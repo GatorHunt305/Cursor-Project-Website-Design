@@ -176,10 +176,22 @@ a:hover { text-decoration: underline; }
 .stats-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; }
 
 /* CTA block (Hunt “Ready to get a website that works?”) */
-.cta-block { text-align: center; padding: 3.5rem 1.5rem; background: linear-gradient(165deg, var(--bg-dark) 0%, var(--bg-dark-accent) 40%, var(--night-blue) 100%); color: var(--white); border-radius: var(--radius-lg); border: 1px solid rgba(45, 84, 94, 0.4); }
+/* CTA block: dark bubble on home page for contrast with light section background */
+.cta-block {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: var(--night-blue-shadow);
+  background: linear-gradient(165deg, var(--night-blue-shadow) 0%, var(--night-blue) 100%);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(18, 52, 59, 0.9);
+  box-shadow: 0 8px 32px rgba(18, 52, 59, 0.35);
+}
 .cta-block .section-title { color: var(--white); margin-bottom: 0.75rem; }
 .cta-block .section-lead { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; text-align: center; margin-left: auto; margin-right: auto; max-width: 560px; }
 .cta-block .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.cta-block .btn { background: var(--sand-tan); color: var(--night-blue-shadow); border: none; }
+.cta-block .btn:hover { background: var(--sand-tan-shadow); color: var(--night-blue-shadow); text-decoration: none; }
 .cta-block .btn-ghost { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
 .cta-block .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.1); color: var(--white); text-decoration: none; }
 
