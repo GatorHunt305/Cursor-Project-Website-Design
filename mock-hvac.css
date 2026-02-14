@@ -21,7 +21,7 @@ a:hover { text-decoration: underline; }
 .mock-container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
 @media (min-width: 768px) { .mock-container { padding: 0 2rem; } }
 
-/* Return to H4Services banner – HVAC teal */
+/* Return to H4Services card – HVAC teal */
 .mock-return-banner { background: var(--hvac-primary); }
 .mock-return-banner:hover { background: var(--hvac-primary-dark); }
 
