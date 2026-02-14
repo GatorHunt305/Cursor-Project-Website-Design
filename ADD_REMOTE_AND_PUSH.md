@@ -1,17 +1,28 @@
 # Push this project to GitHub
 
-Your project already has Git set up with an initial commit on the `main` branch.
+Your project is set up with the remote **https://github.com/GatorHunt305/Cursor-Project-Website-Design.git**. You only need to authenticate and push.
 
-## One-time setup on GitHub
+## GitHub no longer accepts account passwords for Git
+
+Use a **Personal Access Token (PAT)** instead.
+
+### 1. Create a token
+
+1. Go to **https://github.com/settings/tokens**
+2. Click **Generate new token** → **Generate new token (classic)**
+3. Name it (e.g. "Cursor push"), choose an expiry, and check the **repo** scope
+4. Click **Generate token** and **copy the token** (you won’t see it again)
+
+### 2. Create the repo on GitHub (if you haven’t yet)
 
 1. Go to **https://github.com/new**
-2. Repository name: e.g. `small-business-websites`
+2. Repository name: **Cursor-Project-Website-Design**
 3. Leave "Add a README" **unchecked**
 4. Click **Create repository**
 
-## Then run this (replace with your details)
+### 3. Push from your machine
 
-In PowerShell or Cursor terminal, run **one line at a time**:
+In PowerShell or Cursor terminal, run these **one at a time** (the second line loads Git into your terminal):
 
 ```powershell
 cd "c:\Users\liamh\Documents\New folder\OneDrive\Documents\Cursor Projects\small-business-websites"
@@ -22,12 +33,11 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 ```
 
 ```powershell
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-```
-*(Replace YOUR_GITHUB_USERNAME and YOUR_REPO_NAME with your actual GitHub username and repo name.)*
-
-```powershell
 git push -u origin main
 ```
 
-If GitHub asks for a password, use a **Personal Access Token** (GitHub → Settings → Developer settings → Personal access tokens).
+When prompted:
+- **Username:** `GatorHunt305`
+- **Password:** paste your **Personal Access Token** (not your GitHub password)
+
+After that, your code will be at **https://github.com/GatorHunt305/Cursor-Project-Website-Design**.
