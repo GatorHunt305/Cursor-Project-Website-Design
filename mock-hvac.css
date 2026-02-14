@@ -21,31 +21,10 @@ a:hover { text-decoration: underline; }
 .mock-container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
 @media (min-width: 768px) { .mock-container { padding: 0 2rem; } }
 
-/* Return to H4Services – full-width interactible card (same as plumbing/electrical) */
-.mock-return-banner {
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  text-align: center;
-  background: var(--hvac-primary);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-}
-.mock-return-banner::before { content: "← "; font-weight: 700; }
+/* Return to H4Services – base from mock-styles.css; HVAC color override (same as plumbing/electrical) */
+.mock-return-banner { background: var(--hvac-primary); }
 .mock-return-banner:hover,
-.mock-return-banner:focus {
-  background: var(--hvac-primary-dark);
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-  outline: none;
-}
+.mock-return-banner:focus { background: var(--hvac-primary-dark); }
 
 /* Header – minimal, transparent over hero possible */
 .mock-header {
