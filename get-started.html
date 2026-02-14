@@ -120,5 +120,22 @@
       }
     })();
   </script>
+  <script>
+    (function() {
+      var logoIcon = document.querySelector('.site-header .logo-icon');
+      if (!logoIcon) return;
+      function updateSpin() {
+        logoIcon.style.transform = 'rotate(' + (window.scrollY * 0.15) + 'deg)';
+      }
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateSpin(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateSpin();
+    })();
+  </script>
 </body>
 </html>

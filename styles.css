@@ -50,7 +50,7 @@ a:hover { text-decoration: underline; }
 }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-logo); font-size: 1.4rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
-.logo-icon { display: inline-block; width: 6rem; height: 6rem; flex-shrink: 0; vertical-align: middle; background-color: var(--primary); mask: url("h4-logo.png") center / contain no-repeat; -webkit-mask: url("h4-logo.png") center / contain no-repeat; }
+.logo-icon { display: inline-block; width: 6rem; height: 6rem; flex-shrink: 0; vertical-align: middle; background-color: var(--primary); mask: url("h4-logo.png") center / contain no-repeat; -webkit-mask: url("h4-logo.png") center / contain no-repeat; transform-origin: center center; }
 .logo:hover .logo-icon { background-color: var(--primary-dark); }
 /* H and 4 on same baseline, like normal text on lined paper */
 .logo .logo-num {
