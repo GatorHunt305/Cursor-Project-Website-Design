@@ -1,6 +1,6 @@
 # Stripe setup: one-time setup + recurring monthly payments
 
-Your payment portal (`payment.html`) is ready. Customers choose a plan and are sent to **Stripe Checkout** to pay the setup fee and start the monthly subscription. You never handle card numbers.
+Pricing is on **Get started** (`get-started.html`). Customers choose a plan and click “Pay setup & subscribe” to go to **Stripe Checkout** for the setup fee and monthly subscription. You never handle card numbers.
 
 ## 1. Create a Stripe account
 
@@ -51,7 +51,7 @@ Use **Option A** if available so the customer pays setup and subscribes in one g
 
 ## 4. Add your links to the site
 
-1. Open **payment.html** in your project.
+1. Open **get-started.html** (Pricing page) in your project.
 2. Find the `<script>` block near the bottom with `STRIPE_LINKS`.
 3. Replace the placeholders with your real Payment Link URLs:
 

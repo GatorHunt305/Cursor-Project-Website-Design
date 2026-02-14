@@ -262,6 +262,17 @@ a:hover { text-decoration: underline; }
 .contact-assurance strong { color: var(--primary); }
 
 /* Payment portal */
+/* Pricing page: secure Stripe callout */
+.pricing-secure-stripe {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  padding: 1rem 1.25rem;
+  background: rgba(94, 190, 196, 0.08);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+}
+.pricing-secure-stripe strong { color: var(--primary); }
+
 .payment-assurance {
   max-width: 640px;
   margin: 0 auto 2rem;
@@ -276,6 +287,30 @@ a:hover { text-decoration: underline; }
 .payment-plan-desc { margin: 0 0 1.25rem; font-size: 0.95rem; color: var(--text-muted); }
 .payment-portal-grid .pricing-card .btn { width: 100%; text-align: center; }
 .payment-footer-note { text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.95rem; }
+
+/* Pricing: custom quote CTA box */
+.pricing-quote-cta {
+  display: block;
+  max-width: 420px;
+  margin: 2rem auto 0;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  background: var(--bg-primary-tint);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.pricing-quote-cta:hover {
+  background: rgba(94, 190, 196, 0.15);
+  border-color: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(94, 190, 196, 0.2);
+  color: var(--text);
+  text-decoration: none;
+}
+.pricing-quote-cta-label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--primary); margin-bottom: 0.25rem; }
+.pricing-quote-cta-text { font-size: 1rem; font-weight: 500; }
 
 /* Forms */
 .form-block { max-width: 520px; margin: 2rem 0; }

@@ -17,8 +17,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="case-studies.html">Case Studies</a>
-        <a href="get-started.html">Pricing</a>
-        <a href="payment.html" class="nav-cta">Pay</a>
+        <a href="get-started.html" class="nav-cta">View Pricing</a>
       </nav>
     </div>
   </header>
@@ -33,6 +32,9 @@
 
     <section class="section section--alt">
       <div class="container">
+        <p class="pricing-secure-stripe">
+          <strong>Secure payment with Stripe.</strong> When you choose a plan, you’ll complete setup and monthly billing on Stripe’s checkout. We never see or store your card number.
+        </p>
         <div class="pricing-grid">
           <div class="pricing-card">
             <h2>Standard</h2>
@@ -47,7 +49,7 @@
               <li>Basic SEO & hosting</li>
               <li>Content updates included in monthly</li>
             </ul>
-            <a href="payment.html" class="btn">Pay setup &amp; subscribe</a>
+            <a href="#" id="pay-standard" class="btn">Pay setup &amp; subscribe</a>
           </div>
           <div class="pricing-card-wrap pricing-card-popular">
             <span class="pricing-badge">Most popular</span>
@@ -66,11 +68,14 @@
               <li>Advanced local SEO</li>
               <li>Priority support</li>
             </ul>
-            <a href="payment.html" class="btn">Pay setup &amp; subscribe</a>
+            <a href="#" id="pay-premium" class="btn">Pay setup &amp; subscribe</a>
             </div>
           </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; color: var(--text-muted);">Questions? <a href="contact.html">Contact us</a> for a custom quote.</p>
+        <a href="contact.html" class="pricing-quote-cta">
+          <span class="pricing-quote-cta-label">Questions?</span>
+          <span class="pricing-quote-cta-text">Contact us for a custom quote</span>
+        </a>
       </div>
     </section>
   </main>
@@ -81,5 +86,17 @@
       <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
     </div>
   </footer>
+  <script>
+    (function() {
+      var STRIPE_LINKS = {
+        standard: 'https://buy.stripe.com/YOUR_STANDARD_LINK',
+        premium: 'https://buy.stripe.com/YOUR_PREMIUM_LINK'
+      };
+      var s = document.getElementById('pay-standard');
+      var p = document.getElementById('pay-premium');
+      if (s && STRIPE_LINKS.standard.indexOf('YOUR_') === -1) s.href = STRIPE_LINKS.standard;
+      if (p && STRIPE_LINKS.premium.indexOf('YOUR_') === -1) p.href = STRIPE_LINKS.premium;
+    })();
+  </script>
 </body>
 </html>
