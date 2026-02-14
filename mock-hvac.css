@@ -22,18 +22,8 @@ a:hover { text-decoration: underline; }
 @media (min-width: 768px) { .mock-container { padding: 0 2rem; } }
 
 /* Return to H4Services banner – HVAC teal */
-.mock-return-banner {
-  display: block;
-  text-align: center;
-  padding: 0.45rem 1rem;
-  background: var(--hvac-primary);
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.mock-return-banner:hover { background: var(--hvac-primary-dark); color: #fff; text-decoration: none; }
+.mock-return-banner { background: var(--hvac-primary); }
+.mock-return-banner:hover { background: var(--hvac-primary-dark); }
 
 /* Header – minimal, transparent over hero possible */
 .mock-header {
