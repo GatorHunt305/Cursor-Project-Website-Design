@@ -398,36 +398,31 @@ form .btn { margin-top: 0.25rem; }
 .values-list li:last-child { border-bottom: none; }
 .values-list strong { display: block; margin-bottom: 0.2rem; }
 
-/* Mobile: dropdown nav at top right */
+/* Mobile: tabbed organizer (same as mock sites – full-width menu below header) */
 @media (max-width: 768px) {
-  .site-header .container { position: relative; flex-wrap: nowrap; gap: 0.5rem; }
+  .site-header .container { flex-wrap: wrap; gap: 0.5rem; }
   .site-nav-toggle { display: flex; }
   .site-nav {
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin: 0 -1.5rem 0 0;
+    width: 100%;
+    flex-basis: 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    min-width: 220px;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0 0;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--border);
     background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    box-shadow: var(--shadow-lg);
-    z-index: 60;
   }
   .site-nav.is-open { display: flex; }
   .site-nav a {
     display: block;
-    padding: 0.75rem 1.25rem;
+    padding: 0.7rem 1rem;
     font-size: 1rem;
     border-bottom: 1px solid var(--border);
   }
   .site-nav a:last-child { border-bottom: none; }
-  .site-nav .nav-cta { margin: 0.5rem 1.25rem 0; padding: 0.6rem 1rem; text-align: center; border-radius: 8px; }
+  .site-nav .nav-cta { margin: 0.5rem 1rem 0; padding: 0.65rem 1rem; text-align: center; border-radius: 8px; }
   .logo { font-size: 1.2rem; }
   .logo-icon { width: 4rem; height: 4rem; }
 }

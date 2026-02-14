@@ -77,14 +77,20 @@
   </footer>
   <script>
     (function() {
-      var btn = document.querySelector('.site-nav-toggle');
-      var nav = document.getElementById('site-nav');
-      if (btn && nav) {
+      function initNavToggle() {
+        var btn = document.querySelector('.site-nav-toggle');
+        var nav = document.getElementById('site-nav') || document.querySelector('.site-nav');
+        if (!btn || !nav) return;
         btn.addEventListener('click', function() {
           var open = nav.classList.toggle('is-open');
           btn.setAttribute('aria-expanded', open);
           btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNavToggle);
+      } else {
+        initNavToggle();
       }
     })();
   </script>
