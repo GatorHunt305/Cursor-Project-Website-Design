@@ -78,6 +78,24 @@ a:hover { text-decoration: underline; }
 }
 .site-nav .nav-cta:hover { background: var(--sand-tan-shadow); color: var(--night-blue-shadow); border-color: var(--sand-tan-shadow); text-decoration: none; }
 
+/* Mobile: menu toggle button (hidden on desktop) */
+.site-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+}
+.site-nav-toggle:hover { color: var(--primary); background: rgba(45, 84, 94, 0.08); }
+.site-nav-toggle:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
+.site-nav-toggle[aria-expanded="true"] { color: var(--primary); }
+
 /* Hero – bold, two CTAs (Hunt-style) */
 .hero {
   padding: 4rem 0 4.5rem;
@@ -380,12 +398,36 @@ form .btn { margin-top: 0.25rem; }
 .values-list li:last-child { border-bottom: none; }
 .values-list strong { display: block; margin-bottom: 0.2rem; }
 
-/* Mobile: header nav – tighter spacing so View Pricing stays on one line */
+/* Mobile: dropdown nav at top right */
 @media (max-width: 768px) {
-  .site-header .container { gap: 0.5rem; }
-  .site-nav { gap: 0.6rem; }
-  .site-nav a { font-size: 0.875rem; }
-  .site-nav .nav-cta { padding: 0.4rem 0.7rem; font-size: 0.875rem; white-space: nowrap; }
+  .site-header .container { position: relative; flex-wrap: nowrap; gap: 0.5rem; }
+  .site-nav-toggle { display: flex; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin: 0 -1.5rem 0 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 220px;
+    padding: 0.5rem 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 60;
+  }
+  .site-nav.is-open { display: flex; }
+  .site-nav a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .site-nav a:last-child { border-bottom: none; }
+  .site-nav .nav-cta { margin: 0.5rem 1.25rem 0; padding: 0.6rem 1rem; text-align: center; border-radius: 8px; }
   .logo { font-size: 1.2rem; }
   .logo-icon { width: 4rem; height: 4rem; }
 }

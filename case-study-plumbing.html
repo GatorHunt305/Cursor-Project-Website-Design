@@ -12,7 +12,8 @@
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-icon" role="img" aria-hidden="true"></span>H<span class="logo-num">4</span> Services</a>
-      <nav class="site-nav">
+      <button type="button" class="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="site-nav" id="site-nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -39,5 +40,18 @@
       <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
     </div>
   </footer>
+  <script>
+    (function() {
+      var btn = document.querySelector('.site-nav-toggle');
+      var nav = document.getElementById('site-nav');
+      if (btn && nav) {
+        btn.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open);
+          btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
