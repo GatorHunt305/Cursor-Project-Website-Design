@@ -33,8 +33,11 @@
     <section class="section section--alt">
       <div class="container">
         <p class="contact-assurance">We respond within <strong>24 hours</strong> and are happy to assist with any specific requests for service.</p>
+        <p id="contact-success" class="contact-success" hidden>Thanks for your message. We’ll get back to you within 24 hours.</p>
         <div class="form-block">
-          <form id="contact-form" action="#" method="post">
+          <form id="contact-form" action="https://formspree.io/f/xojnddnb" method="post">
+            <input type="hidden" name="_next" value="https://www.h4services.co/contact.html?sent=1">
+            <input type="hidden" name="_subject" value="H4 Services contact form">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required placeholder="e.g. John Smith">
             <label for="email">Email</label>
@@ -94,10 +97,15 @@
       noRadio.addEventListener('change', toggleUrlField);
       toggleUrlField();
 
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thanks for your message! This is a demo—connect the form to your backend or email service.');
-      });
+      // Show success message when redirected back after submit
+      if (window.location.search.indexOf('sent=1') !== -1) {
+        var successEl = document.getElementById('contact-success');
+        var formBlock = form.closest('.form-block');
+        if (successEl && formBlock) {
+          successEl.hidden = false;
+          formBlock.style.display = 'none';
+        }
+      }
     })();
   </script>
 </body>

@@ -273,6 +273,16 @@ a:hover { text-decoration: underline; }
   color: var(--text);
 }
 .contact-assurance strong { color: var(--primary); }
+.contact-success {
+  max-width: 520px;
+  padding: 1.5rem 1.25rem;
+  background: rgba(45, 84, 94, 0.08);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 500;
+}
 
 /* Payment portal */
 /* Pricing page: secure Stripe callout */
