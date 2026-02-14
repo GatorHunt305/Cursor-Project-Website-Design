@@ -85,7 +85,7 @@ a:hover { text-decoration: underline; }
   background: linear-gradient(165deg, var(--bg-dark) 0%, var(--bg-dark-accent) 50%, var(--night-blue) 100%);
   color: var(--white);
 }
-.hero .container { max-width: 720px; }
+.hero .container { max-width: 840px; }
 .hero .hero-label { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--sand-tan); margin-bottom: 0.75rem; }
 .hero .btn { background: var(--sand-tan); color: var(--night-blue-shadow); border: none; }
 .hero .btn:hover { background: var(--sand-tan-shadow); color: var(--night-blue-shadow); text-decoration: none; }
