@@ -380,6 +380,16 @@ form .btn { margin-top: 0.25rem; }
 .values-list li:last-child { border-bottom: none; }
 .values-list strong { display: block; margin-bottom: 0.2rem; }
 
+/* Mobile: header nav – tighter spacing so View Pricing stays on one line */
+@media (max-width: 768px) {
+  .site-header .container { gap: 0.5rem; }
+  .site-nav { gap: 0.6rem; }
+  .site-nav a { font-size: 0.875rem; }
+  .site-nav .nav-cta { padding: 0.4rem 0.7rem; font-size: 0.875rem; white-space: nowrap; }
+  .logo { font-size: 1.2rem; }
+  .logo-icon { width: 4rem; height: 4rem; }
+}
+
 @media (max-width: 640px) {
   .hero { padding: 3rem 0 3.5rem; }
   .section { padding: 2.5rem 0; }

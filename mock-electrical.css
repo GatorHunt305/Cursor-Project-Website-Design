@@ -1,4 +1,8 @@
 /* Electrical mock – soft yellow and orange theme */
+/* Return to H4Services banner – electrical orange (mock-styles base is overridden by this file’s --mock-primary) */
+.mock-return-banner { background: var(--mock-primary); }
+.mock-return-banner:hover { background: var(--mock-primary-dark); }
+
 :root {
   --mock-primary: #c87030;
   --mock-primary-dark: #9a4a20;
