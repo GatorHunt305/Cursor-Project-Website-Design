@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Peachtree Comfort HVAC – Atlanta HVAC</title>
+  <meta name="description" content="HVAC services in Atlanta: AC and heating repair, installation, maintenance, duct cleaning. Licensed and insured.">
+  <link rel="stylesheet" href="mock-hvac.css">
+  <link rel="stylesheet" href="mock-styles.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-hvac.html" class="mock-logo"><img src="logo-hvac.svg" alt="" class="mock-logo-icon" width="32" height="32">Peachtree Comfort HVAC</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-hvac.html">Home</a>
+        <a href="mock-hvac-services.html">Services</a>
+        <a href="mock-hvac-about.html">About</a>
+        <a href="mock-hvac-book.html">Book</a>
+        <a href="mock-hvac-portal.html">Portal</a>
+        <a href="mock-hvac-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hvac-hero" id="hvac-hero" aria-label="Hero">
+      <div class="hvac-hero-gallery">
+        <div class="hvac-hero-panel" style="background-image: url('hvac-hero-1.png');" data-index="0"></div>
+        <div class="hvac-hero-panel" style="background-image: url('hvac-hero-2.png');" data-index="1"></div>
+        <div class="hvac-hero-panel" style="background-image: url('hvac-hero-3.png');" data-index="2"></div>
+        <div class="hvac-hero-panel" style="background-image: url('hvac-hero-4.png');" data-index="3"></div>
+        <div class="hvac-hero-panel" style="background-image: url('hvac-hero-5.png');" data-index="4"></div>
+      </div>
+      <div class="hvac-hero-overlay">
+        <div class="mock-container">
+          <span class="hvac-hero-badge">Premium service · Real-time booking</span>
+          <h1>HVAC Services in Atlanta</h1>
+          <p class="hvac-hero-tagline">Heating, cooling, and indoor air quality for your home. AC and heating repair, installation, maintenance, and more.</p>
+          <a href="mock-hvac-book.html" class="mock-btn">Book now — see availability</a>
+        </div>
+        <span class="hvac-scroll-hint">Scroll</span>
+      </div>
+    </section>
+
+    <section class="mock-section hvac-services-cards">
+      <div class="mock-container">
+        <h2>What we do</h2>
+        <div class="mock-services-grid">
+          <a href="mock-hvac-book.html?service=ac" class="mock-service-card">
+            <img src="hvac-ac.png" alt="AC repair and installation">
+            <div class="mock-service-body">
+              <h3>AC repair and installation</h3>
+              <p>Central air and ductless AC—diagnosis, repair, replacement, and new installation with warranty options.</p>
+            </div>
+          </a>
+          <a href="mock-hvac-book.html?service=heating" class="mock-service-card">
+            <img src="hvac-heating.png" alt="Heating repair and installation">
+            <div class="mock-service-body">
+              <h3>Heating repair and installation</h3>
+              <p>Furnace and heat pump service, repair, and new installation for Atlanta winters.</p>
+            </div>
+          </a>
+          <a href="mock-hvac-book.html?service=maintenance" class="mock-service-card">
+            <img src="hvac-maintenance.png" alt="Maintenance and tune-ups">
+            <div class="mock-service-body">
+              <h3>Maintenance and tune-ups</h3>
+              <p>Seasonal maintenance plans and one-time tune-ups to improve efficiency and extend equipment life.</p>
+            </div>
+          </a>
+          <a href="mock-hvac-book.html?service=ducts" class="mock-service-card">
+            <img src="hvac-duct.png" alt="Duct cleaning and sealing">
+            <div class="mock-service-body">
+              <h3>Duct cleaning and sealing</h3>
+              <p>Air duct cleaning and sealing for better airflow and indoor air quality.</p>
+            </div>
+          </a>
+          <a href="mock-hvac-book.html?service=thermostat" class="mock-service-card">
+            <img src="hvac-thermostat.png" alt="Thermostats and indoor air quality">
+            <div class="mock-service-body">
+              <h3>Thermostats and indoor air quality</h3>
+              <p>Smart thermostat installation, air purifiers, and IAQ solutions.</p>
+            </div>
+          </a>
+        </div>
+        <p style="margin-top: 1.5rem; color: var(--mock-muted); font-size: 0.95rem;">Need a price before you book? Use our <a href="mock-hvac-contact.html">service request form</a> for an instant quote. See real-time availability when you <a href="mock-hvac-book.html">book online</a>.</p>
+        <div class="mock-cta">
+          <h3>Ready to book?</h3>
+          <p>See live availability and get instant confirmation. Existing customers can view invoices in the <a href="mock-hvac-portal.html" style="color: rgba(255,255,255,0.95); text-decoration: underline;">customer portal</a>.</p>
+          <a href="mock-hvac-book.html" class="mock-btn mock-btn-primary">Book a Service</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Peachtree Comfort HVAC · Atlanta, GA · (404) 555-0176 · Demo site by H4Services</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+
+    (function() {
+      var hero = document.getElementById('hvac-hero');
+      if (hero) {
+        var panels = hero.querySelectorAll('.hvac-hero-panel');
+        var strength = 12;
+        hero.addEventListener('mousemove', function(e) {
+          var rect = hero.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          panels.forEach(function(panel, i) {
+            var dx = (i % 3 - 1) * 0.5;
+            var dy = (Math.floor(i / 3) - 0.5) * 0.5;
+            var tx = (x - dx) * strength;
+            var ty = (y - dy) * strength;
+            panel.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(1.02)';
+          });
+        });
+        hero.addEventListener('mouseleave', function() {
+          panels.forEach(function(panel) {
+            panel.style.transform = '';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

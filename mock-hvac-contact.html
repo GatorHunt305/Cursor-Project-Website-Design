@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Peachtree Comfort HVAC – Atlanta, GA</title>
+  <meta name="description" content="Contact Peachtree Comfort HVAC in Atlanta. Call (404) 555-0176 or send a message for HVAC services and quotes.">
+  <link rel="stylesheet" href="mock-styles.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-hvac.html" class="mock-logo"><img src="logo-hvac.svg" alt="" class="mock-logo-icon" width="32" height="32">Peachtree Comfort HVAC</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-hvac.html">Home</a>
+        <a href="mock-hvac-services.html">Services</a>
+        <a href="mock-hvac-about.html">About</a>
+        <a href="mock-hvac-book.html">Book</a>
+        <a href="mock-hvac-portal.html">Portal</a>
+        <a href="mock-hvac-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-section">
+      <div class="mock-container">
+        <h1>Contact us</h1>
+        <p>Have a question or need a quote? Use the form below for <strong>service requests with instant quotes</strong>. Call us at <strong>(404) 555-0176</strong> or send a message. Existing customers: <a href="mock-hvac-portal.html">view invoices and appointments in the customer portal</a>.</p>
+        <div class="mock-booking">
+          <form class="mock-form" id="contact-form">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(404) 555-0176">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="mock-btn mock-btn-primary">Send message</button>
+          </form>
+          <div class="mock-confirm" id="confirm-msg" aria-live="polite">
+            <strong>Message sent.</strong> We'll get back to you soon. This is a demo site—no message was sent.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Peachtree Comfort HVAC · Atlanta, GA · (404) 555-0176 · Demo site by H4Services</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirm-msg').classList.add('is-visible');
+      this.querySelector('button[type="submit"]').setAttribute('disabled', 'disabled');
+    });
+  </script>
+</body>
+</html>

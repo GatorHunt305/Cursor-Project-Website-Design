@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <!-- Orange sun (left) -->
+  <g fill="#ea580c" stroke="#c2410c" stroke-width="1">
+    <circle cx="18" cy="24" r="7"/>
+    <line x1="18" y1="24" x2="18" y2="12" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="18" y2="36" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="8" y2="24" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="28" y2="24" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="11" y2="17" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="25" y2="31" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="11" y2="31" stroke="#ea580c" stroke-width="1.2"/>
+    <line x1="18" y1="24" x2="25" y2="17" stroke="#ea580c" stroke-width="1.2"/>
+  </g>
+  <!-- Light blue snowflake (right) -->
+  <g fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1">
+    <circle cx="34" cy="24" r="4"/>
+    <line x1="34" y1="24" x2="34" y2="14"/>
+    <line x1="34" y1="24" x2="34" y2="34"/>
+    <line x1="34" y1="24" x2="26" y2="24"/>
+    <line x1="34" y1="24" x2="42" y2="24"/>
+    <line x1="34" y1="24" x2="28" y2="18"/>
+    <line x1="34" y1="24" x2="40" y2="30"/>
+    <line x1="34" y1="24" x2="28" y2="30"/>
+    <line x1="34" y1="24" x2="40" y2="18"/>
+  </g>
+</svg>

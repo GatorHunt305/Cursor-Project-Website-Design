@@ -1,0 +1,215 @@
+/* Mock business sites – modern theme, conversion-focused (H4Services product quality) */
+:root {
+  --mock-primary: #0f766e;
+  --mock-primary-dark: #0d5c63;
+  --mock-bg: #f8fafc;
+  --mock-card: #ffffff;
+  --mock-text: #1e293b;
+  --mock-muted: #64748b;
+  --mock-border: #e2e8f0;
+  --mock-radius: 12px;
+  --mock-shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+  --mock-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 1rem; line-height: 1.6; color: var(--mock-text); background: var(--mock-bg); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--mock-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.mock-container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 640px) { .mock-container { padding: 0 1.25rem; } }
+
+/* Header */
+.mock-header {
+  background: var(--mock-card);
+  border-bottom: 1px solid var(--mock-border);
+  padding: 0.875rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.mock-header .mock-container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.mock-logo { display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 700; color: var(--mock-text); flex-shrink: 0; white-space: nowrap; }
+.mock-logo:hover { text-decoration: none; color: var(--mock-primary); }
+.mock-logo-icon { display: block; width: 2rem; height: 2rem; flex-shrink: 0; }
+.mock-nav { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.mock-nav a { color: var(--mock-text); font-weight: 500; }
+.mock-nav a:hover { color: var(--mock-primary); }
+.mock-back { font-size: 0.9rem; color: var(--mock-muted); }
+.mock-back:hover { color: var(--mock-primary); }
+
+/* Mobile: hamburger menu */
+.mock-menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.25rem; color: var(--mock-text); line-height: 1; }
+@media (max-width: 768px) {
+  .mock-menu-toggle { display: block; }
+  .mock-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; padding-top: 0.75rem; border-top: 1px solid var(--mock-border); margin-top: 0.25rem; }
+  .mock-nav.is-open { display: flex; }
+  .mock-nav a, .mock-nav .mock-back { padding: 0.6rem 0; }
+  .mock-header .mock-container { flex-wrap: wrap; }
+}
+
+/* Hero with background image */
+.mock-hero {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--mock-primary-dark) center/cover no-repeat;
+  color: #fff;
+}
+@media (min-width: 640px) {
+  .mock-hero { min-height: 320px; padding: 3rem 1.5rem; }
+}
+.mock-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+.mock-hero .mock-container { position: relative; z-index: 2; }
+.mock-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 32px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.9);
+  color: #fff;
+}
+.mock-hero p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 1;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.9);
+  color: #fff;
+}
+.mock-hero p:has(.mock-btn) { margin-top: 1.5rem; }
+.mock-hero .mock-btn { text-shadow: 0 1px 4px rgba(0,0,0,0.6); font-weight: 700; }
+
+/* Sections */
+.mock-section { padding: 2.5rem 0; }
+.mock-section h2 { margin: 0 0 1rem; font-size: 1.5rem; color: var(--mock-text); }
+.mock-section-alt { background: var(--mock-card); border-top: 1px solid var(--mock-border); border-bottom: 1px solid var(--mock-border); }
+
+/* Service cards with images */
+.mock-services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
+.mock-service-card {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+@media (min-width: 640px) {
+  .mock-service-card { flex: 0 0 calc((100% - 1.5rem) / 2); max-width: calc((100% - 1.5rem) / 2); }
+}
+@media (min-width: 900px) {
+  .mock-service-card { flex: 0 0 calc((100% - 2 * 1.5rem) / 3); max-width: calc((100% - 2 * 1.5rem) / 3); }
+}
+.mock-service-card {
+  background: var(--mock-card);
+  border-radius: var(--mock-radius);
+  overflow: hidden;
+  box-shadow: var(--mock-shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.mock-service-card:hover { box-shadow: var(--mock-shadow-lg); transform: translateY(-2px); }
+a.mock-service-card { display: block; text-decoration: none; color: inherit; }
+a.mock-service-card:hover { text-decoration: none; color: inherit; }
+.mock-service-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.mock-service-card .mock-service-body { padding: 1.25rem; }
+.mock-service-card h3 { margin: 0 0 0.35rem; font-size: 1.1rem; }
+.mock-service-card p { margin: 0; font-size: 0.95rem; color: var(--mock-muted); line-height: 1.5; }
+
+/* Local support section (standard mock home) */
+.mock-local { margin-top: 2rem; padding: 1.5rem; background: var(--mock-card); border: 1px solid var(--mock-border); border-radius: var(--mock-radius); }
+.mock-local h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.mock-local p { margin: 0; font-size: 0.95rem; color: var(--mock-muted); line-height: 1.55; }
+
+/* CTA block */
+.mock-cta { text-align: center; padding: 2rem 1.5rem; background: var(--mock-primary); color: #fff; border-radius: var(--mock-radius); margin-top: 2rem; }
+.mock-cta h3 { margin: 0 0 0.5rem; font-size: 1.25rem; color: #fff; }
+.mock-cta p { margin: 0 0 1rem; opacity: 0.95; font-size: 0.95rem; }
+.mock-btn { display: inline-block; font: inherit; font-weight: 600; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; background: #fff; color: var(--mock-primary); text-decoration: none; transition: opacity 0.2s; }
+.mock-btn:hover { opacity: 0.95; text-decoration: none; color: var(--mock-primary); }
+.mock-btn-primary { background: var(--mock-primary); color: #fff; }
+.mock-btn-primary:hover { color: #fff; }
+
+/* Booking section */
+.mock-section h2#booking { margin-top: 4.5rem; }
+.mock-booking { background: var(--mock-card); border: 1px solid var(--mock-border); border-radius: var(--mock-radius); padding: 1.75rem; margin-top: 2rem; box-shadow: var(--mock-shadow); }
+.mock-booking h3 { margin: 0 0 1rem; font-size: 1.25rem; }
+.mock-form .form-row { margin-bottom: 1rem; }
+.mock-form label { display: block; font-weight: 600; margin-bottom: 0.35rem; font-size: 0.95rem; color: var(--mock-text); }
+.mock-form input, .mock-form select, .mock-form textarea { width: 100%; font: inherit; font-size: 1rem; padding: 0.6rem 0.75rem; border: 1px solid var(--mock-border); border-radius: 8px; background: #fff; }
+.mock-form input:focus, .mock-form select:focus, .mock-form textarea:focus { outline: none; border-color: var(--mock-primary); box-shadow: 0 0 0 3px rgba(15,118,110,0.15); }
+.mock-form .form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 500px) { .mock-form .form-row-inline { grid-template-columns: 1fr; } }
+.mock-form .mock-btn { margin-top: 0.5rem; }
+.mock-confirm { display: none; margin-top: 1rem; padding: 1rem; background: #d1fae5; border: 1px solid #a7f3d0; border-radius: 8px; color: #065f46; }
+.mock-confirm.is-visible { display: block; }
+
+/* About / content */
+.mock-about p { color: var(--mock-muted); margin: 0 0 1rem; }
+.mock-contact-list { list-style: none; padding: 0; margin: 0; }
+.mock-contact-list li { padding: 0.35rem 0; color: var(--mock-muted); }
+
+/* Premium features list (HVAC / Jobber-style) */
+.mock-features-section { background: var(--mock-card); border: 1px solid var(--mock-border); border-radius: var(--mock-radius); padding: 1.75rem; margin-top: 2rem; box-shadow: var(--mock-shadow); }
+.mock-features-section h3 { margin: 0 0 1rem; font-size: 1.2rem; }
+.mock-features-grid { display: grid; gap: 0.75rem; list-style: none; padding: 0; margin: 0; }
+.mock-features-grid li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; color: var(--mock-text); }
+.mock-features-grid li::before { content: "✓"; color: var(--mock-primary); font-weight: 700; flex-shrink: 0; }
+.mock-reviews { margin-top: 2rem; }
+.mock-reviews h3 { margin: 0 0 1rem; font-size: 1.2rem; }
+.mock-reviews-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .mock-reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+.mock-review-card { background: var(--mock-card); border: 1px solid var(--mock-border); border-radius: var(--mock-radius); padding: 1.25rem; font-size: 0.95rem; }
+.mock-review-card p { margin: 0 0 0.5rem; color: var(--mock-text); font-style: italic; }
+.mock-review-card cite { font-style: normal; color: var(--mock-muted); font-size: 0.9rem; }
+.mock-badge { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--mock-primary); background: rgba(15,118,110,0.1); padding: 0.25rem 0.6rem; border-radius: 6px; margin-bottom: 0.5rem; }
+.mock-pay-note { font-size: 0.9rem; color: var(--mock-muted); margin-top: 0.5rem; }
+.mock-booking-hold {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(15, 118, 110, 0.08);
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: var(--mock-radius);
+  border-left: 4px solid var(--mock-primary);
+}
+.mock-booking-hold strong { display: block; margin-bottom: 0.35rem; font-size: 0.95rem; color: var(--mock-text); }
+.mock-booking-hold p { margin: 0; font-size: 0.9rem; color: var(--mock-muted); line-height: 1.5; }
+.form-row-checkbox { margin-bottom: 1.25rem; text-align: left; }
+.mock-form .form-row-checkbox .mock-checkbox-label {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-bottom: 0;
+  cursor: pointer;
+  color: var(--mock-text);
+  text-align: left;
+}
+.mock-checkbox-label input[type="checkbox"] { flex-shrink: 0; order: 1; width: 1.1rem; height: 1.1rem; }
+.mock-checkbox-label span { order: 2; line-height: 1.45; }
+
+/* Footer */
+.mock-footer { padding: 1.75rem 0; border-top: 1px solid var(--mock-border); font-size: 0.9rem; color: var(--mock-muted); text-align: center; background: var(--mock-card); }
+
+@media (max-width: 640px) {
+  .mock-section { padding: 1.5rem 0; }
+  .mock-service-card .mock-service-body { padding: 1rem; }
+  .mock-cta { padding: 1.5rem 1rem; }
+  .mock-booking { padding: 1.25rem; }
+  body { font-size: 0.9375rem; }
+}

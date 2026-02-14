@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windy City Plumbing | Chicago, IL – 24/7 Plumbing</title>
+  <meta name="description" content="Licensed plumber in Chicago. Drain cleaning, water heater repair, pipe repair, and emergency plumbing. Book online or call 24/7.">
+  <link rel="stylesheet" href="mock-styles.css">
+  <link rel="stylesheet" href="mock-plumbing.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-plumbing.html" class="mock-logo"><img src="logo-plumbing.svg" alt="" class="mock-logo-icon" width="32" height="32">Windy City Plumbing</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-plumbing.html">Home</a>
+        <a href="mock-plumbing-services.html">Services</a>
+        <a href="mock-plumbing-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-hero" style="background-image: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200');">
+      <div class="mock-container">
+        <h1>Reliable Plumbing for Chicago & the North Side</h1>
+        <p>Licensed, insured, and available 24/7 for residential and commercial plumbing.</p>
+        <p><a href="#booking" class="mock-btn">Book a Service</a></p>
+      </div>
+    </section>
+
+    <section class="mock-section">
+      <div class="mock-container">
+        <h2>Our Most Requested Services</h2>
+        <p>From drain cleaning to water heater installs—we handle it all with upfront pricing and same-day availability when you need it.</p>
+        <div class="mock-services-grid">
+          <a href="mock-plumbing.html#booking" class="mock-service-card">
+            <img src="plumbing-drain-cleaning.png" alt="Drain cleaning">
+            <div class="mock-service-body">
+              <h3>Drain cleaning & clog removal</h3>
+              <p>Clearing blockages in sinks, tubs, showers, and main sewer lines. We use professional equipment and offer preventive maintenance.</p>
+            </div>
+          </a>
+          <a href="mock-plumbing.html#booking" class="mock-service-card">
+            <img src="plumbing-water-heater.png" alt="Water heater service">
+            <div class="mock-service-body">
+              <h3>Water heater repair & installation</h3>
+              <p>Tank and tankless water heaters—diagnosis, repair, replacement, and new installs with warranty options.</p>
+            </div>
+          </a>
+          <a href="mock-plumbing.html#booking" class="mock-service-card">
+            <img src="plumbing-pipe-repair.png" alt="Pipe repair and repiping">
+            <div class="mock-service-body">
+              <h3>Pipe repair & repiping</h3>
+              <p>Leak detection and repair, pipe replacement, and full repiping for older or problem plumbing.</p>
+            </div>
+          </a>
+        </div>
+        <div class="mock-local">
+          <h3>Proud to serve Chicago & the North Side</h3>
+          <p>We're a local team—licensed, insured, and based in your community. Same-day and 24/7 emergency service for Chicago, Evanston, Skokie, Lincolnwood, and surrounding neighborhoods. When you call, you get a neighbor who knows the area.</p>
+        </div>
+        <h2 id="booking">Book a Service</h2>
+        <p>Choose a date and time; we'll reach out to confirm your appointment.</p>
+        <div class="mock-booking">
+          <h3>Schedule your appointment</h3>
+          <form class="mock-form" id="booking-form">
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="p-date">Date</label>
+                <input type="date" id="p-date" name="date" required>
+              </div>
+              <div>
+                <label for="p-time">Preferred time</label>
+                <select id="p-time" name="time" required>
+                  <option value="">Select time</option>
+                  <option value="8:00 AM">8:00 AM</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="p-service">Service needed</label>
+              <select id="p-service" name="service" required>
+                <option value="">Select service</option>
+                <option value="Drain cleaning">Drain cleaning</option>
+                <option value="Water heater">Water heater repair/install</option>
+                <option value="Pipe repair">Pipe repair</option>
+                <option value="Fixture install">Fixture installation</option>
+                <option value="Emergency">Emergency plumbing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="p-name">Full name</label>
+              <input type="text" id="p-name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="p-phone">Phone</label>
+                <input type="tel" id="p-phone" name="phone" required placeholder="(312) 555-0123">
+              </div>
+              <div>
+                <label for="p-email">Email</label>
+                <input type="email" id="p-email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="p-address">Address (where service is needed)</label>
+              <input type="text" id="p-address" name="address" placeholder="Street, city, ZIP">
+            </div>
+            <div class="form-row">
+              <label for="p-notes">Details or notes</label>
+              <textarea id="p-notes" name="notes" rows="3" placeholder="Describe the issue or request..."></textarea>
+            </div>
+            <button type="submit" class="mock-btn mock-btn-primary">Confirm booking</button>
+          </form>
+          <div class="mock-confirm" id="p-confirm-msg" aria-live="polite">
+            <strong>Booking received.</strong> We'll confirm your appointment by phone or email shortly. This is a demo site—no real booking was made.
+          </div>
+        </div>
+        <div class="mock-cta">
+          <h3>Need a plumber?</h3>
+          <p>Book above or call (312) 555-0199 for same-day service.</p>
+          <a href="#booking" class="mock-btn mock-btn-primary">Book now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Windy City Plumbing · Chicago, IL · (312) 555-0199 · Demo site by H4Services</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('p-confirm-msg').classList.add('is-visible');
+      this.querySelector('button[type="submit"]').setAttribute('disabled', 'disabled');
+    });
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

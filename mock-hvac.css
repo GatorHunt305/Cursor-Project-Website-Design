@@ -1,0 +1,391 @@
+/* HVAC mock – premium, editorial (Mea Suna–inspired) */
+:root {
+  --hvac-primary: #0f766e;
+  --hvac-primary-dark: #0d5c63;
+  --hvac-bg: #fafaf9;
+  --hvac-card: #ffffff;
+  --hvac-text: #1c1917;
+  --hvac-muted: #57534e;
+  --hvac-border: #e7e5e4;
+  --hvac-radius: 8px;
+  --hvac-font-heading: Georgia, "Times New Roman", serif;
+  --hvac-font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--hvac-font-body); font-size: 1rem; line-height: 1.65; color: var(--hvac-text); background: var(--hvac-bg); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--hvac-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.mock-container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 768px) { .mock-container { padding: 0 2rem; } }
+
+/* Header – minimal, transparent over hero possible */
+.mock-header {
+  background: var(--hvac-card);
+  border-bottom: 1px solid var(--hvac-border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.mock-header .mock-container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.mock-logo { display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 0.5rem; font-family: var(--hvac-font-heading); font-size: 1.35rem; font-weight: 700; color: var(--hvac-text); flex-shrink: 0; white-space: nowrap; }
+.mock-logo:hover { text-decoration: none; color: var(--hvac-primary); }
+.mock-logo-icon { display: block; width: 2rem; height: 2rem; flex-shrink: 0; }
+.mock-nav { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
+.mock-nav a { color: var(--hvac-text); font-weight: 500; font-size: 0.95rem; }
+.mock-nav a:hover { color: var(--hvac-primary); }
+.mock-back { font-size: 0.9rem; color: var(--hvac-muted); }
+.mock-back:hover { color: var(--hvac-primary); }
+
+.mock-menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.25rem; color: var(--hvac-text); line-height: 1; }
+@media (max-width: 768px) {
+  .mock-menu-toggle { display: block; }
+  .mock-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; padding-top: 0.75rem; border-top: 1px solid var(--hvac-border); margin-top: 0.25rem; }
+  .mock-nav.is-open { display: flex; }
+  .mock-nav a, .mock-nav .mock-back { padding: 0.6rem 0; }
+}
+
+/* Hero – dynamic 5-image gallery reacting to mouse */
+.hvac-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  color: #fff;
+  overflow: hidden;
+}
+.hvac-hero-gallery {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+}
+.hvac-hero-panel {
+  background: var(--hvac-primary-dark) center/cover no-repeat;
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+.hvac-hero-panel:nth-child(1) { grid-column: 1; grid-row: 1; }
+.hvac-hero-panel:nth-child(2) { grid-column: 2; grid-row: 1; }
+.hvac-hero-panel:nth-child(3) { grid-column: 3; grid-row: 1; }
+.hvac-hero-panel:nth-child(4) { grid-column: 1; grid-row: 2; }
+.hvac-hero-panel:nth-child(5) { grid-column: 2 / span 2; grid-row: 2; }
+.hvac-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+.hvac-hero-overlay .mock-container,
+.hvac-hero-overlay .hvac-scroll-hint { pointer-events: auto; }
+.hvac-hero-overlay .hvac-scroll-hint { margin-top: auto; }
+.hvac-hero .mock-container { position: relative; }
+.hvac-hero-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 1.25rem;
+}
+.hvac-hero h1 {
+  margin: 0 0 1rem;
+  font-family: var(--hvac-font-heading);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+  color: #fff;
+}
+.hvac-hero .hvac-hero-line2 { display: block; margin-top: 0.15em; }
+.hvac-hero-tagline {
+  margin: 0 0 2rem;
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+.hvac-hero .mock-btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.9rem 1.75rem;
+  border: 2px solid #fff;
+  border-radius: var(--hvac-radius);
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.hvac-hero .mock-btn:hover { background: #fff; color: var(--hvac-primary-dark); text-decoration: none; }
+.hvac-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+/* Section labels (Mea Suna–style) */
+.hvac-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--hvac-primary);
+  margin-bottom: 0.75rem;
+}
+.hvac-section-title {
+  font-family: var(--hvac-font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  color: var(--hvac-text);
+  line-height: 1.2;
+}
+.hvac-section-lead {
+  font-size: 1.05rem;
+  color: var(--hvac-muted);
+  margin: 0 0 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Scroll-triggered fade-up */
+.hvac-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.hvac-fade-up.hvac-fade-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Services – editorial blocks (alternating image + text) */
+.hvac-services {
+  padding: 4rem 0;
+}
+.hvac-service-block {
+  display: grid;
+  gap: 0;
+  align-items: center;
+  margin-bottom: 0;
+  background: var(--hvac-card);
+}
+.hvac-service-block:nth-child(even) .hvac-service-content { order: 2; }
+@media (min-width: 768px) {
+  .hvac-service-block { grid-template-columns: 1fr 1fr; min-height: 380px; }
+  .hvac-service-block:nth-child(even) .hvac-service-img { order: 2; }
+  .hvac-service-block:nth-child(even) .hvac-service-content { order: 1; }
+}
+.hvac-service-img {
+  position: relative;
+  min-height: 260px;
+  background: var(--hvac-border) center/cover no-repeat;
+}
+@media (min-width: 768px) { .hvac-service-img { min-height: 100%; } }
+.hvac-service-img img { width: 100%; height: 100%; object-fit: cover; }
+.hvac-service-content {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) { .hvac-service-content { padding: 3rem 2.5rem; } }
+.hvac-service-content h3 {
+  font-family: var(--hvac-font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  color: var(--hvac-text);
+}
+.hvac-service-content p { margin: 0 0 1.25rem; color: var(--hvac-muted); line-height: 1.6; }
+.hvac-service-content .mock-btn {
+  align-self: flex-start;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  color: var(--hvac-primary);
+  border: none;
+  background: none;
+  border-radius: 0;
+  border-bottom: 2px solid var(--hvac-primary);
+  cursor: pointer;
+  text-decoration: none;
+}
+.hvac-service-content .mock-btn:hover { opacity: 0.85; text-decoration: none; color: var(--hvac-primary); }
+
+/* HVAC services page – 5 cards (AC, Heating, Maintenance, Duct cleaning, Thermostats) glow teal when interacted with */
+.hvac-services-cards .mock-service-card {
+  overflow: visible; /* allow glow to show (mock-styles uses overflow: hidden which clips box-shadow) */
+  border: 1px solid var(--hvac-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.hvac-services-cards .mock-service-card img {
+  border-radius: 12px 12px 0 0;
+}
+.hvac-services-cards .mock-service-card .mock-service-body {
+  border-radius: 0 0 12px 12px;
+}
+/* Teal glow on hover, focus, or active (click/tap) */
+.hvac-services-cards .mock-service-card:hover,
+.hvac-services-cards .mock-service-card:focus,
+.hvac-services-cards .mock-service-card:focus-visible,
+.hvac-services-cards .mock-service-card:active {
+  box-shadow: 0 10px 20px rgba(30, 41, 59, 0.1),
+    0 0 0 2px rgba(15, 118, 110, 0.5),
+    0 0 24px rgba(15, 118, 110, 0.4),
+    0 0 48px rgba(15, 118, 110, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--hvac-primary);
+}
+.hvac-services-cards a.mock-service-card:focus,
+.hvac-services-cards a.mock-service-card:focus-visible { outline: none; }
+
+/* Intro strip (two-line statement) */
+.hvac-statement {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: var(--hvac-card);
+  border-top: 1px solid var(--hvac-border);
+  border-bottom: 1px solid var(--hvac-border);
+}
+.hvac-statement-inner { max-width: 720px; margin: 0 auto; }
+.hvac-statement h2 {
+  font-family: var(--hvac-font-heading);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.35;
+  color: var(--hvac-text);
+}
+.hvac-statement .hvac-statement-line2 { display: block; margin-top: 0.2em; color: var(--hvac-primary); }
+
+/* Experience / Why book – clean grid */
+.hvac-experience {
+  padding: 4rem 0;
+}
+.hvac-experience-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 640px) { .hvac-experience-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .hvac-experience-grid { grid-template-columns: repeat(3, 1fr); } }
+.hvac-experience-item {
+  padding: 1.5rem;
+  background: var(--hvac-card);
+  border: 1px solid var(--hvac-border);
+  border-radius: var(--hvac-radius);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.hvac-experience-item:hover { border-color: var(--hvac-primary); box-shadow: 0 4px 20px rgba(15,118,110,0.08); }
+.hvac-experience-item strong { display: block; margin-bottom: 0.35rem; font-size: 1rem; color: var(--hvac-text); }
+.hvac-experience-item span { font-size: 0.95rem; color: var(--hvac-muted); line-height: 1.5; }
+
+/* Customer stories */
+.hvac-stories {
+  padding: 4rem 0;
+  background: var(--hvac-card);
+  border-top: 1px solid var(--hvac-border);
+}
+.hvac-stories .mock-container { max-width: 900px; }
+.hvac-stories-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (min-width: 640px) { .hvac-stories-grid { grid-template-columns: repeat(2, 1fr); } }
+.hvac-story-card {
+  padding: 2rem;
+  background: var(--hvac-bg);
+  border-radius: var(--hvac-radius);
+  border: 1px solid var(--hvac-border);
+}
+.hvac-story-stars {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: #d4a012;
+  font-style: normal;
+}
+.hvac-story-card p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: var(--hvac-text);
+  line-height: 1.65;
+  font-style: italic;
+}
+.hvac-story-card .hvac-story-stars + p { margin-top: 0; }
+.hvac-story-card cite { font-style: normal; font-size: 0.9rem; color: var(--hvac-muted); }
+
+/* CTA block */
+.hvac-cta {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: var(--hvac-primary-dark);
+  color: #fff;
+}
+.hvac-cta h2 {
+  font-family: var(--hvac-font-heading);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  color: #fff;
+}
+.hvac-cta p { margin: 0 0 1.5rem; opacity: 0.9; font-size: 1.05rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+.hvac-cta .mock-btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--hvac-radius);
+  background: #fff;
+  color: var(--hvac-primary-dark);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.hvac-cta .mock-btn:hover { opacity: 0.95; text-decoration: none; color: var(--hvac-primary-dark); }
+
+/* Buttons (shared) */
+.mock-btn { cursor: pointer; font: inherit; }
+
+/* Footer */
+.mock-footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--hvac-border);
+  font-size: 0.9rem;
+  color: var(--hvac-muted);
+  text-align: center;
+  background: var(--hvac-card);
+}
+
+@media (max-width: 640px) {
+  .hvac-hero { min-height: 75vh; padding: 3rem 1rem; }
+  .hvac-service-content { padding: 1.75rem 1.25rem; }
+  .hvac-statement { padding: 2rem 1rem; }
+  .hvac-cta { padding: 3rem 1rem; }
+}

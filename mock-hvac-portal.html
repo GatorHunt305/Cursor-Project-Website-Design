@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Portal | Peachtree Comfort HVAC – Atlanta</title>
+  <meta name="description" content="Peachtree Comfort HVAC customer portal. View invoices, appointments, and payment history. Secure login.">
+  <link rel="stylesheet" href="mock-styles.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-hvac.html" class="mock-logo"><img src="logo-hvac.svg" alt="" class="mock-logo-icon" width="32" height="32">Peachtree Comfort HVAC</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-hvac.html">Home</a>
+        <a href="mock-hvac-services.html">Services</a>
+        <a href="mock-hvac-about.html">About</a>
+        <a href="mock-hvac-book.html">Book</a>
+        <a href="mock-hvac-portal.html">Portal</a>
+        <a href="mock-hvac-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-section">
+      <div class="mock-container">
+        <span class="mock-badge">Customer portal</span>
+        <h1>Customer portal</h1>
+        <p>Sign in to view your appointments, invoices, and payment history. Pay outstanding balances securely with Stripe or Square.</p>
+
+        <div class="mock-booking" style="max-width: 420px;">
+          <h3>Sign in</h3>
+          <p class="mock-pay-note">Demo only — no real login. In a live site this would connect to Jobber, Housecall Pro, or your booking/payment system.</p>
+          <form class="mock-form" id="portal-form">
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-row">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="mock-btn mock-btn-primary">Sign in</button>
+          </form>
+          <div class="mock-confirm" id="confirm-msg" aria-live="polite">
+            <strong>Demo.</strong> In production you'd see: upcoming appointments, past invoices, payment history, and the option to pay with card (Stripe/Square).
+          </div>
+        </div>
+
+        <div class="mock-features-section" style="margin-top: 2rem;">
+          <h3>What you can do in the portal</h3>
+          <ul class="mock-features-grid">
+            <li><strong>View &amp; pay invoices</strong> — See past and current invoices; pay securely online</li>
+            <li><strong>Upcoming appointments</strong> — Date, time, service; get reminder links</li>
+            <li><strong>Payment history</strong> — Card payments (Stripe/Square) and receipts</li>
+            <li><strong>Service history</strong> — Past visits and notes for your records</li>
+          </ul>
+          <p class="mock-pay-note" style="margin-top: 1rem;">Powered by our booking &amp; payment integration (e.g. Jobber, Housecall Pro). Demo site by H4Services.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Peachtree Comfort HVAC · Atlanta, GA · (404) 555-0176 · Demo site by H4Services</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('portal-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirm-msg').classList.add('is-visible');
+      this.querySelector('button[type="submit"]').setAttribute('disabled', 'disabled');
+    });
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Mile High Electric – Denver Electrical</title>
+  <meta name="description" content="Electrical services in Denver: panel upgrades, wiring, lighting, outlets, inspections. Licensed and insured.">
+  <link rel="stylesheet" href="mock-styles.css">
+  <link rel="stylesheet" href="mock-electrical.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-electrical.html" class="mock-logo"><img src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Mile High Electric</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-electrical.html">Home</a>
+        <a href="mock-electrical-services.html">Services</a>
+        <a href="mock-electrical-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-hero mock-hero-services" style="background-image: url('electrical-banner.png');">
+      <div class="mock-container">
+        <h1>Licensed Electrical Services in Denver & the Front Range</h1>
+        <p>Residential and commercial—panels, wiring, lighting, inspections, and repairs.</p>
+      </div>
+    </section>
+
+    <section class="mock-section">
+      <div class="mock-container">
+        <h2>What we do</h2>
+        <div class="mock-services-grid">
+          <a href="mock-electrical.html?service=panel#booking" class="mock-service-card">
+            <img src="electrical-panel.png" alt="Panel upgrade">
+            <div class="mock-service-body">
+              <h3>Panel upgrades & replacement</h3>
+              <p>Service upgrades, panel replacement, and subpanel installation for older homes and added capacity.</p>
+            </div>
+          </a>
+          <a href="mock-electrical.html?service=wiring#booking" class="mock-service-card">
+            <img src="electrical-wiring.png" alt="Wiring and rewiring">
+            <div class="mock-service-body">
+              <h3>Wiring & rewiring</h3>
+              <p>New circuits, whole-home rewiring, and troubleshooting for residential and commercial.</p>
+            </div>
+          </a>
+          <a href="mock-electrical.html?service=outlets#booking" class="mock-service-card">
+            <img src="electrical-lighting-outlets.png" alt="Outlets and switches">
+            <div class="mock-service-body">
+              <h3>Outlet & switch installation</h3>
+              <p>New outlets, USB outlets, switches, dimmers, and GFCI installation where required.</p>
+            </div>
+          </a>
+          <a href="mock-electrical.html?service=lighting#booking" class="mock-service-card">
+            <img src="electrical-lighting.png" alt="Lighting design and installation">
+            <div class="mock-service-body">
+              <h3>Lighting design & installation</h3>
+              <p>Indoor and outdoor lighting, fixtures, and smart lighting solutions.</p>
+            </div>
+          </a>
+          <a href="mock-electrical.html?service=inspection#booking" class="mock-service-card">
+            <img src="electrical-inspection.png" alt="Inspections and repairs">
+            <div class="mock-service-body">
+              <h3>Inspections & repairs</h3>
+              <p>Electrical inspections, troubleshooting, and repair for existing systems.</p>
+            </div>
+          </a>
+        </div>
+        <div class="mock-cta">
+          <h3>Ready to book?</h3>
+          <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book a Service</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Mile High Electric · Denver, CO · (303) 555-0142 · Demo site by H4Services</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

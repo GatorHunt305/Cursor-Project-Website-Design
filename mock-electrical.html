@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mile High Electric | Denver, CO – Licensed Electrical</title>
+  <meta name="description" content="Licensed electrician in Denver. Panel upgrades, wiring, lighting, and electrical repair. Book online or call for a free estimate.">
+  <link rel="stylesheet" href="mock-styles.css">
+  <link rel="stylesheet" href="mock-electrical.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-electrical.html" class="mock-logo"><img src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Mile High Electric</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-electrical.html">Home</a>
+        <a href="mock-electrical-services.html">Services</a>
+        <a href="mock-electrical-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-hero" style="background-image: url('electrical-banner.png');">
+      <div class="mock-container">
+        <h1>Licensed Electrical Services in Denver & the Front Range</h1>
+        <p>Residential and commercial electrical work—panels, wiring, repairs, and more.</p>
+        <p><a href="#booking" class="mock-btn">Book a Service</a></p>
+      </div>
+    </section>
+
+    <section class="mock-section">
+      <div class="mock-container">
+        <h2>Our Most Requested Services</h2>
+        <p>From panel upgrades to new wiring and lighting—we're licensed, insured, and focused on safety and code compliance.</p>
+        <div class="mock-services-grid">
+          <a href="mock-electrical.html#booking" class="mock-service-card">
+            <img src="electrical-panel.png" alt="Panel upgrade">
+            <div class="mock-service-body">
+              <h3>Panel upgrades & replacement</h3>
+              <p>Service upgrades, panel replacement, and subpanel installation for older homes and added capacity.</p>
+            </div>
+          </a>
+          <a href="mock-electrical.html#booking" class="mock-service-card">
+            <img src="electrical-wiring.png" alt="Wiring and rewiring">
+            <div class="mock-service-body">
+              <h3>Wiring & rewiring</h3>
+              <p>New circuits, whole-home rewiring, and troubleshooting for residential and commercial.</p>
+            </div>
+          </a>
+          <a href="mock-electrical.html#booking" class="mock-service-card">
+            <img src="electrical-lighting-outlets.png" alt="Outlets and switches">
+            <div class="mock-service-body">
+              <h3>Outlet & switch installation</h3>
+              <p>New outlets, USB outlets, switches, dimmers, and GFCI installation where required.</p>
+            </div>
+          </a>
+        </div>
+        <div class="mock-local">
+          <h3>Proud to serve Denver & the Front Range</h3>
+          <p>We're a local team—licensed, insured, and based in your community. Free estimates and same-day service when possible for Denver, Lakewood, Aurora, Littleton, and the greater metro area. When you call, you get a neighbor who knows the area.</p>
+        </div>
+        <h2 id="booking">Book a Service</h2>
+        <p>Choose a date and time; we'll reach out to confirm your appointment.</p>
+        <div class="mock-booking">
+          <h3>Schedule your appointment</h3>
+          <form class="mock-form" id="booking-form">
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="e-date">Date</label>
+                <input type="date" id="e-date" name="date" required>
+              </div>
+              <div>
+                <label for="e-time">Preferred time</label>
+                <select id="e-time" name="time" required>
+                  <option value="">Select time</option>
+                  <option value="8:00 AM">8:00 AM</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="e-service">Service needed</label>
+              <select id="e-service" name="service" required>
+                <option value="">Select service</option>
+                <option value="Panel upgrade">Panel upgrade</option>
+                <option value="Wiring">Wiring / rewiring</option>
+                <option value="Outlets">Outlet / switch install</option>
+                <option value="Lighting">Lighting</option>
+                <option value="Inspection">Inspection</option>
+                <option value="Repair">Repair / troubleshooting</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="e-name">Full name</label>
+              <input type="text" id="e-name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="e-phone">Phone</label>
+                <input type="tel" id="e-phone" name="phone" required placeholder="(303) 555-0142">
+              </div>
+              <div>
+                <label for="e-email">Email</label>
+                <input type="email" id="e-email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="e-address">Address (where service is needed)</label>
+              <input type="text" id="e-address" name="address" placeholder="Street, city, ZIP">
+            </div>
+            <div class="form-row">
+              <label for="e-notes">Details or notes</label>
+              <textarea id="e-notes" name="notes" rows="3" placeholder="Describe the job or request..."></textarea>
+            </div>
+            <button type="submit" class="mock-btn mock-btn-primary">Confirm booking</button>
+          </form>
+          <div class="mock-confirm" id="e-confirm-msg" aria-live="polite">
+            <strong>Booking received.</strong> We'll confirm your appointment by phone or email shortly. This is a demo site—no real booking was made.
+          </div>
+        </div>
+        <div class="mock-cta">
+          <h3>Need an electrician?</h3>
+          <p>Book above or call (303) 555-0142 for a free estimate.</p>
+          <a href="#booking" class="mock-btn mock-btn-primary">Book now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Mile High Electric · Denver, CO · (303) 555-0142 · Demo site by H4Services</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('e-confirm-msg').classList.add('is-visible');
+      this.querySelector('button[type="submit"]').setAttribute('disabled', 'disabled');
+    });
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

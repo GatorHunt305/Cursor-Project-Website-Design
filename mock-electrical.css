@@ -1,0 +1,40 @@
+/* Electrical mock – soft yellow and orange theme */
+:root {
+  --mock-primary: #c87030;
+  --mock-primary-dark: #9a4a20;
+  --mock-bg: #fefdf9;
+  --mock-bg-alt: #fdf6ed;
+  --mock-card: #ffffff;
+  --mock-text: #1c1917;
+  --mock-muted: #78716c;
+  --mock-border: #ecd9c8;
+  --mock-shadow: 0 4px 6px -1px rgba(180, 120, 60, 0.06), 0 2px 4px -2px rgba(180, 120, 60, 0.04);
+  --mock-shadow-lg: 0 10px 15px -3px rgba(120, 113, 108, 0.08), 0 4px 6px -4px rgba(120, 113, 108, 0.06);
+  --mock-glow: 0 0 0 1px rgba(200, 112, 48, 0.4), 0 0 28px rgba(200, 112, 48, 0.2);
+}
+
+body { background: var(--mock-bg); }
+.mock-section:nth-of-type(even) { background: var(--mock-bg-alt); }
+.mock-section:nth-of-type(odd) { background: var(--mock-bg); }
+.mock-header { background: var(--mock-card); border-bottom-color: var(--mock-border); }
+.mock-footer { background: var(--mock-bg-alt); border-top-color: var(--mock-border); }
+
+.mock-service-card { border: 1px solid var(--mock-border); transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
+.mock-service-card:hover,
+.mock-service-card:focus-visible {
+  box-shadow: var(--mock-shadow-lg), var(--mock-glow);
+  transform: translateY(-2px);
+  border-color: #c87030;
+}
+a.mock-service-card:focus-visible { outline: none; }
+
+/* Hero / Book a service button: invert on hover (orange box, white text) */
+.mock-btn { transition: background 0.2s ease, color 0.2s ease; }
+.mock-btn:hover { background: var(--mock-primary); color: #fff !important; text-decoration: none; }
+.mock-hero .mock-btn:hover { text-shadow: none; }
+
+/* Services page hero: same image as home, varied angle (different crop/position) */
+.mock-hero-services {
+  background-position: 65% 45% !important;
+  background-size: 115% !important;
+}

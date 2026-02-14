@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service | Peachtree Comfort HVAC – Atlanta</title>
+  <meta name="description" content="Book HVAC service in Atlanta. AC, heating, maintenance. Real-time availability. Same-day service when available.">
+  <link rel="stylesheet" href="mock-styles.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-hvac.html" class="mock-logo"><img src="logo-hvac.svg" alt="" class="mock-logo-icon" width="32" height="32">Peachtree Comfort HVAC</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-hvac.html">Home</a>
+        <a href="mock-hvac-services.html">Services</a>
+        <a href="mock-hvac-about.html">About</a>
+        <a href="mock-hvac-book.html">Book</a>
+        <a href="mock-hvac-portal.html">Portal</a>
+        <a href="mock-hvac-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-section">
+      <div class="mock-container">
+        <h1>Book a Service</h1>
+        <p><strong>Real-time availability</strong> · Times below are live from our calendar. Instant confirmation; pay online with Stripe or Square, or pay on site. <a href="mock-hvac-contact.html">Get an instant quote</a> for your project first.</p>
+
+        <div class="mock-booking" id="booking">
+          <h3>Schedule your appointment</h3>
+          <p class="mock-pay-note">Available slots are updated in real time. Secure payment (Stripe/Square) optional at checkout.</p>
+          <form class="mock-form" id="booking-form">
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div>
+                <label for="time">Preferred time</label>
+                <select id="time" name="time" required>
+                  <option value="">Select time</option>
+                  <option value="8:00 AM">8:00 AM</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="service">Service needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select service</option>
+                <option value="AC repair">AC repair</option>
+                <option value="AC install">AC installation</option>
+                <option value="Heating repair">Heating repair</option>
+                <option value="Heating install">Heating installation</option>
+                <option value="Maintenance">Maintenance / tune-up</option>
+                <option value="Duct cleaning">Duct cleaning</option>
+                <option value="Thermostat">Thermostat</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-row form-row-inline">
+              <div>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(404) 555-0176">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="address">Address (where service is needed)</label>
+              <input type="text" id="address" name="address" placeholder="Street, city, ZIP">
+            </div>
+            <div class="form-row">
+              <label for="notes">Details or notes</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Describe the issue or request..."></textarea>
+            </div>
+            <div class="mock-booking-hold">
+              <strong>Card to hold your booking</strong>
+              <p>A charge will be placed on your card to secure this appointment. The amount will be deducted from your final bill after service.</p>
+            </div>
+            <div class="form-row form-row-checkbox">
+              <label class="mock-checkbox-label">
+                <input type="checkbox" id="ack-fee" name="ack_fee" required>
+                <span>I acknowledge the booking and cancellation fee policy (hold charge may apply if I cancel or no-show).</span>
+              </label>
+            </div>
+            <button type="submit" class="mock-btn mock-btn-primary">Confirm booking</button>
+          </form>
+          <div class="mock-confirm" id="confirm-msg" aria-live="polite">
+            <strong>Booking received.</strong> You'll get an automated reminder by email and text before your appointment. View your booking and invoices anytime in the <a href="mock-hvac-portal.html">customer portal</a>. This is a demo site—no real booking was made.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Peachtree Comfort HVAC · Atlanta, GA · (404) 555-0176 · Demo site by H4Services</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirm-msg').classList.add('is-visible');
+      this.querySelector('button[type="submit"]').setAttribute('disabled', 'disabled');
+    });
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

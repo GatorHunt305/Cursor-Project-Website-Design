@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Windy City Plumbing – Chicago Plumbing</title>
+  <meta name="description" content="Plumbing services in Chicago: drain cleaning, water heater, pipe repair, fixtures, emergency plumbing. Licensed and 24/7.">
+  <link rel="stylesheet" href="mock-styles.css">
+  <link rel="stylesheet" href="mock-plumbing.css">
+</head>
+<body>
+  <header class="mock-header">
+    <div class="mock-container">
+      <a href="mock-plumbing.html" class="mock-logo"><img src="logo-plumbing.svg" alt="" class="mock-logo-icon" width="32" height="32">Windy City Plumbing</a>
+      <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mock-nav">
+        <a href="mock-plumbing.html">Home</a>
+        <a href="mock-plumbing-services.html">Services</a>
+        <a href="mock-plumbing-contact.html">Contact</a>
+        <a href="case-studies.html" class="mock-back">← Case studies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mock-hero" style="background-image: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200');">
+      <div class="mock-container">
+        <h1>Reliable Plumbing for Chicago & the North Side</h1>
+        <p>Licensed, insured, and available 24/7 for residential and commercial plumbing.</p>
+      </div>
+    </section>
+
+    <section class="mock-section">
+      <div class="mock-container">
+        <h2>What we do</h2>
+        <div class="mock-services-grid">
+          <a href="mock-plumbing.html?service=drain#booking" class="mock-service-card">
+            <img src="plumbing-drain-cleaning.png" alt="Drain cleaning">
+            <div class="mock-service-body">
+              <h3>Drain cleaning & clog removal</h3>
+              <p>Clearing blockages in sinks, tubs, showers, and main sewer lines. We use professional equipment and offer preventive maintenance.</p>
+            </div>
+          </a>
+          <a href="mock-plumbing.html?service=water-heater#booking" class="mock-service-card">
+            <img src="plumbing-water-heater.png" alt="Water heater service">
+            <div class="mock-service-body">
+              <h3>Water heater repair & installation</h3>
+              <p>Tank and tankless water heaters—diagnosis, repair, replacement, and new installs with warranty options.</p>
+            </div>
+          </a>
+          <a href="mock-plumbing.html?service=pipe#booking" class="mock-service-card">
+            <img src="plumbing-pipe-repair.png" alt="Pipe repair and repiping">
+            <div class="mock-service-body">
+              <h3>Pipe repair & repiping</h3>
+              <p>Leak detection and repair, pipe replacement, and full repiping for older or problem plumbing.</p>
+            </div>
+          </a>
+          <a href="mock-plumbing.html?service=fixture#booking" class="mock-service-card">
+            <img src="plumbing-fixture-installation.png" alt="Fixture installation">
+            <div class="mock-service-body">
+              <h3>Fixture installation</h3>
+              <p>Sinks, toilets, faucets, garbage disposals, and other fixtures—install and repair.</p>
+            </div>
+          </a>
+          <a href="mock-plumbing.html?service=emergency#booking" class="mock-service-card">
+            <img src="plumbing-emergency.png" alt="Emergency plumbing">
+            <div class="mock-service-body">
+              <h3>Emergency plumbing</h3>
+              <p>24/7 availability for burst pipes, major leaks, sewer backups, and no-heat calls.</p>
+            </div>
+          </a>
+        </div>
+        <div class="mock-cta">
+          <h3>Ready to book?</h3>
+          <p>Choose a date and time that works for you.</p>
+          <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book a Service</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mock-footer">
+    <div class="mock-container">
+      <p>Windy City Plumbing · Chicago, IL · (312) 555-0199 · Demo site by H4Services</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.mock-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

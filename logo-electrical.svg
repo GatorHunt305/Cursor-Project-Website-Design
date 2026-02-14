@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <!-- Lightning bolt from copper wires: brown/copper fill with wire twist suggestion -->
+  <path d="M28 4L16 26h8l-4 18 16-22h-8L28 4z" fill="#b87333" stroke="#8B4513" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Inner highlight for wire look -->
+  <path d="M26 8L18 22h5l-2 12 10-16h-5L26 8z" fill="#d4a574" opacity="0.6"/>
+</svg>
