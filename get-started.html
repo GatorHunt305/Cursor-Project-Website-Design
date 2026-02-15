@@ -96,9 +96,9 @@
         standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
         premium: 'https://buy.stripe.com/aFaeVdev71EieNterGeZ200'
       };
-      // Prefilled promo code (alphanumeric). Automatically applied at checkout.
-      var STRIPE_PROMO_STANDARD = '1STMONTHFREE';
-      var STRIPE_PROMO_PREMIUM = '1STMONTHFREE';
+      // Prefilled promo code (alphanumeric). Auto-applied at checkout so customer doesn't have to add a coupon.
+      var STRIPE_PROMO_STANDARD = 'STANDARD250';
+      var STRIPE_PROMO_PREMIUM = 'PREMIUM500';
       function buildPayUrl(base, promo) {
         if (!base || base.indexOf('YOUR_') !== -1) return '#';
         if (promo && /^[a-zA-Z0-9]+$/.test(promo)) {
