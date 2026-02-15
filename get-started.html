@@ -34,7 +34,7 @@
     <section class="section section--alt">
       <div class="container">
         <p class="pricing-secure-stripe">
-          <strong>Secure payment with Stripe.</strong> When you choose a plan, you’ll complete setup and monthly billing on Stripe’s checkout. We never see or store your card number.
+          <strong>Secure payment with Stripe.</strong> You pay the one-time setup fee now; monthly billing starts the following month. We never see or store your card number.
         </p>
         <div class="pricing-grid">
           <div class="pricing-card">
@@ -50,7 +50,7 @@
               <li>Basic SEO & hosting</li>
               <li>Content updates included in monthly</li>
             </ul>
-            <a href="#" id="pay-standard" class="btn">Pay setup &amp; subscribe</a>
+            <a href="#" id="pay-standard" class="btn">Pay setup fee — monthly starts next month</a>
           </div>
           <div class="pricing-card-wrap pricing-card-popular">
             <span class="pricing-badge">Most popular</span>
@@ -69,7 +69,7 @@
               <li>Advanced local SEO</li>
               <li>Priority support</li>
             </ul>
-            <a href="#" id="pay-premium" class="btn">Pay setup &amp; subscribe</a>
+            <a href="#" id="pay-premium" class="btn">Pay setup fee — monthly starts next month</a>
             </div>
           </div>
         </div>
@@ -91,14 +91,26 @@
   </footer>
   <script>
     (function() {
+      // Stripe Payment Links. Optional: set a promotion code so the first month is free (see README).
       var STRIPE_LINKS = {
         standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
         premium: 'https://buy.stripe.com/aFaeVdev71EieNterGeZ200'
       };
+      // Prefilled promo code (alphanumeric). Automatically applied at checkout.
+      var STRIPE_PROMO_STANDARD = '1STMONTHFREE';
+      var STRIPE_PROMO_PREMIUM = '1STMONTHFREE';
+      function buildPayUrl(base, promo) {
+        if (!base || base.indexOf('YOUR_') !== -1) return '#';
+        if (promo && /^[a-zA-Z0-9]+$/.test(promo)) {
+          var sep = base.indexOf('?') !== -1 ? '&' : '?';
+          return base + sep + 'prefilled_promo_code=' + encodeURIComponent(promo);
+        }
+        return base;
+      }
       var s = document.getElementById('pay-standard');
       var p = document.getElementById('pay-premium');
-      if (s && STRIPE_LINKS.standard.indexOf('YOUR_') === -1) s.href = STRIPE_LINKS.standard;
-      if (p && STRIPE_LINKS.premium.indexOf('YOUR_') === -1) p.href = STRIPE_LINKS.premium;
+      if (s) s.href = buildPayUrl(STRIPE_LINKS.standard, STRIPE_PROMO_STANDARD);
+      if (p) p.href = buildPayUrl(STRIPE_LINKS.premium, STRIPE_PROMO_PREMIUM);
     })();
   </script>
   <script>

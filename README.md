@@ -24,6 +24,47 @@ A marketing website for a service that builds and maintains websites for small a
 
 Update the amounts in `get-started.html` to match your real pricing.
 
+### Charging setup fee first, then monthly
+
+The site is set up so customers **pay the one-time setup fee upfront** and **monthly billing starts the following month**. To do this in Stripe:
+
+1. **Option A (recommended):** Use **two Payment Links** per plan:
+   - **Link 1 (main CTA):** One-time payment only — the setup fee (e.g. $2,000 or $5,000). Put this link in `get-started.html` as the plan’s “Pay setup fee” button.
+   - **Link 2:** Subscription only — the monthly amount (e.g. $250 or $500). After the customer pays the setup fee, send them this link (email, thank-you page, or Stripe Customer Portal) so they add the subscription. When creating the subscription in Stripe, you can set a 1‑month free trial so the first monthly charge is ~30 days after they subscribe.
+
+2. **Option B:** In the Stripe Dashboard, edit your existing Payment Links so they **only** include the one-time setup product (remove the recurring line item from the first payment). Then use a separate subscription link or Customer Portal for monthly billing after they’ve paid setup.
+
+Update the URLs in `get-started.html` (the `STRIPE_LINKS` object in the script) to point to your setup-only Payment Links.
+
+### First month free with a coupon
+
+To give one-time discount equal to one month’s maintenance (so the first month is free), use a **Stripe coupon** and attach it to the Payment Link.
+
+**1. Create the coupon (Stripe Dashboard)**  
+- Go to [Stripe Dashboard → Products → Coupons](https://dashboard.stripe.com/coupons) (or [Billing → Coupons](https://dashboard.stripe.com/coupons)).  
+- Click **Create coupon**.  
+- Choose **Amount off** and set the value to one month’s fee (e.g. **$250** for Standard, **$500** for Premium).  
+- Optionally set **Duration: once** so it only applies to one invoice.  
+- Save.
+
+**2. Create a promotion code**  
+- Open the coupon you created → **Create promotion code**.  
+- Enter a code (e.g. `FIRSTMONTHFREE` or `STANDARD250` / `PREMIUM500`). Use only letters and numbers.  
+- Save. You can create one promo per plan (one for Standard, one for Premium).
+
+**3. Allow promotion codes on the Payment Link**  
+- Go to [Payment Links](https://dashboard.stripe.com/payment-links), open the link for that plan.  
+- Click the **⋮** menu → **Update details** (or create a new link).  
+- In **Options**, turn on **Allow promotion codes** so customers can use a code at checkout.  
+- Save.
+
+**4. Attach the coupon to the link (so it applies automatically)**  
+- In `get-started.html`, find `STRIPE_PROMO_STANDARD` and `STRIPE_PROMO_PREMIUM` in the script.  
+- Set each to the promotion code you created, e.g. `var STRIPE_PROMO_STANDARD = 'FIRSTMONTHFREE';`  
+- The button URL will then include `?prefilled_promo_code=FIRSTMONTHFREE`, so the discount is applied when they click through (they can still change or remove it on the Stripe page).
+
+You can’t “attach” a coupon to a product or link in the Dashboard so it’s the only option; using **prefilled_promo_code** in the URL is how you make one specific code apply by default for that plan.
+
 ## Running locally
 
 Open `index.html` in a browser, or use a simple local server:
