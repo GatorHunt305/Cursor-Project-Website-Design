@@ -1,44 +1,398 @@
-/* Electrical mock – soft yellow and orange theme */
-/* Return to H4Services banner – electrical orange (mock-styles base is overridden by this file’s --mock-primary) */
-.mock-return-banner { background: var(--mock-primary); }
-.mock-return-banner:hover { background: var(--mock-primary-dark); }
+/* Electrical mock – sleek theme: dark slate + electric amber, distinct layout from plumbing */
 
-:root {
-  --mock-primary: #c87030;
-  --mock-primary-dark: #9a4a20;
-  --mock-bg: #fefdf9;
-  --mock-bg-alt: #fdf6ed;
-  --mock-card: #ffffff;
-  --mock-text: #1c1917;
-  --mock-muted: #78716c;
-  --mock-border: #ecd9c8;
-  --mock-shadow: 0 4px 6px -1px rgba(180, 120, 60, 0.06), 0 2px 4px -2px rgba(180, 120, 60, 0.04);
-  --mock-shadow-lg: 0 10px 15px -3px rgba(120, 113, 108, 0.08), 0 4px 6px -4px rgba(120, 113, 108, 0.06);
-  --mock-glow: 0 0 0 1px rgba(200, 112, 48, 0.4), 0 0 28px rgba(200, 112, 48, 0.2);
+.mock-theme-sleek {
+  --mock-primary: #f59e0b;
+  --mock-primary-dark: #d97706;
+  --mock-accent: #38bdf8;
+  --mock-warm: #fef3c7;
+  --mock-bg: #0f172a;
+  --mock-bg-alt: #1e293b;
+  --mock-card: #1e293b;
+  --mock-text: #f1f5f9;
+  --mock-muted: #94a3b8;
+  --mock-border: #334155;
+  --mock-radius: 8px;
+  --mock-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  --mock-shadow-lg: 0 12px 24px rgba(0,0,0,0.35);
+  --mock-glow: 0 0 0 1px rgba(245,158,11,0.4);
 }
 
-body { background: var(--mock-bg); }
-.mock-section:nth-of-type(even) { background: var(--mock-bg-alt); }
-.mock-section:nth-of-type(odd) { background: var(--mock-bg); }
-.mock-header { background: var(--mock-card); border-bottom-color: var(--mock-border); }
-.mock-footer { background: var(--mock-bg-alt); border-top-color: var(--mock-border); }
+/* Return banner – amber on dark */
+.mock-theme-sleek .mock-return-banner { background: var(--mock-primary); color: #0f172a; }
+.mock-theme-sleek .mock-return-banner:hover { background: #fbbf24; color: #0f172a; }
 
-.mock-service-card { border: 1px solid var(--mock-border); transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
-.mock-service-card:hover,
-.mock-service-card:focus-visible {
-  box-shadow: var(--mock-shadow-lg), var(--mock-glow);
-  transform: translateY(-2px);
-  border-color: #c87030;
+body.mock-theme-sleek {
+  background: linear-gradient(180deg, rgba(56,189,248,0.04) 0%, var(--mock-bg) 20%, var(--mock-bg) 80%, rgba(254,243,199,0.03) 100%);
+  color: var(--mock-text);
 }
-a.mock-service-card:focus-visible { outline: none; }
+body.mock-theme-sleek a { color: var(--mock-primary); }
+body.mock-theme-sleek a:hover { color: #fbbf24; }
 
-/* Hero / Book a service button: invert on hover (orange box, white text) */
-.mock-btn { transition: background 0.2s ease, color 0.2s ease; }
-.mock-btn:hover { background: var(--mock-primary); color: #fff !important; text-decoration: none; }
-.mock-hero .mock-btn:hover { text-shadow: none; }
+/* Header – solid so it stays readable when scrolling; page names white */
+.mock-theme-sleek .mock-header {
+  background: var(--mock-bg-alt);
+  border-bottom: 2px solid var(--mock-accent);
+  padding: 0.75rem 0;
+}
+.mock-theme-sleek .mock-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.mock-theme-sleek .mock-header-phone {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--mock-primary);
+  white-space: nowrap;
+}
+.mock-theme-sleek .mock-header-phone:hover { color: #fbbf24; text-decoration: none; }
+.mock-theme-sleek .mock-logo { color: var(--mock-text); }
+.mock-theme-sleek .mock-logo:hover { color: var(--mock-primary); }
+.mock-theme-sleek .mock-nav { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.mock-theme-sleek .mock-nav a { color: #fff; }
+.mock-theme-sleek .mock-nav a:hover { color: var(--mock-accent); }
+.mock-theme-sleek .mock-back { color: #fff; }
+.mock-theme-sleek .mock-back:hover { color: var(--mock-accent); }
+.mock-theme-sleek .mock-menu-toggle { color: var(--mock-text); }
+@media (max-width: 768px) {
+  .mock-theme-sleek .mock-header-phone { order: 3; width: 100%; text-align: center; }
+  .mock-theme-sleek .mock-nav { border-top-color: var(--mock-border); }
+}
 
-/* Services page hero: same image as home, varied angle (different crop/position) */
-.mock-hero-services {
-  background-position: 65% 45% !important;
-  background-size: 115% !important;
+/* Hero – background image/graphic with dark overlay so text stays readable */
+.mock-theme-sleek .mock-hero {
+  min-height: 200px;
+  padding: 2.5rem 1rem;
+  text-align: left;
+  background-color: var(--mock-bg-alt);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--mock-text);
+  position: relative;
+}
+.mock-theme-sleek .mock-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.65) 45%, rgba(30,41,59,0.5) 100%);
+  z-index: 1;
+}
+.mock-theme-sleek .mock-hero .mock-container { position: relative; z-index: 2; }
+@media (min-width: 640px) {
+  .mock-theme-sleek .mock-hero { min-height: 220px; padding: 3rem 1.5rem; }
+}
+.mock-theme-sleek .mock-hero .mock-container { max-width: 720px; margin-left: 0; margin-right: auto; }
+.mock-theme-sleek .mock-hero-tagline {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mock-primary);
+  margin: 0 0 0.5rem;
+}
+.mock-theme-sleek .mock-hero h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: none;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+.mock-theme-sleek .mock-hero-callout {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mock-accent);
+  margin: 0 0 0.75rem;
+}
+.mock-theme-sleek .mock-hero-intro {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--mock-warm);
+  margin: 0 0 1rem;
+  max-width: 520px;
+}
+.mock-theme-sleek .mock-hero p {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+  text-shadow: none;
+  color: var(--mock-muted);
+  margin-left: 0;
+}
+.mock-theme-sleek .mock-hero p:has(.mock-btn) { margin-top: 0; margin-bottom: 0; }
+.mock-theme-sleek .mock-hero .mock-btn {
+  background: var(--mock-primary);
+  color: #0f172a;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-top: 0;
+}
+.mock-theme-sleek .mock-hero .mock-btn:hover { background: #fbbf24; color: #0f172a; }
+
+/* Trust strip – warm cream band; Licensed, Insured, Local all warm cream */
+.mock-theme-sleek .mock-trust-strip {
+  padding: 2rem 0;
+  background: linear-gradient(135deg, rgba(254,243,199,0.12) 0%, rgba(254,243,199,0.08) 50%, rgba(254,243,199,0.12) 100%);
+  border-top: 1px solid rgba(254,243,199,0.3);
+  border-bottom: 1px solid rgba(254,243,199,0.25);
+}
+.mock-theme-sleek .mock-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.mock-theme-sleek .mock-trust-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.mock-theme-sleek .mock-trust-pillar strong {
+  font-size: 1.15rem;
+  color: var(--mock-warm);
+}
+.mock-theme-sleek .mock-trust-pillar span { font-size: 0.9rem; color: var(--mock-muted); }
+.mock-theme-sleek .mock-trust-cta { text-align: center; margin: 0; }
+@media (max-width: 600px) {
+  .mock-theme-sleek .mock-trust-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* Sections – alternate accent/warm tinted strips */
+.mock-theme-sleek .mock-section { padding: 2.5rem 0; }
+.mock-theme-sleek .mock-section:nth-of-type(odd) {
+  background: linear-gradient(180deg, rgba(56,189,248,0.06) 0%, var(--mock-bg) 30%, var(--mock-bg) 100%);
+  border-top: 1px solid rgba(56,189,248,0.2);
+}
+.mock-theme-sleek .mock-section:nth-of-type(even) {
+  background: linear-gradient(180deg, rgba(254,243,199,0.06) 0%, var(--mock-bg-alt) 30%, var(--mock-bg-alt) 100%);
+  border-top: 1px solid rgba(254,243,199,0.15);
+}
+.mock-theme-sleek .mock-section h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.mock-theme-sleek .mock-section:nth-of-type(odd) h2 { color: var(--mock-accent); }
+.mock-theme-sleek .mock-section:nth-of-type(even) h2 { color: var(--mock-warm); }
+.mock-theme-sleek .mock-section > .mock-container > p { color: var(--mock-muted); font-size: 0.95rem; }
+
+/* Service cards – all warm cream (Collins-style); fade in on scroll */
+.mock-theme-sleek .mock-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+.mock-theme-sleek .mock-service-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 100%;
+  flex: none;
+  background: linear-gradient(90deg, rgba(254,243,199,0.12) 0%, rgba(30,41,59,0.7) 100%);
+  border: 1px solid rgba(254,243,199,0.25);
+  border-left: 4px solid var(--mock-warm);
+  border-radius: var(--mock-radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s, opacity 0.5s ease, transform 0.5s ease;
+}
+.mock-theme-sleek .mock-section-services .mock-service-card {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.mock-theme-sleek .mock-section-services .mock-service-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mock-theme-sleek .mock-service-card:last-child { margin-bottom: 0; }
+.mock-theme-sleek .mock-service-card:hover {
+  border-color: var(--mock-primary);
+  box-shadow: 0 0 0 1px rgba(245,158,11,0.4), 0 0 20px rgba(56,189,248,0.15);
+}
+.mock-theme-sleek .mock-service-card img {
+  width: 140px;
+  min-width: 140px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.mock-theme-sleek .mock-service-card .mock-service-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mock-theme-sleek .mock-service-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.35rem;
+}
+.mock-theme-sleek .mock-service-card p { color: var(--mock-muted); font-size: 0.9rem; margin: 0; }
+.mock-theme-sleek .mock-service-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--mock-primary);
+}
+.mock-theme-sleek a.mock-service-card:hover .mock-service-link { color: #fbbf24; }
+.mock-theme-sleek .mock-see-all {
+  text-align: center;
+  margin: 1.5rem 0 0;
+  font-weight: 600;
+}
+.mock-theme-sleek .mock-see-all a:hover { text-decoration: none; }
+@media (max-width: 600px) {
+  .mock-theme-sleek .mock-service-card { flex-direction: column; }
+  .mock-theme-sleek .mock-service-card img { width: 100%; min-width: 0; aspect-ratio: 16/10; }
+}
+
+/* Local / support block – warm cream band */
+.mock-theme-sleek .mock-local {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(254,243,199,0.12) 0%, rgba(30,41,59,0.7) 100%);
+  border: 1px solid rgba(254,243,199,0.25);
+  border-left: 4px solid var(--mock-warm);
+  border-radius: var(--mock-radius);
+}
+.mock-theme-sleek .mock-local h3 { color: var(--mock-warm); font-size: 1.1rem; }
+.mock-theme-sleek .mock-local p { color: var(--mock-muted); }
+
+/* CTA block – accent band */
+.mock-theme-sleek .mock-cta {
+  background: linear-gradient(135deg, rgba(56,189,248,0.18) 0%, var(--mock-bg-alt) 60%);
+  border: 1px solid rgba(56,189,248,0.4);
+  border-left: 4px solid var(--mock-accent);
+  color: var(--mock-text);
+  margin-top: 2rem;
+}
+.mock-theme-sleek .mock-cta h3 { color: var(--mock-accent); }
+.mock-theme-sleek .mock-cta p { color: var(--mock-muted); }
+.mock-theme-sleek .mock-cta .mock-btn {
+  background: var(--mock-primary);
+  color: #0f172a;
+}
+.mock-theme-sleek .mock-cta .mock-btn:hover { background: #fbbf24; color: #0f172a; }
+
+/* Buttons */
+.mock-theme-sleek .mock-btn {
+  background: transparent;
+  color: var(--mock-primary);
+  border: 2px solid var(--mock-primary);
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.mock-theme-sleek .mock-btn:hover { background: var(--mock-primary); color: #0f172a; text-decoration: none; }
+.mock-theme-sleek .mock-btn-primary {
+  background: var(--mock-primary);
+  color: #0f172a;
+  border-color: var(--mock-primary);
+}
+.mock-theme-sleek .mock-btn-primary:hover { background: #fbbf24; color: #0f172a; border-color: #fbbf24; }
+
+/* Booking / form section – warm tint */
+.mock-theme-sleek .mock-booking {
+  background: linear-gradient(180deg, rgba(254,243,199,0.08) 0%, rgba(30,41,59,0.7) 100%);
+  border: 1px solid rgba(254,243,199,0.2);
+  border-radius: var(--mock-radius);
+  padding: 1.75rem;
+  margin-top: 1.5rem;
+}
+.mock-theme-sleek .mock-booking h3 { color: var(--mock-warm); }
+.mock-theme-sleek .mock-form label { color: var(--mock-text); }
+.mock-theme-sleek .mock-form input,
+.mock-theme-sleek .mock-form select,
+.mock-theme-sleek .mock-form textarea {
+  background: var(--mock-bg);
+  border: 1px solid var(--mock-border);
+  color: var(--mock-text);
+}
+.mock-theme-sleek .mock-form input::placeholder,
+.mock-theme-sleek .mock-form textarea::placeholder { color: var(--mock-muted); }
+.mock-theme-sleek .mock-form input:focus,
+.mock-theme-sleek .mock-form select:focus,
+.mock-theme-sleek .mock-form textarea:focus {
+  border-color: var(--mock-primary);
+  box-shadow: 0 0 0 2px rgba(245,158,11,0.25);
+}
+
+/* Contact page – main section intro */
+.mock-theme-sleek .mock-section h1 { color: var(--mock-warm); font-size: 1.75rem; margin-bottom: 0.5rem; }
+
+/* Footer – accent/warm strip; keep tone change, ensure text and links are legible */
+.mock-theme-sleek .mock-footer {
+  background: linear-gradient(180deg, rgba(56,189,248,0.1) 0%, var(--mock-bg-alt) 25%, rgba(254,243,199,0.06) 100%);
+  border-top: 2px solid var(--mock-accent);
+  color: #e2e8f0;
+  padding: 2rem 0;
+}
+.mock-theme-sleek .mock-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.mock-theme-sleek .mock-footer-brand strong {
+  display: block;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+.mock-theme-sleek .mock-footer-brand p { margin: 0 0 0.25rem; font-size: 0.9rem; color: #e2e8f0; }
+.mock-theme-sleek .mock-footer-brand a {
+  color: #7dd3fc;
+  font-weight: 600;
+}
+.mock-theme-sleek .mock-footer-brand a:hover { color: #fff; text-decoration: underline; }
+.mock-theme-sleek .mock-footer-credit {
+  margin-top: 0.75rem !important;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+.mock-theme-sleek .mock-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mock-theme-sleek .mock-footer-links a {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+.mock-theme-sleek .mock-footer-links a:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 600px) {
+  .mock-theme-sleek .mock-footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* Confirm message */
+.mock-theme-sleek .mock-confirm {
+  background: rgba(245,158,11,0.15);
+  border: 1px solid var(--mock-primary);
+  color: var(--mock-text);
+}
+
+/* Services page hero – keep background image; optional different position */
+.mock-theme-sleek .mock-hero-services { background-position: 60% 40%; }
+
+/* Contact page – add hero with background graphic */
+.mock-theme-sleek .mock-hero-contact { min-height: 140px; padding: 2rem 1rem; }
+.mock-theme-sleek .mock-hero-contact h1 { margin: 0; }
+.mock-theme-sleek .mock-hero-contact .mock-container { display: flex; align-items: center; }
+
+/* Scroll fade-in (home + services) */
+.mock-theme-sleek .mock-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.mock-theme-sleek .mock-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

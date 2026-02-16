@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Form | H4Services</title>
+  <meta name="description" content="Tell us about your business so we can tailor your website. Discovery form before checkout.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-icon" role="img" aria-hidden="true"></span>H<span class="logo-num">4</span> Services</a>
+      <button type="button" class="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="get-started.html" class="nav-cta">View Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="discovery-form" id="discovery-form">
+          <div class="discovery-window">
+            <p class="discovery-step-counter" id="step-counter" aria-live="polite">Step 1 of 6</p>
+            <div class="discovery-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="6" aria-label="Form progress">
+              <div class="discovery-progress-fill" id="discovery-progress-fill"></div>
+            </div>
+
+            <div class="discovery-panel is-active" id="panel-1" data-step="1">
+              <h2>About Your Business</h2>
+              <div class="form-block">
+                <label for="your-name">Your name <span aria-label="required">*</span></label>
+                <input type="text" id="your-name" name="your_name" required placeholder="e.g. Jane Smith">
+                <label for="business-name">Business name <span aria-label="required">*</span></label>
+                <input type="text" id="business-name" name="business_name" required placeholder="e.g. Smith Plumbing Co.">
+                <label for="existing-url">Existing website URL (if any)</label>
+                <input type="url" id="existing-url" name="existing_url" placeholder="e.g. https://mybusiness.com">
+              </div>
+              <div class="discovery-actions">
+                <span></span>
+                <button type="button" class="btn" id="next-1">Next</button>
+              </div>
+            </div>
+
+            <div class="discovery-panel" id="panel-2" data-step="2" style="display: none;">
+            <h2>Design Preference</h2>
+            <div class="form-block">
+              <label for="theme">Website theme / style <span aria-label="required">*</span></label>
+              <select id="theme" name="theme" required>
+                <option value="">Select a style</option>
+                <option value="warm-professional">Warm & professional (like our main site)</option>
+                <option value="clean-minimal">Clean & minimal</option>
+                <option value="bold-modern">Bold & modern</option>
+                <option value="classic">Classic / traditional</option>
+                <option value="other">Other (describe in comments)</option>
+              </select>
+              <label for="words-describe">Words that describe your business <span aria-label="required">*</span></label>
+              <input type="text" id="words-describe" name="words_describe" required placeholder="e.g. reliable, local, family-owned, 24/7">
+              <label for="inspiration-sites">Websites to draw inspiration from</label>
+              <input type="text" id="inspiration-sites" name="inspiration_sites" placeholder="Paste URLs or names of sites you like">
+            </div>
+            <div class="discovery-actions">
+              <button type="button" class="btn btn-back" id="back-2">Back</button>
+              <button type="button" class="btn" id="next-2">Next</button>
+            </div>
+          </div>
+
+          <div class="discovery-panel" id="panel-3" data-step="3" style="display: none;">
+            <h2>Existing Logo or Design</h2>
+            <p class="discovery-panel-desc">Upload your logo or any images you’d like us to use (PNG, JPG). Optional.</p>
+            <div class="discovery-file-drop" id="file-drop">
+              <p class="discovery-file-drop-text">Drag files here or <label for="logo-files">browse</label></p>
+              <input type="file" id="logo-files" name="logo_files" accept="image/*" multiple>
+            </div>
+            <div class="discovery-actions">
+              <button type="button" class="btn btn-back" id="back-3">Back</button>
+              <button type="button" class="btn" id="next-3">Next</button>
+            </div>
+          </div>
+
+          <div class="discovery-panel" id="panel-4" data-step="4" style="display: none;">
+            <h2>Pages and Feature Request</h2>
+            <p class="discovery-panel-desc">Check any features you want included in your build.</p>
+            <ul class="discovery-features">
+              <li><input type="checkbox" id="feat-contact" name="features" value="contact-forms"> <label for="feat-contact">Contact forms & basic booking</label></li>
+              <li><input type="checkbox" id="feat-mobile" name="features" value="mobile"> <label for="feat-mobile">Mobile optimization</label></li>
+              <li><input type="checkbox" id="feat-seo" name="features" value="seo"> <label for="feat-seo">Basic SEO & hosting</label></li>
+              <li><input type="checkbox" id="feat-booking" name="features" value="booking-page" data-premium> <label for="feat-booking">Dedicated booking page *</label></li>
+              <li><input type="checkbox" id="feat-portal" name="features" value="portal" data-premium> <label for="feat-portal">Customer portal (invoices, appointments) *</label></li>
+              <li><input type="checkbox" id="feat-payments" name="features" value="payments" data-premium> <label for="feat-payments">Payment links (Stripe / Square) *</label></li>
+              <li><input type="checkbox" id="feat-seo-adv" name="features" value="seo-advanced" data-premium> <label for="feat-seo-adv">Advanced local SEO *</label></li>
+              <li><input type="checkbox" id="feat-priority" name="features" value="priority" data-premium> <label for="feat-priority">Priority support *</label></li>
+            </ul>
+            <div class="discovery-actions">
+              <button type="button" class="btn btn-back" id="back-4">Back</button>
+              <button type="button" class="btn" id="next-4">Next</button>
+            </div>
+          </div>
+
+          <div class="discovery-panel" id="panel-5" data-step="5" style="display: none;">
+            <h2>Special Requests or Final Comments</h2>
+            <div class="form-block discovery-textarea-block">
+              <label for="special-requests">Anything else we should know?</label>
+              <textarea id="special-requests" name="special_requests" rows="8" placeholder="Deadlines, brand guidelines, must-have pages, etc."></textarea>
+            </div>
+            <div class="discovery-actions">
+              <button type="button" class="btn btn-back" id="back-5">Back</button>
+              <button type="button" class="btn" id="next-5">Next</button>
+            </div>
+          </div>
+
+          <div class="discovery-panel" id="panel-6" data-step="6" style="display: none;">
+            <h2>You're Almost Done!</h2>
+            <p class="discovery-panel-desc">Review your plan and proceed to secure checkout. We’ll use your discovery answers to tailor your site.</p>
+            <div class="discovery-actions">
+              <button type="button" class="btn btn-back" id="back-6">Back</button>
+              <a href="#" id="complete-checkout" class="btn">Complete and Proceed to Payment</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="discovery-premium-modal" id="discovery-premium-modal" role="dialog" aria-labelledby="premium-modal-title" aria-modal="true" hidden>
+    <div class="discovery-premium-modal-backdrop"></div>
+    <div class="discovery-premium-modal-content">
+      <h3 id="premium-modal-title" class="discovery-premium-modal-title">Premium plan features</h3>
+      <p class="discovery-premium-modal-text">You're selecting features that are included in our <strong>Premium</strong> plan. If you proceed with these selections, you'll be directed to Premium checkout at the end of the form.</p>
+      <div class="discovery-premium-modal-actions">
+        <button type="button" class="btn btn-back" id="premium-modal-remove">Remove and keep Standard</button>
+        <button type="button" class="btn" id="premium-modal-continue">Continue with Premium</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>H4Services · <a href="contact.html">Contact</a> · <a href="get-started.html">Get started</a></p>
+      <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
+    </div>
+  </footer>
+  <script>
+    (function() {
+      function initDiscovery() {
+      var form = document.getElementById('discovery-form');
+      if (!form) return;
+      var counter = document.getElementById('step-counter');
+      var panels = form.querySelectorAll('.discovery-panel');
+      var totalSteps = 6;
+      var currentStep = 1;
+
+      function goToStep(step) {
+        if (step < 1 || step > totalSteps) return;
+        currentStep = step;
+        counter.textContent = 'Step ' + step + ' of ' + totalSteps;
+        var progressFill = document.getElementById('discovery-progress-fill');
+        if (progressFill) progressFill.style.width = (step / totalSteps) * 100 + '%';
+        var progressBar = form.querySelector('.discovery-progress');
+        if (progressBar) progressBar.setAttribute('aria-valuenow', step);
+        panels.forEach(function(p) {
+          var isActive = parseInt(p.getAttribute('data-step'), 10) === step;
+          p.classList.toggle('is-active', isActive);
+          p.style.display = isActive ? 'block' : 'none';
+        });
+      }
+
+      function validateStep1() {
+        var name = document.getElementById('your-name').value.trim();
+        var biz = document.getElementById('business-name').value.trim();
+        if (!name) { document.getElementById('your-name').focus(); return false; }
+        if (!biz) { document.getElementById('business-name').focus(); return false; }
+        return true;
+      }
+      function validateStep2() {
+        var theme = document.getElementById('theme').value;
+        var words = document.getElementById('words-describe').value.trim();
+        if (!theme) { document.getElementById('theme').focus(); return false; }
+        if (!words) { document.getElementById('words-describe').focus(); return false; }
+        return true;
+      }
+
+      document.getElementById('next-1').addEventListener('click', function() {
+        if (validateStep1()) goToStep(2);
+      });
+      document.getElementById('next-2').addEventListener('click', function() {
+        if (validateStep2()) goToStep(3);
+      });
+      document.getElementById('next-3').addEventListener('click', function() { goToStep(4); });
+      document.getElementById('next-4').addEventListener('click', function() { goToStep(5); });
+      document.getElementById('next-5').addEventListener('click', function() { goToStep(6); });
+
+      document.getElementById('back-2').addEventListener('click', function() { goToStep(1); });
+      document.getElementById('back-3').addEventListener('click', function() { goToStep(2); });
+      document.getElementById('back-4').addEventListener('click', function() { goToStep(3); });
+      document.getElementById('back-5').addEventListener('click', function() { goToStep(4); });
+      document.getElementById('back-6').addEventListener('click', function() { goToStep(5); });
+
+      var completeBtn = document.getElementById('complete-checkout');
+      var params = new URLSearchParams(window.location.search);
+      var plan = (params.get('plan') || 'standard').toLowerCase();
+      if (plan !== 'standard' && plan !== 'premium') plan = 'standard';
+      var upgradeToPremium = false;
+      var STRIPE_LINKS = {
+        standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
+        premium: 'https://buy.stripe.com/aFaeVdev71EieNterGeZ200'
+      };
+      var STRIPE_PROMO = { standard: 'STANDARD250', premium: 'PREMIUM500' };
+      function buildPayUrl(base, promo) {
+        if (!base || base.indexOf('YOUR_') !== -1) return '#';
+        if (promo && /^[a-zA-Z0-9]+$/.test(promo)) {
+          var sep = base.indexOf('?') !== -1 ? '&' : '?';
+          return base + sep + 'prefilled_promo_code=' + encodeURIComponent(promo);
+        }
+        return base;
+      }
+      function setCheckoutHref() {
+        var effectivePlan = upgradeToPremium ? 'premium' : plan;
+        completeBtn.href = buildPayUrl(STRIPE_LINKS[effectivePlan], STRIPE_PROMO[effectivePlan]);
+      }
+      setCheckoutHref();
+
+      var premiumModal = document.getElementById('discovery-premium-modal');
+      var premiumCheckboxes = form.querySelectorAll('.discovery-features input[data-premium]');
+      var lastCheckedPremium = null;
+      premiumCheckboxes.forEach(function(cb) {
+        cb.addEventListener('change', function() {
+          if (this.checked && plan === 'standard' && !upgradeToPremium) {
+            lastCheckedPremium = this;
+            premiumModal.hidden = false;
+            premiumModal.classList.add('is-open');
+          }
+        });
+      });
+      document.getElementById('premium-modal-remove').addEventListener('click', function() {
+        if (lastCheckedPremium) lastCheckedPremium.checked = false;
+        lastCheckedPremium = null;
+        premiumModal.hidden = true;
+        premiumModal.classList.remove('is-open');
+      });
+      document.getElementById('premium-modal-continue').addEventListener('click', function() {
+        upgradeToPremium = true;
+        setCheckoutHref();
+        premiumModal.hidden = true;
+        premiumModal.classList.remove('is-open');
+        lastCheckedPremium = null;
+      });
+      document.querySelector('.discovery-premium-modal-backdrop').addEventListener('click', function() {
+        if (lastCheckedPremium) lastCheckedPremium.checked = false;
+        lastCheckedPremium = null;
+        premiumModal.hidden = true;
+        premiumModal.classList.remove('is-open');
+      });
+
+      goToStep(1);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDiscovery);
+      } else {
+        initDiscovery();
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var drop = document.getElementById('file-drop');
+      var input = document.getElementById('logo-files');
+      if (!drop || !input) return;
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(function(ev) {
+        drop.addEventListener(ev, function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          drop.classList.toggle('is-dragover', ev === 'dragenter' || ev === 'dragover');
+        });
+      });
+      drop.addEventListener('drop', function(e) {
+        var files = e.dataTransfer.files;
+        if (files.length) input.files = files;
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      function initNavToggle() {
+        var btn = document.querySelector('.site-nav-toggle');
+        var nav = document.getElementById('site-nav') || document.querySelector('.site-nav');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open);
+          btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNavToggle);
+      } else {
+        initNavToggle();
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var logoIcon = document.querySelector('.site-header .logo-icon');
+      if (!logoIcon) return;
+      function updateSpin() {
+        logoIcon.style.transform = 'rotate(' + (window.scrollY * 0.15) + 'deg)';
+      }
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateSpin(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateSpin();
+    })();
+  </script>
+</body>
+</html>

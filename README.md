@@ -65,6 +65,23 @@ To give one-time discount equal to one month’s maintenance (so the first month
 
 You can’t “attach” a coupon to a product or link in the Dashboard so it’s the only option; using **prefilled_promo_code** in the URL is how you make one specific code apply by default for that plan.
 
+**If the code shows “Invalid” at checkout:**
+
+1. **Code name must match exactly**  
+   In [Stripe → Billing → Coupons](https://dashboard.stripe.com/coupons), open the coupon → **Promotion codes**. The code string (e.g. `STANDARD250` / `PREMIUM500`) must match what’s in `get-started.html`. Stripe treats it as case-insensitive, but spelling must match.
+
+2. **Allow promotion codes on the Payment Link**  
+   [Payment Links](https://dashboard.stripe.com/payment-links) → open the link → **⋮** → **Update details** → under **Options** turn **on** “Allow promotion codes”. Save.
+
+3. **Don’t restrict the coupon to other products**  
+   When you created the coupon, if you set “Limit to specific products” (e.g. **applies_to**), the promotion code only works for those products. Your Payment Link must be for one of those products. Easiest fix: edit the coupon and **remove** the product restriction so the code applies to any product on that link (or add the correct product IDs that each Payment Link uses).
+
+4. **Test vs Live**  
+   Promotion codes and Payment Links must be in the same mode. If your site uses a **live** Stripe link, create the coupon and promotion code in **Live** mode in the Dashboard (toggle in the top-right), not Test.
+
+5. **Coupon still valid**  
+   Check the coupon isn’t expired and hasn’t hit “Max redemptions” (if set).
+
 ## Running locally
 
 Open `index.html` in a browser, or use a simple local server:

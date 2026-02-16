@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Next | H4Services</title>
+  <meta name="description" content="Next steps after choosing your H4Services plan: discovery form and secure Stripe checkout.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-icon" role="img" aria-hidden="true"></span>H<span class="logo-num">4</span> Services</a>
+      <button type="button" class="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="get-started.html" class="nav-cta">View Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="whats-next-splash">
+      <div class="container">
+        <h1>What's Next</h1>
+        <p class="whats-next-step"><strong>1st</strong> — We will walk through a brief Discovery Form so we can best tailor your website to your needs.</p>
+        <p class="whats-next-step"><strong>2nd</strong> — You'll be directed to Stripe for secure checkout.</p>
+        <p class="whats-next-step"><strong>3rd</strong> — Work begins on your site immediately!</p>
+        <div class="whats-next-cta">
+          <a href="#" id="whats-next-customize" class="btn btn-customize">Customize your Site</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>H4Services · <a href="contact.html">Contact</a> · <a href="get-started.html">Get started</a></p>
+      <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
+    </div>
+  </footer>
+  <script>
+    (function() {
+      var STRIPE_LINKS = {
+        standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
+        premium: 'https://buy.stripe.com/aFaeVdev71EieNterGeZ200'
+      };
+      var STRIPE_PROMO_STANDARD = 'STANDARD250';
+      var STRIPE_PROMO_PREMIUM = 'PREMIUM500';
+      function buildPayUrl(base, promo) {
+        if (!base || base.indexOf('YOUR_') !== -1) return '#';
+        if (promo && /^[a-zA-Z0-9]+$/.test(promo)) {
+          var sep = base.indexOf('?') !== -1 ? '&' : '?';
+          return base + sep + 'prefilled_promo_code=' + encodeURIComponent(promo);
+        }
+        return base;
+      }
+      var params = new URLSearchParams(window.location.search);
+      var plan = (params.get('plan') || 'standard').toLowerCase();
+      if (plan !== 'standard' && plan !== 'premium') plan = 'standard';
+      var link = plan === 'premium' ? STRIPE_LINKS.premium : STRIPE_LINKS.standard;
+      var promo = plan === 'premium' ? STRIPE_PROMO_PREMIUM : STRIPE_PROMO_STANDARD;
+      var btn = document.getElementById('whats-next-customize');
+      if (btn) btn.href = 'discovery.html?plan=' + plan;
+    })();
+  </script>
+  <script>
+    (function() {
+      function initNavToggle() {
+        var btn = document.querySelector('.site-nav-toggle');
+        var nav = document.getElementById('site-nav') || document.querySelector('.site-nav');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open);
+          btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNavToggle);
+      } else {
+        initNavToggle();
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var logoIcon = document.querySelector('.site-header .logo-icon');
+      if (!logoIcon) return;
+      function updateSpin() {
+        logoIcon.style.transform = 'rotate(' + (window.scrollY * 0.15) + 'deg)';
+      }
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateSpin(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateSpin();
+    })();
+  </script>
+</body>
+</html>

@@ -51,7 +51,7 @@
               <li>Content updates included in monthly</li>
               <li><strong>Mobile optimization</strong></li>
             </ul>
-            <a href="#" id="pay-standard" class="btn">Pay setup fee — monthly starts next month</a>
+            <a href="whats-next.html?plan=standard" id="pay-standard" class="btn">Proceed</a>
           </div>
           <div class="pricing-card-wrap pricing-card-popular">
             <span class="pricing-badge">Most popular</span>
@@ -69,7 +69,7 @@
               <li>Advanced local SEO</li>
               <li>Priority support</li>
             </ul>
-            <a href="#" id="pay-premium" class="btn">Pay setup fee — monthly starts next month</a>
+            <a href="whats-next.html?plan=premium" id="pay-premium" class="btn">Proceed</a>
             </div>
           </div>
         </div>
@@ -89,30 +89,7 @@
       <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
     </div>
   </footer>
-  <script>
-    (function() {
-      // Stripe Payment Links. Optional: set a promotion code so the first month is free (see README).
-      var STRIPE_LINKS = {
-        standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
-        premium: 'https://buy.stripe.com/aFaeVdev71EieNterGeZ200'
-      };
-      // Prefilled promo code (alphanumeric). Auto-applied at checkout so customer doesn't have to add a coupon.
-      var STRIPE_PROMO_STANDARD = 'STANDARD250';
-      var STRIPE_PROMO_PREMIUM = 'PREMIUM500';
-      function buildPayUrl(base, promo) {
-        if (!base || base.indexOf('YOUR_') !== -1) return '#';
-        if (promo && /^[a-zA-Z0-9]+$/.test(promo)) {
-          var sep = base.indexOf('?') !== -1 ? '&' : '?';
-          return base + sep + 'prefilled_promo_code=' + encodeURIComponent(promo);
-        }
-        return base;
-      }
-      var s = document.getElementById('pay-standard');
-      var p = document.getElementById('pay-premium');
-      if (s) s.href = buildPayUrl(STRIPE_LINKS.standard, STRIPE_PROMO_STANDARD);
-      if (p) p.href = buildPayUrl(STRIPE_LINKS.premium, STRIPE_PROMO_PREMIUM);
-    })();
-  </script>
+  <!-- Proceed buttons link to whats-next.html?plan=standard|premium; Stripe checkout is on that page. -->
   <script>
     (function() {
       function initNavToggle() {

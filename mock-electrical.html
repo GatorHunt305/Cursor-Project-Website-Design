@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="mock-styles.css">
   <link rel="stylesheet" href="mock-electrical.css">
 </head>
-<body>
+<body class="mock-theme-sleek">
   <a href="https://www.h4services.co/" class="mock-return-banner">Return to H4Services</a>
   <header class="mock-header">
-    <div class="mock-container">
+    <div class="mock-container mock-header-inner">
       <a href="mock-electrical.html" class="mock-logo"><img src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Mile High Electric</a>
+      <a href="tel:+13035550142" class="mock-header-phone">(303) 555-0142</a>
       <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
       <nav class="mock-nav">
         <a href="mock-electrical.html">Home</a>
@@ -26,46 +27,63 @@
   <main>
     <section class="mock-hero" style="background-image: url('electrical-banner.png');">
       <div class="mock-container">
-        <h1>Licensed Electrical Services in Denver & the Front Range</h1>
-        <p>Residential and commercial electrical work—panels, wiring, repairs, and more.</p>
+        <p class="mock-hero-tagline">Trusted by Denver & the Front Range</p>
+        <h1>Licensed Electrical Services</h1>
+        <p class="mock-hero-callout">24/7 Emergency Service · Free Estimates</p>
+        <p class="mock-hero-intro">Residential and commercial electrical work—panels, wiring, repairs, and more. We're licensed, insured, and focused on safety and code compliance.</p>
         <p><a href="#booking" class="mock-btn">Book a Service</a></p>
+      </div>
+    </section>
+
+    <section class="mock-section mock-trust-strip mock-fade-in">
+      <div class="mock-container">
+        <div class="mock-trust-grid">
+          <div class="mock-trust-pillar"><strong>Licensed</strong><span>Fully licensed & code-compliant</span></div>
+          <div class="mock-trust-pillar"><strong>Insured</strong><span>Protected for your peace of mind</span></div>
+          <div class="mock-trust-pillar"><strong>Local</strong><span>Denver-based, Front Range focus</span></div>
+        </div>
+        <p class="mock-trust-cta"><a href="tel:+13035550142" class="mock-btn mock-btn-primary">Call us now</a></p>
       </div>
     </section>
 
     <section class="mock-section">
       <div class="mock-container">
-        <h2>Our Most Requested Services</h2>
-        <p>From panel upgrades to new wiring and lighting—we're licensed, insured, and focused on safety and code compliance.</p>
+        <h2 class="mock-fade-in">Our Services</h2>
+        <p class="mock-fade-in">From panel upgrades to new wiring and lighting—we handle it all with upfront pricing and same-day availability when you need it.</p>
         <div class="mock-services-grid">
-          <a href="mock-electrical.html#booking" class="mock-service-card">
+          <a href="mock-electrical.html#booking" class="mock-service-card mock-fade-in">
             <img src="electrical-panel.png" alt="Panel upgrade">
             <div class="mock-service-body">
               <h3>Panel upgrades & replacement</h3>
               <p>Service upgrades, panel replacement, and subpanel installation for older homes and added capacity.</p>
+              <span class="mock-service-link">Learn more</span>
             </div>
           </a>
-          <a href="mock-electrical.html#booking" class="mock-service-card">
+          <a href="mock-electrical.html#booking" class="mock-service-card mock-fade-in">
             <img src="electrical-wiring.png" alt="Wiring and rewiring">
             <div class="mock-service-body">
               <h3>Wiring & rewiring</h3>
               <p>New circuits, whole-home rewiring, and troubleshooting for residential and commercial.</p>
+              <span class="mock-service-link">Learn more</span>
             </div>
           </a>
-          <a href="mock-electrical.html#booking" class="mock-service-card">
+          <a href="mock-electrical.html#booking" class="mock-service-card mock-fade-in">
             <img src="electrical-lighting-outlets.png" alt="Outlets and switches">
             <div class="mock-service-body">
               <h3>Outlet & switch installation</h3>
               <p>New outlets, USB outlets, switches, dimmers, and GFCI installation where required.</p>
+              <span class="mock-service-link">Learn more</span>
             </div>
           </a>
         </div>
-        <div class="mock-local">
+        <p class="mock-see-all mock-fade-in"><a href="mock-electrical-services.html">See all services</a></p>
+        <div class="mock-local mock-fade-in">
           <h3>Proud to serve Denver & the Front Range</h3>
           <p>We're a local team—licensed, insured, and based in your community. Free estimates and same-day service when possible for Denver, Lakewood, Aurora, Littleton, and the greater metro area. When you call, you get a neighbor who knows the area.</p>
         </div>
-        <h2 id="booking">Book a Service</h2>
-        <p>Choose a date and time; we'll reach out to confirm your appointment.</p>
-        <div class="mock-booking">
+        <h2 id="booking" class="mock-fade-in">Book a Service</h2>
+        <p class="mock-fade-in">Choose a date and time; we'll reach out to confirm your appointment.</p>
+        <div class="mock-booking mock-fade-in">
           <h3>Schedule your appointment</h3>
           <form class="mock-form" id="booking-form">
             <div class="form-row form-row-inline">
@@ -131,18 +149,24 @@
             <strong>Booking received.</strong> We'll confirm your appointment by phone or email shortly. This is a demo site—no real booking was made.
           </div>
         </div>
-        <div class="mock-cta">
-          <h3>Need an electrician?</h3>
-          <p>Book above or call (303) 555-0142 for a free estimate.</p>
-          <a href="#booking" class="mock-btn mock-btn-primary">Book now</a>
-        </div>
       </div>
     </section>
   </main>
 
   <footer class="mock-footer">
-    <div class="mock-container">
-      <p>Mile High Electric · Denver, CO · (303) 555-0142 · Demo site by H4Services</p>
+    <div class="mock-container mock-footer-grid">
+      <div class="mock-footer-brand">
+        <strong>Mile High Electric</strong>
+        <p>Denver, CO & the Front Range</p>
+        <p><a href="tel:+13035550142">(303) 555-0142</a></p>
+        <p class="mock-footer-credit">Demo site by H4Services</p>
+      </div>
+      <div class="mock-footer-links">
+        <a href="mock-electrical.html">Home</a>
+        <a href="mock-electrical-services.html">Services</a>
+        <a href="mock-electrical-contact.html">Contact</a>
+        <a href="case-studies.html">Case studies</a>
+      </div>
     </div>
   </footer>
   <script>
@@ -154,6 +178,21 @@
     document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
       document.querySelector('.mock-nav').classList.toggle('is-open');
     });
+    (function() {
+      var els = document.querySelectorAll('.mock-fade-in');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+            setTimeout(function() { el.classList.add('is-visible'); }, Math.min(idx * 60, 200));
+            observer.unobserve(el);
+          }
+        });
+      }, { rootMargin: '0px 0px -30px 0px', threshold: 0 });
+      els.forEach(function(el) { observer.observe(el); });
+    })();
   </script>
 </body>
 </html>
