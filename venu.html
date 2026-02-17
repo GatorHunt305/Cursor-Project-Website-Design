@@ -16,8 +16,7 @@
       <nav class="venu-nav" id="venu-nav" aria-label="Main">
         <a href="#how-it-works">How it works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#examples">Examples</a>
-        <a href="venu-demos.html">Demos</a>
+        <a href="#demos">Demos</a>
         <a href="index.html#contact">Contact</a>
         <a href="#pricing" class="venu-cta-btn">Get your Venu</a>
       </nav>
@@ -175,87 +174,13 @@
       </div>
     </section>
 
-    <section id="examples" class="venu-industry-section" aria-label="Industry examples">
-      <div class="venu-industry-inner">
-        <h2 class="venu-industry-headline font-display">Plumbers, HVAC, nail techs, and more</h2>
-        <div class="venu-industry-cards" role="list">
-          <article class="venu-industry-card" role="listitem" data-venu-demo="plumbing">
-            <div class="venu-card-preview">
-              <p class="venu-card-business">Rivera's Plumbing</p>
-              <p class="venu-card-type">Plumbing</p>
-              <ul class="venu-card-services">
-                <li>Drain Cleaning — $150</li>
-                <li>Water Heater — $350</li>
-                <li>Emergency Call — $125</li>
-              </ul>
-              <button type="button" class="venu-card-book">Book now</button>
-              <span class="venu-card-badge">Powered by Venu</span>
-            </div>
-          </article>
-          <article class="venu-industry-card" role="listitem" data-venu-demo="nail">
-            <div class="venu-card-preview">
-              <p class="venu-card-business">Gloss Nail Studio</p>
-              <p class="venu-card-type">Nail Salon</p>
-              <ul class="venu-card-services">
-                <li>Gel Manicure — $45</li>
-                <li>Pedicure — $55</li>
-                <li>Nail Art — $25</li>
-              </ul>
-              <button type="button" class="venu-card-book">Book now</button>
-              <span class="venu-card-badge">Powered by Venu</span>
-            </div>
-          </article>
-          <article class="venu-industry-card" role="listitem" data-venu-demo="hvac">
-            <div class="venu-card-preview">
-              <p class="venu-card-business">Precision Air & Heat</p>
-              <p class="venu-card-type">HVAC</p>
-              <ul class="venu-card-services">
-                <li>AC Tune-Up — $99</li>
-                <li>Furnace Install — $4,200</li>
-                <li>Emergency Repair — $150</li>
-              </ul>
-              <button type="button" class="venu-card-book">Book now</button>
-              <span class="venu-card-badge">Powered by Venu</span>
-            </div>
-          </article>
-          <article class="venu-industry-card" role="listitem" data-venu-demo="detailing">
-            <div class="venu-card-preview">
-              <p class="venu-card-business">DetailPro Mobile</p>
-              <p class="venu-card-type">Mobile Detailing</p>
-              <ul class="venu-card-services">
-                <li>Basic Wash — $75</li>
-                <li>Full Detail — $225</li>
-                <li>Interior Only — $120</li>
-              </ul>
-              <button type="button" class="venu-card-book">Book now</button>
-              <span class="venu-card-badge">Powered by Venu</span>
-            </div>
-          </article>
-          <article class="venu-industry-card" role="listitem" data-venu-demo="electrical">
-            <div class="venu-card-preview">
-              <p class="venu-card-business">Spark Electric Co</p>
-              <p class="venu-card-type">Electrical</p>
-              <ul class="venu-card-services">
-                <li>Panel Upgrade — $1,800</li>
-                <li>Outlet Install — $85</li>
-                <li>EV Charger — $950</li>
-              </ul>
-              <button type="button" class="venu-card-book">Book now</button>
-              <span class="venu-card-badge">Powered by Venu</span>
-            </div>
-          </article>
-        </div>
+    <section id="demos" class="venu-demos-section" aria-label="Live demos">
+      <div class="venu-demos-inner">
+        <h2 class="venu-demos-headline font-display">Try a live demo</h2>
+        <p class="venu-lead venu-demos-lead">See what a Venu portal looks like in the wild. Try the full booking flow—we'll add more demos soon.</p>
+        <a href="venu-demos.html" class="venu-demos-cta">View demos →</a>
       </div>
     </section>
-
-    <div id="venu-modal" class="venu-modal" role="dialog" aria-modal="true" aria-labelledby="venu-modal-title" hidden>
-      <div class="venu-modal-backdrop"></div>
-      <div class="venu-modal-box">
-        <button type="button" class="venu-modal-close" aria-label="Close">×</button>
-        <h2 id="venu-modal-title" class="venu-modal-title font-display"></h2>
-        <div class="venu-modal-demo"></div>
-      </div>
-    </div>
 
     <section id="pricing" class="venu-pricing-section">
       <div class="venu-pricing-inner">
@@ -331,8 +256,7 @@
         <nav class="venu-footer-links" aria-label="Footer">
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="#examples">Examples</a>
-          <a href="venu-demos.html">Demos</a>
+          <a href="#demos">Demos</a>
           <a href="index.html#contact">Contact</a>
         </nav>
         <p class="venu-footer-powered">
@@ -366,45 +290,6 @@
           a.addEventListener('click', function() { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); });
         });
       }
-
-      var modal = document.getElementById('venu-modal');
-      var titleEl = document.getElementById('venu-modal-title');
-      var demoEl = modal && modal.querySelector('.venu-modal-demo');
-      var closeBtn = modal && modal.querySelector('.venu-modal-close');
-      var backdrop = modal && modal.querySelector('.venu-modal-backdrop');
-      var demos = {
-        plumbing: { name: "Rivera's Plumbing", type: "Plumbing", services: [{ n: "Drain Cleaning", p: "$150" }, { n: "Water Heater Install", p: "$350" }, { n: "Emergency Call", p: "$125" }] },
-        nail: { name: "Gloss Nail Studio", type: "Nail Salon", services: [{ n: "Gel Manicure", p: "$45" }, { n: "Pedicure", p: "$55" }, { n: "Nail Art", p: "$25" }] },
-        hvac: { name: "Precision Air & Heat", type: "HVAC", services: [{ n: "AC Tune-Up", p: "$99" }, { n: "Furnace Install", p: "$4,200" }, { n: "Emergency Repair", p: "$150" }] },
-        detailing: { name: "DetailPro Mobile", type: "Mobile Detailing", services: [{ n: "Basic Wash", p: "$75" }, { n: "Full Detail", p: "$225" }, { n: "Interior Only", p: "$120" }] },
-        electrical: { name: "Spark Electric Co", type: "Electrical", services: [{ n: "Panel Upgrade", p: "$1,800" }, { n: "Outlet Install", p: "$85" }, { n: "EV Charger", p: "$950" }] }
-      };
-      function openModal(id) {
-        var d = demos[id];
-        if (!d || !modal || !titleEl || !demoEl) return;
-        titleEl.textContent = d.name + " — " + d.type;
-        demoEl.innerHTML = '<div class="venu-modal-portal">' +
-          '<div class="venu-modal-header">' + d.name + '</div>' +
-          '<div class="venu-modal-body">' +
-          d.services.map(function(s) { return '<div class="venu-modal-service"><span class="venu-modal-svc-name">' + s.n + '</span><span class="venu-modal-svc-price">' + s.p + '</span></div>'; }).join('') +
-          '</div>' +
-          '<div class="venu-modal-times"><span class="venu-modal-times-label">Choose a time</span><div class="venu-modal-slots"><span>9:00 AM</span><span>10:00 AM</span><span>11:00 AM</span><span>2:00 PM</span></div></div>' +
-          '<button type="button" class="venu-modal-pay">Pay deposit</button>' +
-          '<p class="venu-modal-badge">Powered by Venu</p>' +
-          '</div>';
-        modal.hidden = false;
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal() {
-        if (modal) { modal.hidden = true; document.body.style.overflow = ''; }
-      }
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (backdrop) backdrop.addEventListener('click', closeModal);
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal && !modal.hidden) closeModal(); });
-      document.querySelectorAll('.venu-industry-card').forEach(function(card) {
-        card.addEventListener('click', function() { openModal(card.getAttribute('data-venu-demo')); });
-      });
-      if (modal) modal.querySelector('.venu-modal-box').addEventListener('click', function(e) { e.stopPropagation(); });
     })();
   </script>
 </body>

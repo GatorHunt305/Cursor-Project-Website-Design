@@ -690,7 +690,40 @@
 .venu-feature-card h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.125rem; font-weight: 400; color: var(--venu-red); margin: 0 0 0.5rem; }
 .venu-feature-card p { margin: 0; color: #57534e; font-size: 0.9375rem; }
 
-/* Industry examples – cards (horizontal scroll mobile, 3-col desktop) + modal */
+/* Demos – CTA to try live demos (more demos added over time) */
+.venu-demos-section {
+  background: var(--venu-cream);
+  padding: 4rem 0 5rem;
+  border-top: 1px solid #e7e5e4;
+}
+.venu-demos-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.venu-demos-headline {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  color: #1c1917;
+  margin: 0 0 0.75rem;
+}
+.venu-demos-section .venu-demos-lead { margin-bottom: 1.5rem; }
+.venu-demos-cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--venu-red);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.venu-demos-cta:hover { background: var(--venu-red-dark); color: #fff; }
+
+/* Industry examples – cards (horizontal scroll mobile, 3-col desktop) + modal – kept for reference, no longer in use */
 .venu-industry-section {
   background: var(--venu-cream);
   padding: 4rem 0 5rem;
