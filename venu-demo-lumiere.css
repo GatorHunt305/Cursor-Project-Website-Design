@@ -1,0 +1,2021 @@
+/* Lumière Hair Studio – Venu+ portal demo
+   Luxury editorial, high-fashion salon. Cream, charcoal, warm gold, dusty rose. */
+
+.lumiere-portal * { box-sizing: border-box; }
+.lumiere-portal-body { margin: 0; min-height: 100vh; overflow-x: hidden; }
+.lumiere-page-wrap { overflow-x: hidden; }
+
+/* —— Variables —— */
+.lumiere-portal {
+  --lumiere-cream: #FAF7F2;
+  --lumiere-charcoal: #1C1C1E;
+  --lumiere-gold: #C9A84C;
+  --lumiere-rose: #C4927A;
+  --lumiere-charcoal-soft: rgba(28, 28, 30, 0.85);
+  font-family: 'Jost', system-ui, sans-serif;
+  background: var(--lumiere-cream);
+  color: var(--lumiere-charcoal);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* —— Demo banner: sticky 40px, unobtrusive —— */
+.lumiere-demo-banner {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 1rem;
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-cream);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+.lumiere-demo-banner-cta {
+  color: var(--lumiere-gold);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.lumiere-demo-banner-cta:hover { color: #d4b85a; }
+
+/* —— Back to demos: floating pill —— */
+.lumiere-back-pill {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 85;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(28, 28, 30, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.lumiere-back-pill:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+}
+@media (max-width: 480px) {
+  .lumiere-back-pill { bottom: 5rem; }
+}
+
+/* —— Page wrap —— */
+.lumiere-page-wrap { position: relative; min-height: 100vh; }
+
+/* —— Grain texture (CSS) —— */
+.lumiere-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--lumiere-cream);
+  opacity: 0.97;
+}
+.lumiere-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* —— Header (centered) —— */
+.lumiere-header {
+  position: relative;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .lumiere-header { padding: 3rem 2rem 2.5rem; }
+}
+
+.lumiere-header-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.lumiere-back-demos {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  text-decoration: none;
+}
+.lumiere-back-demos:hover { color: var(--lumiere-gold); }
+@media (min-width: 640px) { .lumiere-back-demos { top: 2rem; left: 2rem; } }
+
+/* Venu+ badge – top right, prominent */
+.lumiere-venu-plus-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.4rem 0.85rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border-radius: 4px;
+}
+@media (min-width: 640px) {
+  .lumiere-venu-plus-badge { top: 2rem; right: 2rem; font-size: 0.8125rem; padding: 0.5rem 1rem; }
+}
+
+/* Brand block – centered */
+.lumiere-brand-block {
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.lumiere-rule {
+  width: 4rem;
+  height: 1px;
+  background: var(--lumiere-gold);
+  margin: 0 auto;
+  opacity: 0.8;
+}
+.lumiere-rule-top { margin-bottom: 1.25rem; }
+.lumiere-rule-bottom { margin-top: 1.25rem; }
+@media (min-width: 640px) {
+  .lumiere-rule { width: 5rem; }
+  .lumiere-rule-top { margin-bottom: 1.5rem; }
+  .lumiere-rule-bottom { margin-top: 1.5rem; }
+}
+
+.lumiere-wordmark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  letter-spacing: 0.08em;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.2em;
+  line-height: 1.05;
+}
+
+.lumiere-tagline {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.75rem;
+}
+
+.lumiere-location {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.lumiere-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.lumiere-stars {
+  color: var(--lumiere-gold);
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+.lumiere-rating-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+}
+.lumiere-reviews {
+  font-weight: 400;
+  color: var(--lumiere-charcoal-soft);
+  font-size: 0.875rem;
+}
+
+/* —— What's included dropdown —— */
+.lumiere-whats-included-wrap {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+.lumiere-whats-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal-soft);
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.lumiere-whats-toggle:hover {
+  border-color: var(--lumiere-gold);
+  color: var(--lumiere-charcoal);
+}
+.lumiere-whats-chevron {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.lumiere-whats-included-wrap.is-open .lumiere-whats-chevron { transform: rotate(-135deg); }
+.lumiere-whats-content {
+  margin-top: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+}
+.lumiere-whats-intro {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.5rem;
+}
+.lumiere-whats-intro strong { color: var(--lumiere-charcoal); font-weight: 600; }
+.lumiere-whats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  line-height: 1.6;
+}
+.lumiere-whats-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+.lumiere-whats-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 4px;
+  height: 4px;
+  background: var(--lumiere-gold);
+  border-radius: 50%;
+}
+
+/* —— Main + services section —— */
+.lumiere-main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+.lumiere-services-section { padding: 2rem 0 3rem; }
+
+.lumiere-services-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  letter-spacing: 0.04em;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+/* Service menu – spa list */
+.lumiere-service-menu {
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+}
+.lumiere-menu-divider {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--lumiere-gold);
+  text-align: center;
+  padding: 0.75rem 1rem;
+  background: rgba(201, 168, 76, 0.08);
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+.lumiere-menu-divider:first-child { border-top: none; }
+
+.lumiere-service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  min-height: 44px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: var(--lumiere-charcoal);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.15s;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid rgba(28, 28, 30, 0.06);
+}
+.lumiere-service-row:hover {
+  border-left-color: rgba(201, 168, 76, 0.5);
+}
+.lumiere-service-row:active {
+  transform: scale(0.99);
+}
+.lumiere-service-row.is-selected {
+  border-left-color: var(--lumiere-gold);
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-cream);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lumiere-service-row,
+  .lumiere-service-row:active { transform: none; transition: none; }
+}
+.lumiere-service-row.is-selected .lumiere-service-duration,
+.lumiere-service-row.is-selected .lumiere-service-note { opacity: 0.85; }
+.lumiere-service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.lumiere-service-name { font-weight: 500; }
+.lumiere-service-duration {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+}
+.lumiere-service-row.is-selected .lumiere-service-duration { color: rgba(250, 247, 242, 0.85); }
+.lumiere-service-note {
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--lumiere-gold);
+  margin-top: 0.1rem;
+}
+.lumiere-service-price {
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* Deposit callout – slides in */
+.lumiere-deposit-wrap {
+  margin-bottom: 1.5rem;
+  animation: lumiere-deposit-in 0.35s ease-out;
+}
+@keyframes lumiere-deposit-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) { .lumiere-deposit-wrap { animation: none; } }
+
+.lumiere-deposit-callout {
+  position: relative;
+  padding: 1.25rem 1.5rem;
+  background: var(--lumiere-cream);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-left: 4px solid var(--lumiere-gold);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 12px rgba(28, 28, 30, 0.06);
+}
+.lumiere-deposit-badge-wrap { margin-bottom: 0.75rem; }
+.lumiere-venu-feature-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  cursor: help;
+}
+.lumiere-deposit-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.5rem;
+}
+.lumiere-deposit-intro,
+.lumiere-deposit-applied,
+.lumiere-deposit-policy,
+.lumiere-deposit-closing {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+.lumiere-deposit-tiers {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  line-height: 1.6;
+}
+.lumiere-deposit-tiers li { padding-left: 0; }
+.lumiere-deposit-dynamic {
+  margin: 1rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+}
+.lumiere-deposit-dynamic strong { color: var(--lumiere-gold); font-weight: 600; }
+
+/* Add-ons collapsible */
+.lumiere-addons-wrap {
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+}
+.lumiere-addons-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+.lumiere-addons-toggle:hover { background: rgba(201, 168, 76, 0.08); }
+.lumiere-addons-chevron {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--lumiere-gold);
+  border-bottom: 2px solid var(--lumiere-gold);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.lumiere-addons-wrap.is-open .lumiere-addons-chevron { transform: rotate(-135deg); }
+.lumiere-addons-content {
+  padding: 0 1.25rem 1rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+.lumiere-addon-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  cursor: pointer;
+}
+.lumiere-addon-row input { accent-color: var(--lumiere-gold); }
+
+/* Fixed total bar */
+.lumiere-total-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-cream);
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+}
+.lumiere-total-bar-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.lumiere-total-bar-text {
+  font-size: 0.9375rem;
+  color: rgba(250, 247, 242, 0.8);
+  margin: 0;
+}
+.lumiere-total-bar-text.has-selection { color: var(--lumiere-cream); font-weight: 500; }
+.lumiere-total-bar-btn {
+  padding: 0.6rem 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 44px;
+}
+.lumiere-total-bar-btn:hover:not(:disabled) { background: #d4b85a; }
+.lumiere-total-bar-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* —— Schedule step: progress, summary bar, calendar, times —— */
+.lumiere-schedule-section {
+  padding: 0 0 5rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+/* Progress indicator */
+.lumiere-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+  padding: 1.25rem 1rem 1rem;
+}
+.lumiere-progress-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(28, 28, 30, 0.45);
+}
+.lumiere-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(28, 28, 30, 0.3);
+  background: transparent;
+}
+.lumiere-progress-step.is-complete .lumiere-progress-dot {
+  border-color: var(--lumiere-gold);
+  background: var(--lumiere-gold);
+}
+.lumiere-progress-step.is-complete .lumiere-progress-label { color: var(--lumiere-gold); }
+.lumiere-progress-step.is-current .lumiere-progress-dot {
+  border-color: var(--lumiere-charcoal);
+  background: var(--lumiere-charcoal);
+}
+.lumiere-progress-step.is-current .lumiere-progress-label { color: var(--lumiere-charcoal); }
+.lumiere-progress-line {
+  width: 24px;
+  height: 1px;
+  background: var(--lumiere-gold);
+  opacity: 0.6;
+}
+
+/* Sticky summary bar */
+.lumiere-summary-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--lumiere-cream);
+  border-bottom: 1px solid var(--lumiere-gold);
+  padding: 0.6rem 1.5rem;
+  margin: 0 -1.5rem 1.5rem;
+}
+.lumiere-summary-bar-text {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0;
+  text-align: center;
+}
+
+/* Schedule headline */
+.lumiere-schedule-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: 0.03em;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+/* Calendar */
+.lumiere-calendar-wrap {
+  background: var(--lumiere-cream);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lumiere-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.lumiere-cal-prev,
+.lumiere-cal-next {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--lumiere-gold);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.lumiere-cal-prev:hover,
+.lumiere-cal-next:hover { color: var(--lumiere-charcoal); }
+.lumiere-calendar-month {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--lumiere-charcoal);
+  margin: 0;
+}
+.lumiere-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  text-align: center;
+}
+.lumiere-calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.lumiere-calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  font-family: inherit;
+}
+.lumiere-calendar-day:hover:not(.is-unavailable):not(.is-today):not(.is-closed) {
+  background: rgba(201, 168, 76, 0.15);
+}
+.lumiere-calendar-day.is-selected {
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-cream);
+}
+.lumiere-calendar-day.is-selected::after { display: none; }
+.lumiere-calendar-day.is-available::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--lumiere-gold);
+}
+.lumiere-calendar-day.is-today {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--lumiere-gold);
+  cursor: default;
+  color: var(--lumiere-charcoal-soft);
+}
+.lumiere-calendar-day.is-unavailable,
+.lumiere-calendar-day.is-closed {
+  color: rgba(28, 28, 30, 0.35);
+  cursor: not-allowed;
+}
+.lumiere-calendar-day.is-closed { font-size: 0.7rem; font-style: italic; color: rgba(28, 28, 30, 0.45); }
+.lumiere-calendar-day.is-empty { visibility: hidden; pointer-events: none; }
+
+/* Time slots list */
+.lumiere-times-wrap {
+  margin-bottom: 1.25rem;
+  animation: lumiere-fade-in 0.3s ease-out;
+}
+@keyframes lumiere-fade-in { from { opacity: 0; } to { opacity: 1; } }
+.lumiere-times-headline {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.75rem;
+}
+.lumiere-time-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+}
+.lumiere-time-list li { border-bottom: 1px solid rgba(28, 28, 30, 0.06); }
+.lumiere-time-list li:last-child { border-bottom: none; }
+.lumiere-time-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.lumiere-time-row:hover:not(:disabled):not(.is-selected) {
+  border-left-color: var(--lumiere-gold);
+}
+.lumiere-time-row.is-selected {
+  border-left-color: var(--lumiere-gold);
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-cream);
+}
+.lumiere-time-row:disabled {
+  color: rgba(28, 28, 30, 0.4);
+  cursor: not-allowed;
+}
+.lumiere-time-status { font-size: 0.8125rem; color: var(--lumiere-charcoal-soft); }
+.lumiere-time-row.is-selected .lumiere-time-status { color: rgba(250, 247, 242, 0.85); }
+.lumiere-time-row:disabled .lumiere-time-status { color: inherit; }
+
+/* Duration note */
+.lumiere-duration-note {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+/* Cancellation card */
+.lumiere-cancel-card {
+  padding: 1.25rem 1.5rem;
+  background: var(--lumiere-cream);
+  border-left: 4px solid var(--lumiere-gold);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-left-width: 4px;
+}
+.lumiere-cancel-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.75rem;
+}
+.lumiere-cancel-title { font-size: 0.9375rem; color: var(--lumiere-charcoal); margin: 0 0 0.25rem; }
+.lumiere-cancel-deadline { font-weight: 600; color: var(--lumiere-charcoal); margin: 0 0 0.5rem; }
+.lumiere-cancel-after { font-size: 0.875rem; color: var(--lumiere-charcoal-soft); margin: 0; line-height: 1.5; }
+
+/* Continue to Payment button */
+.lumiere-schedule-actions { margin-top: 1rem; }
+.lumiere-continue-payment-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--lumiere-gold);
+  background: var(--lumiere-charcoal);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lumiere-continue-payment-btn:hover:not(:disabled) { background: #2a2a2c; color: #d4b85a; }
+.lumiere-continue-payment-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+@media (min-width: 480px) {
+  .lumiere-continue-payment-btn { width: auto; margin-left: auto; display: inline-flex; }
+  .lumiere-schedule-actions { text-align: right; }
+}
+.lumiere-btn-arrow { font-size: 1em; }
+
+/* —— Payment step —— */
+.lumiere-payment-section {
+  padding: 0 0 5rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+.lumiere-payment-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  letter-spacing: 0.04em;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.lumiere-payment-subhead {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  text-align: center;
+  margin: 0 0 2rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lumiere-payment-layout {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 900px) {
+  .lumiere-payment-layout {
+    grid-template-columns: 1fr 280px;
+    align-items: start;
+  }
+}
+
+/* Confirmation card */
+.lumiere-confirm-card {
+  background: var(--lumiere-cream);
+  border: 1px solid var(--lumiere-gold);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 16px rgba(28, 28, 30, 0.06);
+}
+.lumiere-confirm-card-top {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 480px) {
+  .lumiere-confirm-card-top { grid-template-columns: 1fr 1fr; }
+}
+.lumiere-confirm-left .lumiere-confirm-business {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.25rem;
+}
+.lumiere-confirm-service {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 0.15rem;
+}
+.lumiere-confirm-location {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0;
+}
+.lumiere-confirm-right {
+  text-align: right;
+}
+.lumiere-confirm-date,
+.lumiere-confirm-time {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.2rem;
+  font-weight: 500;
+}
+.lumiere-confirm-duration {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0;
+}
+.lumiere-confirm-divider {
+  height: 1px;
+  background: rgba(201, 168, 76, 0.25);
+  margin: 1rem 0;
+}
+.lumiere-confirm-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.lumiere-confirm-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+}
+.lumiere-confirm-row span:last-child { font-weight: 600; }
+.lumiere-confirm-deadline {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+}
+.lumiere-confirm-deadline span:last-child { font-weight: 500; color: var(--lumiere-charcoal); }
+.lumiere-confirm-print {
+  font-size: 0.75rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 1rem 0 0;
+  line-height: 1.5;
+}
+
+/* Payment form */
+.lumiere-form-headline {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 1rem;
+}
+.lumiere-payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.lumiere-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.lumiere-field span {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+}
+.lumiere-input {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-cream);
+  border: 1px solid rgba(28, 28, 30, 0.2);
+  border-radius: 4px;
+  padding: 0.65rem 0.85rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lumiere-input::placeholder { color: var(--lumiere-charcoal-soft); opacity: 0.7; }
+.lumiere-input:focus {
+  outline: none;
+  border-color: var(--lumiere-gold);
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.25);
+}
+.lumiere-card-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+.lumiere-card-input-wrap .lumiere-input { flex: 1; }
+.lumiere-card-icon {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--lumiere-charcoal-soft);
+  flex-shrink: 0;
+}
+.lumiere-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.lumiere-pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--lumiere-gold);
+  background: var(--lumiere-charcoal);
+  border: 1px solid var(--lumiere-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  margin-top: 0.5rem;
+}
+.lumiere-pay-btn:hover:not(:disabled) {
+  background: var(--lumiere-gold);
+  color: var(--lumiere-charcoal);
+}
+.lumiere-pay-btn:disabled { opacity: 0.7; cursor: wait; }
+.lumiere-pay-btn-text { display: inline; }
+.lumiere-pay-btn.is-loading .lumiere-pay-btn-text { visibility: hidden; }
+.lumiere-pay-btn-spinner {
+  display: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(201, 168, 76, 0.4);
+  border-top-color: var(--lumiere-gold);
+  border-radius: 50%;
+  animation: lumiere-spin 0.7s linear infinite;
+  position: absolute;
+}
+.lumiere-pay-btn.is-loading .lumiere-pay-btn-spinner {
+  display: inline-block;
+  position: relative;
+}
+@keyframes lumiere-spin { to { transform: rotate(360deg); } }
+
+/* Trust row */
+.lumiere-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--lumiere-charcoal-soft);
+  margin-bottom: 0.5rem;
+}
+.lumiere-trust-sep { opacity: 0.5; }
+.lumiere-stripe-venu-lockup {
+  font-size: 0.6875rem;
+  color: var(--lumiere-charcoal-soft);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* What happens after I pay */
+.lumiere-what-happens-wrap {
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+}
+.lumiere-what-happens-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+.lumiere-what-happens-toggle:hover { background: rgba(201, 168, 76, 0.08); }
+.lumiere-what-happens-chevron {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--lumiere-gold);
+  border-bottom: 2px solid var(--lumiere-gold);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.lumiere-what-happens-wrap.is-open .lumiere-what-happens-chevron { transform: rotate(-135deg); }
+.lumiere-what-happens-content {
+  padding: 0 1.25rem 1rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+.lumiere-what-happens-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  line-height: 1.7;
+}
+
+/* Venu+ callout (sidebar desktop / below mobile) */
+.lumiere-venu-callout {
+  padding: 1rem 1.25rem;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  line-height: 1.55;
+}
+.lumiere-venu-callout-text { margin: 0; }
+@media (min-width: 900px) {
+  .lumiere-venu-callout { position: sticky; top: 1.5rem; }
+}
+
+/* —— Success state —— */
+.lumiere-success-section {
+  padding: 4rem 1.5rem 5rem;
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.lumiere-success-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.lumiere-confetti-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  opacity: 0;
+  animation: lumiere-confetti-fall 2s ease-out forwards;
+}
+.lumiere-confetti-particle.is-gold { background: var(--lumiere-gold); }
+.lumiere-confetti-particle.is-cream { background: var(--lumiere-cream); border: 1px solid rgba(201, 168, 76, 0.4); }
+@keyframes lumiere-confetti-fall {
+  0% {
+    opacity: 0.9;
+    transform: translateY(-10px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(80px) rotate(180deg);
+  }
+}
+.lumiere-success-check-wrap {
+  margin-bottom: 1.5rem;
+  color: var(--lumiere-gold);
+}
+.lumiere-success-check-svg {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  display: block;
+}
+.lumiere-success-check-circle {
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+  animation: lumiere-check-draw 0.6s ease-out forwards;
+}
+.lumiere-success-check-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: lumiere-check-draw 0.4s ease-out 0.3s forwards;
+}
+@keyframes lumiere-check-draw {
+  to { stroke-dashoffset: 0; }
+}
+.lumiere-success-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  letter-spacing: 0.04em;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.5rem;
+}
+.lumiere-success-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 1.5rem;
+}
+.lumiere-success-recap {
+  background: var(--lumiere-cream);
+  border: 1px solid var(--lumiere-gold);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.lumiere-success-recap-line {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.5rem;
+}
+.lumiere-success-recap-line:last-child { margin-bottom: 0; }
+.lumiere-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.lumiere-success-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.5rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.lumiere-success-btn-secondary {
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: 1px solid rgba(28, 28, 30, 0.3);
+}
+.lumiere-success-btn-secondary:hover {
+  border-color: var(--lumiere-charcoal);
+  background: rgba(28, 28, 30, 0.06);
+}
+.lumiere-success-btn-primary {
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border: 1px solid var(--lumiere-gold);
+}
+.lumiere-success-btn-primary:hover {
+  background: #d4b85a;
+  border-color: #d4b85a;
+  color: var(--lumiere-charcoal);
+}
+
+/* —— Customer Portal —— */
+.lumiere-portal-section {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+.lumiere-portal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.5rem 0 0.75rem;
+}
+.lumiere-portal-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  letter-spacing: 0.04em;
+  color: var(--lumiere-charcoal);
+  margin: 0;
+}
+.lumiere-portal-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lumiere-portal-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--lumiere-gold);
+  color: var(--lumiere-charcoal);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.lumiere-portal-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+}
+.lumiere-portal-rule {
+  height: 1px;
+  background: var(--lumiere-gold);
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+/* Portal tabs */
+.lumiere-portal-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(28, 28, 30, 0.12);
+}
+.lumiere-portal-tab {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lumiere-charcoal-soft);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.lumiere-portal-tab:hover { color: var(--lumiere-charcoal); }
+.lumiere-portal-tab.is-active {
+  color: var(--lumiere-charcoal);
+  border-bottom-color: var(--lumiere-gold);
+}
+
+/* Tab panels */
+.lumiere-portal-panel {
+  padding: 0 0 2rem;
+}
+
+/* Upcoming card */
+.lumiere-upcoming-card {
+  background: var(--lumiere-cream);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-left: 4px solid var(--lumiere-gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 2px 12px rgba(28, 28, 30, 0.06);
+}
+.lumiere-upcoming-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.5rem;
+}
+.lumiere-upcoming-service {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.25rem;
+}
+.lumiere-upcoming-datetime,
+.lumiere-upcoming-location {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 0.2rem;
+}
+.lumiere-upcoming-divider {
+  height: 1px;
+  background: rgba(201, 168, 76, 0.2);
+  margin: 0.75rem 0;
+}
+.lumiere-upcoming-deposit,
+.lumiere-upcoming-balance {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.2rem;
+}
+.lumiere-upcoming-deadline-label {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0.5rem 0 0.15rem;
+}
+.lumiere-upcoming-deadline {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.15rem;
+}
+.lumiere-upcoming-countdown {
+  font-size: 0.8125rem;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.75rem;
+}
+.lumiere-upcoming-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.lumiere-upcoming-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.lumiere-upcoming-btn-outline {
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: 1px solid rgba(28, 28, 30, 0.3);
+}
+.lumiere-upcoming-btn-outline:hover {
+  border-color: var(--lumiere-charcoal);
+  background: rgba(28, 28, 30, 0.06);
+}
+
+/* History tab */
+.lumiere-portal-panel-head {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 1rem;
+}
+.lumiere-history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+}
+.lumiere-history-item {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+.lumiere-history-item:last-child { border-bottom: none; }
+.lumiere-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.lumiere-history-date {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+}
+.lumiere-history-price {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--lumiere-charcoal);
+}
+.lumiere-history-service {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.35rem;
+}
+.lumiere-history-rebook {
+  font-size: 0.8125rem;
+  color: var(--lumiere-gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+.lumiere-history-rebook:hover { text-decoration: underline; }
+.lumiere-history-total {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.35rem;
+}
+.lumiere-history-thanks {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--lumiere-gold);
+  margin: 0;
+}
+
+/* Payments tab */
+.lumiere-balance-card {
+  background: var(--lumiere-cream);
+  border: 1px solid var(--lumiere-gold);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(28, 28, 30, 0.06);
+}
+.lumiere-balance-venu-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.5rem;
+}
+.lumiere-balance-label {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 0.25rem;
+}
+.lumiere-balance-amount {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.25rem;
+}
+.lumiere-balance-due {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 1rem;
+}
+.lumiere-balance-pay-btn {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lumiere-balance-pay-btn:hover { background: #d4b85a; }
+.lumiere-balance-note {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 1rem 0 0;
+  line-height: 1.5;
+}
+.lumiere-payment-history { margin-top: 1.5rem; }
+.lumiere-payment-history-head {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.75rem;
+}
+.lumiere-payment-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+}
+.lumiere-payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+@media (max-width: 420px) {
+  .lumiere-payment-row {
+    grid-template-columns: 1fr auto;
+    font-size: 0.8125rem;
+  }
+  .lumiere-payment-date { grid-column: 1; }
+  .lumiere-payment-desc { grid-column: 1; }
+  .lumiere-payment-amt { grid-column: 2; text-align: right; }
+  .lumiere-payment-status { grid-column: 2; text-align: right; }
+}
+.lumiere-payment-row:last-child { border-bottom: none; }
+.lumiere-payment-date { color: var(--lumiere-charcoal-soft); }
+.lumiere-payment-desc { color: var(--lumiere-charcoal); }
+.lumiere-payment-amt { font-weight: 600; color: var(--lumiere-charcoal); text-align: right; }
+.lumiere-payment-status { color: var(--lumiere-gold); font-size: 0.8125rem; }
+.lumiere-payment-total {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.25rem;
+}
+.lumiere-payment-stripe {
+  font-size: 0.75rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0;
+}
+
+/* Rebook tab */
+.lumiere-rebook-venu-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.5rem;
+}
+.lumiere-portal-panel-sub {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: -0.5rem 0 1rem;
+}
+.lumiere-rebook-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.lumiere-rebook-card {
+  background: var(--lumiere-cream);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(28, 28, 30, 0.04);
+}
+.lumiere-rebook-card-featured {
+  border-color: var(--lumiere-gold);
+  border-width: 1px;
+}
+.lumiere-rebook-card-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.35rem;
+}
+.lumiere-rebook-card-service {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.25rem;
+}
+.lumiere-rebook-card-note {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 0.5rem;
+}
+.lumiere-rebook-card-slots {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.35rem;
+}
+.lumiere-rebook-slots-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal-soft);
+  line-height: 1.6;
+}
+.lumiere-rebook-btn {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.lumiere-rebook-btn-primary {
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border: none;
+}
+.lumiere-rebook-btn-primary:hover { background: #d4b85a; }
+.lumiere-rebook-btn-outline {
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: 1px solid rgba(28, 28, 30, 0.3);
+}
+.lumiere-rebook-btn-outline:hover {
+  border-color: var(--lumiere-charcoal);
+  background: rgba(28, 28, 30, 0.06);
+}
+
+/* SMS Timeline */
+.lumiere-sms-timeline-wrap {
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+  margin-top: 2rem;
+}
+.lumiere-sms-timeline-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+.lumiere-sms-timeline-toggle:hover { background: rgba(201, 168, 76, 0.08); }
+.lumiere-sms-chevron {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--lumiere-gold);
+  border-bottom: 2px solid var(--lumiere-gold);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.lumiere-sms-timeline-wrap.is-open .lumiere-sms-chevron { transform: rotate(-135deg); }
+.lumiere-sms-timeline-content {
+  padding: 1rem 1.25rem 1.5rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+.lumiere-sms-timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.lumiere-sms-timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--lumiere-gold);
+  opacity: 0.5;
+}
+.lumiere-sms-event {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+.lumiere-sms-event:last-child { margin-bottom: 0; }
+.lumiere-sms-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lumiere-cream);
+  border: 2px solid var(--lumiere-gold);
+  box-sizing: border-box;
+}
+.lumiere-sms-event-sent .lumiere-sms-dot {
+  background: var(--lumiere-gold);
+  border-color: var(--lumiere-gold);
+}
+.lumiere-sms-event-title {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+.lumiere-sms-event-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--lumiere-gold);
+  margin-left: 0.35rem;
+}
+.lumiere-sms-badge-scheduled {
+  color: var(--lumiere-charcoal-soft);
+  font-weight: 500;
+}
+.lumiere-sms-bubble {
+  background: #e5e5ea;
+  border-radius: 12px 12px 12px 4px;
+  padding: 0.75rem 1rem;
+  max-width: 280px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.lumiere-sms-bubble p {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal);
+  margin: 0;
+  line-height: 1.5;
+}
+.lumiere-sms-bubble-scheduled {
+  opacity: 0.85;
+  background: #e8e8ed;
+}
+.lumiere-sms-venu-callout {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-gold);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.lumiere-sms-venu-callout p { margin: 0 0 0.35rem; }
+.lumiere-sms-venu-callout p:first-child { font-weight: 600; }
+.lumiere-sms-venu-callout p:last-child { margin-bottom: 0; }
+
+/* Demo footer */
+.lumiere-demo-footer {
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  background: var(--lumiere-charcoal);
+  color: var(--lumiere-cream);
+  text-align: center;
+  border-radius: 8px;
+}
+.lumiere-demo-footer-head {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--lumiere-cream);
+  margin: 0 0 0.75rem;
+}
+.lumiere-demo-footer-body {
+  font-size: 0.875rem;
+  color: rgba(250, 247, 242, 0.85);
+  line-height: 1.55;
+  margin: 0 auto 0.5rem;
+  max-width: 32rem;
+}
+.lumiere-demo-footer-price {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--lumiere-cream);
+  margin: 1rem 0 0.5rem;
+}
+.lumiere-demo-footer-cta-text {
+  font-size: 0.9375rem;
+  color: var(--lumiere-gold);
+  margin: 0 0 0.75rem;
+}
+.lumiere-demo-footer-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal);
+  background: var(--lumiere-gold);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.lumiere-demo-footer-btn:hover { background: #d4b85a; }
+
+/* Cancel modal */
+.lumiere-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(28, 28, 30, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.lumiere-modal-overlay[hidden] {
+  display: none !important;
+}
+.lumiere-modal {
+  background: var(--lumiere-cream);
+  border: 1px solid var(--lumiere-gold);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  max-width: 24rem;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.lumiere-modal-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 1rem;
+}
+.lumiere-modal-deadline {
+  font-size: 0.9375rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.lumiere-modal-policy {
+  font-size: 0.875rem;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 1rem;
+  padding: 1rem;
+  background: rgba(201, 168, 76, 0.08);
+  border-radius: 6px;
+  border-left: 3px solid var(--lumiere-gold);
+}
+.lumiere-modal-policy p { margin: 0 0 0.5rem; }
+.lumiere-modal-policy p:last-child { margin-bottom: 0; }
+.lumiere-modal-question {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--lumiere-charcoal);
+  margin: 0 0 1rem;
+}
+.lumiere-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.lumiere-modal-btn {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.lumiere-modal-btn-keep {
+  color: var(--lumiere-charcoal);
+  background: transparent;
+  border: 1px solid rgba(28, 28, 30, 0.3);
+}
+.lumiere-modal-btn-keep:hover {
+  border-color: var(--lumiere-charcoal);
+  background: rgba(28, 28, 30, 0.06);
+}
+.lumiere-modal-cancel-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+.lumiere-modal-venu-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lumiere-gold);
+}
+.lumiere-modal-btn-cancel {
+  color: var(--lumiere-charcoal-soft);
+  background: transparent;
+  border: 1px solid rgba(28, 28, 30, 0.25);
+}
+.lumiere-modal-btn-cancel:hover {
+  border-color: var(--lumiere-charcoal-soft);
+  color: var(--lumiere-charcoal);
+  background: rgba(28, 28, 30, 0.06);
+}
+
+/* —— Performance: contain layout for animated sections —— */
+.lumiere-services-section,
+.lumiere-schedule-section,
+.lumiere-payment-section,
+.lumiere-success-section,
+.lumiere-portal-section {
+  contain: layout style;
+}
+
+/* —— Page load: staggered fade-in —— */
+.lumiere-services-section {
+  animation: lumiere-fade-in 0.5s ease-out both;
+}
+.lumiere-schedule-section {
+  animation: lumiere-fade-in 0.5s ease-out 0.08s both;
+}
+.lumiere-payment-section {
+  animation: lumiere-fade-in 0.5s ease-out 0.08s both;
+}
+.lumiere-success-section {
+  animation: lumiere-fade-in 0.5s ease-out both;
+}
+.lumiere-portal-section {
+  animation: lumiere-fade-in 0.5s ease-out 0.08s both;
+}
+@keyframes lumiere-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lumiere-services-section,
+  .lumiere-schedule-section,
+  .lumiere-payment-section,
+  .lumiere-success-section,
+  .lumiere-portal-section { animation: none; }
+}
+.lumiere-schedule-section.lumiere-step-enter,
+.lumiere-payment-section.lumiere-step-enter,
+.lumiere-success-section.lumiere-step-enter,
+.lumiere-portal-section.lumiere-step-enter {
+  animation: lumiere-fade-in 0.4s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lumiere-schedule-section.lumiere-step-enter,
+  .lumiere-payment-section.lumiere-step-enter,
+  .lumiere-success-section.lumiere-step-enter,
+  .lumiere-portal-section.lumiere-step-enter { animation: none; }
+}
+
+/* —— Mobile: 390px / 375px, 44px tap targets, no horizontal scroll —— */
+@media (max-width: 390px) {
+  .lumiere-main { padding-left: 1rem; padding-right: 1rem; }
+  .lumiere-service-row { padding: 0.75rem 1rem; min-height: 44px; }
+  .lumiere-calendar-wrap { padding: 1rem; }
+  .lumiere-calendar-day {
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 0.875rem;
+  }
+  .lumiere-time-row { min-height: 44px; padding: 0.75rem 1rem; }
+  .lumiere-continue-payment-btn,
+  .lumiere-pay-btn,
+  .lumiere-total-bar-btn,
+  .lumiere-select-time-btn { min-height: 44px; }
+  .lumiere-success-btn,
+  .lumiere-upcoming-btn,
+  .lumiere-modal-btn { min-height: 44px; }
+  .lumiere-portal-tab { min-height: 44px; padding: 0.65rem 0; }
+}
+@media (max-width: 375px) {
+  .lumiere-demo-banner { font-size: 0.6875rem; padding: 0 0.75rem; }
+  .lumiere-calendar-month { font-size: 1rem; }
+  .lumiere-header { padding-left: 1rem; padding-right: 1rem; }
+}

@@ -2,20 +2,23 @@
    Dark, masculine, premium automotive. Carbon texture, orange accent, chrome/silver. */
 
 .apex-portal * { box-sizing: border-box; }
-.apex-portal-body { margin: 0; min-height: 100vh; }
+.apex-portal-body { margin: 0; min-height: 100vh; overflow-x: hidden; }
+.apex-page-wrap { overflow-x: hidden; }
 
-/* —— Demo banner —— */
+/* —— Demo banner: sticky 40px, unobtrusive —— */
 .apex-demo-banner {
+  position: sticky;
+  top: 0;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  padding-top: calc(4px + 0.4rem);
+  height: 40px;
+  min-height: 40px;
+  padding: 0 1rem;
   background: var(--apex-accent);
   color: #0D0D0D;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 500;
   text-align: center;
 }
@@ -25,6 +28,35 @@
   text-decoration: underline;
 }
 .apex-demo-banner-cta:hover { color: #1a1a1a; }
+
+/* —— Back to demos: floating pill —— */
+.apex-back-pill {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #0D0D0D;
+  background: var(--apex-accent);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.apex-back-pill:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+@media (max-width: 480px) {
+  .apex-back-pill { bottom: 5rem; }
+}
 
 /* —— Variables —— */
 .apex-portal {
@@ -41,25 +73,25 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* —— Top accent bar 4px —— */
+/* —— Top accent bar 4px (below sticky banner) —— */
 .apex-accent-bar {
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   right: 0;
   height: 4px;
   background: var(--apex-accent);
-  z-index: 100;
+  z-index: 98;
 }
 
 /* —— Page wrap —— */
-.apex-page-wrap { position: relative; min-height: 100vh; padding-top: 4px; }
+.apex-page-wrap { position: relative; min-height: 100vh; padding-top: 44px; }
 
 /* —— Carbon fiber texture + garage grid (CSS only) —— */
 .apex-bg {
   position: fixed;
   inset: 0;
-  top: 4px;
+  top: 44px;
   z-index: -1;
   background-color: var(--apex-bg);
   /* Layered: grid (garage floor) then carbon weave. First in list = painted on top. */
@@ -282,8 +314,8 @@
   align-items: flex-start;
   text-align: left;
   padding: 1.25rem 1rem;
-  background: #1A1A1A;
-  border: 1px solid rgba(192, 192, 192, 0.12);
+  background: #151515;
+  border: 1px solid rgba(192, 192, 192, 0.1);
   border-radius: 10px;
   color: var(--apex-text);
   cursor: pointer;
@@ -299,9 +331,14 @@
   border-color: var(--apex-accent);
   box-shadow: 0 0 0 2px var(--apex-accent), 0 4px 20px rgba(255, 107, 0, 0.15);
 }
+.apex-service-card:active {
+  transform: scale(0.98);
+}
 @media (prefers-reduced-motion: reduce) {
+  .apex-service-card,
   .apex-service-card:hover,
-  .apex-service-card.is-selected { transform: none; }
+  .apex-service-card.is-selected,
+  .apex-service-card:active { transform: none; transition: none; }
 }
 
 .apex-service-card-check {
@@ -1079,4 +1116,81 @@
   font-size: 0.8125rem;
   color: var(--apex-text-muted);
   margin: 0;
+}
+
+/* —— Performance: contain layout for animated sections —— */
+.apex-services-section,
+.apex-schedule-section,
+.apex-confirm-section,
+.apex-success-section {
+  contain: layout style;
+}
+
+/* —— Page load: staggered fade-in —— */
+.apex-services-section {
+  animation: apex-fade-in 0.5s ease-out both;
+}
+.apex-schedule-section {
+  animation: apex-fade-in 0.5s ease-out 0.1s both;
+}
+.apex-confirm-section {
+  animation: apex-fade-in 0.5s ease-out 0.1s both;
+}
+.apex-success-section {
+  animation: apex-fade-in 0.5s ease-out both;
+}
+@keyframes apex-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .apex-services-section,
+  .apex-schedule-section,
+  .apex-confirm-section,
+  .apex-success-section { animation: none; }
+}
+.apex-schedule-section.apex-step-enter,
+.apex-confirm-section.apex-step-enter,
+.apex-success-section.apex-step-enter {
+  animation: apex-fade-in 0.4s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .apex-schedule-section.apex-step-enter,
+  .apex-confirm-section.apex-step-enter,
+  .apex-success-section.apex-step-enter { animation: none; }
+}
+
+/* —— Mobile: 390px / 375px, 44px tap targets, no horizontal scroll —— */
+@media (max-width: 390px) {
+  .apex-main { padding-left: 1rem; padding-right: 1rem; }
+  .apex-services-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .apex-service-card {
+    min-height: 44px;
+    padding: 1rem;
+  }
+  .apex-calendar-wrap { padding: 1rem; }
+  .apex-calendar-day {
+    min-height: 44px;
+    aspect-ratio: 1;
+    font-size: 0.875rem;
+  }
+  .apex-calendar-prev,
+  .apex-calendar-next { width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
+  .apex-time-slot {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+  }
+  .apex-vehicle-btn { min-height: 44px; padding: 0.5rem 0.75rem; }
+  .apex-total-bar-btn { min-height: 44px; }
+  .apex-choose-time-btn,
+  .apex-confirm-btn,
+  .apex-book-btn { min-height: 44px; }
+}
+@media (max-width: 375px) {
+  .apex-demo-banner { font-size: 0.6875rem; padding: 0 0.75rem; }
+  .apex-calendar-month { font-size: 1.1rem; }
+  .apex-calendar-weekdays { font-size: 0.625rem; }
 }

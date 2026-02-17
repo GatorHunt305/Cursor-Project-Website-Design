@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="lumiere-portal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book | Lumière Hair Studio</title>
+  <meta name="description" content="Book your appointment at Lumière Hair Studio. West Nashville, Tennessee.">
+  <link rel="icon" type="image/svg+xml" href="venu-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="venu-demo-lumiere.css">
+</head>
+<body class="lumiere-portal-body">
+  <!-- Demo banner: sticky, 40px, unobtrusive -->
+  <div class="lumiere-demo-banner" id="lumiere-demo-banner">
+    <span class="lumiere-demo-banner-text">👀 Venu+ Demo | Get Venu+ → <a href="https://venu.app" class="lumiere-demo-banner-cta" target="_blank" rel="noopener">venu.app</a></span>
+  </div>
+
+  <div class="lumiere-page-wrap">
+    <!-- Grain texture background -->
+    <div class="lumiere-bg" aria-hidden="true"></div>
+
+    <header class="lumiere-header">
+      <div class="lumiere-header-inner">
+        <a href="venu-demos.html" class="lumiere-back-demos">← Demos</a>
+        <div class="lumiere-venu-plus-badge">Venu+</div>
+        <div class="lumiere-brand-block">
+          <div class="lumiere-rule lumiere-rule-top" aria-hidden="true"></div>
+          <h1 class="lumiere-wordmark">Lumière</h1>
+          <p class="lumiere-tagline">Hair Studio</p>
+          <p class="lumiere-location">West Nashville, Tennessee</p>
+          <div class="lumiere-rating" aria-label="5.0 out of 5 from 94 reviews">
+            <span class="lumiere-stars" aria-hidden="true">★★★★★</span>
+            <span class="lumiere-rating-text">5.0 <span class="lumiere-reviews">(94 reviews)</span></span>
+          </div>
+          <div class="lumiere-rule lumiere-rule-bottom" aria-hidden="true"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="lumiere-whats-included-wrap">
+      <button type="button" class="lumiere-whats-toggle" id="lumiere-whats-toggle" aria-expanded="false" aria-controls="lumiere-whats-list">
+        <span>What's included (Venu+)</span>
+        <span class="lumiere-whats-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="lumiere-whats-content" id="lumiere-whats-list" hidden>
+        <p class="lumiere-whats-intro">This salon uses <strong>Venu+</strong>. You get:</p>
+        <ul class="lumiere-whats-list">
+          <li>Stripe payment & deposit to confirm your booking</li>
+          <li>Cancellation policy enforced automatically (no awkward conversations)</li>
+          <li>Customer portal — view history, pay balance early, rebook in one tap</li>
+          <li>Payment history & invoices in one place</li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="lumiere-main" id="main">
+      <section class="lumiere-services-section" aria-labelledby="lumiere-services-heading">
+        <h2 id="lumiere-services-heading" class="lumiere-services-headline">Book Your Service</h2>
+
+        <div class="lumiere-service-menu" role="listbox" aria-label="Select a service">
+          <div class="lumiere-menu-divider">— CUTS —</div>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Women's Cut + Style" data-price="85" data-duration="60 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Women's Cut + Style</span><span class="lumiere-service-duration">60 min</span></span>
+            <span class="lumiere-service-price">$85</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Men's Cut + Style" data-price="55" data-duration="45 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Men's Cut + Style</span><span class="lumiere-service-duration">45 min</span></span>
+            <span class="lumiere-service-price">$55</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Children's Cut" data-price="40" data-duration="30 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Children's Cut</span><span class="lumiere-service-duration">30 min</span></span>
+            <span class="lumiere-service-price">$40</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Bang Trim" data-price="20" data-duration="15 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Bang Trim</span><span class="lumiere-service-duration">15 min</span></span>
+            <span class="lumiere-service-price">$20</span>
+          </button>
+
+          <div class="lumiere-menu-divider">— COLOR —</div>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Single Process Color" data-price="120" data-duration="90 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Single Process Color</span><span class="lumiere-service-duration">90 min</span></span>
+            <span class="lumiere-service-price">$120</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Balayage" data-price="200" data-duration="3 hrs">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Balayage</span><span class="lumiere-service-duration">3 hrs</span></span>
+            <span class="lumiere-service-price">$200</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Full Highlights" data-price="175" data-duration="2.5 hrs">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Full Highlights</span><span class="lumiere-service-duration">2.5 hrs</span></span>
+            <span class="lumiere-service-price">$175</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Color Correction" data-price="300" data-duration="4+ hrs">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Color Correction</span><span class="lumiere-service-duration">4+ hrs</span><span class="lumiere-service-note">Consultation required</span></span>
+            <span class="lumiere-service-price">From $300</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Toning/Gloss" data-price="65" data-duration="45 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Toning/Gloss</span><span class="lumiere-service-duration">45 min</span></span>
+            <span class="lumiere-service-price">$65</span>
+          </button>
+
+          <div class="lumiere-menu-divider">— TREATMENTS —</div>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Brazilian Blowout" data-price="250" data-duration="2.5 hrs">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Brazilian Blowout</span><span class="lumiere-service-duration">2.5 hrs</span></span>
+            <span class="lumiere-service-price">$250</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Keratin Treatment" data-price="200" data-duration="2 hrs">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Keratin Treatment</span><span class="lumiere-service-duration">2 hrs</span></span>
+            <span class="lumiere-service-price">$200</span>
+          </button>
+          <button type="button" class="lumiere-service-row" role="option" data-service="Deep Conditioning" data-price="45" data-duration="30 min">
+            <span class="lumiere-service-info"><span class="lumiere-service-name">Deep Conditioning</span><span class="lumiere-service-duration">30 min</span></span>
+            <span class="lumiere-service-price">$45</span>
+          </button>
+        </div>
+
+        <div class="lumiere-deposit-wrap" id="lumiere-deposit-wrap" hidden>
+          <div class="lumiere-deposit-callout">
+            <div class="lumiere-deposit-badge-wrap">
+              <span class="lumiere-venu-feature-badge" id="lumiere-venu-badge" title="Venu+ automatically collects deposits, enforces cancellation policies, and protects your revenue. No awkward conversations.">⚡ Venu+ Feature</span>
+            </div>
+            <p class="lumiere-deposit-title">✦ Lumière Booking Policy</p>
+            <p class="lumiere-deposit-intro">A deposit is required to hold your appointment:</p>
+            <ul class="lumiere-deposit-tiers">
+              <li>Services under $100 &nbsp; → &nbsp; $15 deposit</li>
+              <li>Services $100–$199 &nbsp; → &nbsp; $25 deposit</li>
+              <li>Services $200+ &nbsp; → &nbsp; $50 deposit</li>
+            </ul>
+            <p class="lumiere-deposit-applied">Your deposit is applied to your total.</p>
+            <p class="lumiere-deposit-policy">Free cancellation up to 24 hours before your appointment. Cancellations within 24 hours or no-shows forfeit the deposit.</p>
+            <p class="lumiere-deposit-closing">This keeps our stylists' time protected and your appointment guaranteed.</p>
+            <p class="lumiere-deposit-dynamic" id="lumiere-deposit-dynamic">Deposit due today: <strong id="lumiere-deposit-amount">$0</strong></p>
+          </div>
+        </div>
+
+        <div class="lumiere-addons-wrap">
+          <button type="button" class="lumiere-addons-toggle" id="lumiere-addons-toggle" aria-expanded="false" aria-controls="lumiere-addons-list">
+            <span>Enhance Your Visit</span>
+            <span class="lumiere-addons-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="lumiere-addons-content" id="lumiere-addons-list" hidden>
+            <label class="lumiere-addon-row"><input type="checkbox" class="lumiere-addon-cb" name="addon" value="Glossing Treatment" data-price="45"> <span>Glossing Treatment +$45</span></label>
+            <label class="lumiere-addon-row"><input type="checkbox" class="lumiere-addon-cb" name="addon" value="Scalp Treatment" data-price="35"> <span>Scalp Treatment +$35</span></label>
+            <label class="lumiere-addon-row"><input type="checkbox" class="lumiere-addon-cb" name="addon" value="Express Conditioning" data-price="25"> <span>Express Conditioning +$25</span></label>
+            <label class="lumiere-addon-row"><input type="checkbox" class="lumiere-addon-cb" name="addon" value="Olaplex Treatment" data-price="55"> <span>Olaplex Treatment +$55</span></label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 2: Schedule (hidden until "Select Your Time" clicked) -->
+      <section class="lumiere-schedule-section" id="lumiere-schedule-section" aria-labelledby="lumiere-schedule-heading" hidden>
+        <nav class="lumiere-progress" aria-label="Booking steps">
+          <span class="lumiere-progress-step is-complete"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Service</span></span>
+          <span class="lumiere-progress-line" aria-hidden="true"></span>
+          <span class="lumiere-progress-step is-current"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Schedule</span></span>
+          <span class="lumiere-progress-line" aria-hidden="true"></span>
+          <span class="lumiere-progress-step"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Payment</span></span>
+          <span class="lumiere-progress-line" aria-hidden="true"></span>
+          <span class="lumiere-progress-step"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Confirmed</span></span>
+        </nav>
+
+        <div class="lumiere-summary-bar" id="lumiere-summary-bar">
+          <p class="lumiere-summary-bar-text" id="lumiere-summary-bar-text">Service • Duration • Total • Deposit due at next step</p>
+        </div>
+
+        <h2 id="lumiere-schedule-heading" class="lumiere-schedule-headline">Choose Your Date</h2>
+        <div class="lumiere-calendar-wrap">
+          <div class="lumiere-calendar-header">
+            <button type="button" class="lumiere-cal-prev" id="lumiere-cal-prev" aria-label="Previous month">‹</button>
+            <h3 class="lumiere-calendar-month" id="lumiere-calendar-month">February 2026</h3>
+            <button type="button" class="lumiere-cal-next" id="lumiere-cal-next" aria-label="Next month">›</button>
+          </div>
+          <div class="lumiere-calendar-weekdays" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+          <div class="lumiere-calendar-days" id="lumiere-calendar-days" role="grid" aria-label="February 2026"></div>
+        </div>
+
+        <div class="lumiere-times-wrap" id="lumiere-times-wrap" hidden>
+          <h3 class="lumiere-times-headline">Available Times</h3>
+          <ul class="lumiere-time-list" role="listbox" aria-label="Select time">
+            <li><button type="button" class="lumiere-time-row" data-time="9:00 AM" data-min="540">9:00 AM <span class="lumiere-time-status">○ Available</span></button></li>
+            <li><button type="button" class="lumiere-time-row lumiere-time-unavailable" data-time="10:00 AM" disabled>10:00 AM <span class="lumiere-time-status">✕ Unavailable</span></button></li>
+            <li><button type="button" class="lumiere-time-row" data-time="11:00 AM" data-min="660">11:00 AM <span class="lumiere-time-status">○ Available</span></button></li>
+            <li><button type="button" class="lumiere-time-row" data-time="12:00 PM" data-min="720">12:00 PM <span class="lumiere-time-status">○ Available</span></button></li>
+            <li><button type="button" class="lumiere-time-row lumiere-time-unavailable" data-time="1:00 PM" disabled>1:00 PM <span class="lumiere-time-status">✕ Unavailable</span></button></li>
+            <li><button type="button" class="lumiere-time-row" data-time="2:00 PM" data-min="840">2:00 PM <span class="lumiere-time-status">○ Available</span></button></li>
+            <li><button type="button" class="lumiere-time-row" data-time="3:00 PM" data-min="900">3:00 PM <span class="lumiere-time-status">○ Available</span></button></li>
+            <li><button type="button" class="lumiere-time-row lumiere-time-unavailable" data-time="4:00 PM" disabled>4:00 PM <span class="lumiere-time-status">✕ Unavailable</span></button></li>
+            <li><button type="button" class="lumiere-time-row" data-time="5:00 PM" data-min="1020">5:00 PM <span class="lumiere-time-status">Last appointment</span></button></li>
+          </ul>
+        </div>
+
+        <p class="lumiere-duration-note" id="lumiere-duration-note" hidden></p>
+
+        <div class="lumiere-cancel-card" id="lumiere-cancel-card" hidden>
+          <p class="lumiere-cancel-badge">⚡ Venu+ automatically calculates and enforces your cancellation window</p>
+          <p class="lumiere-cancel-title">📅 Free cancellation deadline:</p>
+          <p class="lumiere-cancel-deadline" id="lumiere-cancel-deadline">Wednesday, Feb 18 at 2:00 PM</p>
+          <p class="lumiere-cancel-after">After this time, your <strong id="lumiere-cancel-deposit">$50</strong> deposit will be retained per Lumière's policy. You'll receive a reminder before your cancellation window closes.</p>
+        </div>
+
+        <div class="lumiere-schedule-actions">
+          <button type="button" class="lumiere-continue-payment-btn" id="lumiere-continue-payment-btn" disabled>Continue to Payment <span class="lumiere-btn-arrow" aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <!-- Step 3: Payment -->
+      <section class="lumiere-payment-section" id="lumiere-payment-section" aria-labelledby="lumiere-payment-heading" hidden>
+        <nav class="lumiere-progress" aria-label="Booking steps">
+          <span class="lumiere-progress-step is-complete"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Service</span></span>
+          <span class="lumiere-progress-line"></span>
+          <span class="lumiere-progress-step is-complete"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Schedule</span></span>
+          <span class="lumiere-progress-line"></span>
+          <span class="lumiere-progress-step is-current"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Payment</span></span>
+          <span class="lumiere-progress-line"></span>
+          <span class="lumiere-progress-step"><span class="lumiere-progress-dot"></span><span class="lumiere-progress-label">Confirmed</span></span>
+        </nav>
+
+        <h2 id="lumiere-payment-heading" class="lumiere-payment-headline">Secure Your Appointment</h2>
+        <p class="lumiere-payment-subhead" id="lumiere-payment-subhead">A $50 deposit confirms your appointment.</p>
+
+        <div class="lumiere-payment-layout">
+          <div class="lumiere-payment-main">
+            <div class="lumiere-confirm-card">
+              <div class="lumiere-confirm-card-top">
+                <div class="lumiere-confirm-left">
+                  <p class="lumiere-confirm-business">Lumière Hair Studio</p>
+                  <p class="lumiere-confirm-service" id="lumiere-confirm-service">Balayage</p>
+                  <p class="lumiere-confirm-location">West Nashville, TN</p>
+                </div>
+                <div class="lumiere-confirm-right">
+                  <p class="lumiere-confirm-date" id="lumiere-confirm-date">Wed Feb 19, 2026</p>
+                  <p class="lumiere-confirm-time" id="lumiere-confirm-time">2:00 PM — ~5:00 PM</p>
+                  <p class="lumiere-confirm-duration" id="lumiere-confirm-duration">3 hours</p>
+                </div>
+              </div>
+              <div class="lumiere-confirm-divider"></div>
+              <div class="lumiere-confirm-rows">
+                <div class="lumiere-confirm-row"><span>Service Total</span><span id="lumiere-confirm-total">$200.00</span></div>
+                <div class="lumiere-confirm-row"><span>Deposit Due Now</span><span id="lumiere-confirm-deposit">$50.00</span></div>
+                <div class="lumiere-confirm-row"><span>Balance at Appointment</span><span id="lumiere-confirm-balance">$150.00</span></div>
+              </div>
+              <div class="lumiere-confirm-divider"></div>
+              <div class="lumiere-confirm-row lumiere-confirm-deadline"><span>Cancellation Deadline</span><span id="lumiere-confirm-deadline">Wed Feb 18 • 2:00 PM</span></div>
+              <p class="lumiere-confirm-print" id="lumiere-confirm-print">Deposits are processed securely via Stripe. Your $50 will be applied to your $200 service total.</p>
+            </div>
+
+            <h3 class="lumiere-form-headline">Payment Details</h3>
+            <form class="lumiere-payment-form" id="lumiere-payment-form">
+              <label class="lumiere-field">
+                <span>Full Name on Card</span>
+                <input type="text" name="cardName" class="lumiere-input" placeholder="e.g. Sarah Chen" autocomplete="cc-name">
+              </label>
+              <label class="lumiere-field">
+                <span>Card Number</span>
+                <div class="lumiere-card-input-wrap">
+                  <input type="text" name="cardNumber" class="lumiere-input" placeholder="4242 4242 4242 4242" inputmode="numeric" maxlength="19" autocomplete="cc-number">
+                  <span class="lumiere-card-icon" aria-hidden="true">Visa</span>
+                </div>
+              </label>
+              <div class="lumiere-field-row">
+                <label class="lumiere-field">
+                  <span>Expiry Date</span>
+                  <input type="text" name="expiry" class="lumiere-input" placeholder="MM / YY" inputmode="numeric" maxlength="7" autocomplete="cc-exp">
+                </label>
+                <label class="lumiere-field">
+                  <span>CVC</span>
+                  <input type="text" name="cvc" class="lumiere-input" placeholder="123" inputmode="numeric" maxlength="4" autocomplete="cc-csc">
+                </label>
+              </div>
+              <label class="lumiere-field">
+                <span>Billing Zip Code</span>
+                <input type="text" name="zip" class="lumiere-input" placeholder="37203" inputmode="numeric" maxlength="10" autocomplete="postal-code">
+              </label>
+              <button type="submit" class="lumiere-pay-btn" id="lumiere-pay-btn"><span class="lumiere-pay-btn-text">Pay $50 Deposit</span><span class="lumiere-pay-btn-spinner" aria-hidden="true"></span></button>
+            </form>
+
+            <div class="lumiere-trust-row">
+              <span>🔒 Secured by Stripe</span>
+              <span class="lumiere-trust-sep">|</span>
+              <span>256-bit encryption</span>
+              <span class="lumiere-trust-sep">|</span>
+              <span>Lumière never stores card data</span>
+            </div>
+            <p class="lumiere-stripe-venu-lockup">Stripe · Venu+</p>
+
+            <div class="lumiere-what-happens-wrap">
+              <button type="button" class="lumiere-what-happens-toggle" id="lumiere-what-happens-toggle" aria-expanded="false" aria-controls="lumiere-what-happens-content">
+                <span>What happens after I pay?</span>
+                <span class="lumiere-what-happens-chevron" aria-hidden="true"></span>
+              </button>
+              <div class="lumiere-what-happens-content" id="lumiere-what-happens-content" hidden>
+                <ol class="lumiere-what-happens-list">
+                  <li>Instant confirmation text to your phone</li>
+                  <li>Reminder sent Feb 18 before your cancellation deadline</li>
+                  <li>Day-of reminder 2 hours before</li>
+                  <li>Your Lumière portal activates — view history, manage appointments, pay balance early</li>
+                  <li>Post-visit: leave a review, rebook with one tap</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <aside class="lumiere-venu-callout" id="lumiere-venu-callout">
+            <p class="lumiere-venu-callout-text">⚡ This deposit is automatically enforced by Venu+. If Sarah cancels after her deadline, the deposit is retained automatically. No phone calls. No awkward conversations. Just your policy, working for you.</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Success state -->
+      <section class="lumiere-success-section" id="lumiere-success-section" aria-live="polite" hidden>
+        <div class="lumiere-success-confetti" id="lumiere-success-confetti" aria-hidden="true"></div>
+        <div class="lumiere-success-check-wrap">
+          <svg class="lumiere-success-check-svg" viewBox="0 0 52 52" aria-hidden="true">
+            <circle class="lumiere-success-check-circle" cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path class="lumiere-success-check-path" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M14 27 l8 8 16-18"/>
+          </svg>
+        </div>
+        <h2 class="lumiere-success-headline">You're booked at Lumière</h2>
+        <p class="lumiere-success-sub">Confirmation sent to your phone</p>
+        <div class="lumiere-success-recap" id="lumiere-success-recap">
+          <p class="lumiere-success-recap-line"><span id="lumiere-success-service">Balayage</span> · <span id="lumiere-success-date">Wed Feb 19</span> · <span id="lumiere-success-time">2:00 PM</span></p>
+          <p class="lumiere-success-recap-line">Deposit paid: <span id="lumiere-success-deposit">$50</span> ✓</p>
+          <p class="lumiere-success-recap-line">Balance due at appointment: <span id="lumiere-success-balance">$150</span></p>
+          <p class="lumiere-success-recap-line">Cancellation deadline: <span id="lumiere-success-deadline">Feb 18 at 2:00 PM</span></p>
+        </div>
+        <div class="lumiere-success-actions">
+          <a href="#" class="lumiere-success-btn lumiere-success-btn-secondary" id="lumiere-success-calendar">Add to Calendar</a>
+          <a href="#lumiere-customer-portal" class="lumiere-success-btn lumiere-success-btn-primary" id="lumiere-success-portal">View My Lumière Portal</a>
+        </div>
+      </section>
+
+      <!-- Customer Portal (after payment success) -->
+      <section class="lumiere-portal-section" id="lumiere-customer-portal" aria-labelledby="lumiere-portal-heading" hidden>
+        <header class="lumiere-portal-header">
+          <h2 id="lumiere-portal-heading" class="lumiere-portal-title">My Lumière Portal</h2>
+          <div class="lumiere-portal-user">
+            <span class="lumiere-portal-avatar" aria-hidden="true">SM</span>
+            <span class="lumiere-portal-name">Sarah M.</span>
+          </div>
+        </header>
+        <div class="lumiere-portal-rule" aria-hidden="true"></div>
+
+        <nav class="lumiere-portal-tabs" role="tablist" aria-label="Portal sections">
+          <button type="button" class="lumiere-portal-tab is-active" role="tab" aria-selected="true" aria-controls="lumiere-tab-upcoming" id="lumiere-tab-btn-upcoming">Upcoming</button>
+          <button type="button" class="lumiere-portal-tab" role="tab" aria-selected="false" aria-controls="lumiere-tab-history" id="lumiere-tab-btn-history">History</button>
+          <button type="button" class="lumiere-portal-tab" role="tab" aria-selected="false" aria-controls="lumiere-tab-payments" id="lumiere-tab-btn-payments">Payments</button>
+          <button type="button" class="lumiere-portal-tab" role="tab" aria-selected="false" aria-controls="lumiere-tab-rebook" id="lumiere-tab-btn-rebook">Rebook</button>
+        </nav>
+
+        <!-- Tab 1: Upcoming -->
+        <div class="lumiere-portal-panel" id="lumiere-tab-upcoming" role="tabpanel" aria-labelledby="lumiere-tab-btn-upcoming">
+          <div class="lumiere-upcoming-card" id="lumiere-upcoming-card">
+            <p class="lumiere-upcoming-badge">Next Appointment</p>
+            <h3 class="lumiere-upcoming-service" id="lumiere-portal-upcoming-service">Balayage</h3>
+            <p class="lumiere-upcoming-datetime" id="lumiere-portal-upcoming-datetime">Wednesday, February 19  •  2:00 PM</p>
+            <p class="lumiere-upcoming-location">Lumière Hair Studio, West Nashville</p>
+            <div class="lumiere-upcoming-divider"></div>
+            <p class="lumiere-upcoming-deposit" id="lumiere-portal-upcoming-deposit">Deposit Paid: $50 ✓</p>
+            <p class="lumiere-upcoming-balance" id="lumiere-portal-upcoming-balance">Balance Due at Appointment: $150</p>
+            <div class="lumiere-upcoming-divider"></div>
+            <p class="lumiere-upcoming-deadline-label">Cancellation Deadline:</p>
+            <p class="lumiere-upcoming-deadline" id="lumiere-portal-upcoming-deadline">Wed Feb 18 at 2:00 PM</p>
+            <p class="lumiere-upcoming-countdown" id="lumiere-portal-countdown">—</p>
+            <div class="lumiere-upcoming-actions">
+              <button type="button" class="lumiere-upcoming-btn lumiere-upcoming-btn-outline">Reschedule Appointment</button>
+              <button type="button" class="lumiere-upcoming-btn lumiere-upcoming-btn-outline" id="lumiere-cancel-appt-btn">Cancel Appointment</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: History -->
+        <div class="lumiere-portal-panel" id="lumiere-tab-history" role="tabpanel" aria-labelledby="lumiere-tab-btn-history" hidden>
+          <h3 class="lumiere-portal-panel-head">Your Visit History</h3>
+          <ul class="lumiere-history-list">
+            <li class="lumiere-history-item">
+              <div class="lumiere-history-top">
+                <span class="lumiere-history-date">January 5, 2026</span>
+                <span class="lumiere-history-price">$85.00  •  Paid ✓</span>
+              </div>
+              <p class="lumiere-history-service">Women's Cut + Style</p>
+              <a href="#" class="lumiere-history-rebook">Rebook this service →</a>
+            </li>
+            <li class="lumiere-history-item">
+              <div class="lumiere-history-top">
+                <span class="lumiere-history-date">November 12, 2025</span>
+                <span class="lumiere-history-price">$175.00  •  Paid ✓</span>
+              </div>
+              <p class="lumiere-history-service">Full Highlights</p>
+              <a href="#" class="lumiere-history-rebook">Rebook this service →</a>
+            </li>
+            <li class="lumiere-history-item">
+              <div class="lumiere-history-top">
+                <span class="lumiere-history-date">October 1, 2025</span>
+                <span class="lumiere-history-price">$65.00  •  Paid ✓</span>
+              </div>
+              <p class="lumiere-history-service">Toning/Gloss</p>
+              <a href="#" class="lumiere-history-rebook">Rebook this service →</a>
+            </li>
+          </ul>
+          <p class="lumiere-history-total">Total spent at Lumière: $325</p>
+          <p class="lumiere-history-thanks">Thank you for being a loyal client</p>
+        </div>
+
+        <!-- Tab 3: Payments -->
+        <div class="lumiere-portal-panel" id="lumiere-tab-payments" role="tabpanel" aria-labelledby="lumiere-tab-btn-payments" hidden>
+          <h3 class="lumiere-portal-panel-head">Payment Summary</h3>
+          <div class="lumiere-balance-card">
+            <p class="lumiere-balance-venu-badge">⚡ Venu+ Feature</p>
+            <p class="lumiere-balance-label">Balance Due at Appointment</p>
+            <p class="lumiere-balance-amount" id="lumiere-portal-balance-amount">$150.00</p>
+            <p class="lumiere-balance-due" id="lumiere-portal-balance-due">Due: Wednesday, February 19</p>
+            <button type="button" class="lumiere-balance-pay-btn">Pay Balance Early</button>
+            <p class="lumiere-balance-note">Pay before your appointment and skip the checkout process</p>
+          </div>
+          <div class="lumiere-payment-history">
+            <p class="lumiere-payment-history-head">Payment History</p>
+            <ul class="lumiere-payment-rows">
+              <li class="lumiere-payment-row"><span class="lumiere-payment-date">Feb 17, 2026</span><span class="lumiere-payment-desc">Balayage Deposit</span><span class="lumiere-payment-amt">-$50.00</span><span class="lumiere-payment-status">✓ Paid</span></li>
+              <li class="lumiere-payment-row"><span class="lumiere-payment-date">Jan 5, 2026</span><span class="lumiere-payment-desc">Cut + Style</span><span class="lumiere-payment-amt">-$85.00</span><span class="lumiere-payment-status">✓ Paid</span></li>
+              <li class="lumiere-payment-row"><span class="lumiere-payment-date">Nov 12, 2025</span><span class="lumiere-payment-desc">Full Highlights</span><span class="lumiere-payment-amt">-$175.00</span><span class="lumiere-payment-status">✓ Paid</span></li>
+              <li class="lumiere-payment-row"><span class="lumiere-payment-date">Oct 1, 2025</span><span class="lumiere-payment-desc">Toning/Gloss</span><span class="lumiere-payment-amt">-$65.00</span><span class="lumiere-payment-status">✓ Paid</span></li>
+            </ul>
+            <p class="lumiere-payment-total">Total paid to Lumière: $375.00</p>
+            <p class="lumiere-payment-stripe">All payments processed securely via Stripe</p>
+          </div>
+        </div>
+
+        <!-- Tab 4: Rebook -->
+        <div class="lumiere-portal-panel" id="lumiere-tab-rebook" role="tabpanel" aria-labelledby="lumiere-tab-btn-rebook" hidden>
+          <p class="lumiere-rebook-venu-badge">⚡ Clients rebook in one tap with Venu+</p>
+          <h3 class="lumiere-portal-panel-head">Book Your Next Visit</h3>
+          <p class="lumiere-portal-panel-sub">Based on your history</p>
+          <div class="lumiere-rebook-cards">
+            <div class="lumiere-rebook-card lumiere-rebook-card-featured">
+              <p class="lumiere-rebook-card-label">Book again</p>
+              <h4 class="lumiere-rebook-card-service">Balayage — $200</h4>
+              <p class="lumiere-rebook-card-note">You loved this last time</p>
+              <p class="lumiere-rebook-card-slots">Next available slots:</p>
+              <ul class="lumiere-rebook-slots-list">
+                <li>Mar 5 at 11:00 AM</li>
+                <li>Mar 7 at 2:00 PM</li>
+                <li>Mar 12 at 10:00 AM</li>
+              </ul>
+              <button type="button" class="lumiere-rebook-btn lumiere-rebook-btn-primary">Book Now</button>
+            </div>
+            <div class="lumiere-rebook-card">
+              <h4 class="lumiere-rebook-card-service">Women's Cut + Style — $85</h4>
+              <p class="lumiere-rebook-card-note">Your last cut was 6 weeks ago</p>
+              <button type="button" class="lumiere-rebook-btn lumiere-rebook-btn-outline">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SMS Timeline (collapsible) -->
+        <div class="lumiere-sms-timeline-wrap">
+          <button type="button" class="lumiere-sms-timeline-toggle" id="lumiere-sms-toggle" aria-expanded="false" aria-controls="lumiere-sms-content">
+            <span>Your appointment reminders</span>
+            <span class="lumiere-sms-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="lumiere-sms-timeline-content" id="lumiere-sms-content" hidden>
+            <div class="lumiere-sms-timeline">
+              <div class="lumiere-sms-event lumiere-sms-event-sent">
+                <span class="lumiere-sms-dot" aria-hidden="true"></span>
+                <div class="lumiere-sms-event-body">
+                  <p class="lumiere-sms-event-title">Booking Confirmed <span class="lumiere-sms-event-badge">Sent – Feb 17</span></p>
+                  <div class="lumiere-sms-bubble">
+                    <p>Hi Sarah! Your Balayage is confirmed at Lumière for Wed Feb 19 at 2:00 PM. $50 deposit received ✓ Balance due at appointment: $150. Questions? Reply anytime. – Lumière Hair Studio</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lumiere-sms-event">
+                <span class="lumiere-sms-dot" aria-hidden="true"></span>
+                <div class="lumiere-sms-event-body">
+                  <p class="lumiere-sms-event-title">Cancellation Deadline Reminder <span class="lumiere-sms-event-badge lumiere-sms-badge-scheduled">Sends Feb 18 at 12:00 PM</span></p>
+                  <div class="lumiere-sms-bubble lumiere-sms-bubble-scheduled">
+                    <p>Reminder: Your free cancellation window for your Wed Feb 19 appointment closes TODAY at 2:00 PM. After 2pm: $50 deposit non-refundable. Need to reschedule? Reply now. – Lumière</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lumiere-sms-event">
+                <span class="lumiere-sms-dot" aria-hidden="true"></span>
+                <div class="lumiere-sms-event-body">
+                  <p class="lumiere-sms-event-title">24 Hour Reminder <span class="lumiere-sms-event-badge lumiere-sms-badge-scheduled">Sends Feb 18 at 2:00 PM</span></p>
+                  <div class="lumiere-sms-bubble lumiere-sms-bubble-scheduled">
+                    <p>See you tomorrow! Balayage with Lumière Wed Feb 19 at 2:00 PM 📍 2847 Charlotte Ave, Nashville Reply C to confirm. – Lumière</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lumiere-sms-event">
+                <span class="lumiere-sms-dot" aria-hidden="true"></span>
+                <div class="lumiere-sms-event-body">
+                  <p class="lumiere-sms-event-title">Day-Of Reminder <span class="lumiere-sms-event-badge lumiere-sms-badge-scheduled">Sends Feb 19 at 12:00 PM</span></p>
+                  <div class="lumiere-sms-bubble lumiere-sms-bubble-scheduled">
+                    <p>Your 2:00 PM appointment is in 2 hours! We're at 2847 Charlotte Ave, Nashville. Free parking in rear lot. Balance due today: $150 See you soon! – Lumière Hair Studio</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lumiere-sms-event">
+                <span class="lumiere-sms-dot" aria-hidden="true"></span>
+                <div class="lumiere-sms-event-body">
+                  <p class="lumiere-sms-event-title">Post-Visit Follow Up <span class="lumiere-sms-event-badge lumiere-sms-badge-scheduled">Sends Feb 19 at 6:00 PM</span></p>
+                  <div class="lumiere-sms-bubble lumiere-sms-bubble-scheduled">
+                    <p>Thank you for visiting Lumière! ✨ We hope you love your new look. Leave us a review: [link] Ready to book again? Reply BOOK – Lumière Hair Studio</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lumiere-sms-venu-callout">
+              <p>⚡ All of this runs automatically with Venu+</p>
+              <p>No manual follow-ups. No chasing deposits. No awkward cancellation conversations. Just your business, running professionally.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo footer -->
+        <footer class="lumiere-demo-footer">
+          <p class="lumiere-demo-footer-head">You're viewing a Venu+ demo for Lumière Hair Studio</p>
+          <p class="lumiere-demo-footer-body">Venu+ includes booking, deposit collection, cancellation enforcement, customer portal, payment history, and automated reminders.</p>
+          <p class="lumiere-demo-footer-price">Everything you just experienced costs $99/month with Venu+.</p>
+          <p class="lumiere-demo-footer-cta-text">→ Get Venu+ for your business</p>
+          <a href="venu.html#pricing" class="lumiere-demo-footer-btn">Get Venu+</a>
+        </footer>
+      </section>
+
+      <!-- Cancel appointment modal -->
+      <div class="lumiere-modal-overlay" id="lumiere-cancel-modal" role="dialog" aria-modal="true" aria-labelledby="lumiere-cancel-modal-title" hidden>
+        <div class="lumiere-modal">
+          <h3 id="lumiere-cancel-modal-title" class="lumiere-modal-title">Cancel Your Appointment?</h3>
+          <p class="lumiere-modal-deadline">Your cancellation deadline is <strong id="lumiere-cancel-modal-deadline">Wed Feb 18 at 2:00 PM</strong>.</p>
+          <div class="lumiere-modal-policy">
+            <p><strong>Cancelling before this time:</strong><br>→ Full $50 deposit refunded</p>
+            <p><strong>Cancelling after this time:</strong><br>→ $50 deposit forfeited per Lumière's booking policy</p>
+          </div>
+          <p class="lumiere-modal-question">Are you sure you want to cancel?</p>
+          <div class="lumiere-modal-actions">
+            <button type="button" class="lumiere-modal-btn lumiere-modal-btn-keep" id="lumiere-cancel-modal-keep">Keep My Appointment</button>
+            <div class="lumiere-modal-cancel-wrap">
+              <span class="lumiere-modal-venu-badge">⚡ Policy enforced by Venu+</span>
+              <button type="button" class="lumiere-modal-btn lumiere-modal-btn-cancel" id="lumiere-cancel-modal-confirm">Cancel Anyway</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="lumiere-total-bar" id="lumiere-total-bar" role="status" aria-live="polite">
+      <div class="lumiere-total-bar-inner">
+        <p class="lumiere-total-bar-text" id="lumiere-total-text">Select a service to continue</p>
+        <button type="button" class="lumiere-total-bar-btn" id="lumiere-select-time-btn" disabled>Select Your Time →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to demos: floating pill -->
+  <a href="venu-demos.html" class="lumiere-back-pill">← Back to Venu demos</a>
+
+  <script src="venu-demo-lumiere.js"></script>
+  <script>
+    (function() {
+      var toggle = document.getElementById('lumiere-whats-toggle');
+      var content = document.getElementById('lumiere-whats-list');
+      var wrap = toggle && toggle.closest('.lumiere-whats-included-wrap');
+      if (toggle && content) {
+        toggle.addEventListener('click', function() {
+          var open = content.hidden;
+          content.hidden = !open;
+          toggle.setAttribute('aria-expanded', open);
+          if (wrap) wrap.classList.toggle('is-open', open);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -12,10 +12,9 @@
   <link rel="stylesheet" href="venu-demo-apex.css">
 </head>
 <body class="apex-portal-body">
-  <!-- Demo banner -->
-  <div class="apex-demo-banner">
-    <span class="apex-demo-banner-text">👀 This is a live demo of Venu. Want this for your business?</span>
-    <a href="venu.html#pricing" class="apex-demo-banner-cta">Get your Venu</a>
+  <!-- Demo banner: sticky, 40px, unobtrusive -->
+  <div class="apex-demo-banner" id="apex-demo-banner">
+    <span class="apex-demo-banner-text">👀 Venu Demo | Get your Venu → <a href="https://venu.app" class="apex-demo-banner-cta" target="_blank" rel="noopener">venu.app</a></span>
   </div>
   <!-- Top accent bar -->
   <div class="apex-accent-bar" aria-hidden="true"></div>
@@ -41,7 +40,7 @@
         </div>
         <div class="apex-powered">
           <a href="venu-demos.html" class="apex-back-demos">← Demos</a>
-          <span class="apex-powered-label">Powered by <a href="venu.html" class="apex-powered-link">Venu</a></span>
+          <span class="apex-powered-label">Powered by <a href="venu.html" class="apex-powered-link">Venu</a> — booking + SMS only</span>
         </div>
       </div>
     </header>
@@ -299,6 +298,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Back to demos: floating pill -->
+  <a href="venu-demos.html" class="apex-back-pill">← Back to Venu demos</a>
 
   <script src="venu-demo-apex.js"></script>
 </body>

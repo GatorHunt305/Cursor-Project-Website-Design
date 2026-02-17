@@ -56,8 +56,6 @@ a:hover { text-decoration: underline; }
 .site-header .site-nav-toggle { color: var(--white); }
 .site-header .logo:hover { color: var(--sand-tan); }
 .site-header .site-nav a:not(.nav-cta):not(.nav-cta-venu):hover { color: var(--sand-tan); }
-.site-header .logo-icon { background-color: var(--white); }
-.site-header .logo:hover .logo-icon { background-color: var(--sand-tan); }
 
 .site-header-scrolled {
   background: rgba(18, 52, 59, 0.45);
@@ -72,8 +70,23 @@ a:hover { text-decoration: underline; }
 
 .site-header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-logo); font-size: 1.4rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; min-height: 44px; }
-.logo-icon { display: inline-block; width: 6rem; height: 6rem; flex-shrink: 0; vertical-align: middle; background-color: var(--primary); mask: url("h4-logo.png") center / contain no-repeat; -webkit-mask: url("h4-logo.png") center / contain no-repeat; transform-origin: center center; }
-.logo:hover .logo-icon { background-color: var(--primary-dark); }
+.logo-icon {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+  object-fit: contain;
+  transform-origin: center center;
+}
+.site-header .logo-icon {
+  width: 5rem;
+  height: 5rem;
+  filter: brightness(0) invert(1);
+}
+.site-header .logo:hover .logo-icon { opacity: 0.85; }
+.logo:hover .logo-icon { opacity: 0.9; }
+.site-footer .footer-logo { filter: brightness(0); }
 /* H and 4 on same baseline, like normal text on lined paper */
 .logo .logo-num {
   vertical-align: baseline;
@@ -763,7 +776,12 @@ form .btn { margin-top: 0.25rem; }
   .site-nav .nav-cta { margin: 0.5rem 1rem 0; padding: 0.65rem 1rem; text-align: center; border-radius: 8px; color: var(--night-blue-shadow); }
   .site-nav .nav-cta-venu { color: #fff; }
   .logo { font-size: 1.2rem; }
-  .logo-icon { width: 4rem; height: 4rem; }
+  .logo-icon { width: 2rem; height: 2rem; }
+  .site-header .logo-icon { width: 4rem; height: 4rem; }
+}
+.site-footer .footer-logo {
+  width: 3rem;
+  height: 3rem;
 }
 
 @media (max-width: 640px) {

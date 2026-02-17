@@ -191,7 +191,10 @@
 
   function goToStep2() {
     state.currentStep = 2;
-    if (step2Section) step2Section.hidden = false;
+    if (step2Section) {
+      step2Section.hidden = false;
+      step2Section.classList.add('apex-step-enter');
+    }
     if (step1El) {
       step1El.classList.remove('is-current');
       step1El.classList.add('is-complete');
@@ -260,6 +263,7 @@
     if (step3El) step3El.classList.add('is-current');
     if (step3Section) {
       step3Section.hidden = false;
+      step3Section.classList.add('apex-step-enter');
       step3Section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     updateSummaryCard();
@@ -336,6 +340,7 @@
       if (step3Section) step3Section.hidden = true;
       if (successSection) {
         successSection.hidden = false;
+        successSection.classList.add('apex-step-enter');
         successSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       if (successSummaryEl) {
