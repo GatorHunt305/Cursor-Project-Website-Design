@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="venu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demos | Venu - See It In Action</title>
+  <meta name="description" content="Try live demo portals built with Venu. See how booking and reminders look for real businesses.">
+  <link rel="icon" type="image/svg+xml" href="venu-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="venu.css">
+</head>
+<body class="venu-body">
+  <header class="venu-header" id="venu-header">
+    <div class="venu-header-inner">
+      <a href="venu.html" class="venu-logo font-display">Venu</a>
+      <button type="button" class="venu-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="venu-nav" id="venu-nav-toggle"></button>
+      <nav class="venu-nav" id="venu-nav" aria-label="Main">
+        <a href="venu.html#how-it-works">How it works</a>
+        <a href="venu.html#pricing">Pricing</a>
+        <a href="venu.html#examples">Examples</a>
+        <a href="venu-demos.html" class="venu-nav-active">Demos</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="venu.html#pricing" class="venu-cta-btn">Get your Venu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="venu-section venu-demos-hero">
+      <div class="venu-container">
+        <h1 class="venu-demos-title font-display">Demos</h1>
+        <p class="venu-lead venu-demos-lead">See what a Venu portal looks like in the wild. Each demo is a real-style booking page—try the flow yourself.</p>
+      </div>
+    </section>
+
+    <section class="venu-section venu-section-alt">
+      <div class="venu-container">
+        <div class="venu-demos-grid">
+          <article class="venu-demo-card">
+            <div class="venu-demo-card-preview">
+              <span class="venu-demo-card-badge">Venu basic</span>
+              <div class="venu-demo-card-mock">
+                <div class="venu-demo-card-mock-bar"></div>
+                <div class="venu-demo-card-mock-header">
+                  <span class="venu-demo-card-mock-wordmark">APEX</span>
+                  <span class="venu-demo-card-mock-tagline">Mobile Detailing</span>
+                </div>
+                <div class="venu-demo-card-mock-meta">
+                  <span>Serving Greater Austin, TX</span>
+                  <span>★★★★★ 4.9</span>
+                </div>
+              </div>
+            </div>
+            <div class="venu-demo-card-body">
+              <h2 class="venu-demo-card-title font-display">APEX Mobile Detailing</h2>
+              <p class="venu-demo-card-desc">Booking + SMS reminders. Dark, premium automotive vibe—see how a mobile detailer’s portal can look.</p>
+              <a href="venu-demo-apex.html" class="venu-demo-card-cta">Open demo →</a>
+            </div>
+          </article>
+          <!-- More demo cards can be added here later -->
+        </div>
+      </div>
+    </section>
+
+    <section class="venu-section">
+      <div class="venu-container venu-container-narrow">
+        <p class="venu-lead">Want a portal like this for your business? <a href="venu.html#pricing">Get your Venu</a> or <a href="index.html#contact">contact us</a>.</p>
+      </div>
+    </section>
+
+    <a href="index.html#contact" class="venu-chat-btn" aria-label="Chat with us">Chat with us</a>
+
+    <footer class="venu-footer">
+      <div class="venu-footer-main">
+        <div class="venu-footer-brand">
+          <a href="venu.html" class="venu-logo font-display">Venu</a>
+          <p class="venu-footer-tagline">It's your Venu</p>
+        </div>
+        <nav class="venu-footer-links" aria-label="Footer">
+          <a href="venu.html#how-it-works">How it works</a>
+          <a href="venu.html#pricing">Pricing</a>
+          <a href="venu.html#examples">Examples</a>
+          <a href="venu-demos.html">Demos</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <p class="venu-footer-powered">
+          Powered by <a href="index.html">H4 Services</a>
+        </p>
+      </div>
+      <div class="venu-footer-bottom">
+        <p class="venu-footer-copy">© 2025 Venu. All rights reserved.</p>
+        <p class="venu-footer-built">Built for trade businesses</p>
+      </div>
+    </footer>
+  </main>
+  <script>
+    (function() {
+      var header = document.getElementById('venu-header');
+      var toggle = document.getElementById('venu-nav-toggle');
+      var nav = document.getElementById('venu-nav');
+      function onScroll() {
+        if (header) header.classList.toggle('venu-header-scrolled', window.scrollY > 30);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

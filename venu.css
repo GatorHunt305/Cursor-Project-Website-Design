@@ -1336,3 +1336,100 @@
 @media (max-width: 640px) {
   .venu-hero-btns a { width: 100%; text-align: center; min-height: 48px; }
 }
+
+/* —— Demos page (venu-demos.html) —— */
+.venu-demos-hero { padding-bottom: 2rem; }
+.venu-demos-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: #1c1917;
+  margin: 0 0 0.5rem;
+}
+.venu-demos-lead { max-width: 36rem; }
+.venu-demos-grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 640px) {
+  .venu-demos-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+}
+.venu-demo-card {
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.venu-demo-card:hover {
+  box-shadow: 0 12px 24px -8px rgba(0,0,0,0.12);
+  border-color: #d6d3d1;
+}
+.venu-demo-card-preview {
+  position: relative;
+  background: #0D0D0D;
+  min-height: 140px;
+  padding: 1rem 1.25rem;
+}
+.venu-demo-card-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.6);
+}
+.venu-demo-card-mock-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FF6B00;
+}
+.venu-demo-card-mock-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.venu-demo-card-mock-wordmark {
+  font-family: 'Barlow Condensed', 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.venu-demo-card-mock-tagline {
+  font-size: 0.75rem;
+  color: rgba(192,192,192,0.9);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.venu-demo-card-mock-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: rgba(192,192,192,0.8);
+}
+.venu-demo-card-body { padding: 1.25rem 1.5rem; }
+.venu-demo-card-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #1c1917;
+  margin: 0 0 0.5rem;
+}
+.venu-demo-card-desc {
+  font-size: 0.9375rem;
+  color: #57534e;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+.venu-demo-card-cta {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--venu-red);
+  text-decoration: none;
+}
+.venu-demo-card-cta:hover { color: var(--venu-red-dark); text-decoration: underline; }
+.venu-nav-active { font-weight: 600; }

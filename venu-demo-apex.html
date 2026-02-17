@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="apex-portal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book | APEX Mobile Detailing</title>
+  <meta name="description" content="Book your mobile detailing appointment with APEX. Serving Greater Austin, TX.">
+  <link rel="icon" type="image/svg+xml" href="venu-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="venu-demo-apex.css">
+</head>
+<body class="apex-portal-body">
+  <!-- Demo banner -->
+  <div class="apex-demo-banner">
+    <span class="apex-demo-banner-text">👀 This is a live demo of Venu. Want this for your business?</span>
+    <a href="venu.html#pricing" class="apex-demo-banner-cta">Get your Venu</a>
+  </div>
+  <!-- Top accent bar -->
+  <div class="apex-accent-bar" aria-hidden="true"></div>
+
+  <div class="apex-page-wrap">
+    <!-- Carbon + grid background (CSS) -->
+    <div class="apex-bg" aria-hidden="true"></div>
+
+    <header class="apex-header">
+      <div class="apex-header-inner">
+        <div class="apex-brand-wrap">
+          <h1 class="apex-wordmark">APEX</h1>
+          <p class="apex-tagline">Mobile Detailing</p>
+          <div class="apex-rule" aria-hidden="true"></div>
+        </div>
+        <div class="apex-header-meta">
+          <span class="apex-badge apex-badge-area">Serving Greater Austin, TX</span>
+          <div class="apex-stars" aria-label="4.9 out of 5 from 127 reviews">
+            <span class="apex-stars-icon" aria-hidden="true">★★★★★</span>
+            <span class="apex-stars-text">4.9 <span class="apex-stars-reviews">(127 reviews)</span></span>
+          </div>
+          <a href="tel:+15125551234" class="apex-phone">(512) 555-1234</a>
+        </div>
+        <div class="apex-powered">
+          <a href="venu-demos.html" class="apex-back-demos">← Demos</a>
+          <span class="apex-powered-label">Powered by <a href="venu.html" class="apex-powered-link">Venu</a></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="apex-main" id="main">
+      <!-- Step indicator -->
+      <nav class="apex-steps" id="apex-steps" aria-label="Booking steps">
+        <a href="#apex-services-heading" class="apex-step apex-step-1 is-current" id="apex-step-1">
+          <span class="apex-step-num">1</span>
+          <span class="apex-step-label">Service</span>
+          <span class="apex-step-check" aria-hidden="true">✓</span>
+        </a>
+        <span class="apex-step-arrow" aria-hidden="true">→</span>
+        <span class="apex-step apex-step-2" id="apex-step-2">
+          <span class="apex-step-num">2</span>
+          <span class="apex-step-label">Schedule</span>
+          <span class="apex-step-check" aria-hidden="true">✓</span>
+        </span>
+        <span class="apex-step-arrow" aria-hidden="true">→</span>
+        <a href="#apex-step3-section" class="apex-step apex-step-3" id="apex-step-3">
+          <span class="apex-step-num">3</span>
+          <span class="apex-step-label">Confirm</span>
+        </a>
+      </nav>
+
+      <section class="apex-services-section" id="apex-step1-section" aria-labelledby="apex-services-heading">
+        <h2 id="apex-services-heading" class="apex-services-headline">Choose Your Service</h2>
+
+        <div class="apex-services-grid" role="group" aria-label="Select a service">
+          <button type="button" class="apex-service-card" data-service="Essential Wash" data-price="75" data-duration="1.5 hrs" data-duration-label="1.5 hrs">
+            <span class="apex-service-card-check" aria-hidden="true"></span>
+            <span class="apex-service-card-icon apex-icon-drop" aria-hidden="true"></span>
+            <span class="apex-service-card-badge">Most Popular</span>
+            <h3 class="apex-service-card-title">Essential Wash</h3>
+            <p class="apex-service-card-price">$75</p>
+            <p class="apex-service-card-duration">1.5 hrs</p>
+            <p class="apex-service-card-desc">Exterior hand wash, wheel cleaning, tire shine, windows cleaned</p>
+          </button>
+
+          <button type="button" class="apex-service-card" data-service="Interior Detail" data-price="120" data-duration="2 hrs" data-duration-label="2 hrs">
+            <span class="apex-service-card-check" aria-hidden="true"></span>
+            <span class="apex-service-card-icon apex-icon-interior" aria-hidden="true"></span>
+            <h3 class="apex-service-card-title">Interior Detail</h3>
+            <p class="apex-service-card-price">$120</p>
+            <p class="apex-service-card-duration">2 hrs</p>
+            <p class="apex-service-card-desc">Full vacuum, steam clean, leather conditioning, odor elimination</p>
+          </button>
+
+          <button type="button" class="apex-service-card" data-service="Full Detail" data-price="185" data-duration="3.5 hrs" data-duration-label="3.5 hrs">
+            <span class="apex-service-card-check" aria-hidden="true"></span>
+            <span class="apex-service-card-icon apex-icon-star" aria-hidden="true"></span>
+            <span class="apex-service-card-badge apex-badge-value">Best Value</span>
+            <h3 class="apex-service-card-title">Full Detail</h3>
+            <p class="apex-service-card-price">$185</p>
+            <p class="apex-service-card-duration">3.5 hrs</p>
+            <p class="apex-service-card-desc">Complete interior + exterior detail, clay bar treatment, wax finish</p>
+          </button>
+
+          <button type="button" class="apex-service-card" data-service="Paint Correction" data-price="350" data-duration="5-6 hrs" data-duration-label="5-6 hrs">
+            <span class="apex-service-card-check" aria-hidden="true"></span>
+            <span class="apex-service-card-icon apex-icon-shield" aria-hidden="true"></span>
+            <span class="apex-service-card-badge apex-badge-premium">Premium</span>
+            <h3 class="apex-service-card-title">Paint Correction</h3>
+            <p class="apex-service-card-price">$350</p>
+            <p class="apex-service-card-duration">5-6 hrs</p>
+            <p class="apex-service-card-desc">Single stage polish, swirl removal, ceramic coating prep</p>
+          </button>
+        </div>
+
+        <p class="apex-services-note">All services performed at your location. We come to you.</p>
+
+        <div class="apex-vehicle-wrap" role="group" aria-label="Vehicle type">
+          <span class="apex-vehicle-label">Vehicle type</span>
+          <div class="apex-vehicle-toggles">
+            <button type="button" class="apex-vehicle-btn is-selected" data-vehicle="Sedan" data-add="0">Sedan</button>
+            <button type="button" class="apex-vehicle-btn" data-vehicle="SUV/Truck" data-add="0">SUV/Truck</button>
+            <button type="button" class="apex-vehicle-btn" data-vehicle="Van/XL" data-add="25">Van/XL (+$25)</button>
+          </div>
+        </div>
+
+        <div class="apex-addons-wrap">
+          <button type="button" class="apex-addons-toggle" aria-expanded="false" aria-controls="apex-addons-list" id="apex-addons-toggle">
+            <span>Enhance Your Detail</span>
+            <span class="apex-addons-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="apex-addons-content" id="apex-addons-list" hidden>
+            <label class="apex-addon-row"><input type="checkbox" class="apex-addon-cb" name="addon" value="Ceramic Coating" data-price="150"> <span>Ceramic Coating +$150</span></label>
+            <label class="apex-addon-row"><input type="checkbox" class="apex-addon-cb" name="addon" value="Headlight Restoration" data-price="50"> <span>Headlight Restoration +$50</span></label>
+            <label class="apex-addon-row"><input type="checkbox" class="apex-addon-cb" name="addon" value="Engine Bay Clean" data-price="75"> <span>Engine Bay Clean +$75</span></label>
+            <label class="apex-addon-row"><input type="checkbox" class="apex-addon-cb" name="addon" value="Pet Hair Removal" data-price="35"> <span>Pet Hair Removal +$35</span></label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 2: Schedule -->
+      <section class="apex-schedule-section" id="apex-step2-section" aria-labelledby="apex-schedule-heading" hidden>
+        <h2 id="apex-schedule-heading" class="apex-schedule-headline">Pick Your Day</h2>
+
+        <div class="apex-calendar-wrap">
+          <div class="apex-calendar-header">
+            <button type="button" class="apex-calendar-prev" id="apex-cal-prev" aria-label="Previous month">‹</button>
+            <h3 class="apex-calendar-month" id="apex-calendar-month">February 2026</h3>
+            <button type="button" class="apex-calendar-next" id="apex-cal-next" aria-label="Next month">›</button>
+          </div>
+          <div class="apex-calendar-weekdays" aria-hidden="true">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div class="apex-calendar-days" id="apex-calendar-days" role="grid" aria-label="February 2026 calendar"></div>
+        </div>
+
+        <div class="apex-times-wrap" id="apex-times-wrap" hidden>
+          <h3 class="apex-times-headline">Pick Your Time</h3>
+          <div class="apex-times-morning">
+            <span class="apex-times-group-label">Morning</span>
+            <div class="apex-time-slots">
+              <button type="button" class="apex-time-slot" data-time="8:00 AM">8:00 AM <span class="apex-time-status">✓ Available</span></button>
+              <button type="button" class="apex-time-slot" data-time="9:30 AM">9:30 AM <span class="apex-time-status">✓ Available</span></button>
+              <button type="button" class="apex-time-slot apex-time-booked" data-time="11:00 AM" disabled>11:00 AM <span class="apex-time-status">— Booked</span></button>
+            </div>
+          </div>
+          <div class="apex-times-afternoon">
+            <span class="apex-times-group-label">Afternoon</span>
+            <div class="apex-time-slots">
+              <button type="button" class="apex-time-slot" data-time="1:00 PM">1:00 PM <span class="apex-time-status">✓ Available</span></button>
+              <button type="button" class="apex-time-slot" data-time="2:30 PM">2:30 PM <span class="apex-time-status">✓ Available</span></button>
+              <button type="button" class="apex-time-slot" data-time="4:00 PM">4:00 PM <span class="apex-time-status">✓ Available</span></button>
+            </div>
+          </div>
+          <div class="apex-times-evening">
+            <span class="apex-times-group-label">Evening</span>
+            <div class="apex-time-slots">
+              <button type="button" class="apex-time-slot apex-time-unavailable" data-time="5:30 PM" disabled>5:30 PM <span class="apex-time-status">— Unavailable</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="apex-schedule-notes">
+          <p class="apex-schedule-note">
+            <span class="apex-note-icon apex-icon-clock" aria-hidden="true"></span>
+            Appointments typically confirmed within 1 hour
+          </p>
+          <p class="apex-schedule-note">
+            <span class="apex-note-icon apex-icon-phone" aria-hidden="true"></span>
+            You'll receive a text confirmation from APEX Detailing
+          </p>
+        </div>
+
+        <button type="button" class="apex-confirm-btn" id="apex-continue-confirm-btn" disabled>Continue to Confirm →</button>
+      </section>
+
+      <!-- Step 3: Confirm -->
+      <section class="apex-confirm-section" id="apex-step3-section" aria-labelledby="apex-confirm-heading" hidden>
+        <h2 id="apex-confirm-heading" class="apex-confirm-headline">Almost done</h2>
+
+        <form class="apex-confirm-form" id="apex-confirm-form" novalidate>
+          <div class="apex-form-row apex-form-row-two">
+            <label class="apex-label">
+              <span>First Name</span>
+              <input type="text" name="firstName" class="apex-input" required placeholder="e.g. Alex">
+            </label>
+            <label class="apex-label">
+              <span>Last Name</span>
+              <input type="text" name="lastName" class="apex-input" required placeholder="e.g. Smith">
+            </label>
+          </div>
+          <label class="apex-label">
+            <span>Phone Number</span>
+            <div class="apex-phone-input-wrap">
+              <span class="apex-phone-flag">+1</span>
+              <input type="tel" name="phone" class="apex-input apex-input-phone" required placeholder="(512) 555-1234">
+            </div>
+          </label>
+          <label class="apex-label">
+            <span>Where should we meet you?</span>
+            <input type="text" name="address" class="apex-input" required placeholder="Street address, city, ZIP">
+          </label>
+          <div class="apex-form-row apex-form-row-three">
+            <label class="apex-label">
+              <span>Year</span>
+              <input type="text" name="vehicleYear" class="apex-input" inputmode="numeric" placeholder="2022">
+            </label>
+            <label class="apex-label">
+              <span>Make</span>
+              <input type="text" name="vehicleMake" class="apex-input" placeholder="Toyota">
+            </label>
+            <label class="apex-label">
+              <span>Model</span>
+              <input type="text" name="vehicleModel" class="apex-input" placeholder="Camry">
+            </label>
+          </div>
+          <label class="apex-label">
+            <span>Anything we should know? <span class="apex-label-hint">(parking instructions, specific concerns)</span></span>
+            <textarea name="notes" class="apex-input apex-textarea" rows="3" placeholder="e.g. Gate code 1234, red truck in driveway"></textarea>
+          </label>
+        </form>
+
+        <div class="apex-summary-card" id="apex-summary-card">
+          <div class="apex-summary-row"><span class="apex-summary-label">Service</span><span class="apex-summary-value" id="apex-summary-service">—</span></div>
+          <div class="apex-summary-row"><span class="apex-summary-label">Vehicle</span><span class="apex-summary-value" id="apex-summary-vehicle">—</span></div>
+          <div class="apex-summary-row"><span class="apex-summary-label">Add-ons</span><span class="apex-summary-value" id="apex-summary-addons">None</span></div>
+          <div class="apex-summary-row"><span class="apex-summary-label">Date</span><span class="apex-summary-value" id="apex-summary-date">—</span></div>
+          <div class="apex-summary-row"><span class="apex-summary-label">Time</span><span class="apex-summary-value" id="apex-summary-time">—</span></div>
+          <div class="apex-summary-row"><span class="apex-summary-label">Duration</span><span class="apex-summary-value" id="apex-summary-duration">—</span></div>
+          <div class="apex-summary-row apex-summary-total"><span class="apex-summary-label">Total</span><span class="apex-summary-value" id="apex-summary-total">—</span></div>
+          <div class="apex-summary-row"><span class="apex-summary-label">Location</span><span class="apex-summary-value" id="apex-summary-location">Your address (entered above)</span></div>
+        </div>
+
+        <div class="apex-reminders-wrap">
+          <p class="apex-reminders-intro">📱 You'll receive these reminders:</p>
+          <ul class="apex-reminders-list" aria-hidden="true">
+            <li>Booking confirmed (immediate)</li>
+            <li>Reminder 24 hours before</li>
+            <li>Reminder 2 hours before</li>
+          </ul>
+          <div class="apex-sms-bubbles">
+            <div class="apex-sms-bubble">
+              <p class="apex-sms-text" id="apex-sms-1">Hi [Name]! Your APEX Detail is confirmed for Thu 2/19 at 2:30pm. We'll come to you at [address]. Questions? Reply to this text. – APEX Mobile Detailing</p>
+            </div>
+            <div class="apex-sms-bubble">
+              <p class="apex-sms-text">Reminder: Your APEX Detail is TOMORROW (Thu 2/19) at 2:30pm. Reply C to confirm or call us to reschedule. – APEX</p>
+            </div>
+            <div class="apex-sms-bubble">
+              <p class="apex-sms-text">See you in 2 hours! Our detailer is heading your way for your 2:30pm appointment. – APEX Mobile Detailing</p>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="apex-book-btn" id="apex-confirm-booking-btn">
+          <span class="apex-book-btn-icon" aria-hidden="true"></span>
+          Confirm Booking
+        </button>
+      </section>
+
+      <!-- Success state (after confirm) -->
+      <section class="apex-success-section" id="apex-success-section" aria-live="polite" hidden>
+        <div class="apex-success-check-wrap">
+          <span class="apex-success-check" aria-hidden="true">✓</span>
+        </div>
+        <h2 class="apex-success-headline">You're booked with APEX!</h2>
+        <p class="apex-success-sub">Check your phone for confirmation text</p>
+        <div class="apex-success-summary" id="apex-success-summary"></div>
+        <div class="apex-success-actions">
+          <a href="#" class="apex-success-btn apex-btn-calendar" id="apex-add-calendar-btn">Add to Calendar</a>
+          <a href="#" class="apex-success-btn apex-btn-share" id="apex-share-link-btn">Share APEX's booking link</a>
+        </div>
+        <p class="apex-success-link-display" id="apex-success-link-display">venu.app/apex-detailing</p>
+      </section>
+    </main>
+
+    <!-- Fixed running total bar -->
+    <div class="apex-total-bar" id="apex-total-bar" role="status" aria-live="polite">
+      <div class="apex-total-bar-inner">
+        <p class="apex-total-bar-text" id="apex-total-text">Select a service to continue</p>
+        <button type="button" class="apex-total-bar-btn" id="apex-choose-time-btn" disabled>Choose Your Time →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="venu-demo-apex.js"></script>
+</body>
+</html>
