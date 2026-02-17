@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="h4-favicon.svg">
   <title>H4Services | Keep Pace In A Digital Age</title>
   <meta name="description" content="H4Services builds and maintains websites for small and underrepresented businesses. Clear pricing, simple navigation, and trusted support.">
   <!-- Link preview (shared in text messages, social, etc.) -->
@@ -20,9 +21,9 @@
   <meta name="twitter:image" content="https://www.h4services.co/og-image.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-home">
   <a href="#main" class="skip-link">Skip to content</a>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-icon" role="img" aria-hidden="true"></span>H<span class="logo-num">4</span> Services</a>
       <button type="button" class="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
@@ -33,6 +34,7 @@
         <a href="contact.html">Contact</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="get-started.html" class="nav-cta">View Pricing</a>
+        <a href="venu.html" class="nav-cta nav-cta-venu">Venu</a>
       </nav>
     </div>
   </header>
@@ -42,9 +44,9 @@
       <div class="container">
         <p class="hero-label">Web design for small business</p>
         <h1>Keep Pace In A Digital Age</h1>
-        <p class="hero-lead">We bridge the gap for businesses underrepresented on the web—turbo charge your engagement and expose your already successful business to more customers and growth.</p>
+        <p class="hero-lead">We get you online so the people already looking for you can find you—and book. Real sites for real businesses, without the corporate runaround.</p>
         <div class="btn-group">
-          <a href="get-started.html" class="btn">Get started</a>
+          <a href="get-started.html" class="btn btn-get-started">Get started</a>
           <a href="case-studies.html" class="btn btn-ghost">See our work</a>
         </div>
       </div>
@@ -52,25 +54,25 @@
 
     <section class="section section--alt problem-solution">
       <div class="container">
-        <h2 class="section-title">Your Business Deserves Better</h2>
-        <p class="section-lead">Too many small businesses are underrepresented online—invisible to customers who search, compare, and book on the web. A quality website changes that.</p>
+        <h2 class="section-title">Your business deserves better</h2>
+        <p class="section-lead">When you're not where customers look, they book someone else. A real site puts you in the game.</p>
         <div class="problem-grid">
           <div class="problem-card">
-            <h3>Underrepresented on the web</h3>
-            <p>When you're hard to find or don't show up where customers look, you miss new clients and repeat business.</p>
+            <h3>Invisible where it counts</h3>
+            <p>No Google listing, no clear way to book, no way to pay a deposit. You lose jobs before the first call.</p>
           </div>
           <div class="problem-card">
-            <h3>What a quality site does</h3>
-            <p>Businesses with a strong web presence see significantly more return customers and captured clientele—you get found, remembered, and chosen.</p>
+            <h3>What changes when you're online</h3>
+            <p>You show up when they search. They see your services and prices, book a slot, and pay—without the back-and-forth.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="work" class="section">
       <div class="container">
-        <h2 class="section-title">Work We've Done</h2>
-        <p class="section-lead">See how we've helped businesses like yours get online with sites that book and sell.</p>
+        <h2 class="section-title">Work we've done</h2>
+        <p class="section-lead">Real sites we built for plumbers, electricians, and service pros—so you can see what you're getting.</p>
         <div class="case-grid">
           <article class="case-card">
             <a href="mock-plumbing.html">
@@ -102,6 +104,16 @@
               </div>
             </a>
           </article>
+          <article class="case-card">
+            <a href="venu.html">
+              <div class="case-card-image" style="background: linear-gradient(135deg, #8B1538 0%, #6B0F2A 100%);"></div>
+              <div class="case-card-body">
+                <span class="case-card-label">Product</span>
+                <h3 class="case-card-title">Venu</h3>
+                <span class="case-card-link">View page →</span>
+              </div>
+            </a>
+          </article>
         </div>
         <p class="case-grid-footer"><a href="case-studies.html" class="btn">View all case studies</a></p>
       </div>
@@ -116,7 +128,7 @@
           </div>
           <div>
             <div class="stats-value" data-count-end="99" data-count-suffix="%">0</div>
-            <div class="stats-label">of customers check a product online before buying</div>
+            <div class="stats-label">of buyers look online before they call</div>
           </div>
           <div>
             <div class="stats-value stats-value--static" data-count-static="24/7">0</div>
@@ -126,11 +138,11 @@
       </div>
     </section>
 
-    <section class="section section--muted">
+    <section id="cta" class="section section--muted">
       <div class="container">
         <div class="cta-block">
-          <h2 class="section-title">Ready To Get A Website That Works?</h2>
-          <p class="section-lead">Get represented online and capture more return customers and new clientele. Pick a plan, get in touch, and get your website.</p>
+          <h2 class="section-title">Ready to get a website that works?</h2>
+          <p class="section-lead">Pick a plan, tell us about your business, and we'll build it. No runaround.</p>
           <div class="btn-group">
             <a href="get-started.html" class="btn">Get started</a>
             <a href="case-studies.html" class="btn btn-ghost">See our work</a>
@@ -146,6 +158,17 @@
       <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
     </div>
   </footer>
+  <a href="contact.html" class="h4-chat-btn" aria-label="Chat with us">Chat with us</a>
+  <script>
+    (function() {
+      var header = document.getElementById('site-header');
+      if (header) {
+        function onScroll() { header.classList.toggle('site-header-scrolled', window.scrollY > 30); }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    })();
+  </script>
   <script>
     (function() {
       var statsSection = document.querySelector('.stats');
@@ -280,6 +303,9 @@
           var open = nav.classList.toggle('is-open');
           btn.setAttribute('aria-expanded', open);
           btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Open menu'); });
         });
       }
       if (document.readyState === 'loading') {

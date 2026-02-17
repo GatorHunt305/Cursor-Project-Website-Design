@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="h4-favicon.svg">
   <title>Why Us | H4Services</title>
   <meta name="description" content="Why choose H4Services over DIY builders or expensive agencies. We build sites you own, optimized for your business—not homework or hype.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-icon" role="img" aria-hidden="true"></span>H<span class="logo-num">4</span> Services</a>
       <button type="button" class="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
@@ -20,6 +21,7 @@
         <a href="contact.html">Contact</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="get-started.html" class="nav-cta">View Pricing</a>
+        <a href="venu.html" class="nav-cta nav-cta-venu">Venu</a>
       </nav>
     </div>
   </header>
@@ -80,6 +82,17 @@
       <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
     </div>
   </footer>
+  <a href="contact.html" class="h4-chat-btn" aria-label="Chat with us">Chat with us</a>
+  <script>
+    (function() {
+      var header = document.getElementById('site-header');
+      if (header) {
+        function onScroll() { header.classList.toggle('site-header-scrolled', window.scrollY > 30); }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    })();
+  </script>
   <script>
     (function() {
       function initNavToggle() {
@@ -90,6 +103,9 @@
           var open = nav.classList.toggle('is-open');
           btn.setAttribute('aria-expanded', open);
           btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Open menu'); });
         });
       }
       if (document.readyState === 'loading') {
