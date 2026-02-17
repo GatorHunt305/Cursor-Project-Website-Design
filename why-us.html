@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Us | H4Services</title>
+  <meta name="description" content="Why choose H4Services over DIY builders or expensive agencies. We build sites you own, optimized for your business—not homework or hype.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-icon" role="img" aria-hidden="true"></span>H<span class="logo-num">4</span> Services</a>
+      <button type="button" class="site-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="why-us.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="get-started.html" class="nav-cta">View Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-about">
+    <section class="page-header">
+      <div class="container why-us-container">
+        <div class="why-us-content why-us-fade">
+          <h1>Why Us</h1>
+          <p>You have options for getting online. Here’s how we’re different—and why we’re built for busy business owners who want results, not <strong>homework</strong> <span class="no-wrap">or <strong>hype</strong>.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt why-us-block">
+      <div class="container why-us-container">
+        <div class="why-us-content why-us-fade">
+          <h2 class="section-title">The Homework</h2>
+          <p class="section-lead">Certain sites offer cheap monthly subscriptions, but they’re DIY templates. Our clients don’t have time for that—they’re running a business. Those plans are limited in customization and keep you tied to their platform.</p>
+<blockquote class="why-us-quote">
+          <p>Those sites are renting furniture. We’re building you a house <span class="no-wrap">you own.</span></p>
+        </blockquote>
+          <p>We design and build your site for you. You get the customization and professional look you need without spending your nights clicking through templates. Your site is yours—we hand it over and maintain it so you can focus on your customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-us-block">
+      <div class="container why-us-container">
+        <div class="why-us-content why-us-fade">
+          <h2 class="section-title">The Hype</h2>
+          <p class="section-lead">With a larger website design agency, that impressive $20K site often looks better in their portfolio than it performs for your business.</p>
+          <blockquote class="why-us-quote">
+            <p>Agencies optimize for awards. We optimize for your schedule being booked.</p>
+          </blockquote>
+          <ul class="values-list">
+            <li><strong>Customization and function at a fraction of the cost</strong> You get the tailored site and features your business needs without agency-level budgets or timelines.</li>
+            <li><strong>Dedicated support—not questions sent to the ether</strong> When you need a change or have a question, you get a real response from someone who knows your site and your goals.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt why-us-block">
+      <div class="container why-us-container">
+        <div class="why-us-content why-us-fade">
+          <h2 class="section-title">The Sweet Spot That Fits Your Business</h2>
+          <p class="section-lead">You don’t have to choose between doing it yourself with limited tools and paying a fortune for an agency. We offer clear pricing, hands-on design and build, and ongoing support so your site works for you—without the DIY grind or the agency bill.</p>
+          <p><a href="get-started.html" class="btn">Get started</a> or <a href="contact.html">contact us</a> to talk about your site.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>H4Services · <a href="contact.html">Contact</a> · <a href="get-started.html">Get started</a></p>
+      <p class="footer-logo-wrap"><span class="logo-icon footer-logo" aria-hidden="true"></span></p>
+    </div>
+  </footer>
+  <script>
+    (function() {
+      function initNavToggle() {
+        var btn = document.querySelector('.site-nav-toggle');
+        var nav = document.getElementById('site-nav') || document.querySelector('.site-nav');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open);
+          btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNavToggle);
+      } else {
+        initNavToggle();
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var logoIcon = document.querySelector('.site-header .logo-icon');
+      if (!logoIcon) return;
+      function updateSpin() {
+        logoIcon.style.transform = 'rotate(' + (window.scrollY * 0.15) + 'deg)';
+      }
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateSpin(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateSpin();
+    })();
+  </script>
+  <script>
+    (function() {
+      var els = document.querySelectorAll('.why-us-fade');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var i = Array.prototype.indexOf.call(els, el);
+            setTimeout(function() { el.classList.add('is-visible'); }, Math.min(i * 80, 240));
+            observer.unobserve(el);
+          }
+        });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
+      els.forEach(function(el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>

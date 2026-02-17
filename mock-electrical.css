@@ -57,8 +57,21 @@ body.mock-theme-sleek a:hover { color: #fbbf24; }
 .mock-theme-sleek .mock-back:hover { color: var(--mock-accent); }
 .mock-theme-sleek .mock-menu-toggle { color: var(--mock-text); }
 @media (max-width: 768px) {
+  .mock-theme-sleek .mock-menu-toggle { display: block; }
+  .mock-theme-sleek .mock-nav {
+    display: none;
+    width: 100%;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--mock-border);
+  }
+  .mock-theme-sleek .mock-nav.is-open { display: flex; }
+  .mock-theme-sleek .mock-nav a,
+  .mock-theme-sleek .mock-nav .mock-back { padding: 0.6rem 0; }
   .mock-theme-sleek .mock-header-phone { order: 3; width: 100%; text-align: center; }
-  .mock-theme-sleek .mock-nav { border-top-color: var(--mock-border); }
 }
 
 /* Hero – background image/graphic with dark overlay so text stays readable */
