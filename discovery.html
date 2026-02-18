@@ -212,6 +212,7 @@
       var plan = (params.get('plan') || 'standard').toLowerCase();
       if (plan !== 'standard' && plan !== 'premium') plan = 'standard';
       var upgradeToPremium = false;
+      var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqedlkkb';
       var STRIPE_LINKS = {
         standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
         premium: 'https://buy.stripe.com/aFaeVdev71EieNterGeZ200'
@@ -225,11 +226,63 @@
         }
         return base;
       }
-      function setCheckoutHref() {
+      function getStripeUrl() {
         var effectivePlan = upgradeToPremium ? 'premium' : plan;
-        completeBtn.href = buildPayUrl(STRIPE_LINKS[effectivePlan], STRIPE_PROMO[effectivePlan]);
+        return buildPayUrl(STRIPE_LINKS[effectivePlan], STRIPE_PROMO[effectivePlan]);
+      }
+      function setCheckoutHref() {
+        completeBtn.href = getStripeUrl();
       }
       setCheckoutHref();
+
+      completeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var stripeUrl = getStripeUrl();
+        if (stripeUrl === '#') return;
+        var btn = completeBtn;
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending…';
+        btn.style.pointerEvents = 'none';
+
+        var features = [];
+        form.querySelectorAll('.discovery-features input[name="features"]:checked').forEach(function(cb) {
+          features.push(cb.value);
+        });
+        var payload = {
+          your_name: document.getElementById('your-name').value.trim(),
+          business_name: document.getElementById('business-name').value.trim(),
+          existing_url: document.getElementById('existing-url').value.trim(),
+          theme: document.getElementById('theme').value,
+          words_describe: document.getElementById('words-describe').value.trim(),
+          inspiration_sites: document.getElementById('inspiration-sites').value.trim(),
+          features: features.join(', '),
+          special_requests: document.getElementById('special-requests').value.trim(),
+          plan: upgradeToPremium ? 'Premium' : (plan === 'premium' ? 'Premium' : 'Standard'),
+          _subject: 'H4 Discovery: ' + document.getElementById('business-name').value.trim() + ' (' + (upgradeToPremium ? 'Premium' : (plan === 'premium' ? 'Premium' : 'Standard')) + ')'
+        };
+        var logoInput = document.getElementById('logo-files');
+        if (logoInput && logoInput.files && logoInput.files.length) {
+          payload.logo_files_count = logoInput.files.length;
+        }
+
+        fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' }
+        })
+          .then(function(res) {
+            if (res.ok) {
+              window.location.href = stripeUrl;
+              return;
+            }
+            throw new Error('Form submit failed');
+          })
+          .catch(function() {
+            btn.textContent = originalText;
+            btn.style.pointerEvents = '';
+            alert('Could not send your details. Please check your connection and try again, or contact us directly.');
+          });
+      });
 
       var premiumModal = document.getElementById('discovery-premium-modal');
       var premiumCheckboxes = form.querySelectorAll('.discovery-features input[data-premium]');

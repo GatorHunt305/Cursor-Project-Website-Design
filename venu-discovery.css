@@ -210,3 +210,42 @@
 .venu-discovery-textarea-block textarea {
   min-height: 120px;
 }
+
+.venu-discovery-field-hint {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.35rem;
+}
+
+.venu-discovery-file-drop {
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  margin-top: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+  color: rgba(255, 255, 255, 0.9);
+}
+.venu-discovery-file-drop:hover,
+.venu-discovery-file-drop.is-dragover {
+  border-color: var(--venu-accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+.venu-discovery-file-drop-text {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+.venu-discovery-file-drop-text label {
+  cursor: pointer;
+  color: var(--venu-accent);
+  text-decoration: underline;
+}
+.venu-discovery-file-drop input[type="file"] {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}

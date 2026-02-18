@@ -27,8 +27,8 @@
     <section class="venu-section venu-section-cream">
       <div class="venu-discovery-form" id="venu-discovery-form">
         <div class="venu-discovery-window">
-          <p class="venu-discovery-step-counter" id="venu-step-counter" aria-live="polite">Step 1 of 4</p>
-          <div class="venu-discovery-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4" aria-label="Form progress">
+          <p class="venu-discovery-step-counter" id="venu-step-counter" aria-live="polite">Step 1 of 5</p>
+          <div class="venu-discovery-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" aria-label="Form progress">
             <div class="venu-discovery-progress-fill" id="venu-discovery-progress-fill"></div>
           </div>
 
@@ -65,6 +65,9 @@
               </select>
               <label for="venu-words">Words that describe your business <span aria-label="required">*</span></label>
               <input type="text" id="venu-words" name="words_describe" required placeholder="e.g. reliable, local, family-owned">
+              <label for="venu-additional-details">Additional details? <span aria-label="required">*</span></label>
+              <p class="venu-discovery-field-hint">The more you share, the quicker we get you a quality product.</p>
+              <textarea id="venu-additional-details" name="additional_details" required rows="5" placeholder="e.g. Brand color (hex #), theme, font preference, aesthetic..."></textarea>
             </div>
             <div class="venu-discovery-actions">
               <button type="button" class="venu-btn venu-btn-back" id="venu-back-2">Back</button>
@@ -73,11 +76,11 @@
           </div>
 
           <div class="venu-discovery-panel" id="venu-panel-3" data-step="3">
-            <h2>Anything Else?</h2>
-            <p class="venu-discovery-panel-desc">Optional — deadlines, special requests, or how you'd like to use your Venu.</p>
-            <div class="venu-form-block venu-discovery-textarea-block">
-              <label for="venu-notes">Notes</label>
-              <textarea id="venu-notes" name="notes" rows="5" placeholder="e.g. Go live by Friday, prefer gold accent..."></textarea>
+            <h2>Logo or Branding</h2>
+            <p class="venu-discovery-panel-desc">Upload your logo or brand assets (optional). PNG, JPG, or SVG.</p>
+            <div class="venu-discovery-file-drop" id="venu-file-drop">
+              <p class="venu-discovery-file-drop-text">Drag files here or <label for="venu-logo-files">browse</label></p>
+              <input type="file" id="venu-logo-files" name="logo_files" accept="image/*,.pdf" multiple>
             </div>
             <div class="venu-discovery-actions">
               <button type="button" class="venu-btn venu-btn-back" id="venu-back-3">Back</button>
@@ -86,11 +89,24 @@
           </div>
 
           <div class="venu-discovery-panel" id="venu-panel-4" data-step="4">
+            <h2>Anything Else?</h2>
+            <p class="venu-discovery-panel-desc">Optional — deadlines, special requests, or how you'd like to use your Venu.</p>
+            <div class="venu-form-block venu-discovery-textarea-block">
+              <label for="venu-notes">Notes</label>
+              <textarea id="venu-notes" name="notes" rows="5" placeholder="e.g. Go live by Friday, prefer gold accent..."></textarea>
+            </div>
+            <div class="venu-discovery-actions">
+              <button type="button" class="venu-btn venu-btn-back" id="venu-back-4">Back</button>
+              <button type="button" class="venu-btn venu-btn-primary" id="venu-next-4">Next</button>
+            </div>
+          </div>
+
+          <div class="venu-discovery-panel" id="venu-panel-5" data-step="5">
             <h2>You're Almost Done</h2>
             <p class="venu-discovery-panel-desc">Review your plan and proceed to secure checkout. We'll use your answers to tailor your Venu.</p>
             <p class="venu-discovery-panel-desc" id="venu-plan-summary"><strong>Plan:</strong> <span id="venu-plan-name">Venu</span></p>
             <div class="venu-discovery-actions">
-              <button type="button" class="venu-btn venu-btn-back" id="venu-back-4">Back</button>
+              <button type="button" class="venu-btn venu-btn-back" id="venu-back-5">Back</button>
               <a href="#" id="venu-complete-checkout" class="venu-btn venu-btn-primary">Complete and Proceed to Payment</a>
             </div>
           </div>
@@ -127,7 +143,7 @@
         var progressFill = document.getElementById('venu-discovery-progress-fill');
         var progressBar = form.querySelector('.venu-discovery-progress');
         var panels = form.querySelectorAll('.venu-discovery-panel');
-        var totalSteps = 4;
+        var totalSteps = 5;
         var currentStep = 1;
 
         function goToStep(step) {
@@ -154,8 +170,10 @@
         function validateStep2() {
           var type = document.getElementById('venu-business-type').value;
           var words = document.getElementById('venu-words').value.trim();
+          var details = document.getElementById('venu-additional-details').value.trim();
           if (!type) { document.getElementById('venu-business-type').focus(); return false; }
           if (!words) { document.getElementById('venu-words').focus(); return false; }
+          if (!details) { document.getElementById('venu-additional-details').focus(); return false; }
           return true;
         }
 
@@ -166,10 +184,12 @@
           if (validateStep2()) goToStep(3);
         });
         document.getElementById('venu-next-3').addEventListener('click', function() { goToStep(4); });
+        document.getElementById('venu-next-4').addEventListener('click', function() { goToStep(5); });
 
         document.getElementById('venu-back-2').addEventListener('click', function() { goToStep(1); });
         document.getElementById('venu-back-3').addEventListener('click', function() { goToStep(2); });
         document.getElementById('venu-back-4').addEventListener('click', function() { goToStep(3); });
+        document.getElementById('venu-back-5').addEventListener('click', function() { goToStep(4); });
 
         var completeBtn = document.getElementById('venu-complete-checkout');
         var planNameEl = document.getElementById('venu-plan-name');
@@ -177,9 +197,59 @@
         var product = (params.get('product') || 'venu').toLowerCase();
         if (product !== 'venu' && product !== 'venu-plus') product = 'venu';
         if (planNameEl) planNameEl.textContent = product === 'venu-plus' ? 'Venu+' : 'Venu';
-        // Stripe placeholder – replace with your Stripe Payment Link when ready
-        var STRIPE_PLACEHOLDER = '#';
-        completeBtn.href = STRIPE_PLACEHOLDER;
+
+        var FORMSPREE_ENDPOINT = 'https://formspree.io/f/maqdbyyo';
+        var STRIPE_LINKS = {
+          venu: 'https://buy.stripe.com/9B66oHev7dn07l1dnCeZ203',
+          'venu-plus': 'https://buy.stripe.com/aFacN53Qt1Ei5cTabqeZ202'
+        };
+        var stripeUrl = STRIPE_LINKS[product] || STRIPE_LINKS.venu;
+
+        completeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var btn = this;
+          var originalText = btn.textContent;
+          btn.textContent = 'Sending…';
+          btn.style.pointerEvents = 'none';
+
+          var planLabel = product === 'venu-plus' ? 'Venu+' : 'Venu';
+          var subject = 'Venu Discovery: ' + document.getElementById('venu-business-name').value.trim() + ' (' + planLabel + ')';
+
+          var formData = new FormData();
+          formData.append('your_name', document.getElementById('venu-your-name').value.trim());
+          formData.append('business_name', document.getElementById('venu-business-name').value.trim());
+          formData.append('email', document.getElementById('venu-email').value.trim());
+          formData.append('business_type', document.getElementById('venu-business-type').value);
+          formData.append('words_describe', document.getElementById('venu-words').value.trim());
+          formData.append('additional_details', document.getElementById('venu-additional-details').value.trim());
+          formData.append('notes', document.getElementById('venu-notes').value.trim());
+          formData.append('plan', planLabel);
+          formData.append('_subject', subject);
+
+          var logoInput = document.getElementById('venu-logo-files');
+          if (logoInput && logoInput.files && logoInput.files.length) {
+            for (var i = 0; i < logoInput.files.length; i++) {
+              formData.append('logo_files', logoInput.files[i]);
+            }
+          }
+
+          fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            body: formData
+          })
+            .then(function(res) {
+              if (res.ok) {
+                window.location.href = stripeUrl;
+                return;
+              }
+              throw new Error('Form submit failed');
+            })
+            .catch(function() {
+              btn.textContent = originalText;
+              btn.style.pointerEvents = '';
+              alert('Could not send your details. Please check your connection and try again, or contact us directly.');
+            });
+        });
 
         goToStep(1);
       }
@@ -187,6 +257,25 @@
         document.addEventListener('DOMContentLoaded', initVenuDiscovery);
       } else {
         initVenuDiscovery();
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var drop = document.getElementById('venu-file-drop');
+      var input = document.getElementById('venu-logo-files');
+      if (drop && input) {
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(function(ev) {
+          drop.addEventListener(ev, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            drop.classList.toggle('is-dragover', ev === 'dragenter' || ev === 'dragover');
+          });
+        });
+        drop.addEventListener('drop', function(e) {
+          var files = e.dataTransfer.files;
+          if (files.length) input.files = files;
+        });
       }
     })();
   </script>
