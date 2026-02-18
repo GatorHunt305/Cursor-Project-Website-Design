@@ -351,7 +351,7 @@
         parts.push('Location: ' + (state.confirmedAddress || '—'));
         successSummaryEl.innerHTML = parts.map(function(p) { return '<p>' + p + '</p>'; }).join('');
       }
-      if (successLinkDisplay) successLinkDisplay.textContent = 'venu.app/apex-detailing';
+      if (successLinkDisplay) successLinkDisplay.textContent = 'Your booking link';
     });
   }
 
@@ -372,7 +372,7 @@
   if (shareLinkBtn) {
     shareLinkBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      var url = 'https://venu.app/apex-detailing';
+      var url = 'https://venu.h4services.co';
       if (navigator.share) {
         navigator.share({ title: 'APEX Mobile Detailing', url: url, text: 'Book your detail with APEX' }).catch(function() { copyAndShow(url); });
       } else {

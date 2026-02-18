@@ -680,6 +680,19 @@ form .btn { margin-top: 0.25rem; }
 }
 .form-radio-option:hover { border-color: var(--primary); }
 .form-radio-option input { margin: 0; width: 1.1rem; height: 1.1rem; accent-color: var(--primary); }
+.form-checkbox-group { display: flex; gap: 1.25rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.form-checkbox-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.form-checkbox-option:hover { border-color: var(--primary); }
+.form-checkbox-option input { margin: 0; width: 1.1rem; height: 1.1rem; accent-color: var(--primary); }
 .form-website-url-wrap { margin-bottom: 1rem; }
 .form-website-url-wrap label { display: block; }
 .form-website-url-wrap input { margin-bottom: 0; }
