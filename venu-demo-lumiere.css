@@ -283,10 +283,19 @@
 /* —— Main + services section —— */
 .lumiere-main {
   max-width: 56rem;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem 6rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 .lumiere-services-section { padding: 2rem 0 3rem; }
+.lumiere-service-menu,
+.lumiere-deposit-wrap,
+.lumiere-schedule-wrap,
+.lumiere-payment-wrap,
+.lumiere-success-section,
+.lumiere-portal-section { max-width: 100%; box-sizing: border-box; }
 
 .lumiere-services-headline {
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -1994,11 +2003,21 @@
   .lumiere-portal-section.lumiere-step-enter { animation: none; }
 }
 
-/* —— Mobile: 390px / 375px, 44px tap targets, no horizontal scroll —— */
-@media (max-width: 390px) {
+/* —— Mobile: prevent right-side cutoff, 44px tap targets, no horizontal scroll —— */
+@media (max-width: 480px) {
   .lumiere-main { padding-left: 1rem; padding-right: 1rem; }
+  .lumiere-header-inner,
+  .lumiere-whats-included-wrap { padding-left: 1rem; padding-right: 1rem; max-width: 100%; }
   .lumiere-service-row { padding: 0.75rem 1rem; min-height: 44px; }
-  .lumiere-calendar-wrap { padding: 1rem; }
+  .lumiere-service-name,
+  .lumiere-service-price { word-break: break-word; overflow-wrap: break-word; }
+}
+@media (max-width: 390px) {
+  .lumiere-main { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .lumiere-header-inner,
+  .lumiere-whats-included-wrap { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .lumiere-service-row { padding: 0.75rem 1rem; min-height: 44px; }
+  .lumiere-calendar-wrap { padding: 1rem; max-width: 100%; }
   .lumiere-calendar-day {
     min-height: 44px;
     min-width: 44px;
@@ -2018,4 +2037,5 @@
   .lumiere-demo-banner { font-size: 0.6875rem; padding: 0 0.75rem; }
   .lumiere-calendar-month { font-size: 1rem; }
   .lumiere-header { padding-left: 1rem; padding-right: 1rem; }
+  .lumiere-main { padding-left: 0.75rem; padding-right: 0.75rem; }
 }

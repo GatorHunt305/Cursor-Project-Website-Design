@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="venu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Next | Venu</title>
+  <meta name="description" content="Next steps after choosing your Venu plan: quick discovery form and secure Stripe checkout.">
+  <link rel="icon" type="image/svg+xml" href="venu-favicon.svg">
+  <link rel="stylesheet" href="venu.css">
+  <link rel="stylesheet" href="venu-discovery.css">
+</head>
+<body class="venu-body">
+  <header class="venu-header" id="venu-header">
+    <div class="venu-header-inner">
+      <a href="venu.html" class="venu-logo font-display">Venu</a>
+      <button type="button" class="venu-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="venu-nav" id="venu-nav-toggle"></button>
+      <nav class="venu-nav" id="venu-nav" aria-label="Main">
+        <a href="venu.html#how-it-works">How it works</a>
+        <a href="venu.html#pricing">Pricing</a>
+        <a href="venu.html#demos">Demos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="venu-whats-next-splash">
+      <div class="venu-whats-next-inner">
+        <h1 class="venu-whats-next-headline font-display">What's Next</h1>
+        <p class="venu-whats-next-step">We'll walk through a brief Discovery Form so we can tailor your Venu to your business.</p>
+        <p class="venu-whats-next-step">You'll be directed to Stripe for secure checkout.</p>
+        <p class="venu-whats-next-step">Your Venu goes live within 24 hours.</p>
+        <div class="venu-whats-next-cta">
+          <a href="#" id="venu-whats-next-customize" class="venu-btn venu-btn-primary">Customize your Venu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="venu-footer">
+    <div class="venu-footer-main">
+      <div class="venu-footer-brand">
+        <a href="venu.html" class="venu-logo font-display">Venu</a>
+        <p class="venu-footer-tagline">It's your Venu</p>
+      </div>
+      <nav class="venu-footer-links" aria-label="Footer">
+        <a href="venu.html#how-it-works">How it works</a>
+        <a href="venu.html#pricing">Pricing</a>
+        <a href="venu.html#demos">Demos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="venu-footer-powered">Powered by <a href="index.html">H4 Services</a></p>
+    </div>
+    <div class="venu-footer-bottom">
+      <p class="venu-footer-copy">© 2025 Venu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('venu-whats-next-customize');
+      if (!btn) return;
+      var params = new URLSearchParams(window.location.search);
+      var product = (params.get('product') || 'venu').toLowerCase();
+      if (product !== 'venu' && product !== 'venu-plus') product = 'venu';
+      btn.href = 'venu-discovery.html?product=' + product;
+    })();
+  </script>
+  <script>
+    (function() {
+      var header = document.getElementById('venu-header');
+      var toggle = document.getElementById('venu-nav-toggle');
+      var nav = document.getElementById('venu-nav');
+      function onScroll() {
+        if (header) header.classList.toggle('venu-header-scrolled', window.scrollY > 30);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

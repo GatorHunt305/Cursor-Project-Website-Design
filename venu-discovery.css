@@ -1,0 +1,212 @@
+/* Venu What's Next splash + Discovery form – same aesthetic as venu.css */
+
+.venu-whats-next-splash {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  background: var(--venu-red-dark);
+  position: relative;
+  overflow: hidden;
+}
+.venu-whats-next-splash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.venu-whats-next-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.venu-whats-next-headline {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 2rem;
+}
+.venu-whats-next-step {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto 1.5rem;
+  max-width: 28rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: venu-wn-fade-up 0.8s ease-out forwards;
+}
+.venu-whats-next-step:nth-of-type(2) { animation-delay: 0.3s; }
+.venu-whats-next-step:nth-of-type(3) { animation-delay: 0.6s; }
+.venu-whats-next-step:nth-of-type(4) { animation-delay: 0.9s; }
+.venu-whats-next-cta {
+  margin-top: 2.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: venu-wn-fade-up 0.8s ease-out 1.2s forwards;
+}
+@keyframes venu-wn-fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+.venu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.875rem 1.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.venu-btn-primary {
+  background: var(--venu-accent);
+  color: #fff;
+}
+.venu-btn-primary:hover {
+  background: #9a7209;
+  color: #fff;
+}
+
+.venu-section-cream { background: var(--venu-cream); }
+
+/* Discovery form window – Venu navy/red theme */
+.venu-discovery-form {
+  max-width: 560px;
+  margin: 2rem auto;
+  padding: 0 1rem 4rem;
+}
+.venu-discovery-window {
+  background: var(--venu-navy);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  min-height: 320px;
+  color: #fff;
+}
+.venu-discovery-step-counter {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+.venu-discovery-progress {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.venu-discovery-progress-fill {
+  height: 100%;
+  width: 25%;
+  max-width: 100%;
+  background: var(--venu-accent);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.venu-discovery-form .venu-discovery-panel {
+  display: none !important;
+}
+.venu-discovery-form .venu-discovery-panel.is-active {
+  display: block !important;
+}
+.venu-discovery-panel h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+.venu-discovery-panel-desc {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.venu-discovery-window .venu-form-block label {
+  display: block;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.35rem;
+  margin-top: 1rem;
+}
+.venu-discovery-window .venu-form-block label:first-of-type { margin-top: 0; }
+.venu-discovery-window .venu-form-block input,
+.venu-discovery-window .venu-form-block textarea,
+.venu-discovery-window .venu-form-block select {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+.venu-discovery-window .venu-form-block input::placeholder,
+.venu-discovery-window .venu-form-block textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.venu-discovery-window .venu-form-block input:focus,
+.venu-discovery-window .venu-form-block textarea:focus,
+.venu-discovery-window .venu-form-block select:focus {
+  outline: none;
+  border-color: var(--venu-accent);
+  box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.3);
+}
+.venu-discovery-window .venu-form-block select option {
+  background: var(--venu-navy);
+  color: #fff;
+}
+.venu-discovery-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.venu-discovery-actions .venu-btn { min-width: 120px; }
+.venu-discovery-actions .venu-btn-back {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.venu-discovery-actions .venu-btn-back:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.venu-discovery-actions .venu-btn-primary {
+  background: var(--venu-accent);
+  color: #fff;
+}
+.venu-discovery-actions .venu-btn-primary:hover {
+  background: #9a7209;
+  color: #fff;
+}
+.venu-discovery-actions a.venu-btn-primary {
+  text-decoration: none;
+}
+.venu-discovery-panel textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.venu-discovery-textarea-block textarea {
+  min-height: 120px;
+}

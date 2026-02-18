@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="venu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Form | Venu</title>
+  <meta name="description" content="Tell us about your business so we can tailor your Venu. Quick discovery before checkout.">
+  <link rel="icon" type="image/svg+xml" href="venu-favicon.svg">
+  <link rel="stylesheet" href="venu.css">
+  <link rel="stylesheet" href="venu-discovery.css">
+</head>
+<body class="venu-body">
+  <header class="venu-header" id="venu-header">
+    <div class="venu-header-inner">
+      <a href="venu.html" class="venu-logo font-display">Venu</a>
+      <button type="button" class="venu-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="venu-nav" id="venu-nav-toggle"></button>
+      <nav class="venu-nav" id="venu-nav" aria-label="Main">
+        <a href="venu.html#how-it-works">How it works</a>
+        <a href="venu.html#pricing">Pricing</a>
+        <a href="venu.html#demos">Demos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="venu-section venu-section-cream">
+      <div class="venu-discovery-form" id="venu-discovery-form">
+        <div class="venu-discovery-window">
+          <p class="venu-discovery-step-counter" id="venu-step-counter" aria-live="polite">Step 1 of 4</p>
+          <div class="venu-discovery-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4" aria-label="Form progress">
+            <div class="venu-discovery-progress-fill" id="venu-discovery-progress-fill"></div>
+          </div>
+
+          <div class="venu-discovery-panel is-active" id="venu-panel-1" data-step="1">
+            <h2>About Your Business</h2>
+            <p class="venu-discovery-panel-desc">We'll use this to personalize your Venu.</p>
+            <div class="venu-form-block">
+              <label for="venu-your-name">Your name <span aria-label="required">*</span></label>
+              <input type="text" id="venu-your-name" name="your_name" required placeholder="e.g. Jane Smith">
+              <label for="venu-business-name">Business name <span aria-label="required">*</span></label>
+              <input type="text" id="venu-business-name" name="business_name" required placeholder="e.g. Smith Plumbing Co.">
+              <label for="venu-email">Email <span aria-label="required">*</span></label>
+              <input type="email" id="venu-email" name="email" required placeholder="you@yourbusiness.com">
+            </div>
+            <div class="venu-discovery-actions">
+              <span></span>
+              <button type="button" class="venu-btn venu-btn-primary" id="venu-next-1">Next</button>
+            </div>
+          </div>
+
+          <div class="venu-discovery-panel" id="venu-panel-2" data-step="2">
+            <h2>Style & Preferences</h2>
+            <p class="venu-discovery-panel-desc">Help us match your Venu to your brand.</p>
+            <div class="venu-form-block">
+              <label for="venu-business-type">Business type <span aria-label="required">*</span></label>
+              <select id="venu-business-type" name="business_type" required>
+                <option value="">Select type</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="hvac">HVAC</option>
+                <option value="electrical">Electrical</option>
+                <option value="cleaning">Cleaning / Detail</option>
+                <option value="beauty">Beauty / Nails / Hair</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="venu-words">Words that describe your business <span aria-label="required">*</span></label>
+              <input type="text" id="venu-words" name="words_describe" required placeholder="e.g. reliable, local, family-owned">
+            </div>
+            <div class="venu-discovery-actions">
+              <button type="button" class="venu-btn venu-btn-back" id="venu-back-2">Back</button>
+              <button type="button" class="venu-btn venu-btn-primary" id="venu-next-2">Next</button>
+            </div>
+          </div>
+
+          <div class="venu-discovery-panel" id="venu-panel-3" data-step="3">
+            <h2>Anything Else?</h2>
+            <p class="venu-discovery-panel-desc">Optional — deadlines, special requests, or how you'd like to use your Venu.</p>
+            <div class="venu-form-block venu-discovery-textarea-block">
+              <label for="venu-notes">Notes</label>
+              <textarea id="venu-notes" name="notes" rows="5" placeholder="e.g. Go live by Friday, prefer gold accent..."></textarea>
+            </div>
+            <div class="venu-discovery-actions">
+              <button type="button" class="venu-btn venu-btn-back" id="venu-back-3">Back</button>
+              <button type="button" class="venu-btn venu-btn-primary" id="venu-next-3">Next</button>
+            </div>
+          </div>
+
+          <div class="venu-discovery-panel" id="venu-panel-4" data-step="4">
+            <h2>You're Almost Done</h2>
+            <p class="venu-discovery-panel-desc">Review your plan and proceed to secure checkout. We'll use your answers to tailor your Venu.</p>
+            <p class="venu-discovery-panel-desc" id="venu-plan-summary"><strong>Plan:</strong> <span id="venu-plan-name">Venu</span></p>
+            <div class="venu-discovery-actions">
+              <button type="button" class="venu-btn venu-btn-back" id="venu-back-4">Back</button>
+              <a href="#" id="venu-complete-checkout" class="venu-btn venu-btn-primary">Complete and Proceed to Payment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="venu-footer">
+    <div class="venu-footer-main">
+      <div class="venu-footer-brand">
+        <a href="venu.html" class="venu-logo font-display">Venu</a>
+        <p class="venu-footer-tagline">It's your Venu</p>
+      </div>
+      <nav class="venu-footer-links" aria-label="Footer">
+        <a href="venu.html#how-it-works">How it works</a>
+        <a href="venu.html#pricing">Pricing</a>
+        <a href="venu.html#demos">Demos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="venu-footer-powered">Powered by <a href="index.html">H4 Services</a></p>
+    </div>
+    <div class="venu-footer-bottom">
+      <p class="venu-footer-copy">© 2025 Venu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      function initVenuDiscovery() {
+        var form = document.getElementById('venu-discovery-form');
+        if (!form) return;
+        var counter = document.getElementById('venu-step-counter');
+        var progressFill = document.getElementById('venu-discovery-progress-fill');
+        var progressBar = form.querySelector('.venu-discovery-progress');
+        var panels = form.querySelectorAll('.venu-discovery-panel');
+        var totalSteps = 4;
+        var currentStep = 1;
+
+        function goToStep(step) {
+          if (step < 1 || step > totalSteps) return;
+          currentStep = step;
+          counter.textContent = 'Step ' + step + ' of ' + totalSteps;
+          if (progressFill) progressFill.style.width = (step / totalSteps) * 100 + '%';
+          if (progressBar) progressBar.setAttribute('aria-valuenow', step);
+          panels.forEach(function(p) {
+            var isActive = parseInt(p.getAttribute('data-step'), 10) === step;
+            p.classList.toggle('is-active', isActive);
+          });
+        }
+
+        function validateStep1() {
+          var name = document.getElementById('venu-your-name').value.trim();
+          var biz = document.getElementById('venu-business-name').value.trim();
+          var email = document.getElementById('venu-email').value.trim();
+          if (!name) { document.getElementById('venu-your-name').focus(); return false; }
+          if (!biz) { document.getElementById('venu-business-name').focus(); return false; }
+          if (!email) { document.getElementById('venu-email').focus(); return false; }
+          return true;
+        }
+        function validateStep2() {
+          var type = document.getElementById('venu-business-type').value;
+          var words = document.getElementById('venu-words').value.trim();
+          if (!type) { document.getElementById('venu-business-type').focus(); return false; }
+          if (!words) { document.getElementById('venu-words').focus(); return false; }
+          return true;
+        }
+
+        document.getElementById('venu-next-1').addEventListener('click', function() {
+          if (validateStep1()) goToStep(2);
+        });
+        document.getElementById('venu-next-2').addEventListener('click', function() {
+          if (validateStep2()) goToStep(3);
+        });
+        document.getElementById('venu-next-3').addEventListener('click', function() { goToStep(4); });
+
+        document.getElementById('venu-back-2').addEventListener('click', function() { goToStep(1); });
+        document.getElementById('venu-back-3').addEventListener('click', function() { goToStep(2); });
+        document.getElementById('venu-back-4').addEventListener('click', function() { goToStep(3); });
+
+        var completeBtn = document.getElementById('venu-complete-checkout');
+        var planNameEl = document.getElementById('venu-plan-name');
+        var params = new URLSearchParams(window.location.search);
+        var product = (params.get('product') || 'venu').toLowerCase();
+        if (product !== 'venu' && product !== 'venu-plus') product = 'venu';
+        if (planNameEl) planNameEl.textContent = product === 'venu-plus' ? 'Venu+' : 'Venu';
+        // Stripe placeholder – replace with your Stripe Payment Link when ready
+        var STRIPE_PLACEHOLDER = '#';
+        completeBtn.href = STRIPE_PLACEHOLDER;
+
+        goToStep(1);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVenuDiscovery);
+      } else {
+        initVenuDiscovery();
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var header = document.getElementById('venu-header');
+      var toggle = document.getElementById('venu-nav-toggle');
+      var nav = document.getElementById('venu-nav');
+      function onScroll() {
+        if (header) header.classList.toggle('venu-header-scrolled', window.scrollY > 30);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          var open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
