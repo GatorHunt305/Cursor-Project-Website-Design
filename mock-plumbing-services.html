@@ -3,78 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Windy City Plumbing – Chicago Plumbing</title>
-  <meta name="description" content="Plumbing services in Chicago: drain cleaning, water heater, pipe repair, fixtures, emergency plumbing. Licensed and 24/7.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Plumbing Services | Windy City Plumbing – Chicago</title>
+  <meta name="description" content="Complete plumbing services in Chicago: emergency, drain cleaning, water heaters, leak repair, fixtures, pipe repair, sump pump, backflow. Licensed &amp; 24/7.">
   <link rel="stylesheet" href="mock-styles.css">
   <link rel="stylesheet" href="mock-plumbing.css">
 </head>
 <body>
+  <div class="mock-demo-banner" id="mock-demo-banner">
+    <div class="mock-demo-banner-inner">
+      <span>📋 This is a demonstration site showcasing H4 Services' Standard Package.</span>
+      <a href="https://www.h4services.co/get-started.html" class="mock-demo-banner-cta">Get a site like this →</a>
+      <button type="button" class="mock-demo-banner-close" aria-label="Dismiss" onclick="document.getElementById('mock-demo-banner').classList.add('is-dismissed')">×</button>
+    </div>
+  </div>
   <a href="https://www.h4services.co/" class="mock-return-banner">Return to H4Services</a>
   <header class="mock-header">
     <div class="mock-container">
       <a href="mock-plumbing.html" class="mock-logo"><img loading="lazy" src="logo-plumbing.svg" alt="" class="mock-logo-icon" width="32" height="32">Windy City Plumbing</a>
+      <a href="tel:+13125550147" class="wcp-header-phone">(312) 555-0147</a>
       <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
       <nav class="mock-nav">
         <a href="mock-plumbing.html">Home</a>
         <a href="mock-plumbing-services.html">Services</a>
+        <a href="mock-plumbing-about.html">About</a>
         <a href="mock-plumbing-contact.html">Contact</a>
+        <a href="mock-plumbing.html#booking">Book Service</a>
         <a href="case-studies.html" class="mock-back">← Case studies</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="mock-hero" style="background-image: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200');">
+    <section class="wcp-hero">
       <div class="mock-container">
-        <h1>Reliable Plumbing for Chicago & the North Side</h1>
-        <p>Licensed, insured, and available 24/7 for residential and commercial plumbing.</p>
+        <h1>Complete Plumbing Services</h1>
+        <p class="wcp-hero-sub">From routine maintenance to emergency repairs, we do it all.</p>
       </div>
     </section>
 
     <section class="mock-section">
       <div class="mock-container">
-        <h2>What we do</h2>
-        <div class="mock-services-grid">
-          <a href="mock-plumbing.html?service=drain#booking" class="mock-service-card">
-            <img loading="lazy" src="plumbing-drain-cleaning.png" alt="Drain cleaning">
-            <div class="mock-service-body">
-              <h3>Drain cleaning & clog removal</h3>
-              <p>Clearing blockages in sinks, tubs, showers, and main sewer lines. We use professional equipment and offer preventive maintenance.</p>
+        <div class="wcp-service-listing">
+          <article class="wcp-service-listing-card" id="emergency">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-emergency.png');"></div>
+            <div>
+              <h3>Emergency Plumbing</h3>
+              <p class="wcp-svc-desc">Burst pipes, gas leaks, flooding—24/7 emergency response.</p>
+              <p class="wcp-svc-price">Starting at $200 emergency call fee</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
             </div>
-          </a>
-          <a href="mock-plumbing.html?service=water-heater#booking" class="mock-service-card">
-            <img loading="lazy" src="plumbing-water-heater.png" alt="Water heater service">
-            <div class="mock-service-body">
-              <h3>Water heater repair & installation</h3>
-              <p>Tank and tankless water heaters—diagnosis, repair, replacement, and new installs with warranty options.</p>
+          </article>
+          <article class="wcp-service-listing-card" id="drain">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-drain-cleaning.png');"></div>
+            <div>
+              <h3>Drain &amp; Sewer Cleaning</h3>
+              <p class="wcp-svc-desc">Clogged drains, slow drains, sewer backups cleared fast.</p>
+              <p class="wcp-svc-price">From $150</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
             </div>
-          </a>
-          <a href="mock-plumbing.html?service=pipe#booking" class="mock-service-card">
-            <img loading="lazy" src="plumbing-pipe-repair.png" alt="Pipe repair and repiping">
-            <div class="mock-service-body">
-              <h3>Pipe repair & repiping</h3>
-              <p>Leak detection and repair, pipe replacement, and full repiping for older or problem plumbing.</p>
+          </article>
+          <article class="wcp-service-listing-card" id="water-heater">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-water-heater.png');"></div>
+            <div>
+              <h3>Water Heater Services</h3>
+              <p class="wcp-svc-desc">Installation, repair, and replacement of tank and tankless heaters.</p>
+              <p class="wcp-svc-price">Repairs from $175 | New install from $1,200</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
             </div>
-          </a>
-          <a href="mock-plumbing.html?service=fixture#booking" class="mock-service-card">
-            <img loading="lazy" src="plumbing-fixture-installation.png" alt="Fixture installation">
-            <div class="mock-service-body">
-              <h3>Fixture installation</h3>
-              <p>Sinks, toilets, faucets, garbage disposals, and other fixtures—install and repair.</p>
+          </article>
+          <article class="wcp-service-listing-card" id="leak">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-pipe-repair.png');"></div>
+            <div>
+              <h3>Leak Detection &amp; Repair</h3>
+              <p class="wcp-svc-desc">Find and fix hidden leaks before they cause damage.</p>
+              <p class="wcp-svc-price">From $125</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
             </div>
-          </a>
-          <a href="mock-plumbing.html?service=emergency#booking" class="mock-service-card">
-            <img loading="lazy" src="plumbing-emergency.png" alt="Emergency plumbing">
-            <div class="mock-service-body">
-              <h3>Emergency plumbing</h3>
-              <p>24/7 availability for burst pipes, major leaks, sewer backups, and no-heat calls.</p>
+          </article>
+          <article class="wcp-service-listing-card" id="fixture">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-fixture-installation.png');"></div>
+            <div>
+              <h3>Fixture Installation</h3>
+              <p class="wcp-svc-desc">Faucets, sinks, toilets, garbage disposals, and more.</p>
+              <p class="wcp-svc-price">From $95</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
             </div>
-          </a>
+          </article>
+          <article class="wcp-service-listing-card" id="pipe">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-pipe-repair.png');"></div>
+            <div>
+              <h3>Pipe Repair &amp; Replacement</h3>
+              <p class="wcp-svc-desc">Repair or replace damaged pipes, including repiping.</p>
+              <p class="wcp-svc-price">From $200</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
+            </div>
+          </article>
+          <article class="wcp-service-listing-card" id="sump">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-drain-cleaning.png');"></div>
+            <div>
+              <h3>Sump Pump Services</h3>
+              <p class="wcp-svc-desc">Keep your basement dry with sump pump install and repair.</p>
+              <p class="wcp-svc-price">From $300</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
+            </div>
+          </article>
+          <article class="wcp-service-listing-card" id="backflow">
+            <div class="wcp-svc-image" style="background-image: url('plumbing-pipe-repair.png');"></div>
+            <div>
+              <h3>Backflow Prevention</h3>
+              <p class="wcp-svc-desc">Required testing and installation of backflow devices.</p>
+              <p class="wcp-svc-price">From $150</p>
+              <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book This Service →</a>
+            </div>
+          </article>
         </div>
-        <div class="mock-cta">
-          <h3>Ready to book?</h3>
-          <p>Choose a date and time that works for you.</p>
-          <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-primary">Book a Service</a>
+        <div class="wcp-cta-strip" style="margin-top: 2rem;">
+          <h3>Not sure what you need?</h3>
+          <p>Call us at (312) 555-0147 and we'll diagnose the issue.</p>
+          <a href="tel:+13125550147" class="mock-btn mock-btn-primary">Call Now</a>
+          <a href="mock-plumbing.html#booking" class="mock-btn mock-btn-outline">Book Online</a>
         </div>
       </div>
     </section>
@@ -82,7 +130,33 @@
 
   <footer class="mock-footer">
     <div class="mock-container">
-      <p>Windy City Plumbing · Chicago, IL · (312) 555-0199 · Demo site by H4Services</p>
+      <p class="mock-footer-disclaimer">This is an example site built by H4 Services. Not a real business. <a href="https://www.h4services.co/case-studies.html">View more examples</a> · <a href="https://www.h4services.co/get-started.html">Get your own site</a></p>
+      <div class="wcp-footer-grid">
+        <div>
+          <h4>Windy City Plumbing</h4>
+          <p>Chicago's Trusted Plumbers Since 2007</p>
+          <p>Licensed · Bonded · Insured</p>
+        </div>
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="mock-plumbing.html">Home</a></li>
+            <li><a href="mock-plumbing-services.html">Services</a></li>
+            <li><a href="mock-plumbing-about.html">About</a></li>
+            <li><a href="mock-plumbing-contact.html">Contact</a></li>
+            <li><a href="mock-plumbing.html#booking">Book Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Phone: <a href="tel:+13125550147">(312) 555-0147</a></p>
+          <p>Email: <a href="mailto:info@windycityplumbing.example">info@windycityplumbing.example</a></p>
+        </div>
+      </div>
+      <div class="wcp-footer-bottom">
+        <p>© 2025 Windy City Plumbing. All rights reserved.</p>
+        <p class="wcp-demo-note">This is a demonstration site built by H4 Services.</p>
+      </div>
     </div>
   </footer>
   <script>

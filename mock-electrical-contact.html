@@ -3,60 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Mile High Electric – Denver</title>
-  <meta name="description" content="Contact Mile High Electric in Denver. Call (303) 555-0142 or send a message for electrical services and free estimates.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Contact | Lakefront Electric – Chicago</title>
+  <meta name="description" content="Contact Lakefront Electric. Call (773) 555-0283, email, or book online. 24/7 emergency service. Serving Chicago and the North Shore.">
   <link rel="stylesheet" href="mock-styles.css">
   <link rel="stylesheet" href="mock-electrical.css">
 </head>
-<body class="mock-theme-sleek">
+<body class="mock-theme-lakefront">
+  <div class="mock-demo-banner" id="mock-demo-banner">
+    <div class="mock-demo-banner-inner">
+      <span>This is a demonstration site showcasing H4 Services' Standard Package.</span>
+      <a href="https://www.h4services.co/get-started.html" class="mock-demo-banner-cta">Get a site like this →</a>
+      <button type="button" class="mock-demo-banner-close" aria-label="Dismiss" onclick="document.getElementById('mock-demo-banner').classList.add('is-dismissed')">×</button>
+    </div>
+  </div>
   <a href="https://www.h4services.co/" class="mock-return-banner">Return to H4Services</a>
   <header class="mock-header">
     <div class="mock-container mock-header-inner">
-      <a href="mock-electrical.html" class="mock-logo"><img loading="lazy" src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Mile High Electric</a>
-      <a href="tel:+13035550142" class="mock-header-phone">(303) 555-0142</a>
+      <a href="mock-electrical.html" class="mock-logo"><img loading="lazy" src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Lakefront Electric</a>
+      <a href="tel:+17735550283" class="mock-header-phone">(773) 555-0283</a>
       <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
       <nav class="mock-nav">
         <a href="mock-electrical.html">Home</a>
         <a href="mock-electrical-services.html">Services</a>
+        <a href="mock-electrical-about.html">About</a>
         <a href="mock-electrical-contact.html">Contact</a>
+        <a href="mock-electrical.html#booking">Book Service</a>
         <a href="case-studies.html" class="mock-back">← Case studies</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="mock-hero mock-hero-contact" style="background-image: url('electrical-banner.png');">
+    <section class="le-page-hero">
       <div class="mock-container">
-        <h1>Contact us</h1>
+        <h1>Contact Us</h1>
+        <p>Call, email, or book online—we're here when you need us.</p>
       </div>
     </section>
+
     <section class="mock-section">
       <div class="mock-container">
-        <p>Have a question or need a quote? Call us at <strong>(303) 555-0142</strong> or send a message below.</p>
-        <div class="mock-booking">
+        <h2>Get in touch</h2>
+        <div class="le-contact-info">
+          <div class="le-contact-block">
+            <h3>Phone</h3>
+            <p><a href="tel:+17735550283">(773) 555-0283</a></p>
+          </div>
+          <div class="le-contact-block">
+            <h3>Email</h3>
+            <p><a href="mailto:info@lakefrontelectric.example.com">info@lakefrontelectric.example.com</a></p>
+          </div>
+          <div class="le-contact-block">
+            <h3>Emergency service</h3>
+            <p>24/7</p>
+          </div>
+          <div class="le-contact-block">
+            <h3>Regular hours</h3>
+            <p>Mon–Sat 7am–6pm</p>
+            <p>Closed Sundays (non-emergency)</p>
+          </div>
+        </div>
+
+        <div class="le-booking">
+          <h3>Send a message</h3>
           <form class="mock-form" id="contact-form">
             <div class="form-row">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" required placeholder="Your name">
             </div>
             <div class="form-row form-row-inline">
               <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="you@example.com">
+                <label for="contact-phone">Phone</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="(773) 555-0123">
               </div>
               <div>
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="(303) 555-0142">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" required placeholder="you@example.com">
               </div>
             </div>
             <div class="form-row">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+              <label for="contact-service">Service needed</label>
+              <select id="contact-service" name="service">
+                <option value="">Select service</option>
+                <option value="Emergency">Emergency</option>
+                <option value="Lighting">Lighting</option>
+                <option value="Panel Upgrade">Panel Upgrade</option>
+                <option value="Wiring">Wiring</option>
+                <option value="Inspection">Inspection</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
-            <button type="submit" class="mock-btn mock-btn-primary">Send message</button>
+            <div class="form-row">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="mock-btn mock-btn-primary">Send Message</button>
           </form>
-          <div class="mock-confirm" id="confirm-msg" aria-live="polite">
+          <p class="le-booking-note">For emergencies, call us directly at <a href="tel:+17735550283">(773) 555-0283</a>.</p>
+          <div class="mock-confirm" id="contact-confirm" aria-live="polite">
             <strong>Message sent.</strong> We'll get back to you soon. This is a demo site—no message was sent.
+          </div>
+        </div>
+
+        <h2 class="le-map-heading">Service area</h2>
+        <p class="le-map-intro">Proudly serving Chicago and the North Shore suburbs.</p>
+        <div class="le-map-wrap">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-87.94%2C41.64%2C-87.52%2C42.02&layer=mapnik&marker=41.88%2C-87.63" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Chicago and North Shore service area"></iframe>
+        </div>
+
+        <div class="le-faq">
+          <h3>Frequently asked questions</h3>
+          <div class="le-faq-item">
+            <h4>Do you offer emergency service?</h4>
+            <p>Yes, 24/7. Call <a href="tel:+17735550283">(773) 555-0283</a> anytime for electrical emergencies.</p>
+          </div>
+          <div class="le-faq-item">
+            <h4>Are your electricians licensed and insured?</h4>
+            <p>Yes. All electricians are state-licensed, bonded, and carry full liability insurance.</p>
+          </div>
+          <div class="le-faq-item">
+            <h4>Do you provide estimates before starting work?</h4>
+            <p>Yes. We provide upfront pricing before any work begins.</p>
+          </div>
+          <div class="le-faq-item">
+            <h4>What forms of payment do you accept?</h4>
+            <p>Cash, check, and all major credit cards.</p>
+          </div>
+          <div class="le-faq-item">
+            <h4>Do you pull permits?</h4>
+            <p>Yes. We pull all required permits and schedule inspections as needed by code.</p>
+          </div>
+          <div class="le-faq-item">
+            <h4>Do you offer warranties?</h4>
+            <p>Yes. All work includes a 1-year labor warranty. Manufacturer warranties apply to parts and equipment.</p>
           </div>
         </div>
       </div>
@@ -64,29 +144,42 @@
   </main>
 
   <footer class="mock-footer">
-    <div class="mock-container mock-footer-grid">
-      <div class="mock-footer-brand">
-        <strong>Mile High Electric</strong>
-        <p>Denver, CO & the Front Range</p>
-        <p><a href="tel:+13035550142">(303) 555-0142</a></p>
-        <p class="mock-footer-credit">Demo site by H4Services</p>
+    <div class="mock-container le-footer-grid">
+      <div>
+        <h4>Lakefront Electric</h4>
+        <p>Powering Chicago Homes &amp; Businesses Since 2010</p>
+        <p>Licensed / Bonded / Insured</p>
       </div>
-      <div class="mock-footer-links">
-        <a href="mock-electrical.html">Home</a>
-        <a href="mock-electrical-services.html">Services</a>
-        <a href="mock-electrical-contact.html">Contact</a>
-        <a href="case-studies.html">Case studies</a>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="mock-electrical.html">Home</a></li>
+          <li><a href="mock-electrical-services.html">Services</a></li>
+          <li><a href="mock-electrical-about.html">About</a></li>
+          <li><a href="mock-electrical-contact.html">Contact</a></li>
+          <li><a href="mock-electrical.html#booking">Book Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:+17735550283">(773) 555-0283</a></p>
+        <p>Email: <a href="mailto:info@lakefrontelectric.example.com">info@lakefrontelectric.example.com</a></p>
+        <p>24/7 Emergency Service</p>
+        <p>Regular hours: Mon–Sat 7am–6pm</p>
+      </div>
+      <div class="le-footer-bottom" style="grid-column: 1 / -1;">
+        <p>© 2025 Lakefront Electric. All rights reserved.</p>
+        <p class="le-demo-note">Demonstration site built by H4 Services.</p>
       </div>
     </div>
   </footer>
-
   <script>
     document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
       document.querySelector('.mock-nav').classList.toggle('is-open');
     });
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('confirm-msg').classList.add('is-visible');
+      document.getElementById('contact-confirm').classList.add('is-visible');
       this.querySelector('button[type="submit"]').setAttribute('disabled', 'disabled');
     });
   </script>

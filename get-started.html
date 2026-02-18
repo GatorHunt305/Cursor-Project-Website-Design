@@ -56,26 +56,98 @@
             </ul>
             <a href="whats-next.html?plan=standard" id="pay-standard" class="btn">Proceed</a>
           </div>
-          <div class="pricing-card-wrap pricing-card-popular">
-            <span class="pricing-badge">Most popular</span>
-            <div class="pricing-card">
-            <h2>Premium</h2>
-            <div class="pricing-price">$5,000</div>
-            <div class="pricing-price-note">$500/month maintenance</div>
-            <p style="margin: 0 0 1rem; font-size: 0.95rem; color: var(--text-muted);">Everything in Standard, plus online payments and customer portal.</p>
-            <ul>
-              <li>Everything in Standard</li>
-              <li>Dedicated booking page & real-time availability</li>
-              <li><strong>Customer portal (invoices, appointments)</strong></li>
-              <li>Payment links (Stripe / Square)</li>
-              <li><strong>Charge at booking to recoup last-second cancellations</strong></li>
-              <li>Advanced local SEO</li>
-              <li>Priority support</li>
-            </ul>
-            <a href="whats-next.html?plan=premium" id="pay-premium" class="btn">Proceed</a>
+          <div class="pricing-card-wrap pricing-card-popular pricing-card-premium-wrap" id="premium">
+            <span class="pricing-badge pricing-badge-premium">Most popular</span>
+            <div class="pricing-card pricing-card-premium">
+              <h2>Premium</h2>
+              <div class="pricing-price">$5,000</div>
+              <div class="pricing-price-note">$500/month maintenance</div>
+              <p class="pricing-card-headline">Everything in Standard, plus your own Venu+ portal.</p>
+              <ul class="pricing-card-list">
+                <li><strong>Everything in Standard</strong> (full website build)</li>
+              </ul>
+              <h3 class="pricing-venu-title">Venu+ Booking &amp; Payments</h3>
+              <ul class="pricing-card-list pricing-venu-list">
+                <li>Automated booking with deposit collection</li>
+                <li>SMS reminders (confirmation, 24hr, 2hr before)</li>
+                <li>Cancellation fee enforcement (no awkward conversations)</li>
+                <li>Customer payment portal with booking history</li>
+                <li>One-tap rebooking for repeat customers</li>
+                <li>Stripe payment integration (we don't charge transaction fees)</li>
+              </ul>
+              <h3 class="pricing-section-title">Protection &amp; ROI</h3>
+              <ul class="pricing-card-list">
+                <li>No-show protection (saves avg $300–500/month)</li>
+                <li>Advanced local SEO</li>
+                <li>Priority support (24hr response)</li>
+              </ul>
+              <div class="pricing-venu-callout">
+                <p class="pricing-venu-callout-heading">💡 What's Venu+?</p>
+                <p>Your Premium package includes Venu+ (normally $600 setup + $150/month standalone). This is the complete booking, payment, and reminder system shown at venu.h4services.co</p>
+                <a href="https://venu.h4services.co/#pricing?utm_source=h4&utm_medium=premium-card&utm_campaign=venu-demo" target="_blank" rel="noopener noreferrer" class="pricing-venu-callout-link">See Venu+ demo →</a>
+              </div>
+              <a href="whats-next.html?plan=premium" id="pay-premium" class="btn">Proceed</a>
+              <p class="pricing-premium-note">Premium = Complete Website + Venu+ included<br>(You save $600 on Venu+ setup when bundled)</p>
             </div>
           </div>
         </div>
+
+        <div class="pricing-compare" id="pricing-compare">
+          <h2 class="pricing-compare-title">What's the difference?</h2>
+          <div class="pricing-compare-table-wrap">
+            <table class="pricing-compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Standard</th>
+                  <th scope="col">Premium</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Full website</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Contact forms</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Basic SEO</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Monthly updates</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Online booking</td><td>Basic</td><td>Venu+ (advanced)</td></tr>
+                <tr><td>Payment collection</td><td>—</td><td>✓ Stripe integrated</td></tr>
+                <tr><td>Deposit enforcement</td><td>—</td><td>✓ Automatic</td></tr>
+                <tr><td>SMS reminders</td><td>—</td><td>✓ Automated</td></tr>
+                <tr><td>Customer portal</td><td>—</td><td>✓ Full portal</td></tr>
+                <tr><td>No-show protection</td><td>—</td><td>✓ Saves $300–500/mo</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pricing-compare-cards">
+            <div class="pricing-compare-card">
+              <h3>Standard includes</h3>
+              <ul>
+                <li>Full website</li>
+                <li>Contact forms</li>
+                <li>Basic SEO</li>
+                <li>Monthly updates</li>
+              </ul>
+            </div>
+            <div class="pricing-compare-card pricing-compare-card-premium">
+              <h3>Premium adds</h3>
+              <ul>
+                <li>Venu+ booking system</li>
+                <li>Payment collection</li>
+                <li>Automated reminders</li>
+                <li>Customer portal</li>
+                <li>No-show protection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-venu-standalone-callout">
+          <h2 class="pricing-venu-standalone-title">Just need a quality customer portal?</h2>
+          <p>If you already have a website and just want the Venu<span class="pricing-venu-plus-gold">+</span> booking and payment system standalone, you can get it separately.</p>
+          <p>Venu<span class="pricing-venu-plus-gold">+</span> Standalone: $600 setup + $150/month</p>
+          <p>Same booking, payments, reminders, and portal—just without the full website build.</p>
+          <a href="https://venu.h4services.co/#pricing?utm_source=h4&utm_medium=pricing&utm_campaign=venu-standalone" target="_blank" rel="noopener noreferrer" class="pricing-venu-standalone-link">Explore Venu<span class="pricing-venu-plus-gold">+</span> Standalone →</a>
+        </div>
+
         <div class="pricing-quote-bubble-wrap">
           <a href="contact.html" class="pricing-quote-cta pricing-quote-bubble">
             <span class="pricing-quote-cta-label">Questions?</span>

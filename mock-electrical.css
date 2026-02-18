@@ -1,411 +1,394 @@
-/* Electrical mock – sleek theme: dark slate + electric amber, distinct layout from plumbing */
+/* Lakefront Electric – Standard package demo. Charcoal + electric amber, safety-conscious */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-.mock-theme-sleek {
-  --mock-primary: #f59e0b;
-  --mock-primary-dark: #d97706;
-  --mock-accent: #38bdf8;
-  --mock-warm: #fef3c7;
-  --mock-bg: #0f172a;
-  --mock-bg-alt: #1e293b;
-  --mock-card: #1e293b;
-  --mock-text: #f1f5f9;
-  --mock-muted: #94a3b8;
-  --mock-border: #334155;
-  --mock-radius: 8px;
-  --mock-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  --mock-shadow-lg: 0 12px 24px rgba(0,0,0,0.35);
-  --mock-glow: 0 0 0 1px rgba(245,158,11,0.4);
+:root {
+  --le-charcoal: #1C1C1E;
+  --le-charcoal-dark: #0d0d0e;
+  --le-amber: #F5A623;
+  --le-amber-dark: #d98f1a;
+  --le-bg: #FAFAFA;
+  --le-bg-alt: #F0F0F0;
+  --le-text: #222222;
+  --le-text-muted: #6B7280;
+  --le-white: #FFFFFF;
+  --le-border: #E5E7EB;
+  --le-shadow: 0 2px 8px rgba(28, 28, 30, 0.08);
+  --le-shadow-lg: 0 8px 24px rgba(28, 28, 30, 0.12);
 }
 
-/* Return banner – amber on dark */
-.mock-theme-sleek .mock-return-banner { background: var(--mock-primary); color: #0f172a; }
-.mock-theme-sleek .mock-return-banner:hover { background: #fbbf24; color: #0f172a; }
-
-body.mock-theme-sleek {
-  background: linear-gradient(180deg, rgba(56,189,248,0.04) 0%, var(--mock-bg) 20%, var(--mock-bg) 80%, rgba(254,243,199,0.03) 100%);
-  color: var(--mock-text);
+body.mock-theme-lakefront {
+  background: var(--le-bg);
+  color: var(--le-text);
+  font-family: 'Inter', system-ui, sans-serif;
 }
-body.mock-theme-sleek a { color: var(--mock-primary); }
-body.mock-theme-sleek a:hover { color: #fbbf24; }
+.mock-theme-lakefront .mock-container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 640px) { .mock-theme-lakefront .mock-container { padding: 0 1.25rem; } }
 
-/* Header – solid so it stays readable when scrolling; page names white */
-.mock-theme-sleek .mock-header {
-  background: var(--mock-bg-alt);
-  border-bottom: 2px solid var(--mock-accent);
+/* Header */
+.mock-theme-lakefront .mock-header {
+  background: var(--le-charcoal);
+  border-bottom: 3px solid var(--le-amber);
   padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.mock-theme-sleek .mock-header-inner {
+.mock-theme-lakefront .mock-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
-.mock-theme-sleek .mock-header-phone {
+.mock-theme-lakefront .mock-logo {
+  color: var(--le-white) !important;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+.mock-theme-lakefront .mock-logo:hover { color: var(--le-amber) !important; text-decoration: none; }
+.mock-theme-lakefront .mock-header-phone {
   font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--mock-primary);
-  white-space: nowrap;
+  font-size: 1.05rem;
+  color: var(--le-amber);
+  text-decoration: none;
 }
-.mock-theme-sleek .mock-header-phone:hover { color: #fbbf24; text-decoration: none; }
-.mock-theme-sleek .mock-logo { color: var(--mock-text); }
-.mock-theme-sleek .mock-logo:hover { color: var(--mock-primary); }
-.mock-theme-sleek .mock-nav { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-.mock-theme-sleek .mock-nav a { color: #fff; }
-.mock-theme-sleek .mock-nav a:hover { color: var(--mock-accent); }
-.mock-theme-sleek .mock-back { color: #fff; }
-.mock-theme-sleek .mock-back:hover { color: var(--mock-accent); }
-.mock-theme-sleek .mock-menu-toggle { color: var(--mock-text); }
-@media (max-width: 768px) {
-  .mock-theme-sleek .mock-menu-toggle { display: block; }
-  .mock-theme-sleek .mock-nav {
-    display: none;
-    width: 100%;
-    flex-basis: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 0.75rem;
-    margin-top: 0.25rem;
-    border-top: 1px solid var(--mock-border);
-  }
-  .mock-theme-sleek .mock-nav.is-open { display: flex; }
-  .mock-theme-sleek .mock-nav a,
-  .mock-theme-sleek .mock-nav .mock-back { padding: 0.6rem 0; }
-  .mock-theme-sleek .mock-header-phone { order: 3; width: 100%; text-align: center; }
+.mock-theme-lakefront .mock-header-phone:hover { color: var(--le-white); text-decoration: none; }
+.mock-theme-lakefront .mock-nav a { color: rgba(255,255,255,0.9) !important; font-weight: 500; }
+.mock-theme-lakefront .mock-nav a:hover { color: var(--le-amber) !important; text-decoration: none; }
+.mock-theme-lakefront .mock-nav .mock-back { color: var(--le-text-muted); font-size: 0.9rem; }
+.mock-theme-lakefront .mock-menu-toggle { color: var(--le-white); }
+.mock-theme-lakefront .mock-menu-toggle:hover { color: var(--le-amber); }
+
+/* Headings */
+.mock-theme-lakefront h1,
+.mock-theme-lakefront .le-h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--le-charcoal);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+.mock-theme-lakefront h2,
+.mock-theme-lakefront .le-h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--le-charcoal);
+  margin: 0 0 1rem;
+}
+.mock-theme-lakefront h3,
+.mock-theme-lakefront .le-h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--le-charcoal);
+  margin: 0 0 0.5rem;
 }
 
-/* Hero – background image/graphic with dark overlay so text stays readable */
-.mock-theme-sleek .mock-hero {
-  min-height: 200px;
-  padding: 2.5rem 1rem;
-  text-align: left;
-  background-color: var(--mock-bg-alt);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--mock-text);
-  position: relative;
+/* Buttons */
+.mock-theme-lakefront .mock-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
-.mock-theme-sleek .mock-hero::before {
+.mock-theme-lakefront .mock-btn-primary {
+  background: var(--le-amber);
+  color: var(--le-charcoal) !important;
+  border-color: var(--le-amber);
+}
+.mock-theme-lakefront .mock-btn-primary:hover {
+  background: var(--le-amber-dark);
+  border-color: var(--le-amber-dark);
+  color: var(--le-charcoal) !important;
+  text-decoration: none;
+}
+.mock-theme-lakefront .mock-btn-outline {
+  background: transparent;
+  color: var(--le-charcoal) !important;
+  border-color: var(--le-charcoal);
+}
+.mock-theme-lakefront .mock-btn-outline:hover {
+  background: var(--le-charcoal);
+  color: var(--le-white) !important;
+  text-decoration: none;
+}
+
+/* Return / demo banners */
+.mock-theme-lakefront .mock-return-banner { background: var(--le-charcoal); color: var(--le-white); }
+.mock-theme-lakefront .mock-return-banner:hover { background: var(--le-charcoal-dark); color: var(--le-white); text-decoration: none; }
+.mock-theme-lakefront .mock-demo-banner-cta { background: var(--le-amber) !important; color: #1C1C1E !important; }
+
+/* Hero */
+.mock-theme-lakefront .le-hero {
+  position: relative;
+  padding: 3rem 0;
+  background: var(--le-charcoal) url('electrical-banner.png') center/cover no-repeat;
+  background-color: var(--le-charcoal);
+  color: var(--le-white);
+  text-align: center;
+}
+.mock-theme-lakefront .le-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.65) 45%, rgba(30,41,59,0.5) 100%);
-  z-index: 1;
+  background: linear-gradient(135deg, rgba(28, 28, 30, 0.92) 0%, rgba(28, 28, 30, 0.82) 100%);
 }
-.mock-theme-sleek .mock-hero .mock-container { position: relative; z-index: 2; }
-@media (min-width: 640px) {
-  .mock-theme-sleek .mock-hero { min-height: 220px; padding: 3rem 1.5rem; }
-}
-.mock-theme-sleek .mock-hero .mock-container { max-width: 720px; margin-left: 0; margin-right: auto; }
-.mock-theme-sleek .mock-hero-tagline {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--mock-primary);
-  margin: 0 0 0.5rem;
-}
-.mock-theme-sleek .mock-hero h1 {
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-shadow: none;
-  color: #fff;
-  margin-bottom: 0.35rem;
-}
-.mock-theme-sleek .mock-hero-callout {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--mock-accent);
-  margin: 0 0 0.75rem;
-}
-.mock-theme-sleek .mock-hero-intro {
+.mock-theme-lakefront .le-hero .mock-container { position: relative; z-index: 1; }
+.mock-theme-lakefront .le-hero h1 { color: var(--le-white); margin-bottom: 0.75rem; }
+.mock-theme-lakefront .le-hero .le-hero-sub { font-size: 1.05rem; opacity: 0.95; margin-bottom: 1.5rem; line-height: 1.5; }
+.mock-theme-lakefront .le-hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+.mock-theme-lakefront .le-hero-btns .mock-btn-primary { font-size: 1.05rem; padding: 1rem 1.75rem; }
+.mock-theme-lakefront .le-hero-btns .mock-btn-outline { color: var(--le-white) !important; border-color: rgba(255,255,255,0.8); }
+.mock-theme-lakefront .le-hero-btns .mock-btn-outline:hover { background: rgba(255,255,255,0.15); color: var(--le-white) !important; }
+.mock-theme-lakefront .le-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
   font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--mock-warm);
-  margin: 0 0 1rem;
-  max-width: 520px;
-}
-.mock-theme-sleek .mock-hero p {
-  font-size: 1rem;
-  font-weight: 500;
-  opacity: 0.9;
-  text-shadow: none;
-  color: var(--mock-muted);
-  margin-left: 0;
-}
-.mock-theme-sleek .mock-hero p:has(.mock-btn) { margin-top: 0; margin-bottom: 0; }
-.mock-theme-sleek .mock-hero .mock-btn {
-  background: var(--mock-primary);
-  color: #0f172a;
   font-weight: 600;
-  border-radius: 6px;
-  margin-top: 0;
 }
-.mock-theme-sleek .mock-hero .mock-btn:hover { background: #fbbf24; color: #0f172a; }
+.mock-theme-lakefront .le-trust-badges span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.mock-theme-lakefront .le-trust-badges .le-icon { width: 20px; height: 20px; flex-shrink: 0; }
 
-/* Trust strip – warm cream band; Licensed, Insured, Local all warm cream */
-.mock-theme-sleek .mock-trust-strip {
-  padding: 2rem 0;
-  background: linear-gradient(135deg, rgba(254,243,199,0.12) 0%, rgba(254,243,199,0.08) 50%, rgba(254,243,199,0.12) 100%);
-  border-top: 1px solid rgba(254,243,199,0.3);
-  border-bottom: 1px solid rgba(254,243,199,0.25);
-}
-.mock-theme-sleek .mock-trust-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* Page hero (Services, About, Contact) */
+.mock-theme-lakefront .le-page-hero {
+  background: var(--le-charcoal);
+  color: var(--le-white);
+  padding: 2.5rem 0;
   text-align: center;
-  margin-bottom: 1.25rem;
 }
-.mock-theme-sleek .mock-trust-pillar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.mock-theme-sleek .mock-trust-pillar strong {
-  font-size: 1.15rem;
-  color: var(--mock-warm);
-}
-.mock-theme-sleek .mock-trust-pillar span { font-size: 0.9rem; color: var(--mock-muted); }
-.mock-theme-sleek .mock-trust-cta { text-align: center; margin: 0; }
-@media (max-width: 600px) {
-  .mock-theme-sleek .mock-trust-grid { grid-template-columns: 1fr; gap: 1rem; }
-}
+.mock-theme-lakefront .le-page-hero h1 { color: var(--le-white); margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-page-hero p { margin: 0; opacity: 0.95; font-size: 1.05rem; }
 
-/* Sections – alternate accent/warm tinted strips */
-.mock-theme-sleek .mock-section { padding: 2.5rem 0; }
-.mock-theme-sleek .mock-section:nth-of-type(odd) {
-  background: linear-gradient(180deg, rgba(56,189,248,0.06) 0%, var(--mock-bg) 30%, var(--mock-bg) 100%);
-  border-top: 1px solid rgba(56,189,248,0.2);
-}
-.mock-theme-sleek .mock-section:nth-of-type(even) {
-  background: linear-gradient(180deg, rgba(254,243,199,0.06) 0%, var(--mock-bg-alt) 30%, var(--mock-bg-alt) 100%);
-  border-top: 1px solid rgba(254,243,199,0.15);
-}
-.mock-theme-sleek .mock-section h2 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
-}
-.mock-theme-sleek .mock-section:nth-of-type(odd) h2 { color: var(--mock-accent); }
-.mock-theme-sleek .mock-section:nth-of-type(even) h2 { color: var(--mock-warm); }
-.mock-theme-sleek .mock-section > .mock-container > p { color: var(--mock-muted); font-size: 0.95rem; }
+/* Section spacing */
+.mock-theme-lakefront .mock-section { padding: 2.5rem 0; }
+.mock-theme-lakefront .mock-section:nth-of-type(even) { background: var(--le-bg-alt); }
+.mock-theme-lakefront .mock-section:nth-of-type(odd) { background: var(--le-bg); }
 
-/* Service cards – all warm cream (Collins-style); fade in on scroll */
-.mock-theme-sleek .mock-services-grid {
-  display: flex;
-  flex-direction: column;
+/* Services preview – 4 cards, charcoal bg, white text, amber hover */
+.mock-theme-lakefront .le-service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .mock-theme-lakefront .le-service-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .mock-theme-lakefront .le-service-grid { grid-template-columns: repeat(4, 1fr); } }
+.mock-theme-lakefront .le-service-card {
+  display: block;
+  position: relative;
+  min-height: 200px;
+  background: var(--le-charcoal);
+  background-size: cover;
+  background-position: center;
+  color: var(--le-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  border: 2px solid var(--le-charcoal);
+}
+.mock-theme-lakefront .le-service-card-emergency { background-image: url('electrical-inspection.png'); }
+.mock-theme-lakefront .le-service-card-lighting { background-image: url('electrical-lighting.png'); }
+.mock-theme-lakefront .le-service-card-panel { background-image: url('electrical-panel.png'); }
+.mock-theme-lakefront .le-service-card-wiring { background-image: url('electrical-wiring.png'); }
+.mock-theme-lakefront .le-service-card-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(to top, rgba(28,28,30,0.94) 0%, rgba(28,28,30,0.75) 45%, rgba(28,28,30,0.5) 100%);
+  pointer-events: none;
+}
+.mock-theme-lakefront .le-service-card .le-card-icon,
+.mock-theme-lakefront .le-service-card h3,
+.mock-theme-lakefront .le-service-card p,
+.mock-theme-lakefront .le-service-card .le-card-link { position: relative; z-index: 1; }
+.mock-theme-lakefront .le-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--le-shadow-lg);
+  border-color: var(--le-amber);
+  color: var(--le-white);
+  text-decoration: none;
+}
+.mock-theme-lakefront .le-service-card .le-card-icon { display: block; width: 40px; height: 40px; margin-bottom: 0.75rem; color: var(--le-amber); }
+.mock-theme-lakefront .le-service-card .le-card-icon svg { width: 100%; height: 100%; }
+.mock-theme-lakefront .le-service-card h3 { color: var(--le-white); font-size: 1.1rem; margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-service-card p { color: rgba(255,255,255,0.88); font-size: 0.9rem; margin-bottom: 0.75rem; line-height: 1.45; }
+.mock-theme-lakefront .le-service-card .le-card-link { font-size: 0.9rem; font-weight: 600; color: var(--le-amber); }
+.mock-theme-lakefront .le-service-card:hover .le-card-link { color: var(--le-amber); text-decoration: underline; }
+
+/* Booking section */
+.mock-theme-lakefront .le-booking {
+  background: var(--le-white);
+  border: 1px solid var(--le-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--le-shadow);
+}
+.mock-theme-lakefront .le-booking h3 { margin-bottom: 1rem; }
+.mock-theme-lakefront .le-booking .mock-form label { font-weight: 600; color: var(--le-text); }
+.mock-theme-lakefront .le-booking .mock-form input,
+.mock-theme-lakefront .le-booking .mock-form select,
+.mock-theme-lakefront .le-booking .mock-form textarea {
+  border: 1px solid var(--le-border);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+}
+.mock-theme-lakefront .le-booking .mock-form input:focus,
+.mock-theme-lakefront .le-booking .mock-form select:focus,
+.mock-theme-lakefront .le-booking .mock-form textarea:focus {
+  outline: none;
+  border-color: var(--le-amber);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+}
+.mock-theme-lakefront .le-booking-note { font-size: 0.9rem; color: var(--le-text-muted); margin-top: 1rem; }
+.mock-theme-lakefront .le-booking-note a { color: var(--le-amber); font-weight: 700; }
+.mock-theme-lakefront .mock-confirm { display: none; padding: 1rem; background: rgba(245,166,35,0.12); border-radius: 6px; margin-top: 1rem; }
+.mock-theme-lakefront .mock-confirm.is-visible { display: block; }
+
+/* Why choose us */
+.mock-theme-lakefront .le-why-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 640px) { .mock-theme-lakefront .le-why-grid { grid-template-columns: repeat(3, 1fr); } }
+.mock-theme-lakefront .le-why-card { text-align: center; padding: 1.5rem; }
+.mock-theme-lakefront .le-why-card h3 { margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-why-card p { margin: 0; font-size: 0.95rem; color: var(--le-text); }
+
+/* Testimonials */
+.mock-theme-lakefront .le-testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 640px) { .mock-theme-lakefront .le-testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+.mock-theme-lakefront .le-testimonial {
+  background: var(--le-white);
+  border-left: 4px solid var(--le-amber);
+  padding: 1.25rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: var(--le-shadow);
+}
+.mock-theme-lakefront .le-testimonial p { margin: 0 0 0.5rem; font-style: italic; color: var(--le-text); }
+.mock-theme-lakefront .le-testimonial cite { font-size: 0.9rem; color: var(--le-text-muted); font-style: normal; }
+
+/* Service area */
+.mock-theme-lakefront .le-service-area { text-align: center; }
+.mock-theme-lakefront .le-service-area ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1rem; }
+.mock-theme-lakefront .le-service-area li { font-size: 1rem; color: var(--le-text); }
+.mock-theme-lakefront .le-service-area li::before { content: "· "; color: var(--le-amber); font-weight: 700; }
+.mock-theme-lakefront .le-service-area li:first-child::before { content: ""; }
+
+/* Footer */
+.mock-theme-lakefront .mock-footer {
+  background: var(--le-charcoal);
+  color: rgba(255,255,255,0.9);
+  border-top: 3px solid var(--le-amber);
+  padding: 2rem 0 1.5rem;
+}
+.mock-theme-lakefront .mock-footer-disclaimer { background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.85rem; }
+.mock-theme-lakefront .mock-footer-disclaimer a { color: var(--le-amber); }
+.mock-theme-lakefront .le-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 640px) { .mock-theme-lakefront .le-footer-grid { grid-template-columns: 1fr 1fr 1fr; text-align: left; } }
+.mock-theme-lakefront .le-footer-grid h4 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--le-white); margin: 0 0 0.75rem; }
+.mock-theme-lakefront .le-footer-grid p { margin: 0 0 0.35rem; font-size: 0.95rem; }
+.mock-theme-lakefront .le-footer-grid a { color: rgba(255,255,255,0.9); }
+.mock-theme-lakefront .le-footer-grid a:hover { color: var(--le-amber); text-decoration: none; }
+.mock-theme-lakefront .le-footer-grid ul { list-style: none; padding: 0; margin: 0; }
+.mock-theme-lakefront .le-footer-grid ul li { margin-bottom: 0.35rem; }
+.mock-theme-lakefront .le-footer-bottom { font-size: 0.85rem; color: rgba(255,255,255,0.7); text-align: center; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.15); }
+.mock-theme-lakefront .le-footer-bottom .le-demo-note { font-size: 0.8rem; margin-top: 0.5rem; }
+
+/* Services page – listing cards with image */
+.mock-theme-lakefront .le-service-listing { display: grid; gap: 1.5rem; }
+.mock-theme-lakefront .le-service-listing-card {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0;
-  margin-top: 1.5rem;
-}
-.mock-theme-sleek .mock-service-card {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  max-width: 100%;
-  flex: none;
-  background: linear-gradient(90deg, rgba(254,243,199,0.12) 0%, rgba(30,41,59,0.7) 100%);
-  border: 1px solid rgba(254,243,199,0.25);
-  border-left: 4px solid var(--mock-warm);
-  border-radius: var(--mock-radius);
+  background: var(--le-white);
+  border: 1px solid var(--le-border);
+  border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s, opacity 0.5s ease, transform 0.5s ease;
+  box-shadow: var(--le-shadow);
 }
-.mock-theme-sleek .mock-section-services .mock-service-card {
-  opacity: 0;
-  transform: translateY(24px);
+@media (min-width: 768px) {
+  .mock-theme-lakefront .le-service-listing-card { grid-template-columns: 140px 1fr; align-items: stretch; }
 }
-.mock-theme-sleek .mock-section-services .mock-service-card.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.mock-theme-lakefront .le-svc-image {
+  min-height: 120px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--le-bg-alt);
 }
-.mock-theme-sleek .mock-service-card:last-child { margin-bottom: 0; }
-.mock-theme-sleek .mock-service-card:hover {
-  border-color: var(--mock-primary);
-  box-shadow: 0 0 0 1px rgba(245,158,11,0.4), 0 0 20px rgba(56,189,248,0.15);
-}
-.mock-theme-sleek .mock-service-card img {
-  width: 140px;
-  min-width: 140px;
-  height: auto;
+@media (min-width: 768px) { .mock-theme-lakefront .le-svc-image { min-height: 0; min-width: 140px; } }
+.mock-theme-lakefront .le-service-listing-card > div:last-child { padding: 1.25rem 1.5rem; }
+.mock-theme-lakefront .le-service-listing-card h3 { margin-bottom: 0.35rem; }
+.mock-theme-lakefront .le-svc-desc { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--le-text-muted); }
+.mock-theme-lakefront .le-svc-price { font-weight: 700; color: var(--le-amber); font-size: 0.95rem; margin-bottom: 0.75rem; }
+.mock-theme-lakefront .le-service-listing-card .mock-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+
+/* CTA strip */
+.mock-theme-lakefront .le-cta-strip { text-align: center; padding: 2rem; background: var(--le-charcoal); color: var(--le-white); border-radius: 8px; }
+.mock-theme-lakefront .le-cta-strip h3 { color: var(--le-white); margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-cta-strip p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+.mock-theme-lakefront .le-cta-strip .mock-btn-primary { margin: 0 0.35rem 0.35rem 0; }
+.mock-theme-lakefront .le-cta-strip .mock-btn-outline { color: var(--le-white) !important; border-color: rgba(255,255,255,0.8); }
+.mock-theme-lakefront .le-cta-strip .mock-btn-outline:hover { background: rgba(255,255,255,0.15); color: var(--le-white) !important; }
+
+/* About – story, values, team */
+.mock-theme-lakefront .le-story p { max-width: 720px; margin-bottom: 1rem; }
+.mock-theme-lakefront .le-values-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 640px) { .mock-theme-lakefront .le-values-grid { grid-template-columns: repeat(3, 1fr); } }
+.mock-theme-lakefront .le-value-card { text-align: center; padding: 1.5rem; background: var(--le-white); border-radius: 8px; border-top: 4px solid var(--le-amber); box-shadow: var(--le-shadow); }
+.mock-theme-lakefront .le-value-card h3 { margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-team-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 640px) { .mock-theme-lakefront .le-team-grid { grid-template-columns: repeat(3, 1fr); } }
+.mock-theme-lakefront .le-team-card { background: var(--le-white); padding: 1.5rem; border-radius: 8px; box-shadow: var(--le-shadow); text-align: center; }
+.mock-theme-lakefront .le-team-card .le-team-photo {
+  width: 100%;
   aspect-ratio: 1;
+  max-width: 160px;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  background: var(--le-bg-alt);
   object-fit: cover;
 }
-.mock-theme-sleek .mock-service-card .mock-service-body {
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.mock-theme-sleek .mock-service-card h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 0.35rem;
-}
-.mock-theme-sleek .mock-service-card p { color: var(--mock-muted); font-size: 0.9rem; margin: 0; }
-.mock-theme-sleek .mock-service-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--mock-primary);
-}
-.mock-theme-sleek a.mock-service-card:hover .mock-service-link { color: #fbbf24; }
-.mock-theme-sleek .mock-see-all {
-  text-align: center;
-  margin: 1.5rem 0 0;
-  font-weight: 600;
-}
-.mock-theme-sleek .mock-see-all a:hover { text-decoration: none; }
-@media (max-width: 600px) {
-  .mock-theme-sleek .mock-service-card { flex-direction: column; }
-  .mock-theme-sleek .mock-service-card img { width: 100%; min-width: 0; aspect-ratio: 16/10; }
-}
+.mock-theme-lakefront .le-team-card h3 { margin-bottom: 0.25rem; }
+.mock-theme-lakefront .le-team-card .le-role { font-size: 0.9rem; color: var(--le-amber); font-weight: 600; margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-certs { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1rem; }
+.mock-theme-lakefront .le-certs span { padding: 0.35rem 0.75rem; background: var(--le-bg-alt); border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--le-charcoal); }
 
-/* Local / support block – warm cream band */
-.mock-theme-sleek .mock-local {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(254,243,199,0.12) 0%, rgba(30,41,59,0.7) 100%);
-  border: 1px solid rgba(254,243,199,0.25);
-  border-left: 4px solid var(--mock-warm);
-  border-radius: var(--mock-radius);
-}
-.mock-theme-sleek .mock-local h3 { color: var(--mock-warm); font-size: 1.1rem; }
-.mock-theme-sleek .mock-local p { color: var(--mock-muted); }
+/* Contact */
+.mock-theme-lakefront .le-contact-hero { text-align: center; }
+.mock-theme-lakefront .le-contact-info { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+@media (min-width: 640px) { .mock-theme-lakefront .le-contact-info { grid-template-columns: 1fr 1fr; } }
+.mock-theme-lakefront .le-contact-block { padding: 1.5rem; background: var(--le-white); border-radius: 8px; border-left: 4px solid var(--le-amber); box-shadow: var(--le-shadow); }
+.mock-theme-lakefront .le-contact-block h3 { margin-bottom: 0.5rem; }
+.mock-theme-lakefront .le-contact-block a { color: var(--le-amber); font-weight: 700; }
+.mock-theme-lakefront .le-faq { max-width: 640px; margin: 0 auto; }
+.mock-theme-lakefront .le-faq h3 { margin-top: 2rem; margin-bottom: 1rem; }
+.mock-theme-lakefront .le-faq-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--le-border); }
+.mock-theme-lakefront .le-faq-item h4 { font-size: 1rem; font-weight: 600; color: var(--le-charcoal); margin: 0 0 0.35rem; }
+.mock-theme-lakefront .le-faq-item p { margin: 0; font-size: 0.95rem; color: var(--le-text); }
+.mock-theme-lakefront .le-map-heading { margin-top: 2.5rem; }
+.mock-theme-lakefront .le-map-intro { margin-bottom: 1rem; }
+.mock-theme-lakefront .le-map-wrap { margin-bottom: 2rem; overflow: hidden; border-radius: 8px; box-shadow: var(--le-shadow); }
+.mock-theme-lakefront .le-map-wrap iframe { display: block; }
 
-/* CTA block – accent band */
-.mock-theme-sleek .mock-cta {
-  background: linear-gradient(135deg, rgba(56,189,248,0.18) 0%, var(--mock-bg-alt) 60%);
-  border: 1px solid rgba(56,189,248,0.4);
-  border-left: 4px solid var(--mock-accent);
-  color: var(--mock-text);
-  margin-top: 2rem;
-}
-.mock-theme-sleek .mock-cta h3 { color: var(--mock-accent); }
-.mock-theme-sleek .mock-cta p { color: var(--mock-muted); }
-.mock-theme-sleek .mock-cta .mock-btn {
-  background: var(--mock-primary);
-  color: #0f172a;
-}
-.mock-theme-sleek .mock-cta .mock-btn:hover { background: #fbbf24; color: #0f172a; }
-
-/* Buttons */
-.mock-theme-sleek .mock-btn {
-  background: transparent;
-  color: var(--mock-primary);
-  border: 2px solid var(--mock-primary);
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
-}
-.mock-theme-sleek .mock-btn:hover { background: var(--mock-primary); color: #0f172a; text-decoration: none; }
-.mock-theme-sleek .mock-btn-primary {
-  background: var(--mock-primary);
-  color: #0f172a;
-  border-color: var(--mock-primary);
-}
-.mock-theme-sleek .mock-btn-primary:hover { background: #fbbf24; color: #0f172a; border-color: #fbbf24; }
-
-/* Booking / form section – warm tint */
-.mock-theme-sleek .mock-booking {
-  background: linear-gradient(180deg, rgba(254,243,199,0.08) 0%, rgba(30,41,59,0.7) 100%);
-  border: 1px solid rgba(254,243,199,0.2);
-  border-radius: var(--mock-radius);
-  padding: 1.75rem;
-  margin-top: 1.5rem;
-}
-.mock-theme-sleek .mock-booking h3 { color: var(--mock-warm); }
-.mock-theme-sleek .mock-form label { color: var(--mock-text); }
-.mock-theme-sleek .mock-form input,
-.mock-theme-sleek .mock-form select,
-.mock-theme-sleek .mock-form textarea {
-  background: var(--mock-bg);
-  border: 1px solid var(--mock-border);
-  color: var(--mock-text);
-}
-.mock-theme-sleek .mock-form input::placeholder,
-.mock-theme-sleek .mock-form textarea::placeholder { color: var(--mock-muted); }
-.mock-theme-sleek .mock-form input:focus,
-.mock-theme-sleek .mock-form select:focus,
-.mock-theme-sleek .mock-form textarea:focus {
-  border-color: var(--mock-primary);
-  box-shadow: 0 0 0 2px rgba(245,158,11,0.25);
-}
-
-/* Contact page – main section intro */
-.mock-theme-sleek .mock-section h1 { color: var(--mock-warm); font-size: 1.75rem; margin-bottom: 0.5rem; }
-
-/* Footer – accent/warm strip; keep tone change, ensure text and links are legible */
-.mock-theme-sleek .mock-footer {
-  background: linear-gradient(180deg, rgba(56,189,248,0.1) 0%, var(--mock-bg-alt) 25%, rgba(254,243,199,0.06) 100%);
-  border-top: 2px solid var(--mock-accent);
-  color: #e2e8f0;
-  padding: 2rem 0;
-}
-.mock-theme-sleek .mock-footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-.mock-theme-sleek .mock-footer-brand strong {
-  display: block;
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 0.35rem;
-}
-.mock-theme-sleek .mock-footer-brand p { margin: 0 0 0.25rem; font-size: 0.9rem; color: #e2e8f0; }
-.mock-theme-sleek .mock-footer-brand a {
-  color: #7dd3fc;
-  font-weight: 600;
-}
-.mock-theme-sleek .mock-footer-brand a:hover { color: #fff; text-decoration: underline; }
-.mock-theme-sleek .mock-footer-credit {
-  margin-top: 0.75rem !important;
-  font-size: 0.8rem;
-  color: #cbd5e1;
-}
-.mock-theme-sleek .mock-footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.mock-theme-sleek .mock-footer-links a {
-  color: #e2e8f0;
-  font-weight: 500;
-}
-.mock-theme-sleek .mock-footer-links a:hover { color: #fff; text-decoration: underline; }
-@media (max-width: 600px) {
-  .mock-theme-sleek .mock-footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-}
-
-/* Confirm message */
-.mock-theme-sleek .mock-confirm {
-  background: rgba(245,158,11,0.15);
-  border: 1px solid var(--mock-primary);
-  color: var(--mock-text);
-}
-
-/* Services page hero – keep background image; optional different position */
-.mock-theme-sleek .mock-hero-services { background-position: 60% 40%; }
-
-/* Contact page – add hero with background graphic */
-.mock-theme-sleek .mock-hero-contact { min-height: 140px; padding: 2rem 1rem; }
-.mock-theme-sleek .mock-hero-contact h1 { margin: 0; }
-.mock-theme-sleek .mock-hero-contact .mock-container { display: flex; align-items: center; }
-
-/* Scroll fade-in (home + services) */
-.mock-theme-sleek .mock-fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.mock-theme-sleek .mock-fade-in.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Form */
+.mock-theme-lakefront .mock-form .form-row { margin-bottom: 1rem; }
+.mock-theme-lakefront .mock-form label { display: block; margin-bottom: 0.35rem; }
+.mock-theme-lakefront .mock-form input, .mock-theme-lakefront .mock-form select, .mock-theme-lakefront .mock-form textarea { width: 100%; font: inherit; }
+.mock-theme-lakefront .form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 480px) { .mock-theme-lakefront .form-row-inline { grid-template-columns: 1fr; } }

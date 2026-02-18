@@ -3,96 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Mile High Electric – Denver Electrical</title>
-  <meta name="description" content="Electrical services in Denver: panel upgrades, wiring, lighting, outlets, inspections. Licensed and insured.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Services | Lakefront Electric – Chicago Electrical</title>
+  <meta name="description" content="Full-service electrical solutions in Chicago: emergency service, panel upgrades, lighting, wiring, outlets, surge protection, EV chargers. Licensed and insured.">
   <link rel="stylesheet" href="mock-styles.css">
   <link rel="stylesheet" href="mock-electrical.css">
 </head>
-<body class="mock-theme-sleek">
+<body class="mock-theme-lakefront">
+  <div class="mock-demo-banner" id="mock-demo-banner">
+    <div class="mock-demo-banner-inner">
+      <span>This is a demonstration site showcasing H4 Services' Standard Package.</span>
+      <a href="https://www.h4services.co/get-started.html" class="mock-demo-banner-cta">Get a site like this →</a>
+      <button type="button" class="mock-demo-banner-close" aria-label="Dismiss" onclick="document.getElementById('mock-demo-banner').classList.add('is-dismissed')">×</button>
+    </div>
+  </div>
   <a href="https://www.h4services.co/" class="mock-return-banner">Return to H4Services</a>
   <header class="mock-header">
     <div class="mock-container mock-header-inner">
-      <a href="mock-electrical.html" class="mock-logo"><img loading="lazy" src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Mile High Electric</a>
-      <a href="tel:+13035550142" class="mock-header-phone">(303) 555-0142</a>
+      <a href="mock-electrical.html" class="mock-logo"><img loading="lazy" src="logo-electrical.svg" alt="" class="mock-logo-icon" width="32" height="32">Lakefront Electric</a>
+      <a href="tel:+17735550283" class="mock-header-phone">(773) 555-0283</a>
       <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
       <nav class="mock-nav">
         <a href="mock-electrical.html">Home</a>
         <a href="mock-electrical-services.html">Services</a>
+        <a href="mock-electrical-about.html">About</a>
         <a href="mock-electrical-contact.html">Contact</a>
+        <a href="mock-electrical.html#booking">Book Service</a>
         <a href="case-studies.html" class="mock-back">← Case studies</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="mock-hero mock-hero-services" style="background-image: url('electrical-banner.png');">
+    <section class="le-page-hero">
       <div class="mock-container">
-        <h1>Licensed Electrical Services in Denver & the Front Range</h1>
-        <p>Residential and commercial—panels, wiring, lighting, inspections, and repairs.</p>
+        <h1>Full-Service Electrical Solutions</h1>
+        <p>From a single outlet to a full rewire—licensed, insured, code-compliant.</p>
       </div>
     </section>
 
-    <section class="mock-section mock-section-services">
+    <section class="mock-section">
       <div class="mock-container">
-        <h2>What we do</h2>
-        <div class="mock-services-grid">
-          <a href="mock-electrical.html?service=panel#booking" class="mock-service-card">
-            <img loading="lazy" src="electrical-panel.png" alt="Panel upgrade">
-            <div class="mock-service-body">
-              <h3>Panel upgrades & replacement</h3>
-              <p>Service upgrades, panel replacement, and subpanel installation for older homes and added capacity.</p>
+        <div class="le-service-listing">
+          <article class="le-service-listing-card" id="emergency">
+            <div class="le-svc-image" style="background-image: url('emergency-electrical.png');"></div>
+            <div>
+              <h3>Emergency Electrical Service</h3>
+              <p class="le-svc-desc">Sparking outlets, power outages, burning smells, tripped main breakers—24/7 emergency response. We get there fast so you're not in the dark.</p>
+              <p class="le-svc-price">Starting at $225 emergency call fee</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
             </div>
-          </a>
-          <a href="mock-electrical.html?service=wiring#booking" class="mock-service-card">
-            <img loading="lazy" src="electrical-wiring.png" alt="Wiring and rewiring">
-            <div class="mock-service-body">
-              <h3>Wiring & rewiring</h3>
-              <p>New circuits, whole-home rewiring, and troubleshooting for residential and commercial.</p>
+          </article>
+          <article class="le-service-listing-card" id="panel">
+            <div class="le-svc-image" style="background-image: url('electrical-panel.png');"></div>
+            <div>
+              <h3>Electrical Panel Upgrades</h3>
+              <p class="le-svc-desc">Upgrade from fuse boxes or outdated panels to modern 200-amp service. Required for many home additions and EV chargers.</p>
+              <p class="le-svc-price">From $1,800</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
             </div>
-          </a>
-          <a href="mock-electrical.html?service=outlets#booking" class="mock-service-card">
-            <img loading="lazy" src="electrical-lighting-outlets.png" alt="Outlets and switches">
-            <div class="mock-service-body">
-              <h3>Outlet & switch installation</h3>
-              <p>New outlets, USB outlets, switches, dimmers, and GFCI installation where required.</p>
+          </article>
+          <article class="le-service-listing-card" id="lighting">
+            <div class="le-svc-image" style="background-image: url('electrical-lighting.png');"></div>
+            <div>
+              <h3>Lighting Installation</h3>
+              <p class="le-svc-desc">Recessed lighting, under-cabinet, outdoor landscape lighting, fixtures, and LED retrofits. Indoor and outdoor, done right.</p>
+              <p class="le-svc-price">From $150 per fixture</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
             </div>
-          </a>
-          <a href="mock-electrical.html?service=lighting#booking" class="mock-service-card">
-            <img loading="lazy" src="electrical-lighting.png" alt="Lighting design and installation">
-            <div class="mock-service-body">
-              <h3>Lighting design & installation</h3>
-              <p>Indoor and outdoor lighting, fixtures, and smart lighting solutions.</p>
+          </article>
+          <article class="le-service-listing-card" id="wiring">
+            <div class="le-svc-image" style="background-image: url('electrical-wiring.png');"></div>
+            <div>
+              <h3>Wiring &amp; Rewiring</h3>
+              <p class="le-svc-desc">New construction wiring, knob-and-tube replacement, and additional circuit installation. Whole-home rewiring when you need it.</p>
+              <p class="le-svc-price">From $200</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
             </div>
-          </a>
-          <a href="mock-electrical.html?service=inspection#booking" class="mock-service-card">
-            <img loading="lazy" src="electrical-inspection.png" alt="Inspections and repairs">
-            <div class="mock-service-body">
-              <h3>Inspections & repairs</h3>
-              <p>Electrical inspections, troubleshooting, and repair for existing systems.</p>
+          </article>
+          <article class="le-service-listing-card">
+            <div class="le-svc-image" style="background-image: url('electrical-lighting-outlets.png');"></div>
+            <div>
+              <h3>Outlet &amp; Switch Installation</h3>
+              <p class="le-svc-desc">Standard outlets, GFCI outlets, USB outlets, smart switches, and 240V outlets for appliances. Code-compliant installation.</p>
+              <p class="le-svc-price">From $95 per outlet</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
             </div>
-          </a>
+          </article>
+          <article class="le-service-listing-card">
+            <div class="le-svc-image" style="background-image: url('ceiling-fan.png');"></div>
+            <div>
+              <h3>Ceiling Fan Installation</h3>
+              <p class="le-svc-desc">New fan installation or replacement, including wiring for fan-rated boxes. Safe, secure, and balanced.</p>
+              <p class="le-svc-price">From $175</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
+            </div>
+          </article>
+          <article class="le-service-listing-card">
+            <div class="le-svc-image" style="background-image: url('surge-protection.png');"></div>
+            <div>
+              <h3>Whole-Home Surge Protection</h3>
+              <p class="le-svc-desc">Protect electronics and appliances from power surges at the panel level. One installation, peace of mind.</p>
+              <p class="le-svc-price">From $350 installed</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
+            </div>
+          </article>
+          <article class="le-service-listing-card" id="inspection">
+            <div class="le-svc-image" style="background-image: url('electrical-inspection.png');"></div>
+            <div>
+              <h3>Electrical Inspections</h3>
+              <p class="le-svc-desc">Pre-purchase home inspections, code compliance checks, and annual safety inspections. Know the condition of your system.</p>
+              <p class="le-svc-price">From $200</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
+            </div>
+          </article>
+          <article class="le-service-listing-card">
+            <div class="le-svc-image" style="background-image: url('ev-charger.png');"></div>
+            <div>
+              <h3>EV Charger Installation</h3>
+              <p class="le-svc-desc">Level 2 home charging station installation with dedicated 240V circuit. Get ready for your electric vehicle.</p>
+              <p class="le-svc-price">From $800</p>
+              <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book This Service</a>
+            </div>
+          </article>
         </div>
-        <div class="mock-cta">
-          <h3>Ready to book?</h3>
-          <a href="mock-electrical.html#booking" class="mock-btn mock-btn-primary">Book a Service</a>
+        <div class="le-cta-strip">
+          <h3>Not sure what you need?</h3>
+          <p>Call us at (773) 555-0283 and we'll figure it out.</p>
+          <a href="tel:+17735550283" class="mock-btn mock-btn-primary">Call Now</a>
+          <a href="mock-electrical.html#booking" class="mock-btn mock-btn-outline">Book Online</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="mock-footer">
-    <div class="mock-container mock-footer-grid">
-      <div class="mock-footer-brand">
-        <strong>Mile High Electric</strong>
-        <p>Denver, CO & the Front Range</p>
-        <p><a href="tel:+13035550142">(303) 555-0142</a></p>
-        <p class="mock-footer-credit">Demo site by H4Services</p>
+    <div class="mock-container le-footer-grid">
+      <div>
+        <h4>Lakefront Electric</h4>
+        <p>Powering Chicago Homes &amp; Businesses Since 2010</p>
+        <p>Licensed / Bonded / Insured</p>
       </div>
-      <div class="mock-footer-links">
-        <a href="mock-electrical.html">Home</a>
-        <a href="mock-electrical-services.html">Services</a>
-        <a href="mock-electrical-contact.html">Contact</a>
-        <a href="case-studies.html">Case studies</a>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="mock-electrical.html">Home</a></li>
+          <li><a href="mock-electrical-services.html">Services</a></li>
+          <li><a href="mock-electrical-about.html">About</a></li>
+          <li><a href="mock-electrical-contact.html">Contact</a></li>
+          <li><a href="mock-electrical.html#booking">Book Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:+17735550283">(773) 555-0283</a></p>
+        <p>Email: <a href="mailto:info@lakefrontelectric.example.com">info@lakefrontelectric.example.com</a></p>
+        <p>24/7 Emergency Service</p>
+        <p>Regular hours: Mon–Sat 7am–6pm</p>
+      </div>
+      <div class="le-footer-bottom" style="grid-column: 1 / -1;">
+        <p>© 2025 Lakefront Electric. All rights reserved.</p>
+        <p class="le-demo-note">Demonstration site built by H4 Services.</p>
       </div>
     </div>
   </footer>
@@ -100,22 +171,6 @@
     document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
       document.querySelector('.mock-nav').classList.toggle('is-open');
     });
-    (function() {
-      var cards = document.querySelectorAll('.mock-services-grid .mock-service-card');
-      if (!cards.length) return;
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var card = entry.target;
-            var i = Array.prototype.indexOf.call(card.parentNode.children, card);
-            var delay = Math.min(i * 80, 320);
-            setTimeout(function() { card.classList.add('is-visible'); }, delay);
-            observer.unobserve(card);
-          }
-        });
-      }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
-      cards.forEach(function(card) { observer.observe(card); });
-    })();
   </script>
 </body>
 </html>

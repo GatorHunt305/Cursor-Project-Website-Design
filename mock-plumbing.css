@@ -1,38 +1,324 @@
-/* Plumbing mock – gray and blue theme */
-/* Return to H4Services banner – plumbing blue (mock-styles base is overridden by this file’s --mock-primary) */
-.mock-return-banner { background: var(--mock-primary); }
-.mock-return-banner:hover { background: var(--mock-primary-dark); }
+/* Windy City Plumbing – Standard package demo. Navy + safety orange, industrial tone */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  --mock-primary: #2563eb;
-  --mock-primary-dark: #1d4ed8;
-  --mock-bg: #eff6ff;
-  --mock-bg-alt: #dbeafe;
-  --mock-card: #ffffff;
-  --mock-text: #1e293b;
-  --mock-muted: #475569;
-  --mock-border: #bfdbfe;
-  --mock-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.06), 0 2px 4px -2px rgba(37, 99, 235, 0.04);
-  --mock-shadow-lg: 0 10px 15px -3px rgba(30, 41, 59, 0.08), 0 4px 6px -4px rgba(30, 41, 59, 0.06);
-  --mock-glow: 0 0 0 1px rgba(37, 99, 235, 0.45), 0 0 28px rgba(37, 99, 235, 0.28);
+  --wcp-navy: #1B3A5F;
+  --wcp-navy-dark: #132942;
+  --wcp-orange: #FF6B35;
+  --wcp-orange-dark: #E55A2B;
+  --wcp-bg: #F8F9FA;
+  --wcp-bg-alt: #EEF1F4;
+  --wcp-text: #2C3E50;
+  --wcp-text-muted: #5A6C7D;
+  --wcp-light-blue: #4A90E2;
+  --wcp-white: #FFFFFF;
+  --wcp-border: #DDE1E6;
+  --wcp-shadow: 0 2px 8px rgba(27, 58, 95, 0.1);
+  --wcp-shadow-lg: 0 8px 24px rgba(27, 58, 95, 0.12);
 }
 
-body { background: var(--mock-bg); }
-.mock-section:nth-of-type(even) { background: var(--mock-bg-alt); }
-.mock-section:nth-of-type(odd) { background: var(--mock-bg); }
-.mock-header { background: var(--mock-card); border-bottom-color: var(--mock-border); }
-.mock-footer { background: var(--mock-bg-alt); border-top-color: var(--mock-border); }
+/* Override mock-styles for plumbing */
+.mock-primary { --mock-primary: var(--wcp-navy); --mock-primary-dark: var(--wcp-navy-dark); }
+body { background: var(--wcp-bg); color: var(--wcp-text); font-family: 'Open Sans', system-ui, sans-serif; }
+.mock-container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 640px) { .mock-container { padding: 0 1.25rem; } }
 
-.mock-service-card { border: 1px solid var(--mock-border); transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
-.mock-service-card:hover,
-.mock-service-card:focus-visible {
-  box-shadow: var(--mock-shadow-lg), var(--mock-glow);
-  transform: translateY(-2px);
-  border-color: #2563eb;
+/* Header */
+.mock-header {
+  background: var(--wcp-navy);
+  border-bottom: 3px solid var(--wcp-orange);
+  padding: 0.75rem 0;
 }
-a.mock-service-card:focus-visible { outline: none; }
+.mock-header .mock-container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.wcp-header-phone {
+  display: none;
+  font-weight: 700;
+  color: var(--wcp-orange);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.wcp-header-phone:hover { color: var(--wcp-white); text-decoration: none; }
+@media (min-width: 768px) { .wcp-header-phone { display: inline-block; } }
+.mock-logo { color: var(--wcp-white) !important; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.02em; }
+.mock-logo:hover { color: var(--wcp-orange) !important; text-decoration: none; }
+.mock-nav a { color: rgba(255,255,255,0.9) !important; font-weight: 600; font-size: 0.95rem; }
+.mock-nav a:hover { color: var(--wcp-orange) !important; text-decoration: none; }
+.mock-nav .mock-back { color: var(--wcp-light-blue) !important; font-size: 0.85rem; }
+.mock-menu-toggle { color: var(--wcp-white); }
+.mock-menu-toggle:hover { color: var(--wcp-orange); }
 
-/* Hero / Book a service button: invert on hover (blue box, white text) */
-.mock-btn { transition: background 0.2s ease, color 0.2s ease; }
-.mock-btn:hover { background: var(--mock-primary); color: #fff !important; text-decoration: none; }
-.mock-hero .mock-btn:hover { text-shadow: none; }
+/* Headings */
+h1, .wcp-h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.02em; color: var(--wcp-navy); line-height: 1.1; margin: 0 0 0.5rem; }
+h2, .wcp-h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 4vw, 2.25rem); font-weight: 400; letter-spacing: 0.02em; color: var(--wcp-navy); margin: 0 0 1rem; }
+h3, .wcp-h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; font-weight: 400; letter-spacing: 0.02em; color: var(--wcp-navy); margin: 0 0 0.5rem; }
+.mock-section p { margin: 0 0 1rem; color: var(--wcp-text); line-height: 1.6; }
+
+/* Buttons */
+.mock-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.mock-btn-primary {
+  background: var(--wcp-orange);
+  color: var(--wcp-white) !important;
+  border-color: var(--wcp-orange);
+}
+.mock-btn-primary:hover { background: var(--wcp-orange-dark); border-color: var(--wcp-orange-dark); color: var(--wcp-white) !important; text-decoration: none; }
+.mock-btn-outline {
+  background: transparent;
+  color: var(--wcp-navy) !important;
+  border-color: var(--wcp-navy);
+}
+.mock-btn-outline:hover { background: var(--wcp-navy); color: var(--wcp-white) !important; text-decoration: none; }
+
+/* Return / demo banners */
+.mock-return-banner { background: var(--wcp-navy); color: var(--wcp-white); }
+.mock-return-banner:hover { background: var(--wcp-navy-dark); color: var(--wcp-white); text-decoration: none; }
+.mock-demo-banner-cta { background: var(--wcp-orange) !important; color: #fff !important; }
+
+/* Hero */
+.wcp-hero {
+  position: relative;
+  padding: 3rem 0;
+  background: var(--wcp-navy) url('plumbing-pipe-repair.png') center/cover no-repeat;
+  background-color: var(--wcp-navy);
+  color: var(--wcp-white);
+  text-align: center;
+}
+.wcp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 58, 95, 0.92) 0%, rgba(27, 58, 95, 0.85) 100%);
+}
+.wcp-hero .mock-container { position: relative; z-index: 1; }
+.wcp-hero h1 { color: var(--wcp-white); margin-bottom: 0.75rem; }
+.wcp-hero .wcp-hero-sub { font-size: 1.1rem; opacity: 0.95; margin-bottom: 1.5rem; line-height: 1.5; }
+.wcp-hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+.wcp-hero-btns .mock-btn-primary { font-size: 1.1rem; padding: 1rem 1.75rem; min-height: 52px; }
+.wcp-hero-btns .mock-btn-outline { color: var(--wcp-white) !important; border-color: rgba(255,255,255,0.8); }
+.wcp-hero-btns .mock-btn-outline:hover { background: rgba(255,255,255,0.15); color: var(--wcp-white) !important; }
+.wcp-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.wcp-trust-badges span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.wcp-trust-badges span::before { content: "✓"; color: var(--wcp-orange); font-weight: 700; }
+
+/* Section spacing */
+.mock-section { padding: 2.5rem 0; }
+.mock-section:nth-of-type(even) { background: var(--wcp-bg-alt); }
+.mock-section:nth-of-type(odd) { background: var(--wcp-bg); }
+
+/* Services preview – 4 cards, navy bg, white text, orange hover */
+.wcp-services-preview .mock-container { max-width: 1100px; }
+.wcp-services-preview h2 { text-align: center; margin-bottom: 1.25rem; }
+.wcp-services-preview .wcp-section-lead { text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
+.wcp-service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .wcp-service-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .wcp-service-grid { grid-template-columns: repeat(4, 1fr); } }
+.wcp-service-card {
+  display: block;
+  position: relative;
+  background: var(--wcp-navy);
+  color: var(--wcp-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid var(--wcp-navy);
+  background-size: cover;
+  background-position: center;
+  min-height: 180px;
+}
+.wcp-service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27, 58, 95, 0.75) 0%, rgba(27, 58, 95, 0.92) 100%);
+  border-radius: 6px;
+  pointer-events: none;
+}
+.wcp-service-card h3,
+.wcp-service-card p,
+.wcp-service-card .wcp-card-link { position: relative; z-index: 1; }
+.wcp-service-card-emergency { background-image: url('plumbing-emergency.png'); }
+.wcp-service-card-drain { background-image: url('plumbing-drain-cleaning.png'); }
+.wcp-service-card-water-heater { background-image: url('plumbing-water-heater.png'); }
+.wcp-service-card-fixture { background-image: url('plumbing-fixture-installation.png'); }
+.wcp-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--wcp-shadow-lg);
+  border-color: var(--wcp-orange);
+  color: var(--wcp-white);
+  text-decoration: none;
+}
+.wcp-service-card h3 { color: var(--wcp-white); font-size: 1.15rem; margin-bottom: 0.5rem; }
+.wcp-service-card p { color: rgba(255,255,255,0.9); font-size: 0.9rem; margin-bottom: 0.75rem; line-height: 1.45; }
+.wcp-service-card .wcp-card-link { font-size: 0.9rem; font-weight: 700; color: var(--wcp-orange); }
+.wcp-service-card:hover .wcp-card-link { color: var(--wcp-orange); text-decoration: underline; }
+
+/* Booking section (basic – Standard package) */
+.wcp-booking { background: var(--wcp-white); border: 1px solid var(--wcp-border); border-radius: 8px; padding: 1.5rem; box-shadow: var(--wcp-shadow); }
+.wcp-booking h3 { margin-bottom: 1rem; }
+.wcp-booking .mock-form label { font-weight: 600; color: var(--wcp-text); }
+.wcp-booking .mock-form input,
+.wcp-booking .mock-form select,
+.wcp-booking .mock-form textarea { border: 1px solid var(--wcp-border); border-radius: 6px; padding: 0.6rem 0.75rem; }
+.wcp-booking .mock-form input:focus,
+.wcp-booking .mock-form select:focus,
+.wcp-booking .mock-form textarea:focus { outline: none; border-color: var(--wcp-orange); box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2); }
+.wcp-booking-note { font-size: 0.9rem; color: var(--wcp-text-muted); margin-top: 1rem; }
+.wcp-booking-note a { color: var(--wcp-orange); font-weight: 700; }
+.mock-confirm { display: none; padding: 1rem; background: rgba(74, 144, 226, 0.15); border-radius: 6px; margin-top: 1rem; }
+.mock-confirm.is-visible { display: block; }
+
+/* Why choose us – 3 columns */
+.wcp-why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 640px) { .wcp-why-grid { grid-template-columns: repeat(3, 1fr); } }
+.wcp-why-card { text-align: center; padding: 1.5rem; }
+.wcp-why-card h3 { margin-bottom: 0.5rem; }
+.wcp-why-card p { margin: 0; font-size: 0.95rem; }
+
+/* Testimonials */
+.wcp-testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 640px) { .wcp-testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+.wcp-testimonial {
+  background: var(--wcp-white);
+  border-left: 4px solid var(--wcp-orange);
+  padding: 1.25rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: var(--wcp-shadow);
+}
+.wcp-testimonial p { margin: 0 0 0.5rem; font-style: italic; }
+.wcp-testimonial cite { font-size: 0.9rem; color: var(--wcp-text-muted); font-style: normal; }
+
+/* Service area */
+.wcp-service-area { text-align: center; }
+.wcp-service-area ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1rem; }
+.wcp-service-area li { font-size: 1rem; color: var(--wcp-text); }
+.wcp-service-area li::before { content: "· "; color: var(--wcp-orange); font-weight: 700; }
+.wcp-service-area li:first-child::before { content: ""; }
+
+/* Footer – 3 columns */
+.mock-footer {
+  background: var(--wcp-navy);
+  color: rgba(255,255,255,0.9);
+  border-top: 3px solid var(--wcp-orange);
+  padding: 2rem 0 1.5rem;
+}
+.mock-footer-disclaimer { background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.85rem; }
+.mock-footer-disclaimer a { color: var(--wcp-orange); }
+.wcp-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 640px) { .wcp-footer-grid { grid-template-columns: 1fr 1fr 1fr; text-align: left; } }
+.wcp-footer-grid h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--wcp-white); margin: 0 0 0.75rem; letter-spacing: 0.02em; }
+.wcp-footer-grid p { margin: 0 0 0.35rem; font-size: 0.95rem; }
+.wcp-footer-grid a { color: rgba(255,255,255,0.9); }
+.wcp-footer-grid a:hover { color: var(--wcp-orange); text-decoration: none; }
+.wcp-footer-grid ul { list-style: none; padding: 0; margin: 0; }
+.wcp-footer-grid ul li { margin-bottom: 0.35rem; }
+.wcp-footer-bottom { font-size: 0.85rem; color: rgba(255,255,255,0.7); text-align: center; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.15); }
+.wcp-footer-bottom .wcp-demo-note { font-size: 0.8rem; margin-top: 0.5rem; }
+
+/* Services page – listing cards with pricing */
+.wcp-service-listing {
+  display: grid;
+  gap: 1.5rem;
+}
+.wcp-service-listing-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: var(--wcp-white);
+  border: 1px solid var(--wcp-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--wcp-shadow);
+}
+@media (min-width: 768px) {
+  .wcp-service-listing-card { grid-template-columns: 140px 1fr; align-items: stretch; gap: 0; }
+}
+.wcp-svc-image {
+  min-height: 120px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--wcp-bg-alt);
+}
+@media (min-width: 768px) {
+  .wcp-svc-image { min-height: 0; min-width: 140px; }
+}
+.wcp-service-listing-card > div:last-child { padding: 1.25rem 1.5rem; }
+.wcp-service-listing-card h3 { margin-bottom: 0.35rem; }
+.wcp-service-listing-card .wcp-svc-desc { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--wcp-text-muted); }
+.wcp-service-listing-card .wcp-svc-price { font-weight: 700; color: var(--wcp-orange); font-size: 0.95rem; margin-bottom: 0.75rem; }
+.wcp-service-listing-card .mock-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+
+/* CTA strip */
+.wcp-cta-strip { text-align: center; padding: 2rem; background: var(--wcp-navy); color: var(--wcp-white); border-radius: 8px; }
+.wcp-cta-strip h3 { color: var(--wcp-white); margin-bottom: 0.5rem; }
+.wcp-cta-strip p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+.wcp-cta-strip .mock-btn-primary { margin: 0 0.35rem 0.35rem 0; }
+.wcp-cta-strip .mock-btn-outline { color: var(--wcp-white) !important; border-color: rgba(255,255,255,0.8); }
+.wcp-cta-strip .mock-btn-outline:hover { background: rgba(255,255,255,0.15); color: var(--wcp-white) !important; }
+
+/* About – story, values, team */
+.wcp-story p { max-width: 720px; margin-bottom: 1rem; }
+.wcp-values-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 640px) { .wcp-values-grid { grid-template-columns: repeat(3, 1fr); } }
+.wcp-value-card { text-align: center; padding: 1.5rem; background: var(--wcp-white); border-radius: 8px; border-top: 4px solid var(--wcp-orange); box-shadow: var(--wcp-shadow); }
+.wcp-value-card h3 { margin-bottom: 0.5rem; }
+.wcp-team-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 640px) { .wcp-team-grid { grid-template-columns: repeat(3, 1fr); } }
+.wcp-team-card { background: var(--wcp-white); padding: 1.5rem; border-radius: 8px; box-shadow: var(--wcp-shadow); text-align: center; }
+.wcp-team-card h3 { margin-bottom: 0.25rem; }
+.wcp-team-card .wcp-role { font-size: 0.9rem; color: var(--wcp-orange); font-weight: 600; margin-bottom: 0.5rem; }
+.wcp-certs { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1rem; }
+.wcp-certs span { padding: 0.35rem 0.75rem; background: var(--wcp-bg-alt); border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--wcp-navy); }
+
+/* Contact – large contact info, form, FAQ */
+.wcp-contact-hero { text-align: center; }
+.wcp-contact-info { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+@media (min-width: 640px) { .wcp-contact-info { grid-template-columns: 1fr 1fr; } }
+.wcp-contact-block { padding: 1.5rem; background: var(--wcp-white); border-radius: 8px; border-left: 4px solid var(--wcp-orange); box-shadow: var(--wcp-shadow); }
+.wcp-contact-block h3 { margin-bottom: 0.5rem; }
+.wcp-contact-block a { color: var(--wcp-orange); font-weight: 700; }
+.wcp-faq { max-width: 640px; margin: 0 auto; }
+.wcp-faq h3 { margin-top: 2rem; margin-bottom: 1rem; }
+.wcp-faq-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--wcp-border); }
+.wcp-faq-item h4 { font-size: 1rem; font-weight: 700; color: var(--wcp-navy); margin: 0 0 0.35rem; }
+.wcp-faq-item p { margin: 0; font-size: 0.95rem; }
+
+/* Form overrides from mock-styles */
+.mock-form .form-row { margin-bottom: 1rem; }
+.mock-form label { display: block; margin-bottom: 0.35rem; }
+.mock-form input, .mock-form select, .mock-form textarea { width: 100%; font: inherit; }
+.form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 480px) { .form-row-inline { grid-template-columns: 1fr; } }

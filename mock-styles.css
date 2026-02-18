@@ -15,6 +15,58 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 1rem; line-height: 1.6; color: var(--mock-text); background: var(--mock-bg); -webkit-font-smoothing: antialiased; }
 
+/* Demo site banner – thin top bar, light background, clear disclosure */
+.mock-demo-banner {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--mock-text);
+  background: var(--mock-card);
+  border-bottom: 1px solid var(--mock-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.mock-demo-banner.is-dismissed { display: none; }
+.mock-demo-banner-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+}
+.mock-demo-banner-inner span { flex: 1 1 280px; }
+.mock-demo-banner-cta {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--mock-primary);
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mock-demo-banner-cta:hover { background: var(--mock-primary-dark); color: #fff; text-decoration: none; }
+.mock-demo-banner-close {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--mock-muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.mock-demo-banner-close:hover { color: var(--mock-text); background: rgba(0,0,0,0.06); }
+
 /* Return to H4Services – full-width interactible card spanning top, redirects to main site */
 .mock-return-banner {
   display: block;
@@ -231,6 +283,16 @@ a.mock-service-card:hover { text-decoration: none; color: inherit; }
 
 /* Footer */
 .mock-footer { padding: 1.75rem 0; border-top: 1px solid var(--mock-border); font-size: 0.9rem; color: var(--mock-muted); text-align: center; background: var(--mock-card); }
+.mock-footer-disclaimer {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: var(--mock-muted);
+  background: rgba(0,0,0,0.03);
+  border-radius: var(--mock-radius);
+}
+.mock-footer-disclaimer a { font-weight: 600; }
+.mock-footer-disclaimer a:hover { text-decoration: underline; }
 
 @media (max-width: 640px) {
   .mock-section { padding: 1.5rem 0; }

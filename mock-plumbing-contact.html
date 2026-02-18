@@ -3,32 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Contact | Windy City Plumbing – Chicago</title>
-  <meta name="description" content="Contact Windy City Plumbing in Chicago. Call (312) 555-0199 or send a message for plumbing services and quotes.">
+  <meta name="description" content="Contact Windy City Plumbing in Chicago. Call (312) 555-0147, email, or book online. 24/7 emergency service.">
   <link rel="stylesheet" href="mock-styles.css">
   <link rel="stylesheet" href="mock-plumbing.css">
 </head>
 <body>
+  <div class="mock-demo-banner" id="mock-demo-banner">
+    <div class="mock-demo-banner-inner">
+      <span>📋 This is a demonstration site showcasing H4 Services' Standard Package.</span>
+      <a href="https://www.h4services.co/get-started.html" class="mock-demo-banner-cta">Get a site like this →</a>
+      <button type="button" class="mock-demo-banner-close" aria-label="Dismiss" onclick="document.getElementById('mock-demo-banner').classList.add('is-dismissed')">×</button>
+    </div>
+  </div>
   <a href="https://www.h4services.co/" class="mock-return-banner">Return to H4Services</a>
   <header class="mock-header">
     <div class="mock-container">
       <a href="mock-plumbing.html" class="mock-logo"><img loading="lazy" src="logo-plumbing.svg" alt="" class="mock-logo-icon" width="32" height="32">Windy City Plumbing</a>
+      <a href="tel:+13125550147" class="wcp-header-phone">(312) 555-0147</a>
       <button type="button" class="mock-menu-toggle" aria-label="Open menu">☰</button>
       <nav class="mock-nav">
         <a href="mock-plumbing.html">Home</a>
         <a href="mock-plumbing-services.html">Services</a>
+        <a href="mock-plumbing-about.html">About</a>
         <a href="mock-plumbing-contact.html">Contact</a>
+        <a href="mock-plumbing.html#booking">Book Service</a>
         <a href="case-studies.html" class="mock-back">← Case studies</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <section class="wcp-hero wcp-contact-hero">
+      <div class="mock-container">
+        <h1>Get In Touch</h1>
+        <p class="wcp-hero-sub">Call, email, or book online—we're here to help.</p>
+      </div>
+    </section>
+
     <section class="mock-section">
       <div class="mock-container">
-        <h1>Contact us</h1>
-        <p>Have a question or need a quote? Call us at <strong>(312) 555-0199</strong> or send a message below.</p>
-        <div class="mock-booking">
+        <div class="wcp-contact-info">
+          <div class="wcp-contact-block">
+            <h3>Phone</h3>
+            <p><a href="tel:+13125550147">(312) 555-0147</a></p>
+          </div>
+          <div class="wcp-contact-block">
+            <h3>Email</h3>
+            <p><a href="mailto:info@windycityplumbing.example">info@windycityplumbing.example</a></p>
+          </div>
+        </div>
+        <div class="wcp-contact-block" style="margin-bottom: 2rem;">
+          <h3>Hours</h3>
+          <p><strong>Emergency Service:</strong> 24/7</p>
+          <p><strong>Regular Service:</strong> Mon–Sat 7am–6pm</p>
+          <p>Closed Sundays (non-emergency)</p>
+        </div>
+
+        <h2>Send us a message</h2>
+        <div class="wcp-booking">
           <form class="mock-form" id="contact-form">
             <div class="form-row">
               <label for="name">Name</label>
@@ -36,22 +70,60 @@
             </div>
             <div class="form-row form-row-inline">
               <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="you@example.com">
-              </div>
-              <div>
                 <label for="phone">Phone</label>
                 <input type="tel" id="phone" name="phone" placeholder="(312) 555-0123">
               </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="service">Service needed</label>
+              <select id="service" name="service">
+                <option value="">Select if applicable</option>
+                <option value="Emergency">Emergency</option>
+                <option value="Drain">Drain cleaning</option>
+                <option value="Water heater">Water heater</option>
+                <option value="Quote">General quote</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div class="form-row">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
             </div>
-            <button type="submit" class="mock-btn mock-btn-primary">Send message</button>
+            <button type="submit" class="mock-btn mock-btn-primary">Send Message</button>
           </form>
+          <p class="wcp-booking-note" style="margin-top: 1rem;">For emergencies, call us directly at <a href="tel:+13125550147">(312) 555-0147</a></p>
           <div class="mock-confirm" id="confirm-msg" aria-live="polite">
             <strong>Message sent.</strong> We'll get back to you soon. This is a demo site—no message was sent.
+          </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem;">Proudly serving Chicago and surrounding suburbs.</p>
+
+        <div class="wcp-faq">
+          <h3>Frequently Asked Questions</h3>
+          <div class="wcp-faq-item">
+            <h4>Do you offer emergency service?</h4>
+            <p>Yes, 24/7. Call (312) 555-0147 anytime for emergencies.</p>
+          </div>
+          <div class="wcp-faq-item">
+            <h4>Are you licensed and insured?</h4>
+            <p>Yes, all our plumbers are state-licensed, bonded, and insured. IL License #PL-12847.</p>
+          </div>
+          <div class="wcp-faq-item">
+            <h4>Do you provide estimates?</h4>
+            <p>Yes, we offer upfront pricing before we start any work.</p>
+          </div>
+          <div class="wcp-faq-item">
+            <h4>What forms of payment do you accept?</h4>
+            <p>Cash, check, and all major credit cards.</p>
+          </div>
+          <div class="wcp-faq-item">
+            <h4>Do you offer warranties?</h4>
+            <p>Yes, all repairs include a 1-year labor warranty.</p>
           </div>
         </div>
       </div>
@@ -60,10 +132,35 @@
 
   <footer class="mock-footer">
     <div class="mock-container">
-      <p>Windy City Plumbing · Chicago, IL · (312) 555-0199 · Demo site by H4Services</p>
+      <p class="mock-footer-disclaimer">This is an example site built by H4 Services. Not a real business. <a href="https://www.h4services.co/case-studies.html">View more examples</a> · <a href="https://www.h4services.co/get-started.html">Get your own site</a></p>
+      <div class="wcp-footer-grid">
+        <div>
+          <h4>Windy City Plumbing</h4>
+          <p>Chicago's Trusted Plumbers Since 2007</p>
+          <p>Licensed · Bonded · Insured</p>
+        </div>
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="mock-plumbing.html">Home</a></li>
+            <li><a href="mock-plumbing-services.html">Services</a></li>
+            <li><a href="mock-plumbing-about.html">About</a></li>
+            <li><a href="mock-plumbing-contact.html">Contact</a></li>
+            <li><a href="mock-plumbing.html#booking">Book Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Phone: <a href="tel:+13125550147">(312) 555-0147</a></p>
+          <p>Email: <a href="mailto:info@windycityplumbing.example">info@windycityplumbing.example</a></p>
+        </div>
+      </div>
+      <div class="wcp-footer-bottom">
+        <p>© 2025 Windy City Plumbing. All rights reserved.</p>
+        <p class="wcp-demo-note">This is a demonstration site built by H4 Services.</p>
+      </div>
     </div>
   </footer>
-
   <script>
     document.querySelector('.mock-menu-toggle').addEventListener('click', function() {
       document.querySelector('.mock-nav').classList.toggle('is-open');
