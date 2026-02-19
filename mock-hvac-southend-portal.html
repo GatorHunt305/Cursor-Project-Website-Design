@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>My Portal | SouthEnd Climate Co. – Charlotte, NC</title>
+  <meta name="description" content="View your appointments, payment history, and rebook with SouthEnd Climate Co.">
+  <link rel="stylesheet" href="css/southend.css">
+</head>
+<body class="theme-southend">
+  <div class="mock-demo-banner" id="mock-demo-banner">
+    <div class="mock-demo-banner-inner">
+      <span>This is a demonstration site built by H4 Services to showcase our Premium package. Ready to get a site like this for your business?</span>
+      <a href="https://www.h4services.co/get-started.html?utm_source=h4demo&utm_medium=examples&utm_campaign=hvac-southend" class="mock-demo-banner-cta">Get Started →</a>
+      <button type="button" class="mock-demo-banner-close" aria-label="Dismiss" onclick="document.getElementById('mock-demo-banner').classList.add('is-dismissed')">×</button>
+    </div>
+  </div>
+  <a href="https://www.h4services.co/case-studies.html?utm_source=h4demo&utm_medium=examples&utm_campaign=hvac-southend" class="mock-return-banner">Return to H4Services</a>
+
+  <header class="se-header">
+    <div class="se-header-inner">
+      <a href="mock-hvac-southend.html" class="se-logo">
+        <svg class="se-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8 6 6 10 6 14c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-2-8-6-12z"/><path d="M12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+        SouthEnd Climate Co.
+      </a>
+      <a href="tel:+17045550192" class="se-header-phone">(704) 555-0192</a>
+      <button type="button" class="se-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="se-nav">
+        <a href="mock-hvac-southend.html">Home</a>
+        <a href="mock-hvac-southend-services.html">Services</a>
+        <a href="mock-hvac-southend-about.html">About</a>
+        <a href="mock-hvac-southend-book.html" class="se-nav-book">Book</a>
+        <a href="mock-hvac-southend-portal.html">Portal</a>
+        <a href="mock-hvac-southend-contact.html">Contact</a>
+        <a href="case-studies.html" class="se-back">← Example sites</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="se-portal-wrap">
+    <header class="se-portal-header">
+      <h1 class="se-portal-title">My SouthEnd Portal</h1>
+      <div class="se-portal-user">
+        <span class="se-portal-avatar" aria-hidden="true">DR</span>
+        <span class="se-portal-name">David R.</span>
+      </div>
+    </header>
+    <div class="se-portal-rule" aria-hidden="true"></div>
+
+    <nav class="se-portal-tabs" role="tablist" aria-label="Portal sections">
+      <button type="button" class="se-portal-tab is-active" role="tab" aria-selected="true" aria-controls="se-tab-upcoming" id="se-tab-btn-upcoming">Upcoming</button>
+      <button type="button" class="se-portal-tab" role="tab" aria-selected="false" aria-controls="se-tab-history" id="se-tab-btn-history">History</button>
+      <button type="button" class="se-portal-tab" role="tab" aria-selected="false" aria-controls="se-tab-payments" id="se-tab-btn-payments">Payments</button>
+      <button type="button" class="se-portal-tab" role="tab" aria-selected="false" aria-controls="se-tab-rebook" id="se-tab-btn-rebook">Rebook</button>
+    </nav>
+
+    <!-- Tab 1: Upcoming -->
+    <div class="se-portal-panel" id="se-tab-upcoming" role="tabpanel" aria-labelledby="se-tab-btn-upcoming">
+      <div class="se-portal-upcoming-card">
+        <p class="se-portal-upcoming-badge">Next Appointment</p>
+        <h2 class="se-portal-upcoming-service">Seasonal Tune-Up (AC)</h2>
+        <p class="se-portal-upcoming-datetime">Thursday, March 5 · 10:00 AM</p>
+        <p class="se-portal-upcoming-location">SouthEnd Climate Co., Charlotte NC</p>
+        <div class="se-portal-upcoming-divider"></div>
+        <p class="se-portal-upcoming-deposit">Deposit Paid: $25 ✓</p>
+        <p class="se-portal-upcoming-balance">Balance Due at Appointment: $104 (tune-up $129 − $25 deposit)</p>
+        <div class="se-portal-upcoming-divider"></div>
+        <p class="se-portal-upcoming-deadline-label">Cancellation Deadline:</p>
+        <p class="se-portal-upcoming-deadline">Wed Mar 4 at 10:00 AM</p>
+        <div class="se-portal-upcoming-actions">
+          <a href="mock-hvac-southend-book.html" class="se-portal-upcoming-btn se-portal-upcoming-btn-outline">Reschedule Appointment</a>
+          <button type="button" class="se-portal-upcoming-btn se-portal-upcoming-btn-outline" id="se-cancel-appt-btn">Cancel Appointment</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: History -->
+    <div class="se-portal-panel" id="se-tab-history" role="tabpanel" aria-labelledby="se-tab-btn-history" hidden>
+      <h3 class="se-portal-panel-head">Your Visit History</h3>
+      <ul class="se-portal-history-list">
+        <li class="se-portal-history-item">
+          <div class="se-portal-history-top">
+            <span class="se-portal-history-date">Feb 10, 2026</span>
+            <span class="se-portal-history-price">$487.00 · Paid ✓</span>
+          </div>
+          <p class="se-portal-history-service">Emergency AC Repair</p>
+          <a href="mock-hvac-southend-book.html?service=emergency" class="se-portal-history-rebook">Rebook this service →</a>
+        </li>
+        <li class="se-portal-history-item">
+          <div class="se-portal-history-top">
+            <span class="se-portal-history-date">Nov 15, 2025</span>
+            <span class="se-portal-history-price">$129.00 · Paid ✓</span>
+          </div>
+          <p class="se-portal-history-service">Seasonal Tune-Up (Heating)</p>
+          <a href="mock-hvac-southend-book.html?service=tune-up" class="se-portal-history-rebook">Rebook →</a>
+        </li>
+        <li class="se-portal-history-item">
+          <div class="se-portal-history-top">
+            <span class="se-portal-history-date">Aug 3, 2025</span>
+            <span class="se-portal-history-price">$249.00 · Paid ✓</span>
+          </div>
+          <p class="se-portal-history-service">Thermostat Installation (Nest)</p>
+          <a href="mock-hvac-southend-book.html?service=thermostat" class="se-portal-history-rebook">Rebook →</a>
+        </li>
+        <li class="se-portal-history-item">
+          <div class="se-portal-history-top">
+            <span class="se-portal-history-date">May 20, 2025</span>
+            <span class="se-portal-history-price">$129.00 · Paid ✓</span>
+          </div>
+          <p class="se-portal-history-service">Seasonal Tune-Up (AC)</p>
+          <a href="mock-hvac-southend-book.html?service=tune-up" class="se-portal-history-rebook">Rebook →</a>
+        </li>
+      </ul>
+      <p class="se-portal-history-total">Total spent at SouthEnd: $994.00</p>
+      <p class="se-portal-history-thanks">Thank you for being a loyal customer</p>
+    </div>
+
+    <!-- Tab 3: Payments -->
+    <div class="se-portal-panel" id="se-tab-payments" role="tabpanel" aria-labelledby="se-tab-btn-payments" hidden>
+      <h3 class="se-portal-panel-head">Payment Summary</h3>
+      <div class="se-portal-balance-card">
+        <p class="se-portal-balance-venu">⚡ Venu+ Feature</p>
+        <p class="se-portal-balance-label">Balance due at appointment</p>
+        <p class="se-portal-balance-amount">$104.00</p>
+        <p class="se-portal-balance-due">Due March 5</p>
+        <button type="button" class="se-portal-balance-pay-btn">Pay Balance Early</button>
+        <p class="se-portal-balance-note">Pay before your appointment and skip the checkout process</p>
+      </div>
+      <p class="se-portal-payment-head">Payment History</p>
+      <ul class="se-portal-payment-rows">
+        <li class="se-portal-payment-row">
+          <span class="se-portal-payment-date">Feb 28, 2026</span>
+          <span class="se-portal-payment-desc">Tune-Up Deposit</span>
+          <span class="se-portal-payment-amt">-$25.00</span>
+          <span class="se-portal-payment-status">✓ Paid</span>
+        </li>
+        <li class="se-portal-payment-row">
+          <span class="se-portal-payment-date">Feb 10, 2026</span>
+          <span class="se-portal-payment-desc">Emergency AC Repair</span>
+          <span class="se-portal-payment-amt">-$487.00</span>
+          <span class="se-portal-payment-status">✓ Paid</span>
+        </li>
+        <li class="se-portal-payment-row">
+          <span class="se-portal-payment-date">Nov 15, 2025</span>
+          <span class="se-portal-payment-desc">Seasonal Tune-Up (Heating)</span>
+          <span class="se-portal-payment-amt">-$129.00</span>
+          <span class="se-portal-payment-status">✓ Paid</span>
+        </li>
+        <li class="se-portal-payment-row">
+          <span class="se-portal-payment-date">Aug 3, 2025</span>
+          <span class="se-portal-payment-desc">Thermostat Installation</span>
+          <span class="se-portal-payment-amt">-$249.00</span>
+          <span class="se-portal-payment-status">✓ Paid</span>
+        </li>
+        <li class="se-portal-payment-row">
+          <span class="se-portal-payment-date">May 20, 2025</span>
+          <span class="se-portal-payment-desc">Seasonal Tune-Up (AC)</span>
+          <span class="se-portal-payment-amt">-$129.00</span>
+          <span class="se-portal-payment-status">✓ Paid</span>
+        </li>
+      </ul>
+      <p class="se-portal-payment-total">Total paid to SouthEnd: $1,019.00</p>
+      <p class="se-portal-payment-stripe">All payments processed securely via Stripe</p>
+    </div>
+
+    <!-- Tab 4: Rebook -->
+    <div class="se-portal-panel" id="se-tab-rebook" role="tabpanel" aria-labelledby="se-tab-btn-rebook" hidden>
+      <p class="se-portal-rebook-badge">⚡ Clients rebook in one tap with Venu+</p>
+      <h3 class="se-portal-panel-head">Book Your Next Visit</h3>
+      <p class="se-portal-panel-sub">Based on your history</p>
+      <div class="se-portal-rebook-cards">
+        <div class="se-portal-rebook-card se-portal-rebook-card-featured">
+          <p class="se-portal-rebook-card-label">Due for your spring tune-up!</p>
+          <h4 class="se-portal-rebook-card-service">Seasonal Tune-Up — $129</h4>
+          <p class="se-portal-rebook-card-note">Keep your AC running efficiently before summer.</p>
+          <p class="se-portal-rebook-card-slots">Next available slots:</p>
+          <ul class="se-portal-rebook-slots-list">
+            <li>Mar 15 at 10:00 AM</li>
+            <li>Mar 18 at 2:00 PM</li>
+            <li>Mar 22 at 9:00 AM</li>
+          </ul>
+          <a href="mock-hvac-southend-book.html?service=tune-up" class="se-portal-rebook-btn">Book Now</a>
+        </div>
+        <div class="se-portal-rebook-card">
+          <h4 class="se-portal-rebook-card-service">Emergency Repair</h4>
+          <p class="se-portal-rebook-card-note">We hope you don't need this again! But we're here 24/7.</p>
+          <a href="mock-hvac-southend-book.html?service=emergency" class="se-portal-rebook-btn se-portal-rebook-btn-outline">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reminder timeline (expandable) -->
+    <div class="se-portal-sms-wrap" id="se-sms-wrap">
+      <button type="button" class="se-portal-sms-toggle" id="se-sms-toggle" aria-expanded="false" aria-controls="se-sms-content">
+        <span>Your appointment reminders</span>
+        <span class="se-portal-sms-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="se-portal-sms-content" id="se-sms-content" hidden>
+        <div class="se-portal-sms-event se-portal-sms-event-sent">
+          <span class="se-portal-sms-dot" aria-hidden="true"></span>
+          <div>
+            <p class="se-portal-sms-event-title">Booking Confirmed <span class="se-portal-sms-event-badge">Sent Feb 28</span></p>
+            <div class="se-portal-sms-bubble">
+              <p>Hi David! Your Seasonal Tune-Up (AC) is confirmed for Thu Mar 5 at 10:00 AM. $25 deposit received ✓ Balance due at appointment: $104. — SouthEnd Climate Co.</p>
+            </div>
+          </div>
+        </div>
+        <div class="se-portal-sms-event">
+          <span class="se-portal-sms-dot"></span>
+          <div>
+            <p class="se-portal-sms-event-title">Cancellation Deadline Reminder <span class="se-portal-sms-event-badge">Sends Mar 4 at 8:00 AM</span></p>
+            <div class="se-portal-sms-bubble">
+              <p>Reminder: Your free cancellation window for your Thu Mar 5 appointment closes Wed Mar 4 at 10:00 AM. After that: $25 deposit non-refundable. — SouthEnd Climate Co.</p>
+            </div>
+          </div>
+        </div>
+        <div class="se-portal-sms-event">
+          <span class="se-portal-sms-dot"></span>
+          <div>
+            <p class="se-portal-sms-event-title">24 Hour Reminder <span class="se-portal-sms-event-badge">Sends Mar 4 at 10:00 AM</span></p>
+            <div class="se-portal-sms-bubble">
+              <p>See you tomorrow! Seasonal Tune-Up (AC) Thu Mar 5 at 10:00 AM. Balance due: $104. — SouthEnd Climate Co.</p>
+            </div>
+          </div>
+        </div>
+        <div class="se-portal-sms-event">
+          <span class="se-portal-sms-dot"></span>
+          <div>
+            <p class="se-portal-sms-event-title">Day-Of Reminder <span class="se-portal-sms-event-badge">Sends Mar 5 at 8:00 AM</span></p>
+            <div class="se-portal-sms-bubble">
+              <p>Your 10:00 AM appointment is in 2 hours! Balance due today: $104. See you soon! — SouthEnd Climate Co.</p>
+            </div>
+          </div>
+        </div>
+        <div class="se-portal-sms-event">
+          <span class="se-portal-sms-dot"></span>
+          <div>
+            <p class="se-portal-sms-event-title">Post-Visit Follow Up <span class="se-portal-sms-event-badge">Sends Mar 5 at 4:00 PM</span></p>
+            <div class="se-portal-sms-bubble">
+              <p>Thanks for choosing SouthEnd! We hope your system is running great. Leave a review or rebook anytime in your portal. — SouthEnd Climate Co.</p>
+            </div>
+          </div>
+        </div>
+        <div class="se-portal-sms-venu">
+          <p>⚡ All of this runs automatically with Venu+</p>
+          <p>No manual follow-ups. No chasing deposits. Just your business, running professionally.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cancel appointment modal -->
+  <div class="se-portal-modal-overlay" id="se-cancel-modal" role="dialog" aria-modal="true" aria-labelledby="se-cancel-modal-title" hidden>
+    <div class="se-portal-modal">
+      <h3 id="se-cancel-modal-title" class="se-portal-modal-title">Cancel Your Appointment?</h3>
+      <p class="se-portal-modal-deadline">Your cancellation deadline is <strong>Wed Mar 4 at 10:00 AM</strong>.</p>
+      <div class="se-portal-modal-policy">
+        <p><strong>Cancelling before this time:</strong><br>→ Full $25 deposit refunded</p>
+        <p><strong>Cancelling after this time:</strong><br>→ $25 deposit forfeited per SouthEnd's booking policy</p>
+      </div>
+      <p class="se-portal-modal-question">Are you sure you want to cancel?</p>
+      <div class="se-portal-modal-actions">
+        <button type="button" class="se-portal-modal-btn se-portal-modal-btn-keep" id="se-cancel-modal-keep">Keep My Appointment</button>
+        <div>
+          <p class="se-portal-modal-venu">⚡ Policy enforced by Venu+</p>
+          <button type="button" class="se-portal-modal-btn se-portal-modal-btn-cancel" id="se-cancel-modal-confirm">Cancel Anyway</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="se-footer">
+    <div class="se-footer-inner">
+      <div><h4>SouthEnd Climate Co.</h4><p>Charlotte, NC</p><p>Climate done right.</p></div>
+      <div><h4>Quick links</h4><p><a href="mock-hvac-southend.html">Home</a></p><p><a href="mock-hvac-southend-services.html">Services</a></p><p><a href="mock-hvac-southend-about.html">About</a></p><p><a href="mock-hvac-southend-book.html">Book</a></p><p><a href="mock-hvac-southend-portal.html">Portal</a></p><p><a href="mock-hvac-southend-contact.html">Contact</a></p></div>
+      <div><h4>Contact</h4><p>Charlotte, NC</p><p>Mon–Fri 7AM–6PM · Sat 8AM–2PM</p><p>Emergency 24/7</p></div>
+      <p class="se-footer-disclaimer">This is an example site built by H4 Services. Not a real business. <a href="https://www.h4services.co/case-studies.html?utm_source=h4demo&utm_medium=examples&utm_campaign=hvac-southend">View more examples</a> · <a href="https://www.h4services.co/get-started.html?utm_source=h4demo&utm_medium=examples&utm_campaign=hvac-southend">Get your own site</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var tabs = [
+        { btn: 'se-tab-btn-upcoming', panel: 'se-tab-upcoming' },
+        { btn: 'se-tab-btn-history', panel: 'se-tab-history' },
+        { btn: 'se-tab-btn-payments', panel: 'se-tab-payments' },
+        { btn: 'se-tab-btn-rebook', panel: 'se-tab-rebook' }
+      ];
+      tabs.forEach(function(t) {
+        var btn = document.getElementById(t.btn);
+        var panel = document.getElementById(t.panel);
+        if (!btn || !panel) return;
+        btn.addEventListener('click', function() {
+          tabs.forEach(function(x) {
+            var b = document.getElementById(x.btn);
+            var p = document.getElementById(x.panel);
+            if (b) { b.classList.remove('is-active'); b.setAttribute('aria-selected', 'false'); }
+            if (p) p.hidden = true;
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+          panel.hidden = false;
+        });
+      });
+
+      var smsToggle = document.getElementById('se-sms-toggle');
+      var smsContent = document.getElementById('se-sms-content');
+      var smsWrap = document.getElementById('se-sms-wrap');
+      if (smsToggle && smsContent) {
+        smsToggle.addEventListener('click', function() {
+          var open = smsContent.hidden;
+          smsContent.hidden = !open;
+          smsToggle.setAttribute('aria-expanded', open);
+          if (smsWrap) smsWrap.classList.toggle('is-open', open);
+        });
+      }
+
+      var cancelBtn = document.getElementById('se-cancel-appt-btn');
+      var modal = document.getElementById('se-cancel-modal');
+      var keepBtn = document.getElementById('se-cancel-modal-keep');
+      var confirmBtn = document.getElementById('se-cancel-modal-confirm');
+      if (cancelBtn && modal) {
+        cancelBtn.addEventListener('click', function() { modal.hidden = false; });
+      }
+      if (keepBtn && modal) {
+        keepBtn.addEventListener('click', function() { modal.hidden = true; });
+      }
+      if (confirmBtn && modal) {
+        confirmBtn.addEventListener('click', function() {
+          modal.hidden = true;
+          alert('This is a demo. Your appointment was not cancelled.');
+        });
+      }
+    })();
+  </script>
+  <script>
+    document.querySelector('.se-menu-toggle').addEventListener('click', function() {
+      document.querySelector('.se-nav').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>

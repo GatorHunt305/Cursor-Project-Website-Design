@@ -455,7 +455,8 @@ a:hover { text-decoration: underline; }
 }
 .case-card-body { padding: 1.5rem; }
 .case-card-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.35rem; }
-.case-card-title { font-family: var(--font-heading); font-size: 1.25rem; margin: 0 0 0.75rem; color: var(--text); }
+.case-card-title { font-family: var(--font-heading); font-size: 1.25rem; margin: 0 0 0.35rem; color: var(--text); }
+.case-card-venu { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.6rem; letter-spacing: 0.02em; }
 .case-card-link { font-weight: 600; color: var(--primary); font-size: 0.95rem; }
 .case-card-link:hover { text-decoration: underline; }
 .case-grid-footer { text-align: center; margin-top: 2rem; }
