@@ -710,28 +710,29 @@ a:hover { text-decoration: underline; }
 .whats-next-step:nth-child(3) { animation-delay: 1.5s; }
 .whats-next-step:nth-child(4) { animation-delay: 2.5s; }
 .whats-next-step strong { color: #fff; font-weight: 700; }
-.terms-consent {
-  font-size: 12px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.75);
-  margin: 0 auto 1rem;
-  max-width: 480px;
-  opacity: 0;
-  transform: translateY(1.25rem);
-  animation: whats-next-fade-up 0.8s ease-out forwards;
-  animation-delay: 3.2s;
-}
-.terms-consent a { color: rgba(255, 255, 255, 0.95); text-decoration: underline; }
-.terms-consent a:hover { color: #fff; }
 .whats-next-cta {
   opacity: 0;
   transform: translateY(1.25rem);
   animation: whats-next-fade-up 0.8s ease-out forwards;
   animation-delay: 3.5s;
-  margin-top: 0;
+  margin-top: 2.5rem;
   display: flex;
   justify-content: center;
 }
+.terms-consent {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 400;
+  margin: 1.5rem auto 0;
+  max-width: 480px;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  animation: whats-next-fade-up 0.8s ease-out forwards;
+  animation-delay: 4.2s;
+}
+.terms-consent a { color: #fff; text-decoration: underline; }
+.terms-consent a:hover { color: #fff; }
 .btn-customize { background: #fff !important; color: var(--primary-dark) !important; border: none !important; }
 .btn-customize:hover { background: rgba(255,255,255,0.9) !important; color: var(--primary-dark) !important; text-decoration: none !important; }
 @keyframes whats-next-fade-up {
