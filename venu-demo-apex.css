@@ -1029,6 +1029,43 @@
   min-height: 52px;
 }
 .apex-book-btn:hover { background: #e65f00; }
+.apex-book-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--apex-text-muted);
+  color: var(--apex-bg);
+}
+.apex-book-btn:disabled:hover { background: var(--apex-text-muted); }
+/* SMS consent – unchecked by default (Twilio A2P requirement), small legible text */
+.sms-consent.apex-sms-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--apex-text-muted);
+  cursor: pointer;
+}
+.sms-consent.apex-sms-consent input[type="checkbox"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--apex-accent);
+}
+.sms-consent.apex-sms-consent a {
+  color: var(--apex-accent);
+  text-decoration: underline;
+}
+.sms-consent.apex-sms-consent a:hover { color: #ff8533; }
+.apex-success-sms-note {
+  font-size: 0.8125rem;
+  color: var(--apex-text-muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
 .apex-book-btn-icon {
   width: 22px;
   height: 22px;

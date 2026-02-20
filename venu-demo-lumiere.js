@@ -264,6 +264,8 @@
       paymentSection.hidden = false;
       paymentSection.classList.add('lumiere-step-enter');
       populatePaymentUI();
+      var smsConsent = document.getElementById('lumiere-sms-consent');
+      if (payBtn && smsConsent) payBtn.disabled = !smsConsent.checked;
       paymentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
@@ -368,13 +370,20 @@
   }
 
   if (paymentForm && payBtn) {
+    var smsConsent = document.getElementById('lumiere-sms-consent');
+    if (smsConsent) {
+      smsConsent.addEventListener('change', function() {
+        payBtn.disabled = !smsConsent.checked;
+      });
+    }
     paymentForm.addEventListener('submit', function(e) {
       e.preventDefault();
       payBtn.disabled = true;
       payBtn.classList.add('is-loading');
       setTimeout(function() {
         payBtn.classList.remove('is-loading');
-        payBtn.disabled = false;
+        var consent = document.getElementById('lumiere-sms-consent');
+        payBtn.disabled = !(consent && consent.checked);
         showSuccess();
       }, 1500);
     });

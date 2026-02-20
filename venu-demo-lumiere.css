@@ -1040,7 +1040,39 @@
   background: var(--lumiere-gold);
   color: var(--lumiere-charcoal);
 }
-.lumiere-pay-btn:disabled { opacity: 0.7; cursor: wait; }
+.lumiere-pay-btn:disabled { opacity: 0.6; cursor: not-allowed; background: var(--lumiere-charcoal-soft); color: var(--lumiere-cream); }
+.lumiere-pay-btn:disabled:hover { background: var(--lumiere-charcoal-soft); color: var(--lumiere-cream); }
+.lumiere-pay-btn.is-loading:disabled { cursor: wait; }
+/* SMS consent – unchecked by default (Twilio A2P requirement), small legible text */
+.sms-consent.lumiere-sms-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--lumiere-charcoal-soft);
+  cursor: pointer;
+}
+.sms-consent.lumiere-sms-consent input[type="checkbox"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--lumiere-gold);
+}
+.sms-consent.lumiere-sms-consent a {
+  color: var(--lumiere-gold);
+  text-decoration: underline;
+}
+.sms-consent.lumiere-sms-consent a:hover { color: var(--lumiere-charcoal); }
+.lumiere-success-sms-note {
+  font-size: 0.8125rem;
+  color: var(--lumiere-charcoal-soft);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
 .lumiere-pay-btn-text { display: inline; }
 .lumiere-pay-btn.is-loading .lumiere-pay-btn-text { visibility: hidden; }
 .lumiere-pay-btn-spinner {

@@ -252,6 +252,10 @@
                 <input type="text" name="cardName" class="lumiere-input" placeholder="e.g. Sarah Chen" autocomplete="cc-name">
               </label>
               <label class="lumiere-field">
+                <span>Phone Number</span>
+                <input type="tel" name="phone" id="customer-phone" class="lumiere-input" placeholder="(555) 555-0123" required autocomplete="tel">
+              </label>
+              <label class="lumiere-field">
                 <span>Card Number</span>
                 <div class="lumiere-card-input-wrap">
                   <input type="text" name="cardNumber" class="lumiere-input" placeholder="4242 4242 4242 4242" inputmode="numeric" maxlength="19" autocomplete="cc-number">
@@ -272,7 +276,11 @@
                 <span>Billing Zip Code</span>
                 <input type="text" name="zip" class="lumiere-input" placeholder="37203" inputmode="numeric" maxlength="10" autocomplete="postal-code">
               </label>
-              <button type="submit" class="lumiere-pay-btn" id="lumiere-pay-btn"><span class="lumiere-pay-btn-text">Pay $50 Deposit</span><span class="lumiere-pay-btn-spinner" aria-hidden="true"></span></button>
+              <label class="sms-consent lumiere-sms-consent">
+                <input type="checkbox" id="lumiere-sms-consent" name="smsConsent" required aria-describedby="lumiere-sms-consent-text">
+                <span id="lumiere-sms-consent-text">I agree to receive SMS appointment reminders from Lumière Hair Studio via Venu, including booking confirmation, cancellation deadline reminders, and day-of reminders. Msg frequency varies (3–5 per appointment). Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. <a href="https://venu.h4services.co/privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
+              </label>
+              <button type="submit" class="lumiere-pay-btn" id="lumiere-pay-btn" disabled><span class="lumiere-pay-btn-text">Pay $50 Deposit</span><span class="lumiere-pay-btn-spinner" aria-hidden="true"></span></button>
             </form>
 
             <div class="lumiere-trust-row">
@@ -323,6 +331,7 @@
           <p class="lumiere-success-recap-line">Balance due at appointment: <span id="lumiere-success-balance">$150</span></p>
           <p class="lumiere-success-recap-line">Cancellation deadline: <span id="lumiere-success-deadline">Feb 18 at 2:00 PM</span></p>
         </div>
+        <p class="lumiere-success-sms-note">📱 You'll receive SMS reminders at the phone number you provided. Reply STOP at any time to opt out.</p>
         <div class="lumiere-success-actions">
           <a href="#" class="lumiere-success-btn lumiere-success-btn-secondary" id="lumiere-success-calendar">Add to Calendar</a>
           <a href="#lumiere-customer-portal" class="lumiere-success-btn lumiere-success-btn-primary" id="lumiere-success-portal">View My Lumière Portal</a>

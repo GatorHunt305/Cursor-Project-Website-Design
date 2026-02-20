@@ -268,6 +268,7 @@
     }
     updateSummaryCard();
     updateSmsBubble1();
+    syncApexConfirmButtonState();
   }
 
   function updateSummaryCard() {
@@ -323,8 +324,21 @@
     });
   }
 
+  var smsConsent = document.getElementById('apex-sms-consent');
+  if (smsConsent && confirmBookingBtn) {
+    smsConsent.addEventListener('change', function() {
+      confirmBookingBtn.disabled = !smsConsent.checked;
+    });
+  }
+
+  function syncApexConfirmButtonState() {
+    var cb = document.getElementById('apex-sms-consent');
+    if (confirmBookingBtn && cb) confirmBookingBtn.disabled = !cb.checked;
+  }
+
   if (confirmBookingBtn) {
     confirmBookingBtn.addEventListener('click', function() {
+      if (confirmBookingBtn.disabled) return;
       var firstName = confirmForm && confirmForm.querySelector('[name="firstName"]');
       var address = confirmForm && confirmForm.querySelector('[name="address"]');
       if (firstName && !firstName.value.trim()) {
@@ -335,6 +349,7 @@
         address.focus();
         return;
       }
+      if (smsConsent && !smsConsent.checked) return;
       state.confirmedName = firstName ? firstName.value.trim() : '';
       state.confirmedAddress = address ? address.value.trim() : '';
       if (step3Section) step3Section.hidden = true;

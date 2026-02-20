@@ -268,7 +268,12 @@
           </div>
         </div>
 
-        <button type="button" class="apex-book-btn" id="apex-confirm-booking-btn">
+        <label class="sms-consent apex-sms-consent">
+          <input type="checkbox" id="apex-sms-consent" name="smsConsent" required aria-describedby="apex-sms-consent-text">
+          <span id="apex-sms-consent-text">I agree to receive SMS appointment reminders from APEX Mobile Detailing via Venu, including booking confirmation, cancellation deadline reminders, and day-of reminders. Msg frequency varies (3–5 per appointment). Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. <a href="https://venu.h4services.co/privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
+        </label>
+
+        <button type="button" class="apex-book-btn" id="apex-confirm-booking-btn" disabled>
           <span class="apex-book-btn-icon" aria-hidden="true"></span>
           Confirm Booking
         </button>
@@ -281,6 +286,7 @@
         </div>
         <h2 class="apex-success-headline">You're booked with APEX!</h2>
         <p class="apex-success-sub">Check your phone for confirmation text</p>
+        <p class="apex-success-sms-note">📱 You'll receive SMS reminders at the phone number you provided. Reply STOP at any time to opt out.</p>
         <div class="apex-success-summary" id="apex-success-summary"></div>
         <div class="apex-success-actions">
           <a href="#" class="apex-success-btn apex-btn-calendar" id="apex-add-calendar-btn">Add to Calendar</a>
