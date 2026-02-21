@@ -287,6 +287,181 @@ a:hover { text-decoration: underline; }
 @media (min-width: 900px) {
   .hero-trades-visual { min-height: 320px; justify-content: flex-end; }
 }
+
+/* Hero device mockup – laptop only */
+.hero-devices {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .hero-devices {
+    display: block;
+  }
+}
+
+.laptop-mockup {
+  position: relative;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35)) drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+}
+
+.laptop-bezel {
+  background: linear-gradient(145deg, #2a2a2e 0%, #1c1c20 50%, #111113 100%);
+  border-radius: 12px 12px 0 0;
+  padding: 14px 14px 10px 14px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-bottom: none;
+}
+
+.laptop-bezel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px 12px 0 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+.laptop-camera {
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #1a2a3a 30%, #0a0a15 70%);
+  border-radius: 50%;
+  border: 0.5px solid rgba(255,255,255,0.1);
+  margin: 0 auto 8px auto;
+  position: relative;
+}
+
+.laptop-camera::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 2px;
+  height: 2px;
+  background: #1a3a2a;
+  border-radius: 50%;
+}
+
+.laptop-screen {
+  background: #0a0a0a;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.laptop-screen iframe {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  border: none;
+  pointer-events: none;
+}
+
+.laptop-screen-static {
+  background: #0a0a0a;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.laptop-body {
+  background: linear-gradient(to bottom, #333338, #28282c);
+  height: 18px;
+  border-radius: 0 0 2px 2px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-left: 1px solid rgba(255,255,255,0.04);
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+
+.laptop-keyboard-area {
+  width: 70%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 4px,
+    transparent 4px,
+    transparent 5px
+  );
+  border-radius: 1px;
+}
+
+.laptop-trackpad {
+  width: 25%;
+  height: 4px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 2px;
+  border: 0.5px solid rgba(255,255,255,0.06);
+}
+
+.laptop-lip {
+  width: 104%;
+  margin-left: -2%;
+  height: 6px;
+  background: linear-gradient(to bottom, #3a3a3e, #2a2a2e);
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-top: none;
+}
+
+.laptop-lip::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 0 0 4px 4px;
+}
+
+.laptop-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0) 35%,
+    rgba(255,255,255,0) 65%,
+    rgba(255,255,255,0.02) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .laptop-mockup {
+    animation: laptopFloat 6s ease-in-out infinite;
+  }
+
+  @keyframes laptopFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(0.3deg); }
+  }
+}
+
 .hero-phone {
   position: absolute;
   width: 140px;
