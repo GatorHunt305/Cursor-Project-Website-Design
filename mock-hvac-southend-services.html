@@ -152,12 +152,13 @@
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             var el = entry.target;
-            var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
-            setTimeout(function() { el.classList.add('is-visible'); }, Math.min(idx * 80, 400));
+            var parent = el.closest('.se-svc-list');
+            var idx = parent ? Array.prototype.indexOf.call(parent.children, el) : 0;
+            setTimeout(function() { el.classList.add('is-visible'); }, Math.min(idx * 45, 280));
             observer.unobserve(el);
           }
         });
-      }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
+      }, { rootMargin: '0px 0px 80px 0px', threshold: 0 });
       els.forEach(function(el) { observer.observe(el); });
     })();
   </script>

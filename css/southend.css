@@ -558,8 +558,15 @@ body.theme-southend {
 .theme-southend .se-cta-final .se-btn-primary:hover { background: var(--se-copper-dark); border-color: var(--se-copper-dark); color: #fff !important; text-decoration: none; }
 
 /* ----- Scroll animation utility ----- */
-.theme-southend .se-fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.theme-southend .se-fade-up.is-visible { opacity: 1; transform: translateY(0); }
+.theme-southend .se-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.theme-southend .se-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ----- Services list page ----- */
 .theme-southend .se-svc-list { display: grid; gap: 1.5rem; }
@@ -637,9 +644,18 @@ body.theme-southend {
 .theme-southend .se-tech-block p { margin: 0; font-size: 0.95rem; opacity: 0.95; line-height: 1.6; }
 
 /* ----- Contact page ----- */
-.theme-southend .se-contact-wrap { display: grid; gap: 2rem; }
+.theme-southend .se-contact-wrap {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media (min-width: 768px) {
   .theme-southend .se-contact-wrap { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.theme-southend .se-contact-info {
+  text-align: center;
 }
 .theme-southend .se-contact-info h3 { margin: 0 0 1rem; color: var(--se-forest); font-size: 1.25rem; }
 .theme-southend .se-contact-info p { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--se-charcoal); }
@@ -668,7 +684,9 @@ body.theme-southend {
 }
 .theme-southend .se-form textarea { min-height: 120px; resize: vertical; }
 .theme-southend .se-form .se-btn-submit {
-  display: inline-block;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0.75rem 1.5rem;
   background: var(--se-forest);
   color: #fff !important;
