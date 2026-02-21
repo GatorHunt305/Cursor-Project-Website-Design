@@ -32,7 +32,7 @@
         <div class="discovery-form" id="discovery-form">
           <div class="discovery-window">
             <p class="discovery-step-counter" id="step-counter" aria-live="polite">Step 1 of 6</p>
-            <div class="discovery-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="6" aria-label="Form progress">
+            <div class="discovery-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="7" aria-label="Form progress">
               <div class="discovery-progress-fill" id="discovery-progress-fill"></div>
             </div>
 
@@ -45,6 +45,64 @@
                 <input type="text" id="business-name" name="business_name" required placeholder="e.g. Smith Plumbing Co.">
                 <label for="existing-url">Existing website URL (if any)</label>
                 <input type="url" id="existing-url" name="existing_url" placeholder="e.g. https://mybusiness.com">
+                <label for="discovery-phone">Business phone number <span aria-label="required">*</span></label>
+                <input type="tel" id="discovery-phone" name="phone" required placeholder="(555) 555-0123">
+                <label for="discovery-city">City <span aria-label="required">*</span></label>
+                <input type="text" id="discovery-city" name="city" required placeholder="Tampa">
+                <label for="discovery-state">State <span aria-label="required">*</span></label>
+                <select id="discovery-state" name="state" required>
+                  <option value="">Select state</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
               </div>
               <div class="discovery-actions">
                 <span></span>
@@ -107,11 +165,55 @@
             </div>
           </div>
 
-          <div class="discovery-panel" id="panel-5" data-step="5" style="display: none;">
-            <h2>Special Requests or Final Comments</h2>
-            <div class="form-block discovery-textarea-block">
-              <label for="special-requests">Anything else we should know?</label>
-              <textarea id="special-requests" name="special_requests" rows="8" placeholder="Deadlines, brand guidelines, must-have pages, etc."></textarea>
+          <div class="discovery-panel discovery-panel-premium-only" id="panel-5" data-step="5" style="display: none;">
+            <h2>Your Services &amp; Booking</h2>
+            <p class="discovery-panel-desc">Your Premium plan includes Venu+ booking and payments. We'll use this to set up your booking portal.</p>
+            <div class="form-block">
+              <label for="discovery-business-hours">Typical business hours <span aria-label="required">*</span></label>
+              <select id="discovery-business-hours" name="business_hours" required>
+                <option value="">Select hours</option>
+                <option value="mon-fri-8-5">Mon–Fri, 8 AM – 5 PM</option>
+                <option value="mon-fri-9-6">Mon–Fri, 9 AM – 6 PM</option>
+                <option value="mon-sat-8-5">Mon–Sat, 8 AM – 5 PM</option>
+                <option value="mon-sat-9-6">Mon–Sat, 9 AM – 6 PM</option>
+                <option value="7days-8-6">7 Days, 8 AM – 6 PM</option>
+                <option value="custom">Custom (tell us in notes)</option>
+              </select>
+            </div>
+            <div class="form-block" id="discovery-services-container">
+              <div class="discovery-service-entry discovery-service-entry-card" data-service-index="0">
+                <label for="discovery-service-name-0">Service name <span aria-label="required">*</span></label>
+                <input type="text" id="discovery-service-name-0" name="service_name_0" required placeholder="e.g. Full Detail Package">
+                <label for="discovery-service-price-0">Price <span aria-label="required">*</span></label>
+                <div class="discovery-service-price-wrap">
+                  <span class="discovery-service-price-prefix">$</span>
+                  <input type="number" id="discovery-service-price-0" name="service_price_0" required min="0" step="0.01" placeholder="150">
+                </div>
+                <label for="discovery-service-duration-0">Duration <span aria-label="required">*</span></label>
+                <select id="discovery-service-duration-0" name="service_duration_0" required>
+                  <option value="">Select</option>
+                  <option value="30">30 min</option>
+                  <option value="45">45 min</option>
+                  <option value="60">60 min</option>
+                  <option value="90">90 min</option>
+                  <option value="120">2 hours</option>
+                  <option value="180">3 hours</option>
+                  <option value="240">4 hours</option>
+                  <option value="half-day">Half day</option>
+                  <option value="full-day">Full day</option>
+                </select>
+              </div>
+            </div>
+            <button type="button" class="btn btn-back discovery-add-service-btn" id="discovery-add-service">+ Add another service</button>
+            <div class="form-block">
+              <label for="discovery-deposit">Do you want to collect deposits when customers book?</label>
+              <select id="discovery-deposit" name="deposit_preference">
+                <option value="">Select</option>
+                <option value="no">No deposit</option>
+                <option value="25">25% of service price</option>
+                <option value="50">50% of service price</option>
+                <option value="fixed">Fixed amount (tell us in notes)</option>
+              </select>
             </div>
             <div class="discovery-actions">
               <button type="button" class="btn btn-back" id="back-5">Back</button>
@@ -120,10 +222,23 @@
           </div>
 
           <div class="discovery-panel" id="panel-6" data-step="6" style="display: none;">
+            <h2>Special Requests or Final Comments</h2>
+            <div class="form-block discovery-textarea-block">
+              <label for="special-requests">Anything else we should know?</label>
+              <p class="discovery-field-hint">Include any details about cancellation policies, seasonal hours, or specific booking preferences.</p>
+              <textarea id="special-requests" name="special_requests" rows="8" placeholder="Deadlines, brand guidelines, must-have pages, etc."></textarea>
+            </div>
+            <div class="discovery-actions">
+              <button type="button" class="btn btn-back" id="back-6">Back</button>
+              <button type="button" class="btn" id="next-6">Next</button>
+            </div>
+          </div>
+
+          <div class="discovery-panel" id="panel-7" data-step="7" style="display: none;">
             <h2>You're Almost Done!</h2>
             <p class="discovery-panel-desc">Review your plan and proceed to secure checkout. We’ll use your discovery answers to tailor your site.</p>
             <div class="discovery-actions">
-              <button type="button" class="btn btn-back" id="back-6">Back</button>
+              <button type="button" class="btn btn-back" id="back-7">Back</button>
               <a href="#" id="complete-checkout" class="btn">Complete and Proceed to Payment</a>
             </div>
           </div>
@@ -158,10 +273,17 @@
       if (!form) return;
       var counter = document.getElementById('step-counter');
       var panels = form.querySelectorAll('.discovery-panel');
-      var totalSteps = 6;
+      var params = new URLSearchParams(window.location.search);
+      var plan = (params.get('plan') || 'standard').toLowerCase();
+      if (plan !== 'standard' && plan !== 'premium') plan = 'standard';
+      var upgradeToPremium = false;
       var currentStep = 1;
 
+      function isPremium() { return plan === 'premium' || upgradeToPremium; }
+      function getTotalSteps() { return isPremium() ? 7 : 6; }
+
       function goToStep(step) {
+        var totalSteps = getTotalSteps();
         if (step < 1 || step > totalSteps) return;
         currentStep = step;
         counter.textContent = 'Step ' + step + ' of ' + totalSteps;
@@ -169,8 +291,13 @@
         if (progressFill) progressFill.style.width = (step / totalSteps) * 100 + '%';
         var progressBar = form.querySelector('.discovery-progress');
         if (progressBar) progressBar.setAttribute('aria-valuenow', step);
+        var prem = isPremium();
         panels.forEach(function(p) {
-          var isActive = parseInt(p.getAttribute('data-step'), 10) === step;
+          var d = parseInt(p.getAttribute('data-step'), 10);
+          var isActive = (d <= 4 && step === d) ||
+            (d === 5 && step === 5 && prem) ||
+            (d === 6 && ((prem && step === 6) || (!prem && step === 5))) ||
+            (d === 7 && ((prem && step === 7) || (!prem && step === 6)));
           p.classList.toggle('is-active', isActive);
           p.style.display = isActive ? 'block' : 'none';
         });
@@ -179,8 +306,31 @@
       function validateStep1() {
         var name = document.getElementById('your-name').value.trim();
         var biz = document.getElementById('business-name').value.trim();
+        var phone = document.getElementById('discovery-phone').value.trim();
+        var city = document.getElementById('discovery-city').value.trim();
+        var state = document.getElementById('discovery-state').value;
         if (!name) { document.getElementById('your-name').focus(); return false; }
         if (!biz) { document.getElementById('business-name').focus(); return false; }
+        if (!phone) { document.getElementById('discovery-phone').focus(); return false; }
+        if (!city) { document.getElementById('discovery-city').focus(); return false; }
+        if (!state) { document.getElementById('discovery-state').focus(); return false; }
+        return true;
+      }
+      function validateStep5() {
+        if (!isPremium()) return true;
+        var container = document.getElementById('discovery-services-container');
+        if (!container) return true;
+        var entries = container.querySelectorAll('.discovery-service-entry');
+        for (var i = 0; i < entries.length; i++) {
+          var nameEl = entries[i].querySelector('input[type="text"]');
+          var priceEl = entries[i].querySelector('input[type="number"]');
+          var durationEl = entries[i].querySelector('select');
+          if (!nameEl || !nameEl.value.trim()) { if (nameEl) nameEl.focus(); return false; }
+          if (!priceEl || !priceEl.value) { if (priceEl) priceEl.focus(); return false; }
+          if (!durationEl || !durationEl.value) { if (durationEl) durationEl.focus(); return false; }
+        }
+        var hours = document.getElementById('discovery-business-hours');
+        if (!hours || !hours.value) { document.getElementById('discovery-business-hours').focus(); return false; }
         return true;
       }
       function validateStep2() {
@@ -199,19 +349,23 @@
       });
       document.getElementById('next-3').addEventListener('click', function() { goToStep(4); });
       document.getElementById('next-4').addEventListener('click', function() { goToStep(5); });
-      document.getElementById('next-5').addEventListener('click', function() { goToStep(6); });
+      document.getElementById('next-5').addEventListener('click', function() {
+        if (validateStep5()) goToStep(6);
+      });
+      document.getElementById('next-6').addEventListener('click', function() {
+        goToStep(isPremium() ? 7 : 6);
+      });
 
       document.getElementById('back-2').addEventListener('click', function() { goToStep(1); });
       document.getElementById('back-3').addEventListener('click', function() { goToStep(2); });
       document.getElementById('back-4').addEventListener('click', function() { goToStep(3); });
       document.getElementById('back-5').addEventListener('click', function() { goToStep(4); });
       document.getElementById('back-6').addEventListener('click', function() { goToStep(5); });
+      document.getElementById('back-7').addEventListener('click', function() {
+        goToStep(isPremium() ? 6 : 5);
+      });
 
       var completeBtn = document.getElementById('complete-checkout');
-      var params = new URLSearchParams(window.location.search);
-      var plan = (params.get('plan') || 'standard').toLowerCase();
-      if (plan !== 'standard' && plan !== 'premium') plan = 'standard';
-      var upgradeToPremium = false;
       var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqedlkkb';
       var STRIPE_LINKS = {
         standard: 'https://buy.stripe.com/aFaeVdfzb6YC0WD1EUeZ201',
@@ -252,6 +406,9 @@
           your_name: document.getElementById('your-name').value.trim(),
           business_name: document.getElementById('business-name').value.trim(),
           existing_url: document.getElementById('existing-url').value.trim(),
+          phone: document.getElementById('discovery-phone').value.trim(),
+          city: document.getElementById('discovery-city').value.trim(),
+          state: document.getElementById('discovery-state').value,
           theme: document.getElementById('theme').value,
           words_describe: document.getElementById('words-describe').value.trim(),
           inspiration_sites: document.getElementById('inspiration-sites').value.trim(),
@@ -260,6 +417,23 @@
           plan: upgradeToPremium ? 'Premium' : (plan === 'premium' ? 'Premium' : 'Standard'),
           _subject: 'H4 Discovery: ' + document.getElementById('business-name').value.trim() + ' (' + (upgradeToPremium ? 'Premium' : (plan === 'premium' ? 'Premium' : 'Standard')) + ')'
         };
+        if (isPremium()) {
+          var hoursEl = document.getElementById('discovery-business-hours');
+          var depositEl = document.getElementById('discovery-deposit');
+          if (hoursEl) payload.business_hours = hoursEl.value;
+          if (depositEl) payload.deposit_preference = depositEl.value;
+          var serviceEntries = form.querySelectorAll('.discovery-service-entry');
+          serviceEntries.forEach(function(entry, s) {
+            var sn = entry.querySelector('input[type="text"]');
+            var sp = entry.querySelector('input[type="number"]');
+            var sd = entry.querySelector('select');
+            if (sn && sp && sd && sn.value.trim()) {
+              payload['service_name_' + s] = sn.value.trim();
+              payload['service_price_' + s] = sp.value;
+              payload['service_duration_' + s] = sd.value;
+            }
+          });
+        }
         var logoInput = document.getElementById('logo-files');
         if (logoInput && logoInput.files && logoInput.files.length) {
           payload.logo_files_count = logoInput.files.length;
@@ -308,6 +482,8 @@
         premiumModal.hidden = true;
         premiumModal.classList.remove('is-open');
         lastCheckedPremium = null;
+        var progressBar = form.querySelector('.discovery-progress');
+        if (progressBar) progressBar.setAttribute('aria-valuemax', 7);
       });
       document.querySelector('.discovery-premium-modal-backdrop').addEventListener('click', function() {
         if (lastCheckedPremium) lastCheckedPremium.checked = false;
@@ -315,6 +491,36 @@
         premiumModal.hidden = true;
         premiumModal.classList.remove('is-open');
       });
+
+      var discoveryServiceCount = 1;
+      var discoveryMaxServices = 6;
+      var discoveryContainer = document.getElementById('discovery-services-container');
+      var discoveryAddBtn = document.getElementById('discovery-add-service');
+      var discoveryDurationOpts = '<option value="">Select</option><option value="30">30 min</option><option value="45">45 min</option><option value="60">60 min</option><option value="90">90 min</option><option value="120">2 hours</option><option value="180">3 hours</option><option value="240">4 hours</option><option value="half-day">Half day</option><option value="full-day">Full day</option>';
+      if (discoveryAddBtn && discoveryContainer) {
+        discoveryAddBtn.addEventListener('click', function() {
+          if (discoveryServiceCount >= discoveryMaxServices) return;
+          var idx = discoveryServiceCount;
+          var card = document.createElement('div');
+          card.className = 'discovery-service-entry discovery-service-entry-card';
+          card.setAttribute('data-service-index', idx);
+          card.innerHTML = '<button type="button" class="discovery-service-remove" data-remove-index="' + idx + '">Remove</button>' +
+            '<label for="discovery-service-name-' + idx + '">Service name <span aria-label="required">*</span></label>' +
+            '<input type="text" id="discovery-service-name-' + idx + '" name="service_name_' + idx + '" required placeholder="e.g. Full Detail Package">' +
+            '<label for="discovery-service-price-' + idx + '">Price <span aria-label="required">*</span></label>' +
+            '<div class="discovery-service-price-wrap"><span class="discovery-service-price-prefix">$</span><input type="number" id="discovery-service-price-' + idx + '" name="service_price_' + idx + '" required min="0" step="0.01" placeholder="150"></div>' +
+            '<label for="discovery-service-duration-' + idx + '">Duration <span aria-label="required">*</span></label>' +
+            '<select id="discovery-service-duration-' + idx + '" name="service_duration_' + idx + '" required>' + discoveryDurationOpts + '</select>';
+          discoveryContainer.appendChild(card);
+          card.querySelector('.discovery-service-remove').addEventListener('click', function() {
+            card.remove();
+            discoveryServiceCount--;
+            if (discoveryAddBtn) discoveryAddBtn.style.display = '';
+          });
+          discoveryServiceCount++;
+          if (discoveryServiceCount >= discoveryMaxServices) discoveryAddBtn.style.display = 'none';
+        });
+      }
 
       goToStep(1);
       }
