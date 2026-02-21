@@ -578,7 +578,7 @@ body.theme-southend {
   border: 1px solid var(--se-border);
   display: grid;
   gap: 0.75rem;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 .theme-southend .se-svc-list-card:hover { box-shadow: var(--se-shadow-lg); }
 .theme-southend .se-svc-list-card h3 { margin: 0; font-size: 1.25rem; color: var(--se-forest); }
@@ -604,6 +604,9 @@ body.theme-southend {
   padding: clamp(2.5rem, 5vw, 4rem) 0;
   text-align: center;
   background: linear-gradient(180deg, var(--se-cream-dark) 0%, var(--se-cream) 100%);
+}
+.theme-southend .se-page-hero + .se-section:has(.se-contact-wrap) {
+  padding-top: 2rem;
 }
 .theme-southend .se-page-hero h1 { margin: 0 0 0.5rem; color: var(--se-forest); }
 .theme-southend .se-about-story { max-width: 42rem; margin: 0 auto 3rem; text-align: center; }
@@ -663,30 +666,34 @@ body.theme-southend {
 .theme-southend .se-contact-info a:hover { color: var(--se-copper-dark); text-decoration: underline; }
 .theme-southend .se-form .se-form-group { margin-bottom: 1.25rem; }
 .theme-southend .se-form label { display: block; margin-bottom: 0.35rem; font-weight: 500; color: var(--se-charcoal); font-size: 0.95rem; }
-.theme-southend .se-form input,
+.theme-southend .se-form input[type="text"],
+.theme-southend .se-form input[type="email"],
+.theme-southend .se-form input[type="tel"],
 .theme-southend .se-form select,
 .theme-southend .se-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 15px;
   width: 100%;
-  padding: 0.6rem 0.85rem;
-  border: 1px solid var(--se-border);
-  border-radius: var(--se-radius);
-  font-size: 1rem;
-  font-family: inherit;
+  box-sizing: border-box;
   background: #fff;
   color: var(--se-charcoal);
+  font-family: inherit;
+  transition: border-color 0.2s;
 }
 .theme-southend .se-form input:focus,
 .theme-southend .se-form select:focus,
 .theme-southend .se-form textarea:focus {
+  border-color: #1a4d4d;
   outline: none;
-  border-color: var(--se-copper);
-  box-shadow: 0 0 0 3px rgba(193, 123, 74, 0.2);
+  box-shadow: 0 0 0 2px rgba(26, 77, 77, 0.15);
 }
 .theme-southend .se-form textarea { min-height: 120px; resize: vertical; }
 .theme-southend .se-form .se-btn-submit {
+  width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
   padding: 0.75rem 1.5rem;
   background: var(--se-forest);
   color: #fff !important;
@@ -706,7 +713,10 @@ body.theme-southend {
   text-align: center;
 }
 .theme-southend .se-contact-cta p { margin: 0 0 1rem; font-size: 1rem; color: var(--se-charcoal); }
-.theme-southend .se-contact-cta .se-btn-primary { display: inline-block; }
+.theme-southend .se-contact-cta .se-btn-primary {
+  display: inline-block;
+  margin: 0 auto;
+}
 
 /* ----- Primary/secondary buttons (global for booking and other pages) ----- */
 .theme-southend .se-btn-primary {
